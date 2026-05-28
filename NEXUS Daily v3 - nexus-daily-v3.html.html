@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NEXUS Daily v3</title>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: sans-serif; background: #0f0f1a; color: #e0e0f0; min-height: 100vh; }
+  .app { display: flex; flex-direction: column; min-height: 100vh; }
+  .header { background: #1a1a2e; padding: 16px 20px; border-bottom: 1px solid #2a2a4a; }
+  .header h1 { font-size: 22px; color: #7c83fd; letter-spacing: 2px; }
+  .header p { font-size: 13px; color: #888; margin-top: 4px; }
+  .tabs { display: flex; background: #12122a; border-bottom: 1px solid #2a2a4a; }
+  .tab { flex: 1; padding: 12px 0; text-align: center; cursor: pointer; font-size: 14px; color: #888; background: none; border: none; border-bottom: 2px solid transparent; }
+  .tab.active { color: #7c83fd; font-weight: 700; border-bottom: 2px solid #7c83fd; }
+  .content { flex: 1; padding: 20px; overflow-y: auto; }
+  .card { background: #1a1a2e; border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+  .btn { background: #7c83fd; color: #fff; border: none; border-radius: 8px; padding: 10px 18px; cursor: pointer; font-size: 14px; margin-top: 8px; }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-sm { background: #2a2a4a; color: #aaa; border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: 12px; margin-left: 8px; }
+  .input { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 8px; padding: 10px 14px; color: #e0e0f0; font-size: 14px; width: 100%; }
+  .row { display: flex; gap: 8px; margin-bottom: 16px; align-items: center; }
+  .row .input { flex: 1; }
+  .row .btn { margin-top: 0; }
+  .briefing-text { line-height: 1.7; font-size: 14px; white-space: pre-wrap; color: #d0d0f0; }
+  .tarea-row { display: flex; align-items: center; gap: 10px; }
+  .tarea-row span { flex: 1; }
+  .tarea-row input[type=checkbox] { width: 18px; height: 18px; }
+  .done { text-decoration: line-through; color: #555; }
+  .nota-row { display: flex; align-items: flex-start; gap: 10px; }
+  .nota-row .nota-texto { flex: 1; font-size: 14px; }
+  .nota-fecha { font-size: 11px; color: #555; margin-top: 4px; }
+  .muted { color: #555; }
+  .accent { color: #7c83fd; font-weight: bold; }
+  .source-item { font-size: 12px; color: #666; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const NEWSAPI_KEY = "6ddf5684810b4767a652b1f168ea83ce";
+const DEEPSEEK_KEY = "sk-bfcfeef819bd4d2b94615d43675d0e3d";
+
+function getGreeting() {
+  const h = new Date().getHours();
+  if (h < 12) return "Buenos días, Gabriel ☀️";
+  if (h < 18) return "Buenas tardes, Gabriel 🌤️";
+  return "Buenas noches, Gabriel 🌙";
+}
+
+function getDate() {
+  return new Date().toLocaleDateString("es-AR", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+}
+
+function loadLS(key, def) {
+  try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : def; } catch { return def; }
+}
+function saveLS(key, val) {
+  try { localStorage.setItem(key, JSON.stringify(val)); } catch {}
+}
+
+function App() {
+  const [tab, setTab] = React.useState("Inicio");
+  const [briefing, setBriefing] = React.useState(() => localStorage.getItem("nexus:briefing") || "");
+  const [loading, setLoading] = React.useState(false);
+  const [news, setNews] = React.useState([]);
+  const [tareas, setTareas] = React.useState(() => loadLS("nexus:tareas", []));
+  const [nueva, setNueva] = React.useState("");
+  const [memoria, setMemoria] = React.useState(() => loadLS("nexus:memoria", []));
+  const [nota, setNota] = React.useState("");
+
+  const saveTareas = (arr) => { setTareas(arr); saveLS("nexus:tareas", arr); };
+  const saveMemoria = (arr) => { setMemoria(arr); saveLS("nexus:memoria", arr); };
+
+  const generarBriefing = async () => {
+    setLoading(true);
+    setBriefing("");
+    setTab("Briefing");
+    let articles = [];
+    try {
+      const url = `https://newsapi.org/v2/everything?q=tecnologia+inteligencia+artificial&language=es&sortBy=publishedAt&pageSize=15&apiKey=${NEWSAPI_KEY}`;
+      const r = await fetch(url);
+      const d = await r.json();
+      articles = d.articles || [];
+      setNews(articles);
+    } catch {}
+    const titulos = articles.slice(0, 12).map((a, i) => `${i+1}. ${a.title} (${a.source?.name})`).join("\n");
+    const prompt = `Eres NEXUS, asistente de noticias tecnológicas de Gabriel. Generá un briefing diario en español, claro y directo, con los temas más relevantes de tecnología e inteligencia artificial. Tono informativo y amigable. Máximo 400 palabras.\n\nNoticias:\n${titulos || "No se obtuvieron noticias."}`;
+    try {
+      const r = await fetch("https://api.deepseek.com/v1/chat/completions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Authorization": `Bearer ${DEEPSEEK_KEY}` },
+        body: JSON.stringify({ model: "deepseek-chat", max_tokens: 600, messages: [{ role: "user", content: prompt }] })
+      });
+      const d = await r.json();
+      const texto = d.choices?.[0]?.message?.content || "No se pudo generar el briefing.";
+      setBriefing(texto);
+      localStorage.setItem("nexus:briefing", texto);
+    } catch {
+      setBriefing("Error al conectar con DeepSeek.");
+    }
+    setLoading(false);
+  };
+
+  const agregarTarea = () => {
+    if (!nueva.trim()) return;
+    saveTareas([...tareas, { id: Date.now(), texto: nueva.trim(), hecha: false }]);
+    setNueva("");
+  };
+
+  const agregarNota = () => {
+    if (!nota.trim()) return;
+    saveMemoria([...memoria, { id: Date.now(), texto: nota.trim(), fecha: new Date().toLocaleDateString("es-AR") }]);
+    setNota("");
+  };
+
+  return (
+    <div className="app">
+      <div className="header">
+        <h1>⬡ NEXUS Daily</h1>
+        <p>{getGreeting()}</p>
+      </div>
+      <div className="tabs">
+        {["Inicio","Briefing","Tareas","Memoria"].map(t => (
+          <button key={t} className={`tab${tab===t?" active":""}`} onClick={() => setTab(t)}>{t}</button>
+        ))}
+      </div>
+      <div className="content">
+
+        {tab === "Inicio" && (
+          <>
+            <div className="card">
+              <p style={{fontSize:13,color:"#888",marginBottom:8}}>📅 {getDate()}</p>
+              <p style={{fontSize:14,color:"#aaa",marginBottom:16}}>Tareas pendientes: <span className="accent">{tareas.filter(t=>!t.hecha).length}</span></p>
+              <button className="btn" onClick={generarBriefing}>🗞️ Generar Briefing del Día</button>
+            </div>
+            <div className="card">
+              <p style={{fontSize:12,color:"#444"}}>NEXUS Daily v3 · DeepSeek Chat · NewsAPI</p>
+            </div>
+          </>
+        )}
+
+        {tab === "Briefing" && (
+          <>
+            <button className="btn" onClick={generarBriefing} disabled={loading}>
+              {loading ? "⏳ Generando..." : "🔄 Actualizar Briefing"}
+            </button>
+            <div className="card" style={{marginTop:16}}>
+              {loading
+                ? <p style={{color:"#7c83fd"}}>Buscando noticias y generando resumen...</p>
+                : briefing
+                  ? <p className="briefing-text">{briefing}</p>
+                  : <p className="muted">Presioná "Generar Briefing" para comenzar.</p>
+              }
+            </div>
+            {news.length > 0 && (
+              <div style={{marginTop:8}}>
+                <p style={{fontSize:12,color:"#555",marginBottom:8}}>Fuentes utilizadas:</p>
+                {news.slice(0,8).map((a,i) => <p key={i} className="source-item">· {a.title}</p>)}
+              </div>
+            )}
+          </>
+        )}
+
+        {tab === "Tareas" && (
+          <>
+            <div className="row">
+              <input className="input" placeholder="Nueva tarea..." value={nueva}
+                onChange={e=>setNueva(e.target.value)} onKeyDown={e=>e.key==="Enter"&&agregarTarea()} />
+              <button className="btn" onClick={agregarTarea}>+</button>
+            </div>
+            {tareas.length===0 && <p className="muted">Sin tareas.</p>}
+            {tareas.map(t => (
+              <div key={t.id} className="card tarea-row">
+                <input type="checkbox" checked={t.hecha} onChange={()=>saveTareas(tareas.map(x=>x.id===t.id?{...x,hecha:!x.hecha}:x))} />
+                <span className={t.hecha?"done":""}>{t.texto}</span>
+                <button className="btn-sm" onClick={()=>saveTareas(tareas.filter(x=>x.id!==t.id))}>✕</button>
+              </div>
+            ))}
+          </>
+        )}
+
+        {tab === "Memoria" && (
+          <>
+            <div className="row">
+              <input className="input" placeholder="Agregar nota..." value={nota}
+                onChange={e=>setNota(e.target.value)} onKeyDown={e=>e.key==="Enter"&&agregarNota()} />
+              <button className="btn" onClick={agregarNota}>+</button>
+            </div>
+            {memoria.length===0 && <p className="muted">Sin notas en memoria.</p>}
+            {memoria.map(m => (
+              <div key={m.id} className="card nota-row">
+                <div style={{flex:1}}>
+                  <p className="nota-texto">{m.texto}</p>
+                  <p className="nota-fecha">{m.fecha}</p>
+                </div>
+                <button className="btn-sm" onClick={()=>saveMemoria(memoria.filter(x=>x.id!==m.id))}>✕</button>
+              </div>
+            ))}
+          </>
+        )}
+
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
