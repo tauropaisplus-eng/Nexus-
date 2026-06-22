@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>NEXUS · Descriptor Visual</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --border: #1e1e2e;
+    --accent: #6ee7f7;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --danger: #f87171;
+    --success: #4ade80;
+    --font: 'Segoe UI', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  header {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0 4px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .logo span {
+    color: var(--accent2);
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--muted);
+    transition: background 0.3s;
+  }
+  .status-dot.active { background: var(--success); box-shadow: 0 0 8px var(--success); }
+  .status-dot.loading { background: var(--accent); animation: pulse 1s infinite; }
+  .status-dot.error { background: var(--danger); }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .viewfinder {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 4/3;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  canvas { display: none; }
+
+  .viewfinder-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10,10,15,0.7);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+    padding: 24px;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+  .viewfinder-overlay.hidden { opacity: 0; }
+
+  .corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: var(--accent);
+    border-style: solid;
+    opacity: 0.6;
+  }
+  .corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; border-radius: 4px 0 0 0; }
+  .corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; border-radius: 0 4px 0 0; }
+  .corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; border-radius: 0 0 0 4px; }
+  .corner.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; border-radius: 0 0 4px 0; }
+
+  .controls {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    gap: 12px;
+  }
+
+  button {
+    flex: 1;
+    padding: 16px 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  #btnStart {
+    background: var(--accent);
+    color: #0a0a0f;
+  }
+  #btnStart:hover { filter: brightness(1.15); }
+  #btnStart:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  #btnCapture {
+    background: var(--accent2);
+    color: #0a0a0f;
+    flex: 2;
+  }
+  #btnCapture:hover { filter: brightness(1.15); }
+  #btnCapture:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  #btnStop {
+    background: var(--surface);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    flex: 0.7;
+  }
+  #btnStop:hover { background: var(--danger); color: #0a0a0f; }
+  #btnStop:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  .api-section {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .api-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  input[type="password"] {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-size: 0.85rem;
+    font-family: monospace;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  input[type="password"]:focus { border-color: var(--accent); }
+
+  .result-box {
+    width: 100%;
+    max-width: 480px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    min-height: 120px;
+    position: relative;
+  }
+
+  .result-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  #resultText {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    white-space: pre-wrap;
+  }
+
+  #resultText.empty { color: var(--muted); font-style: italic; }
+
+  .tts-controls {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .tts-btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  #btnSpeak {
+    background: var(--surface);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+  #btnSpeak:hover { background: var(--accent); color: #0a0a0f; }
+  #btnSpeak:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  #btnStop2 {
+    background: var(--surface);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+  #btnStop2:hover { border-color: var(--danger); color: var(--danger); }
+
+  .spinner {
+    display: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+  }
+  .spinner.visible { display: block; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .msg {
+    width: 100%;
+    max-width: 480px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+    min-height: 20px;
+  }
+  .msg.error { color: var(--danger); }
+  .msg.ok { color: var(--success); }
+
+  footer {
+    font-size: 0.68rem;
+    color: var(--muted);
+    opacity: 0.5;
+    padding-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NEXUS <span>·</span> Visual</div>
+  <div class="status-dot" id="dot"></div>
+</header>
+
+<!-- API Key -->
+<div class="api-section">
+  <div class="api-label">API Key Anthropic</div>
+  <input type="password" id="apiKey" placeholder="sk-ant-..." autocomplete="off">
+</div>
+
+<!-- Visor -->
+<div class="viewfinder">
+  <video id="video" autoplay playsinline muted></video>
+  <canvas id="canvas"></canvas>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+  <div class="viewfinder-overlay" id="overlay">
+    Presioná <strong style="color:var(--accent)">Activar cámara</strong><br>para comenzar
+  </div>
+</div>
+
+<!-- Botones -->
+<div class="controls">
+  <button id="btnStart">📷 Activar</button>
+  <button id="btnCapture" disabled>🔍 Capturar y describir</button>
+  <button id="btnStop" disabled>✕</button>
+</div>
+
+<!-- Mensaje de estado -->
+<div class="msg" id="msg"></div>
+
+<!-- Resultado -->
+<div class="result-box">
+  <div class="result-label">Descripción</div>
+  <div id="resultText" class="empty">Aquí aparecerá la descripción de la imagen...</div>
+  <div class="spinner" id="spinner"></div>
+  <div class="tts-controls">
+    <button class="tts-btn" id="btnSpeak" disabled>🔊 Leer en voz alta</button>
+    <button class="tts-btn" id="btnStop2">⏹ Detener</button>
+  </div>
+</div>
+
+<footer>NEXUS · claude-sonnet-4-6 · TTS Rioplatense</footer>
+
+<script>
+  const video = document.getElementById('video');
+  const canvas = document.getElementById('canvas');
+  const overlay = document.getElementById('overlay');
+  const dot = document.getElementById('dot');
+  const msg = document.getElementById('msg');
+  const resultText = document.getElementById('resultText');
+  const spinner = document.getElementById('spinner');
+  const apiKeyInput = document.getElementById('apiKey');
+
+  const btnStart = document.getElementById('btnStart');
+  const btnCapture = document.getElementById('btnCapture');
+  const btnStop = document.getElementById('btnStop');
+  const btnSpeak = document.getElementById('btnSpeak');
+  const btnStop2 = document.getElementById('btnStop2');
+
+  let stream = null;
+  let lastDescription = '';
+
+  // Cargar API key guardada
+  const savedKey = localStorage.getItem('nexus_api_key');
+  if (savedKey) apiKeyInput.value = savedKey;
+  apiKeyInput.addEventListener('change', () => {
+    localStorage.setItem('nexus_api_key', apiKeyInput.value.trim());
+  });
+
+  function setMsg(text, type = '') {
+    msg.textContent = text;
+    msg.className = 'msg' + (type ? ' ' + type : '');
+  }
+
+  function setDot(state) {
+    dot.className = 'status-dot' + (state ? ' ' + state : '');
+  }
+
+  // ACTIVAR CÁMARA
+  btnStart.addEventListener('click', async () => {
+    try {
+      setMsg('Solicitando acceso a cámara...');
+      setDot('loading');
+      stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 960 } },
+        audio: false
+      });
+      video.srcObject = stream;
+      await video.play();
+      overlay.classList.add('hidden');
+      btnStart.disabled = true;
+      btnCapture.disabled = false;
+      btnStop.disabled = false;
+      setDot('active');
+      setMsg('Cámara activa. Encuadrá lo que querés describir.', 'ok');
+    } catch (err) {
+      setDot('error');
+      setMsg('Error de cámara: ' + err.message, 'error');
+    }
+  });
+
+  // DETENER CÁMARA
+  btnStop.addEventListener('click', () => {
+    if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
+    video.srcObject = null;
+    overlay.classList.remove('hidden');
+    btnStart.disabled = false;
+    btnCapture.disabled = true;
+    btnStop.disabled = true;
+    setDot('');
+    setMsg('Cámara detenida.');
+  });
+
+  // CAPTURAR Y DESCRIBIR
+  btnCapture.addEventListener('click', async () => {
+    const apiKey = apiKeyInput.value.trim();
+    if (!apiKey) { setMsg('Ingresá tu API Key de Anthropic primero.', 'error'); return; }
+    if (!stream) { setMsg('Activá la cámara primero.', 'error'); return; }
+
+    // Capturar frame
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0);
+    const base64 = canvas.toDataURL('image/jpeg', 0.85).split(',')[1];
+
+    // UI loading
+    btnCapture.disabled = true;
+    spinner.classList.add('visible');
+    setDot('loading');
+    setMsg('Analizando imagen...');
+    resultText.textContent = '';
+    resultText.classList.remove('empty');
+    btnSpeak.disabled = true;
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 1024,
+          system: `Sos un asistente visual para una persona con baja visión. Describí las imágenes de forma clara, detallada y útil. 
+Usá español rioplatense. Comenzá directamente con la descripción, sin saludos ni preámbulos. 
+Describí: qué hay en la imagen, colores, personas, textos visibles, contexto, y cualquier detalle relevante para alguien que no puede ver bien.
+Sé conciso pero completo. Máximo 3-4 oraciones.`,
+          messages: [{
+            role: 'user',
+            content: [
+              { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: base64 } },
+              { type: 'text', text: 'Describí esta imagen.' }
+            ]
+          }]
+        })
+      });
+
+      if (!response.ok) {
+        const err = await response.json();
+        throw new Error(err.error?.message || `HTTP ${response.status}`);
+      }
+
+      const data = await response.json();
+      lastDescription = data.content?.[0]?.text || 'Sin respuesta.';
+      resultText.textContent = lastDescription;
+      resultText.classList.remove('empty');
+      btnSpeak.disabled = false;
+      setDot('active');
+      setMsg('Descripción lista.', 'ok');
+
+      // Auto-leer
+      hablar(lastDescription);
+
+    } catch (err) {
+      setDot('error');
+      setMsg('Error: ' + err.message, 'error');
+      resultText.textContent = 'No se pudo obtener la descripción.';
+      resultText.classList.remove('empty');
+    } finally {
+      btnCapture.disabled = false;
+      spinner.classList.remove('visible');
+    }
+  });
+
+  // TTS
+  function hablar(texto) {
+    if (!('speechSynthesis' in window)) { setMsg('TTS no disponible en este navegador.', 'error'); return; }
+    window.speechSynthesis.cancel();
+
+    const utter = new SpeechSynthesisUtterance(texto);
+    utter.lang = 'es-AR';
+    utter.rate = 0.95;
+    utter.pitch = 1.0;
+    utter.volume = 1.0;
+
+    // Intentar voz argentina o española
+    const voices = window.speechSynthesis.getVoices();
+    const preferred = voices.find(v => v.lang === 'es-AR') ||
+                      voices.find(v => v.lang === 'es-419') ||
+                      voices.find(v => v.lang.startsWith('es'));
+    if (preferred) utter.voice = preferred;
+
+    window.speechSynthesis.speak(utter);
+  }
+
+  btnSpeak.addEventListener('click', () => {
+    if (lastDescription) hablar(lastDescription);
+  });
+
+  btnStop2.addEventListener('click', () => {
+    window.speechSynthesis.cancel();
+  });
+
+  // Cargar voces cuando estén disponibles
+  window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+</script>
+</body>
+</html>
