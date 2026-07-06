@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>NEXUS v6 — Gabriel OS</title>
+<style>
+  html,body,#root{height:100%;margin:0;padding:0;background:#080B12;}
+  *{box-sizing:border-box;}
+</style>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-type="module">
+const { useState, useRef, useEffect, useCallback } = React;
+
+/* ---------- Storage local (reemplaza window.storage de los artifacts) ---------- */
+window.storage = {
+  get: async (key) => {
+    const v = localStorage.getItem(key);
+    return v !== null ? { key, value: v } : null;
+  },
+  set: async (key, value) => {
+    localStorage.setItem(key, value);
+    return { key, value };
+  },
+};
+
+/* ---------- API key (se guarda en localStorage, igual que en v6/v7) ---------- */
+const getApiKey = () => localStorage.getItem("nexus_api_key") || "";
+const setApiKey = (k) => localStorage.setItem("nexus_api_key", k);
+
+const HOME_CONTEXT = `
+Casa de Gabriel:
+- Planta baja: cocina-comedor con mesa larga, mantel azul a cuadros, cocina a gas, heladera blanca, calefón
+- Terraza/patio superior: piso cerámico, parrilla, mesa y sillas de jardín negras, bidón de agua
+- Living: TV grande, mueble biblioteca con fotos familiares y figura religiosa, puff beige
+- Mascota: Nala, pastor alemán adoptada, no ladra, muy compañera ❤️
+- Pendiente: pintura y arreglos generales en la casa
+- Computadora: HP All-in-One, parlante Genius, calendario Racing Club 2026
+`;
+
+const getTimeContext = () => {
+  const now = new Date();
+  const h = now.getHours();
+  const day = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"][now.getDay()];
+  const date = now.toLocaleDateString("es-AR", { day:"numeric", month:"long", year:"numeric" });
+  const time = now.toLocaleTimeString("es-AR", { hour:"2-digit", minute:"2-digit" });
+  let period, greeting, mood;
+  if (h >= 5 && h < 12) { period="mañana"; greeting="Buenos días"; mood="☀️"; }
+  else if (h >= 12 && h < 18) { period="tarde"; greeting="Buenas tardes"; mood="🌤"; }
+  else if (h >= 18 && h < 22) { period="noche"; greeting="Buenas noches"; mood="🌆"; }
+  else { period="madrugada"; greeting="Buenas noches"; mood="🌙"; }
+  return { h, day, date, time, period, greeting, mood };
+};
+
+const NEXUS_SYSTEM = (memories, tasks, tc) => `Eres NEXUS, el compañero inteligente personal de Gabriel. Gabriel tiene baja visión con un solo ojo funcional.
+
+Personalidad:
+- Respuestas CORTAS y DIRECTAS — máximo 3-4 líneas salvo necesidad
+- Tienes iniciativa: propones ideas, sugieres próximos pasos
+- Eres un socio, no un asistente — dialogás, aprendés, colaborás
+- Cálido pero eficiente. Sin relleno.
+- Siempre en español
+
+Contexto temporal ACTUAL:
+- Hora: ${tc.time} del ${tc.day} ${tc.date}
+- Momento del día: ${tc.period}
+- Saludo apropiado: ${tc.greeting}
+
+Contexto del hogar:
+${HOME_CONTEXT}
+
+Tareas pendientes del hogar (${tasks.filter(t=>!t.done).length} sin completar):
+${tasks.filter(t=>!t.done).map(t=>`- ${t.text}`).join("\n") || "Sin tareas pendientes"}
+
+Memorias de Gabriel:
+${memories.length>0 ? memories.map((m,i)=>`${i+1}. ${m}`).join("\n") : "Sin memorias aún."}
+
+Cuando analices imágenes: sé específico, describe lo más importante primero, leé textos completos.
+
+Instrucciones de memoria:
+- Si Gabriel dice algo importante, al FINAL añadí: [MEMORIA: <frase corta>]
+- Solo cuando sea verdaderamente relevante.`;
+
+const MORNING_PROMPT = (tc, tasks, memories) => {
+  const pending = tasks.filter(t=>!t.done);
+  return `Es ${tc.greeting}, Gabriel. Generá un saludo matutino personalizado y cálido para ${tc.time} del ${tc.day}.
+Incluí:
+1. Saludo con el momento del día
+2. ${pending.length>0 ? `Mencioná brevemente que tiene ${pending.length} tarea(s) pendiente(s) del hogar` : "Decile que no tiene tareas pendientes hoy"}
+3. Una frase motivadora corta o algo positivo para el día
+4. Preguntale cómo está o qué necesita
+Máximo 4 líneas. Cálido y directo.`;
+};
+
+/* ---------- Llamado a la API con headers para uso directo desde el navegador ---------- */
+async function callClaude(body) {
+  const key = getApiKey();
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": key,
+      "anthropic-version": "2023-06-01",
+      "anthropic-dangerous-direct-browser-access": "true",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const errText = await res.text().catch(()=> "");
+    throw new Error(`HTTP ${res.status}: ${errText}`);
+  }
+  return res.json();
+}
+
+/* ---------- Pantalla de configuración de API key ---------- */
+function ApiKeyGate({ onSaved }) {
+  const [val, setVal] = useState(getApiKey());
+  const [error, setError] = useState("");
+  const save = () => {
+    if (!val.trim().startsWith("sk-ant-")) {
+      setError("La clave debe empezar con sk-ant-");
+      return;
+    }
+    setApiKey(val.trim());
+    onSaved();
+  };
+  return (
+    <div style={{minHeight:"100vh",background:"#080B12",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",fontFamily:"Georgia,serif",color:"#DDD8CC",padding:24}}>
+      <div style={{fontSize:22,fontWeight:"bold",letterSpacing:5,background:"linear-gradient(90deg,#B49650,#E8C96A,#F0D882,#B49650)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",marginBottom:20}}>NEXUS</div>
+      <div style={{fontSize:13,color:"rgba(200,195,185,0.7)",marginBottom:16,textAlign:"center",maxWidth:340}}>
+        Para correr NEXUS localmente en Edge necesitás tu propia API key de Anthropic (console.anthropic.com). Se guarda solo en este navegador.
+      </div>
+      <input
+        type="password"
+        value={val}
+        onChange={e=>{setVal(e.target.value); setError("");}}
+        placeholder="sk-ant-..."
+        style={{width:"100%",maxWidth:340,background:"rgba(255,255,255,0.04)",border:"1px solid rgba(180,150,80,0.25)",borderRadius:10,padding:"10px 14px",color:"#DDD8CC",fontSize:13,fontFamily:"monospace",marginBottom:10}}
+      />
+      {error && <div style={{color:"rgba(255,80,80,0.8)",fontSize:12,marginBottom:10}}>{error}</div>}
+      <button onClick={save} style={{background:"rgba(180,150,80,0.15)",border:"1px solid rgba(180,150,80,0.4)",color:"rgba(180,150,80,0.95)",borderRadius:10,padding:"10px 22px",fontSize:13,cursor:"pointer"}}>Guardar y entrar</button>
+    </div>
+  );
+}
+
+function NexusV6() {
+  const [ready, setReady] = useState(!!getApiKey());
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [pendingImage, setPendingImage] = useState(null);
+  const [pendingBase64, setPendingBase64] = useState(null);
+  const [cameraOpen, setCameraOpen] = useState(false);
+  const [cameraReady, setCameraReady] = useState(false);
+  const [stream, setStream] = useState(null);
+  const [memories, setMemories] = useState([]);
+  const [homeTasks, setHomeTasks] = useState([]);
+  const [showMemories, setShowMemories] = useState(false);
+  const [showHome, setShowHome] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [memoryFlash, setMemoryFlash] = useState(false);
+  const [listening, setListening] = useState(false);
+  const [speaking, setSpeaking] = useState(false);
+  const [transcript, setTranscript] = useState("");
+  const [voiceSupported, setVoiceSupported] = useState(false);
+  const [newTask, setNewTask] = useState("");
+  const [timeContext, setTimeContext] = useState(getTimeContext());
+  const [greeted, setGreeted] = useState(false);
+
+  const fileRef = useRef(null);
+  const videoRef = useRef(null);
+  const canvasRef = useRef(null);
+  const bottomRef = useRef(null);
+  const inputRef = useRef(null);
+  const recognitionRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => setTimeContext(getTimeContext()), 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (!ready) return;
+    const load = async () => {
+      let mem = [], tasks = [];
+      try { const r = await window.storage.get("nexus_memories"); if (r?.value) { mem = JSON.parse(r.value); setMemories(mem); } } catch {}
+      try { const t = await window.storage.get("nexus_home_tasks"); if (t?.value) { tasks = JSON.parse(t.value); setHomeTasks(tasks); } } catch {}
+
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (SpeechRecognition) setVoiceSupported(true);
+
+      const tc = getTimeContext();
+      setTimeout(async () => {
+        setGreeted(false);
+        await sendGreeting(tc, tasks, mem);
+      }, 800);
+    };
+    load();
+  }, [ready]);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
+
+  const sendGreeting = async (tc, tasks, mem) => {
+    setLoading(true);
+    try {
+      const data = await callClaude({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 300,
+        system: NEXUS_SYSTEM(mem, tasks, tc),
+        messages: [{ role: "user", content: MORNING_PROMPT(tc, tasks, mem) }],
+      });
+      const reply = data.content?.[0]?.text || `${tc.greeting}, Gabriel! 🧠`;
+      setMessages([{ role: "nexus", text: reply, isGreeting: true }]);
+      speak(reply);
+      setGreeted(true);
+    } catch {
+      setMessages([{ role: "nexus", text: `${tc.greeting}, Gabriel! NEXUS online. ¿Qué necesitás? 🧠` }]);
+    }
+    setLoading(false);
+  };
+
+  const saveMemories = async (m) => { try { await window.storage.set("nexus_memories", JSON.stringify(m)); } catch {} };
+  const saveHomeTasks = async (t) => { try { await window.storage.set("nexus_home_tasks", JSON.stringify(t)); } catch {} };
+
+  const addMemory = async (text) => {
+    const nm = [...memories, text];
+    setMemories(nm);
+    await saveMemories(nm);
+    setMemoryFlash(true);
+    setTimeout(() => setMemoryFlash(false), 2500);
+  };
+
+  const addHomeTask = async () => {
+    if (!newTask.trim()) return;
+    const nt = [...homeTasks, { text: newTask.trim(), done: false, date: new Date().toLocaleDateString("es-AR") }];
+    setHomeTasks(nt); await saveHomeTasks(nt); setNewTask("");
+  };
+
+  const toggleTask = async (i) => {
+    const nt = homeTasks.map((t,idx) => idx===i ? {...t,done:!t.done} : t);
+    setHomeTasks(nt); await saveHomeTasks(nt);
+  };
+
+  const deleteTask = async (i) => {
+    const nt = homeTasks.filter((_,idx)=>idx!==i);
+    setHomeTasks(nt); await saveHomeTasks(nt);
+  };
+
+  const startListening = () => {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) return;
+    const r = new SR();
+    r.lang = "es-AR"; r.continuous = false; r.interimResults = true;
+    r.onstart = () => setListening(true);
+    r.onresult = (e) => {
+      const t = Array.from(e.results).map(r=>r[0].transcript).join("");
+      setTranscript(t);
+      if (e.results[e.results.length-1].isFinal) { setInput(t); setTranscript(""); }
+    };
+    r.onend = () => { setListening(false); setTranscript(""); };
+    r.onerror = () => { setListening(false); setTranscript(""); };
+    recognitionRef.current = r;
+    r.start();
+  };
+
+  const stopListening = () => { recognitionRef.current?.stop(); setListening(false); };
+
+  const speak = (text) => {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const clean = text.replace(/[🧠🚀✨😊❤️🏠🎙📷📁☀️🌤🌆🌙]/g,"").replace(/\*\*/g,"").trim();
+    const utt = new SpeechSynthesisUtterance(clean);
+    utt.lang = "es-AR"; utt.rate = 0.95; utt.pitch = 1;
+    const voices = window.speechSynthesis.getVoices();
+    const es = voices.find(v=>v.lang.startsWith("es")) || voices[0];
+    if (es) utt.voice = es;
+    utt.onstart = () => setSpeaking(true);
+    utt.onend = () => setSpeaking(false);
+    utt.onerror = () => setSpeaking(false);
+    window.speechSynthesis.speak(utt);
+  };
+
+  const openCamera = async () => {
+    try { const s = await navigator.mediaDevices.getUserMedia({video:{facingMode:"environment"}}); setStream(s); setCameraOpen(true); setCameraReady(false); }
+    catch { try { const s = await navigator.mediaDevices.getUserMedia({video:true}); setStream(s); setCameraOpen(true); setCameraReady(false); } catch { setMessages(prev=>[...prev,{role:"nexus",text:"No pude acceder a la cámara. Usá 📁."}]); } }
+  };
+
+  useEffect(() => {
+    if (cameraOpen && stream && videoRef.current) {
+      videoRef.current.srcObject = stream;
+      videoRef.current.onloadedmetadata = () => { videoRef.current.play(); setCameraReady(true); };
+    }
+  }, [cameraOpen, stream]);
+
+  const closeCamera = useCallback(() => {
+    if (stream) stream.getTracks().forEach(t=>t.stop());
+    setStream(null); setCameraOpen(false); setCameraReady(false);
+  }, [stream]);
+
+  const capturePhoto = () => {
+    if (!videoRef.current||!canvasRef.current) return;
+    const v=videoRef.current, c=canvasRef.current;
+    c.width=v.videoWidth; c.height=v.videoHeight;
+    c.getContext("2d").drawImage(v,0,0);
+    const d=c.toDataURL("image/jpeg",0.85);
+    setPendingImage(d); setPendingBase64(d.split(",")[1]); closeCamera();
+  };
+
+  const handleFileUpload = (file) => {
+    if (!file) return;
+    const r = new FileReader();
+    r.onload = (e) => { setPendingImage(e.target.result); setPendingBase64(e.target.result.split(",")[1]); };
+    r.readAsDataURL(file);
+  };
+
+  const buildHistory = () => messages.map(m=>({
+    role: m.role==="user"?"user":"assistant",
+    content: m.text.replace(/\[MEMORIA:.*?\]/g,"").trim(),
+  }));
+
+  const sendMessage = async (override) => {
+    const userText = (override||input).trim() || (pendingBase64?"Analizá esta imagen.":"");
+    if (!userText&&!pendingBase64) return;
+    if (loading) return;
+    setMessages(prev=>[...prev,{role:"user",text:userText,image:pendingImage}]);
+    setInput("");
+    const imgB64=pendingBase64;
+    setPendingImage(null); setPendingBase64(null);
+    setLoading(true);
+    const tc = getTimeContext();
+    const history = buildHistory();
+    const userContent = imgB64
+      ? [{type:"image",source:{type:"base64",media_type:"image/jpeg",data:imgB64}},{type:"text",text:userText}]
+      : userText;
+    try {
+      const data = await callClaude({
+        model:"claude-sonnet-4-20250514", max_tokens:1000,
+        system: NEXUS_SYSTEM(memories, homeTasks, tc),
+        messages:[...history,{role:"user",content:userContent}],
+      });
+      let reply = data.content?.[0]?.text || "Error de conexión.";
+      const mm = reply.match(/\[MEMORIA:\s*(.+?)\]/);
+      if (mm) { await addMemory(mm[1].trim()); reply=reply.replace(/\[MEMORIA:.*?\]/g,"").trim(); }
+      setMessages(prev=>[...prev,{role:"nexus",text:reply}]);
+      speak(reply);
+    } catch (e) { setMessages(prev=>[...prev,{role:"nexus",text:"Error de conexión: " + e.message}]); }
+    setLoading(false);
+  };
+
+  const handleKey = (e) => { if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();sendMessage();} };
+
+  if (!ready) return <ApiKeyGate onSaved={()=>setReady(true)} />;
+
+  if (showSettings) return (
+    <div style={{minHeight:"100vh",background:"#080B12",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",fontFamily:"Georgia,serif",color:"#DDD8CC",padding:24}}>
+      <div style={{fontSize:14,marginBottom:14,color:"rgba(180,150,80,0.8)"}}>Cambiar API key</div>
+      <ApiKeyGate onSaved={()=>setShowSettings(false)} />
+      <button onClick={()=>setShowSettings(false)} style={{marginTop:-10,background:"none",border:"none",color:"rgba(180,150,80,0.5)",fontSize:12,cursor:"pointer"}}>Cancelar</button>
+    </div>
+  );
+
+  if (cameraOpen) return (
+    <div style={{position:"fixed",inset:0,background:"#000",display:"flex",flexDirection:"column",zIndex:1000}}>
+      <style>{`@keyframes scan{0%{top:5%}100%{top:95%}} @keyframes cp{0%,100%{opacity:0.4}50%{opacity:1}}`}</style>
+      <div style={{flex:1,position:"relative",overflow:"hidden"}}>
+        <video ref={videoRef} style={{width:"100%",height:"100%",objectFit:"cover"}} playsInline muted/>
+        <canvas ref={canvasRef} style={{display:"none"}}/>
+        <div style={{position:"absolute",left:0,right:0,height:2,pointerEvents:"none",background:"linear-gradient(90deg,transparent,rgba(0,229,255,0.9),transparent)",animation:"scan 2.5s linear infinite"}}/>
+        {[[{top:"15%",left:"12%"},{borderTop:"2px solid #00E5FF",borderLeft:"2px solid #00E5FF"}],[{top:"15%",right:"12%"},{borderTop:"2px solid #00E5FF",borderRight:"2px solid #00E5FF"}],[{bottom:"15%",left:"12%"},{borderBottom:"2px solid #00E5FF",borderLeft:"2px solid #00E5FF"}],[{bottom:"15%",right:"12%"},{borderBottom:"2px solid #00E5FF",borderRight:"2px solid #00E5FF"}]].map(([p,b],i)=>(
+          <div key={i} style={{position:"absolute",...p,width:24,height:24,...b,animation:`cp 2s ${i*0.25}s ease-in-out infinite`}}/>
+        ))}
+        <div style={{position:"absolute",top:16,left:0,right:0,display:"flex",justifyContent:"center"}}>
+          <div style={{background:"rgba(0,0,0,0.65)",backdropFilter:"blur(8px)",border:"1px solid rgba(0,229,255,0.3)",borderRadius:20,padding:"5px 16px",fontSize:10,color:"#00E5FF",letterSpacing:3}}>{cameraReady?"● EN VIVO":"INICIANDO..."}</div>
+        </div>
+      </div>
+      <div style={{padding:"20px 40px 32px",background:"rgba(0,0,0,0.92)",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+        <button onClick={closeCamera} style={{width:48,height:48,borderRadius:"50%",background:"rgba(255,255,255,0.08)",border:"1px solid rgba(255,255,255,0.2)",color:"#fff",fontSize:18,cursor:"pointer"}}>✕</button>
+        <button onClick={capturePhoto} disabled={!cameraReady} style={{width:70,height:70,borderRadius:"50%",background:cameraReady?"#fff":"rgba(255,255,255,0.25)",border:"4px solid rgba(255,255,255,0.35)",cursor:cameraReady?"pointer":"default",transition:"all 0.2s"}}/>
+        <button onClick={()=>{closeCamera();fileRef.current?.click();}} style={{width:48,height:48,borderRadius:"50%",background:"rgba(255,255,255,0.08)",border:"1px solid rgba(255,255,255,0.2)",color:"#fff",fontSize:20,cursor:"pointer"}}>🖼</button>
+      </div>
+    </div>
+  );
+
+  if (showMemories) return (
+    <div style={{minHeight:"100vh",background:"#080B12",display:"flex",flexDirection:"column",fontFamily:"Georgia,serif",color:"#DDD8CC"}}>
+      <style>{`@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}`}</style>
+      <div style={{padding:"18px 20px 14px",borderBottom:"1px solid rgba(180,150,80,0.12)",background:"rgba(8,11,18,0.95)",display:"flex",alignItems:"center",gap:14}}>
+        <button onClick={()=>setShowMemories(false)} style={{width:36,height:36,borderRadius:"50%",background:"rgba(180,150,80,0.08)",border:"1px solid rgba(180,150,80,0.2)",color:"rgba(180,150,80,0.8)",fontSize:16,cursor:"pointer"}}>←</button>
+        <div><div style={{fontSize:16,fontWeight:"bold",letterSpacing:4,color:"rgba(180,150,80,0.9)"}}>MEMORIAS</div><div style={{fontSize:8,color:"rgba(180,150,80,0.3)",letterSpacing:3}}>LO QUE NEXUS RECUERDA</div></div>
+        <div style={{marginLeft:"auto",fontSize:11,color:"rgba(180,150,80,0.4)"}}>{memories.length} guardadas</div>
+      </div>
+      <div style={{flex:1,padding:"20px 18px",display:"flex",flexDirection:"column",gap:10}}>
+        {memories.length===0?(<div style={{textAlign:"center",color:"rgba(180,150,80,0.3)",fontSize:13,marginTop:40,fontStyle:"italic"}}>Conversá con NEXUS y él irá aprendiendo.</div>)
+        :memories.map((m,i)=>(
+          <div key={i} style={{display:"flex",alignItems:"center",gap:10,padding:"10px 14px",background:"rgba(180,150,80,0.06)",border:"1px solid rgba(180,150,80,0.14)",borderRadius:10,animation:`fadeUp 0.3s ${i*0.05}s ease-out both`}}>
+            <span style={{fontSize:12}}>🧠</span>
+            <span style={{flex:1,fontSize:13,lineHeight:1.5}}>{m}</span>
+            <button onClick={()=>{const nm=memories.filter((_,idx)=>idx!==i);setMemories(nm);saveMemories(nm);}} style={{width:24,height:24,borderRadius:"50%",background:"rgba(255,80,80,0.1)",border:"1px solid rgba(255,80,80,0.2)",color:"rgba(255,80,80,0.6)",fontSize:10,cursor:"pointer"}}>✕</button>
+          </div>
+        ))}
+      </div>
+      {memories.length>0&&<div style={{padding:"14px 18px 24px",borderTop:"1px solid rgba(180,150,80,0.08)",background:"rgba(8,11,18,0.95)",textAlign:"center"}}><button onClick={()=>{setMemories([]);saveMemories([]);}} style={{fontSize:11,color:"rgba(255,80,80,0.4)",background:"none",border:"none",cursor:"pointer"}}>Borrar todas</button></div>}
+    </div>
+  );
+
+  if (showHome) return (
+    <div style={{minHeight:"100vh",background:"#080B12",display:"flex",flexDirection:"column",fontFamily:"Georgia,serif",color:"#DDD8CC"}}>
+      <style>{`@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}`}</style>
+      <div style={{padding:"18px 20px 14px",borderBottom:"1px solid rgba(180,150,80,0.12)",background:"rgba(8,11,18,0.95)",display:"flex",alignItems:"center",gap:14}}>
+        <button onClick={()=>setShowHome(false)} style={{width:36,height:36,borderRadius:"50%",background:"rgba(180,150,80,0.08)",border:"1px solid rgba(180,150,80,0.2)",color:"rgba(180,150,80,0.8)",fontSize:16,cursor:"pointer"}}>←</button>
+        <div><div style={{fontSize:16,fontWeight:"bold",letterSpacing:4,color:"rgba(180,150,80,0.9)"}}>HOGAR</div><div style={{fontSize:8,color:"rgba(180,150,80,0.3)",letterSpacing:3}}>TU CASA • NALA • TAREAS</div></div>
+        <div style={{marginLeft:"auto",fontSize:11,color:"rgba(180,150,80,0.4)"}}>{homeTasks.filter(t=>!t.done).length} pendientes</div>
+      </div>
+      <div style={{flex:1,overflowY:"auto",padding:"18px 16px",display:"flex",flexDirection:"column",gap:14}}>
+        <div style={{background:"rgba(180,150,80,0.05)",border:"1px solid rgba(180,150,80,0.12)",borderRadius:14,padding:"14px 16px"}}>
+          <div style={{fontSize:10,color:"rgba(180,150,80,0.45)",letterSpacing:3,marginBottom:10}}>🏠 TU CASA</div>
+          {[["🛋","Living","TV grande, puff beige, biblioteca con fotos"],["🍳","Cocina-Comedor","Mesa azul a cuadros, cocina a gas"],["🌿","Terraza","Parrilla, mesa de jardín, piso cerámico"],["🐕","Nala","Pastor alemán, adoptada, no ladra ❤️"],["🔧","Arreglos","Pintura y mejoras pendientes"]].map(([icon,name,desc])=>(
+            <div key={name} style={{display:"flex",gap:10,padding:"7px 0",borderBottom:"1px solid rgba(180,150,80,0.07)"}}>
+              <span style={{fontSize:16,flexShrink:0}}>{icon}</span>
+              <div><div style={{fontSize:12,fontWeight:"bold",color:"rgba(180,150,80,0.75)"}}>{name}</div><div style={{fontSize:11,color:"rgba(200,195,185,0.5)",marginTop:1}}>{desc}</div></div>
+            </div>
+          ))}
+        </div>
+        <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:14,padding:"14px 16px"}}>
+          <div style={{fontSize:10,color:"rgba(180,150,80,0.45)",letterSpacing:3,marginBottom:12}}>📋 TAREAS</div>
+          <div style={{display:"flex",gap:8,marginBottom:12}}>
+            <input value={newTask} onChange={e=>setNewTask(e.target.value)} onKeyDown={e=>e.key==="Enter"&&addHomeTask()} placeholder="Nueva tarea..." style={{flex:1,background:"rgba(255,255,255,0.04)",border:"1px solid rgba(180,150,80,0.15)",borderRadius:10,padding:"8px 12px",color:"#DDD8CC",fontSize:12,fontFamily:"Georgia,serif",outline:"none"}}/>
+            <button onClick={addHomeTask} style={{width:36,height:36,borderRadius:10,background:"rgba(180,150,80,0.12)",border:"1px solid rgba(180,150,80,0.25)",color:"rgba(180,150,80,0.8)",fontSize:18,cursor:"pointer"}}>+</button>
+          </div>
+          {homeTasks.length===0?(<div style={{textAlign:"center",color:"rgba(180,150,80,0.25)",fontSize:12,fontStyle:"italic",padding:"10px 0"}}>Sin tareas</div>)
+          :homeTasks.map((task,i)=>(
+            <div key={i} style={{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderBottom:"1px solid rgba(255,255,255,0.04)"}}>
+              <button onClick={()=>toggleTask(i)} style={{width:20,height:20,borderRadius:"50%",border:`2px solid ${task.done?"rgba(105,255,71,0.6)":"rgba(180,150,80,0.3)"}`,background:task.done?"rgba(105,255,71,0.15)":"transparent",cursor:"pointer",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:10,color:"rgba(105,255,71,0.8)"}}>{task.done?"✓":""}</button>
+              <span style={{flex:1,fontSize:13,color:task.done?"rgba(180,180,180,0.35)":"#DDD8CC",textDecoration:task.done?"line-through":"none"}}>{task.text}</span>
+              <span style={{fontSize:9,color:"rgba(180,150,80,0.3)"}}>{task.date}</span>
+              <button onClick={()=>deleteTask(i)} style={{width:20,height:20,borderRadius:"50%",background:"rgba(255,80,80,0.08)",border:"1px solid rgba(255,80,80,0.15)",color:"rgba(255,80,80,0.5)",fontSize:9,cursor:"pointer"}}>✕</button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div style={{minHeight:"100vh",background:"#080B12",display:"flex",flexDirection:"column",fontFamily:"Georgia,'Times New Roman',serif",color:"#DDD8CC",position:"relative",overflow:"hidden"}}>
+      <style>{`
+        @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.2}}
+        @keyframes gold{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+        @keyframes breathe{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(1.06);opacity:1}}
+        @keyframes voiceP{0%,100%{box-shadow:0 0 0 0 rgba(255,80,80,0.5)}50%{box-shadow:0 0 0 10px rgba(255,80,80,0)}}
+        @keyframes greetGlow{0%{background:rgba(180,150,80,0.12)}50%{background:rgba(180,150,80,0.22)}100%{background:rgba(180,150,80,0.08)}}
+        .msg{animation:fadeUp 0.3s ease-out both}
+        .abtn:hover:not(:disabled){filter:brightness(1.4);transform:scale(1.07)}
+        textarea:focus{border-color:rgba(180,150,80,0.55)!important;outline:none}
+        ::-webkit-scrollbar{width:3px}
+        ::-webkit-scrollbar-thumb{background:rgba(180,150,80,0.18);border-radius:2px}
+      `}</style>
+
+      <div style={{position:"fixed",inset:0,zIndex:0,pointerEvents:"none",background:"radial-gradient(ellipse 75% 45% at 50% -5%, rgba(180,150,80,0.07) 0%, transparent 65%)"}}/>
+
+      <div style={{position:"relative",zIndex:10,padding:"6px 18px",background:"rgba(180,150,80,0.05)",borderBottom:"1px solid rgba(180,150,80,0.08)",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+        <span style={{fontSize:10,color:"rgba(180,150,80,0.5)",letterSpacing:1}}>{timeContext.mood} {timeContext.greeting}, Gabriel</span>
+        <span style={{fontSize:10,color:"rgba(180,150,80,0.35)",letterSpacing:1}}>{timeContext.day} • {timeContext.time}</span>
+      </div>
+
+      <div style={{position:"relative",zIndex:10,padding:"12px 18px 10px",borderBottom:"1px solid rgba(180,150,80,0.1)",background:"rgba(8,11,18,0.93)",backdropFilter:"blur(20px)",display:"flex",alignItems:"center",gap:11}}>
+        <div style={{width:40,height:40,borderRadius:"50%",background:"radial-gradient(circle at 35% 35%, rgba(180,150,80,0.22), rgba(180,150,80,0.04))",border:"1px solid rgba(180,150,80,0.22)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,animation:"breathe 4s ease-in-out infinite",boxShadow:"0 0 20px rgba(180,150,80,0.1)"}}>🧠</div>
+        <div style={{flex:1}}>
+          <div style={{fontSize:19,fontWeight:"bold",letterSpacing:5,background:"linear-gradient(90deg,#B49650,#E8C96A,#F0D882,#B49650)",backgroundSize:"300% 100%",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",animation:"gold 6s linear infinite"}}>NEXUS</div>
+          <div style={{fontSize:7,color:"rgba(180,150,80,0.3)",letterSpacing:3}}>SALUDO INTELIGENTE • v6.0 • GABRIEL OS</div>
+        </div>
+
+        {speaking&&<button onClick={()=>{window.speechSynthesis?.cancel();setSpeaking(false);}} style={{width:30,height:30,borderRadius:"50%",background:"rgba(105,255,71,0.12)",border:"1px solid rgba(105,255,71,0.3)",color:"rgba(105,255,71,0.8)",fontSize:13,cursor:"pointer"}}>🔊</button>}
+
+        <button onClick={()=>setShowSettings(true)} style={{background:"none",border:"none",cursor:"pointer",fontSize:14,color:"rgba(180,150,80,0.35)",padding:"3px 5px"}} title="Cambiar API key">⚙</button>
+
+        <button onClick={()=>setShowHome(true)} style={{position:"relative",display:"flex",flexDirection:"column",alignItems:"center",gap:1,background:"none",border:"none",cursor:"pointer",padding:"3px 5px"}}>
+          <span style={{fontSize:16}}>🏠</span>
+          {homeTasks.filter(t=>!t.done).length>0&&<div style={{position:"absolute",top:-2,right:-2,width:14,height:14,borderRadius:"50%",background:"rgba(255,150,50,0.9)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:8,color:"#080B12",fontWeight:"bold"}}>{homeTasks.filter(t=>!t.done).length}</div>}
+          <span style={{fontSize:6,color:"rgba(180,150,80,0.35)",letterSpacing:1}}>HOGAR</span>
+        </button>
+
+        <button onClick={()=>setShowMemories(true)} style={{position:"relative",display:"flex",flexDirection:"column",alignItems:"center",gap:1,background:"none",border:"none",cursor:"pointer",padding:"3px 5px"}}>
+          <span style={{fontSize:16}}>🧠</span>
+          {memories.length>0&&<div style={{position:"absolute",top:-2,right:-2,width:14,height:14,borderRadius:"50%",background:"rgba(180,150,80,0.9)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:8,color:"#080B12",fontWeight:"bold"}}>{memories.length}</div>}
+          <span style={{fontSize:6,color:"rgba(180,150,80,0.35)",letterSpacing:1}}>MEM</span>
+        </button>
+      </div>
+
+      <div style={{flex:1,overflowY:"auto",padding:"18px 15px",display:"flex",flexDirection:"column",gap:15,position:"relative",zIndex:10}}>
+        {messages.map((msg,i)=>(
+          <div key={i} className="msg" style={{display:"flex",flexDirection:msg.role==="user"?"row-reverse":"row",gap:9,alignItems:"flex-start",animationDelay:`${Math.min(i*0.04,0.2)}s`}}>
+            {msg.role==="nexus"&&(
+              <div style={{width:26,height:26,borderRadius:"50%",flexShrink:0,background:msg.isGreeting?"rgba(180,150,80,0.18)":"rgba(180,150,80,0.09)",border:"1px solid rgba(180,150,80,0.22)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,marginTop:3,animation:msg.isGreeting?"greetGlow 2s ease-in-out":"none"}}>🧠</div>
+            )}
+            <div style={{maxWidth:"78%",display:"flex",flexDirection:"column",gap:5}}>
+              {msg.image&&<img src={msg.image} alt="" style={{maxWidth:"100%",maxHeight:190,borderRadius:10,objectFit:"cover",border:"1px solid rgba(180,150,80,0.22)"}}/>}
+              <div style={{padding:"10px 14px",background:msg.isGreeting?"rgba(180,150,80,0.09)":msg.role==="user"?"rgba(180,150,80,0.07)":"rgba(255,255,255,0.03)",border:`1px solid ${msg.isGreeting?"rgba(180,150,80,0.25)":msg.role==="user"?"rgba(180,150,80,0.17)":"rgba(255,255,255,0.06)"}`,borderRadius:msg.role==="user"?"13px 3px 13px 13px":"3px 13px 13px 13px",fontSize:13.5,lineHeight:1.68,whiteSpace:"pre-wrap"}}>
+                {msg.text}
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {memoryFlash&&<div style={{display:"flex",justifyContent:"center"}}><div style={{fontSize:10,color:"rgba(180,150,80,0.7)",background:"rgba(180,150,80,0.08)",border:"1px solid rgba(180,150,80,0.2)",borderRadius:20,padding:"3px 12px",letterSpacing:1}}>🧠 Memoria guardada</div></div>}
+
+        {transcript&&<div style={{display:"flex",justifyContent:"flex-end"}}><div style={{fontSize:12,color:"rgba(255,80,80,0.6)",fontStyle:"italic",padding:"4px 10px",background:"rgba(255,80,80,0.05)",borderRadius:10,border:"1px solid rgba(255,80,80,0.15)"}}>🎙 {transcript}</div></div>}
+
+        {loading&&(
+          <div className="msg" style={{display:"flex",gap:9,alignItems:"flex-start"}}>
+            <div style={{width:26,height:26,borderRadius:"50%",background:"rgba(180,150,80,0.09)",border:"1px solid rgba(180,150,80,0.18)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:11}}>🧠</div>
+            <div style={{padding:"12px 16px",background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.06)",borderRadius:"3px 13px 13px 13px",display:"flex",gap:5,alignItems:"center"}}>
+              {[0,1,2].map(j=><div key={j} style={{width:5,height:5,borderRadius:"50%",background:"rgba(180,150,80,0.7)",animation:`pulse 1.2s ${j*0.2}s ease-in-out infinite`}}/>)}
+            </div>
+          </div>
+        )}
+        <div ref={bottomRef}/>
+      </div>
+
+      {pendingImage&&(
+        <div style={{position:"relative",zIndex:10,padding:"5px 15px 0",display:"flex",alignItems:"center",gap:8}}>
+          <div style={{position:"relative"}}>
+            <img src={pendingImage} alt="" style={{height:50,borderRadius:8,objectFit:"cover",border:"1px solid rgba(180,150,80,0.3)"}}/>
+            <button onClick={()=>{setPendingImage(null);setPendingBase64(null);}} style={{position:"absolute",top:-5,right:-5,width:16,height:16,borderRadius:"50%",background:"#CC3333",border:"none",color:"#fff",fontSize:8,cursor:"pointer"}}>✕</button>
+          </div>
+          <span style={{fontSize:10,color:"rgba(180,150,80,0.4)",fontStyle:"italic"}}>Lista</span>
+        </div>
+      )}
+
+      <div style={{position:"relative",zIndex:10,padding:"9px 15px 16px",borderTop:"1px solid rgba(180,150,80,0.08)",background:"rgba(8,11,18,0.94)",backdropFilter:"blur(20px)"}}>
+        <div style={{display:"flex",gap:7,alignItems:"flex-end"}}>
+          <button className="abtn" onClick={openCamera} style={{width:40,height:40,borderRadius:11,flexShrink:0,background:"rgba(0,229,255,0.06)",border:"1px solid rgba(0,229,255,0.18)",color:"rgba(0,229,255,0.7)",fontSize:16,cursor:"pointer",transition:"all 0.2s",display:"flex",alignItems:"center",justifyContent:"center"}}>📷</button>
+          <button className="abtn" onClick={()=>fileRef.current?.click()} style={{width:40,height:40,borderRadius:11,flexShrink:0,background:"rgba(180,150,80,0.06)",border:"1px solid rgba(180,150,80,0.18)",color:"rgba(180,150,80,0.7)",fontSize:16,cursor:"pointer",transition:"all 0.2s",display:"flex",alignItems:"center",justifyContent:"center"}}>📁</button>
+          <input ref={fileRef} type="file" accept="image/*" style={{display:"none"}} onChange={e=>handleFileUpload(e.target.files?.[0])}/>
+          <canvas ref={canvasRef} style={{display:"none"}}/>
+          <textarea ref={inputRef} value={input} onChange={e=>setInput(e.target.value)} onKeyDown={handleKey}
+            placeholder={listening?"Escuchando...":"Escribe a NEXUS..."} rows={2}
+            style={{flex:1,background:"rgba(255,255,255,0.03)",border:`1px solid ${listening?"rgba(255,80,80,0.4)":"rgba(180,150,80,0.14)"}`,borderRadius:12,padding:"9px 13px",color:"#DDD8CC",fontSize:13.5,fontFamily:"inherit",resize:"none",lineHeight:1.55,transition:"border-color 0.2s"}}
+          />
+          {voiceSupported&&<button className="abtn" onClick={listening?stopListening:startListening} style={{width:40,height:40,borderRadius:11,flexShrink:0,background:listening?"rgba(255,80,80,0.15)":"rgba(255,255,255,0.04)",border:`1px solid ${listening?"rgba(255,80,80,0.4)":"rgba(255,255,255,0.12)"}`,color:listening?"rgba(255,80,80,0.9)":"rgba(200,195,185,0.5)",fontSize:16,cursor:"pointer",transition:"all 0.2s",display:"flex",alignItems:"center",justifyContent:"center",animation:listening?"voiceP 1s ease-in-out infinite":"none"}}>{listening?"⏹":"🎙"}</button>}
+          <button className="abtn" onClick={()=>sendMessage()} disabled={loading||(!input.trim()&&!pendingBase64)} style={{width:40,height:40,borderRadius:11,flexShrink:0,background:"rgba(180,150,80,0.1)",border:"1px solid rgba(180,150,80,0.25)",color:"rgba(180,150,80,0.85)",fontSize:19,cursor:"pointer",transition:"all 0.2s",display:"flex",alignItems:"center",justifyContent:"center",opacity:(loading||(!input.trim()&&!pendingBase64))?0.25:1}}>↑</button>
+        </div>
+        <div style={{fontSize:7,color:"rgba(180,150,80,0.14)",textAlign:"center",marginTop:6,letterSpacing:2}}>
+          📷 CÁMARA &nbsp;•&nbsp; 📁 FOTO &nbsp;•&nbsp; 🎙 VOZ &nbsp;•&nbsp; 🏠 HOGAR &nbsp;•&nbsp; 🧠 MEMORIA
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<NexusV6 />);
+</script>
+</body>
+</html>
