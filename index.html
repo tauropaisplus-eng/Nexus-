@@ -212,7 +212,7 @@ function NexusV6() {
     setLoading(true);
     try {
       const data = await callClaude({
-        model: "claude-sonnet-4-20250514",
+        model: "claude-sonnet-5",
         max_tokens: 300,
         system: NEXUS_SYSTEM(mem, tasks, tc),
         messages: [{ role: "user", content: MORNING_PROMPT(tc, tasks, mem) }],
@@ -342,7 +342,7 @@ function NexusV6() {
       : userText;
     try {
       const data = await callClaude({
-        model:"claude-sonnet-4-20250514", max_tokens:1000,
+        model:"claude-sonnet-5", max_tokens:1000,
         system: NEXUS_SYSTEM(memories, homeTasks, tc),
         messages:[...history,{role:"user",content:userContent}],
       });
