@@ -66,7 +66,7 @@ async function main() {
   let crudo = '';
   for (const url of FUENTES) {
     const html = await fetchUrl(url);
-    crudo += Fuente: ${url}\n${html.slice(0, 500)}\n\n;
+    crudo +=  `Fuente: ${url}\n${html.slice(0, 500)}\n\n`;
   }
 
   const prompt = Sos NEXUS Daily. A partir de este contenido crudo de sitios de tecnología en español, extraé los titulares o temas principales y armá un resumen ejecutivo breve (máximo 10 líneas), en español rioplatense, sin relleno:\n\n${crudo};
