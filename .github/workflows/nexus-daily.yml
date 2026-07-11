@@ -1,4 +1,6 @@
 name: NEXUS Daily Update
+rmissions:
+  contents: write
 
 on:
   schedule:
@@ -21,6 +23,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "NEXUS Bot"
-          git add -A
-          git commit -m "Actualización diaria NEXUS" || echo "Sin cambios"
+          git add nexus-daily-output/
+          git commit -m "Actualización diaria NEXUS" || echo "Nada para commitear"
           git push
