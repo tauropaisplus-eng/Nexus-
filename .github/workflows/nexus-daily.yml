@@ -1,5 +1,5 @@
 name: NEXUS Daily Update
-rmissions:
+permissions:
   contents: write
 
 on:
