@@ -1,11 +1,9 @@
 # NEXUS Daily — 2026-07-11
 
-**NEXUS Daily — Resumen Ejecutivo**
+**NEXUS Daily — Resumen ejecutivo**
 
-Hoy el contenido crudo scrapeado de las fuentes no trajo datos aprovechables: la mayoría son solo encabezados HTML, metadatos y scripts de carga (Infobae, La Nación, Inteligencia Argentina, RedUsers, KeepCoding), sin texto de artículos ni titulares legibles. Investing.com directamente devolvió un challenge anti-bot de Cloudflare ("Just a moment..."), bloqueando el acceso.
+No pude extraer titulares reales: el contenido crudo recibido son solo fragmentos de HTML (head, metadatos, scripts de carga), sin el cuerpo de las notas ni títulos visibles. Investing.com además devolvió una página de verificación anti-bot (Cloudflare), no la noticia.
 
-**Diagnóstico:** el método de extracción está capturando el `<head>` de las páginas pero no el body con el contenido real (probablemente falta renderizado JS o scroll para cargar los módulos de noticias).
+Para armar el resumen necesito el HTML completo de cada página (o mejor, el texto ya renderizado/extraído de los `<h1>`, `<h2>` y bajadas de cada nota), no solo el `<head>`.
 
-**Recomendación:** ajustar el scraper para esperar carga completa (headless browser) o apuntar a los feeds RSS/API de cada sitio en vez del HTML crudo. Sin esto, no hay titulares reales para reportar hoy — cualquier resumen de "temas" sería inventado.
-
-¿Querés que lo intente con RSS feeds directos de estos medios en su lugar?
+¿Querés que lo intente con contenido ya parseado (texto plano de titulares) o repetimos la carga pidiendo el body completo de cada fuente?
