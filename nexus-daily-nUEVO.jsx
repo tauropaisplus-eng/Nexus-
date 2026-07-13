@@ -47,7 +47,7 @@ async function callClaude(messages, mcpServers = []) {
 const MCP_CALENDAR = { type: "url", url: "https://calendarmcp.googleapis.com/mcp/v1", name: "google-calendar" };
 
 const MCP_GMAIL = { type: "url", url: "https://gmailmcp.googleapis.com/mcp/v1", name: "gmail" };
-const NEWS_API_KEY = "6ddf5684810b4767a652b1f168ea83ce";
+const NEWS_API_KEY = "TU_CLAVE_NEWSAPI_AQUI";
 
 async function fetchNewsFromAPI(query = "Argentina") {
   const url = `https://newsapi.org/v2/top-headlines?country=ar&apiKey=${NEWS_API_KEY}&pageSize=5`;
