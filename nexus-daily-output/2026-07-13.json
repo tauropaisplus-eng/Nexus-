@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-07-13",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\n⚠️ No pude extraer titulares reales: el contenido crudo recibido son solo fragmentos de código HTML (metadatos, tags de viewport, links de CSS/favicon, scripts de tracking) sin texto de artículos ni títulos legibles.\n\nFuentes consultadas sin datos aprovechables:\n- Infobae Tecno: solo head del documento\n- La Nación Tecnología: una imagen destacada sin texto asociado\n- Inteligencia Argentina: metadata OG básica\n- RedUsers: estructura de tema WordPress\n- KeepCoding: script de compatibilidad IE\n- Investing.com: bloqueado por Cloudflare (\"Just a moment...\")\n\n**Para armar el resumen necesito:** el HTML completo renderizado, o mejor aún, los titulares ya extraídos en texto plano (título + bajada) de cada nota.\n\n¿Querés reintentar pegando el contenido visible de las páginas (no el código fuente crudo) o preferís que use otra fuente/método de scraping?"
+}
