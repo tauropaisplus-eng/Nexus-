@@ -1,11 +1,14 @@
-# NEXUS Daily — 2026-07-15
+# NEXUS Daily — 2026-07-16
 
-**NEXUS Daily – Resumen ejecutivo**
+**NEXUS Daily - Resumen ejecutivo**
 
-No pude extraer titulares reales: el contenido crudo recibido son solo cabeceras HTML, metadatos y scripts (carga de página, SEO, cookies), sin el cuerpo de las notas.
+No pude extraer titulares reales: el contenido crudo recibido son solo fragmentos de `<head>` HTML (metadatos, CSS, scripts) sin el cuerpo de las noticias. Detalle por fuente:
 
-Lo único rescatable es un indicio en La Nación: una nota sobre **WhatsApp sumando una nueva función** (título truncado, sin detalle del contenido).
+- **Infobae Tecno**: solo carga de assets y scripts (Ebx, Adnami), sin titulares visibles.
+- **La Nación Tecnología**: se detecta una imagen de nota sobre WhatsApp ("sumó una función que mejorará..."), pero sin texto ni más contexto.
+- **Inteligencia Argentina**: solo metadatos Open Graph, sin contenido de artículos.
+- **RedUsers Noticias**: solo hojas de estilo y favicon, sin notas.
+- **KeepCoding Blog**: script de compatibilidad IE, sin contenido de blog.
+- **Investing.com Technology**: bloqueado por Cloudflare ("Just a moment...", challenge anti-bot).
 
-El resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding, Investing) devolvieron bloqueos de scraping, protecciones anti-bot (Cloudflare "Just a moment...") o simplemente el `<head>` sin body.
-
-**Recomendación:** re-scrapear con un método que renderice JS o parsee el HTML completo (body/artículos), no solo el head. Si querés, puedo laburar con headlines que me pegues directo del texto visible de cada sitio.
+**Sugerencia**: para el próximo informe necesito el HTML renderizado completo (body con títulos y bajadas) o un scraper que espere carga JS y evada Cloudflare, sino no hay data real para resumir.
