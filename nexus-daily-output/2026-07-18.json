@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-07-18",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nNo pude extraer titulares concretos: el contenido crudo entregado son solo fragmentos de `<head>` (metadatos, CSS, scripts) de las páginas, sin el cuerpo con las noticias reales. Infobae, La Nación, Inteligencia Argentina y RedUsers cargaron solo la cabecera del HTML; KeepCoding devolvió un script de compatibilidad; Investing.com tiró error 403 (acceso bloqueado).\n\n**Para armar el resumen necesito:**\n- El HTML completo de cada página (o al menos el `<body>` con los `<h1>`/`<h2>` de las notas), o\n- Los titulares ya extraídos en texto plano.\n\n¿Querés que reintente con otro método de scraping o me pasás el contenido completo de alguna fuente puntual?"
+}

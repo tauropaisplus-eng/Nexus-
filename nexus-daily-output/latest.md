@@ -1,12 +1,11 @@
-# NEXUS Daily — 2026-07-17
+# NEXUS Daily — 2026-07-18
 
-**NEXUS Daily — Resumen Ejecutivo**
+**NEXUS Daily — Resumen ejecutivo**
 
-No pude armar el resumen: el contenido crudo que me pasaste son solo fragmentos de HTML (metadata, scripts, headers de carga), sin texto de artículos ni titulares reales extraíbles.
+No pude extraer titulares concretos: el contenido crudo entregado son solo fragmentos de `<head>` (metadatos, CSS, scripts) de las páginas, sin el cuerpo con las noticias reales. Infobae, La Nación, Inteligencia Argentina y RedUsers cargaron solo la cabecera del HTML; KeepCoding devolvió un script de compatibilidad; Investing.com tiró error 403 (acceso bloqueado).
 
-Lo único rescatable a nivel temático:
-- **La Nación**: hay una nota sobre cargadores de celular (por qué no dejarlos siempre conectados).
-- **Investing.com**: la fuente devolvió error 403 (bloqueada).
-- Infobae, Inteligencia Argentina, RedUsers y KeepCoding: solo cargó el `<head>`, sin cuerpo de noticias.
+**Para armar el resumen necesito:**
+- El HTML completo de cada página (o al menos el `<body>` con los `<h1>`/`<h2>` de las notas), o
+- Los titulares ya extraídos en texto plano.
 
-Para el próximo Daily necesito el HTML completo (o mejor, el texto ya parseado de los `<h1>`/`<h2>` y bajadas) de cada nota. Si me pasás eso, armo el resumen ejecutivo real en 10 líneas.
+¿Querés que reintente con otro método de scraping o me pasás el contenido completo de alguna fuente puntual?
