@@ -1,11 +1,11 @@
-# NEXUS Daily — 2026-07-18
+# NEXUS Daily — 2026-07-19
 
 **NEXUS Daily — Resumen ejecutivo**
 
-No pude extraer titulares concretos: el contenido crudo entregado son solo fragmentos de `<head>` (metadatos, CSS, scripts) de las páginas, sin el cuerpo con las noticias reales. Infobae, La Nación, Inteligencia Argentina y RedUsers cargaron solo la cabecera del HTML; KeepCoding devolvió un script de compatibilidad; Investing.com tiró error 403 (acceso bloqueado).
+Che, no llegó data útil hoy. Los fragmentos que me pasaste son puro código HTML crudo (metadatos, scripts, hojas de estilo) de Infobae, La Nación, Inteligencia Argentina, RedUsers y KeepCoding — sin titulares ni cuerpo de texto legible. Investing.com encima tiró error 403 (acceso bloqueado).
 
-**Para armar el resumen necesito:**
-- El HTML completo de cada página (o al menos el `<body>` con los `<h1>`/`<h2>` de las notas), o
-- Los titulares ya extraídos en texto plano.
+No puedo armar un resumen de noticias real con esto sin inventar contenido, y eso no lo hacemos acá.
 
-¿Querés que reintente con otro método de scraping o me pasás el contenido completo de alguna fuente puntual?
+**Sugerencia:** pasame el HTML renderizado, el texto plano de los artículos, o los titulares ya extraídos, y te tiro el resumen ejecutivo posta en 10 líneas.
+
+¿Querés que lo intente con otra fuente o con texto ya parseado?
