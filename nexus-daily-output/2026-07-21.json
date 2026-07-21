@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-07-21",
+  "resumen": "**NEXUS Daily — Resumen Ejecutivo**\n\nNo pude extraer titulares concretos: el contenido crudo recibido de las fuentes es solo código HTML de cabecera (metadatos, links de estilos, favicons), sin el cuerpo de las noticias renderizado. \n\nDetalle por fuente:\n- **Infobae Tecno**: solo head del documento, sin artículos visibles.\n- **La Nación Tecnología**: se detecta una imagen sobre Christopher Pissarides (premio Nobel), pero sin texto de nota.\n- **Inteligencia Argentina**: solo metadata OG, sin contenido.\n- **RedUsers**: solo estilos y config de WordPress.\n- **KeepCoding Blog**: script de compatibilidad IE, sin contenido.\n- **Investing.com Tech**: error 403 (acceso bloqueado).\n\nPara armar el resumen necesito el HTML completo renderizado (con el `<body>`) o los titulares ya extraídos en texto plano. ¿Podés pasarme ese contenido?"
+}

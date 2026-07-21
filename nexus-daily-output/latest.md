@@ -1,11 +1,15 @@
-# NEXUS Daily — 2026-07-20
+# NEXUS Daily — 2026-07-21
 
-**NEXUS Daily - Resumen Ejecutivo**
+**NEXUS Daily — Resumen Ejecutivo**
 
-No pude extraer titulares reales del contenido que me pasaste. Lo que llegó fueron solo fragmentos de código HTML (metadatos, scripts, hojas de estilo) de las páginas, sin el contenido editorial ni los títulos de las notas.
+No pude extraer titulares concretos: el contenido crudo recibido de las fuentes es solo código HTML de cabecera (metadatos, links de estilos, favicons), sin el cuerpo de las noticias renderizado. 
 
-Puntos concretos:
-- Infobae Tecno, La Nación Tecnología, Inteligencia Argentina, RedUsers y KeepCoding: solo se capturó el `<head>` de cada sitio, no el cuerpo con noticias.
-- Investing.com tech news devolvió error 403 (acceso bloqueado).
+Detalle por fuente:
+- **Infobae Tecno**: solo head del documento, sin artículos visibles.
+- **La Nación Tecnología**: se detecta una imagen sobre Christopher Pissarides (premio Nobel), pero sin texto de nota.
+- **Inteligencia Argentina**: solo metadata OG, sin contenido.
+- **RedUsers**: solo estilos y config de WordPress.
+- **KeepCoding Blog**: script de compatibilidad IE, sin contenido.
+- **Investing.com Tech**: error 403 (acceso bloqueado).
 
-Para armar el resumen necesito el HTML del `<body>` (o mejor, texto ya extraído de los titulares/bajadas) de cada fuente. Si me pasás ese contenido, te armo el resumen ejecutivo real en el formato que pediste.
+Para armar el resumen necesito el HTML completo renderizado (con el `<body>`) o los titulares ya extraídos en texto plano. ¿Podés pasarme ese contenido?
