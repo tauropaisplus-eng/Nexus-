@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-07-26",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nNo se pudo extraer contenido real de titulares: lo recibido son solo fragmentos de código HTML (metadatos, headers, links de CSS/favicon), no el cuerpo de las noticias.\n\nEstado por fuente:\n- **Infobae Tecno**: solo head del sitio, sin notas visibles.\n- **La Nación Tecnología**: se cuela una imagen sobre \"semifinal del Mundial 2026\", ajena a tech — posible error de scraping.\n- **Inteligencia Argentina**: solo metadata (og:title, favicon), sin texto de artículos.\n- **RedUsers**: solo hojas de estilo y config del theme.\n- **KeepCoding**: script de compatibilidad IE, nada de contenido.\n- **Investing.com**: error 403, bloqueado.\n\n**Conclusión**: el crawler está capturando el `<head>` de las páginas, no el `<body>` con las notas. Hace falta ajustar el scraping (esperar renderizado JS o apuntar a selectores de artículos) para poder armar un resumen real de titulares."
+}
