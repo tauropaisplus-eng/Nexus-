@@ -1,15 +1,11 @@
-# NEXUS Daily — 2026-07-26
+# NEXUS Daily — 2026-07-27
 
 **NEXUS Daily — Resumen ejecutivo**
 
-No se pudo extraer contenido real de titulares: lo recibido son solo fragmentos de código HTML (metadatos, headers, links de CSS/favicon), no el cuerpo de las noticias.
+No pude extraer titulares reales: el contenido crudo recibido son solo fragmentos de código HTML (metadatos, scripts, estilos) de las páginas, sin el texto de las noticias en sí.
 
-Estado por fuente:
-- **Infobae Tecno**: solo head del sitio, sin notas visibles.
-- **La Nación Tecnología**: se cuela una imagen sobre "semifinal del Mundial 2026", ajena a tech — posible error de scraping.
-- **Inteligencia Argentina**: solo metadata (og:title, favicon), sin texto de artículos.
-- **RedUsers**: solo hojas de estilo y config del theme.
-- **KeepCoding**: script de compatibilidad IE, nada de contenido.
-- **Investing.com**: error 403, bloqueado.
+Dato rescatable: La Nación tiene una imagen relacionada a "la semifinal del Mundial 2026 y la disputa por..." (título cortado, tema no 100% tech). Investing.com devolvió error 403 (bloqueado).
 
-**Conclusión**: el crawler está capturando el `<head>` de las páginas, no el `<body>` con las notas. Hace falta ajustar el scraping (esperar renderizado JS o apuntar a selectores de artículos) para poder armar un resumen real de titulares.
+**Sugerencia:** para armar el resumen necesito el HTML renderizado completo o, mejor, el texto plano de los titulares (podés pegar directamente los `<h1>`, `<h2>` o los títulos de cada nota). Con el head crudo no hay forma de saber qué publicaron hoy.
+
+¿Querés que reintente con otro formato de contenido (texto plano de los titulares, por ejemplo)?

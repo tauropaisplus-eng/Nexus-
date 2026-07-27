@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-07-27",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nNo pude extraer titulares reales: el contenido crudo recibido son solo fragmentos de código HTML (metadatos, scripts, estilos) de las páginas, sin el texto de las noticias en sí.\n\nDato rescatable: La Nación tiene una imagen relacionada a \"la semifinal del Mundial 2026 y la disputa por...\" (título cortado, tema no 100% tech). Investing.com devolvió error 403 (bloqueado).\n\n**Sugerencia:** para armar el resumen necesito el HTML renderizado completo o, mejor, el texto plano de los titulares (podés pegar directamente los `<h1>`, `<h2>` o los títulos de cada nota). Con el head crudo no hay forma de saber qué publicaron hoy.\n\n¿Querés que reintente con otro formato de contenido (texto plano de los titulares, por ejemplo)?"
+}
