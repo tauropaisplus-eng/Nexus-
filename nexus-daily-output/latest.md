@@ -1,11 +1,11 @@
-# NEXUS Daily — 2026-07-27
+# NEXUS Daily — 2026-07-28
 
 **NEXUS Daily — Resumen ejecutivo**
 
-No pude extraer titulares reales: el contenido crudo recibido son solo fragmentos de código HTML (metadatos, scripts, estilos) de las páginas, sin el texto de las noticias en sí.
+Che, hoy el scraping vino flojo: la mayoría de las fuentes sólo devolvieron metadata técnica (head del HTML), sin titulares reales extraíbles.
 
-Dato rescatable: La Nación tiene una imagen relacionada a "la semifinal del Mundial 2026 y la disputa por..." (título cortado, tema no 100% tech). Investing.com devolvió error 403 (bloqueado).
+- **La Nación Tecnología**: único dato concreto, una nota sobre "los 10 mejores prompts de ChatGPT" (guía de uso práctico de IA generativa).
+- **Infobae Tecno, Inteligencia Argentina, RedUsers, KeepCoding**: no trajeron contenido de artículos, sólo tags de head/SEO. No se pueden confirmar titulares.
+- **Investing.com (tech news)**: bloqueado, error 403.
 
-**Sugerencia:** para armar el resumen necesito el HTML renderizado completo o, mejor, el texto plano de los titulares (podés pegar directamente los `<h1>`, `<h2>` o los títulos de cada nota). Con el head crudo no hay forma de saber qué publicaron hoy.
-
-¿Querés que reintente con otro formato de contenido (texto plano de los titulares, por ejemplo)?
+**Conclusión**: no hay suficiente data cruda hoy para armar un panorama sólido de titulares. Recomiendo re-scrapear con selectores de contenido (body/artículos) en vez de solo head, o revisar si hay bloqueo antibot en esas fuentes.
