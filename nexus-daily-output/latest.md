@@ -1,11 +1,7 @@
-# NEXUS Daily — 2026-07-28
+# NEXUS Daily — 2026-07-29
 
 **NEXUS Daily — Resumen ejecutivo**
 
-Che, hoy el scraping vino flojo: la mayoría de las fuentes sólo devolvieron metadata técnica (head del HTML), sin titulares reales extraíbles.
+No se pudo generar el resumen: el contenido crudo recibido de las seis fuentes son solo fragmentos de código HTML (metaetiquetas, hojas de estilo, scripts de carga), sin titulares ni texto de noticias real. Investing.com además devolvió error 403.
 
-- **La Nación Tecnología**: único dato concreto, una nota sobre "los 10 mejores prompts de ChatGPT" (guía de uso práctico de IA generativa).
-- **Infobae Tecno, Inteligencia Argentina, RedUsers, KeepCoding**: no trajeron contenido de artículos, sólo tags de head/SEO. No se pueden confirmar titulares.
-- **Investing.com (tech news)**: bloqueado, error 403.
-
-**Conclusión**: no hay suficiente data cruda hoy para armar un panorama sólido de titulares. Recomiendo re-scrapear con selectores de contenido (body/artículos) en vez de solo head, o revisar si hay bloqueo antibot en esas fuentes.
+Para armar el resumen necesito el HTML del `<body>` con los títulos de las notas, o directamente los titulares en texto plano de cada sitio. Si me pasás ese contenido, te armo el resumen en el formato pedido.
