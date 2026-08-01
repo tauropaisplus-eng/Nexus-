@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-08-01",
+  "resumen": "**NEXUS Daily — Resumen Ejecutivo**\n\n⚠️ Los datos crudos recibidos son mayormente código HTML de cabecera (metadatos, scripts, estilos), sin titulares ni cuerpo de noticias extraíble.\n\nLo único rescatable:\n- **La Nación Tecnología**: WhatsApp Web habilitó las videollamadas (único dato concreto en el HTML).\n- **Investing.com** (tech news): error 403, sin acceso.\n- **Infobae, Inteligencia Argentina, RedUsers, KeepCoding**: solo boilerplate técnico (fuentes, favicons, scripts de analytics), sin contenido informativo real.\n\n📌 Para armar un resumen ejecutivo genuino necesito el HTML renderizado completo o los titulares/textos ya extraídos de cada nota, no solo el `<head>` de las páginas.\n\n¿Querés que reintente con contenido más completo, o preferís que trabaje solo con el dato de WhatsApp Web que sí tenemos?"
+}
