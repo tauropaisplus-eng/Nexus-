@@ -1,14 +1,9 @@
-# NEXUS Daily — 2026-08-01
+# NEXUS Daily — 2026-08-02
 
 **NEXUS Daily — Resumen Ejecutivo**
 
-⚠️ Los datos crudos recibidos son mayormente código HTML de cabecera (metadatos, scripts, estilos), sin titulares ni cuerpo de noticias extraíble.
+No pude extraer titulares reales: el contenido crudo recibido son solo fragmentos de código HTML (metadatos, headers, tags de tracking) sin el cuerpo de las noticias. Investing.com además devolvió error 403 (acceso bloqueado).
 
-Lo único rescatable:
-- **La Nación Tecnología**: WhatsApp Web habilitó las videollamadas (único dato concreto en el HTML).
-- **Investing.com** (tech news): error 403, sin acceso.
-- **Infobae, Inteligencia Argentina, RedUsers, KeepCoding**: solo boilerplate técnico (fuentes, favicons, scripts de analytics), sin contenido informativo real.
+Lo único rescatable como dato: La Nación tiene una nota sobre "lanzamientos de videojuegos en agosto de 2026". El resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no aportaron contenido legible, solo boilerplate técnico.
 
-📌 Para armar un resumen ejecutivo genuino necesito el HTML renderizado completo o los titulares/textos ya extraídos de cada nota, no solo el `<head>` de las páginas.
-
-¿Querés que reintente con contenido más completo, o preferís que trabaje solo con el dato de WhatsApp Web que sí tenemos?
+**Sugerencia:** para armar el resumen necesito el HTML renderizado completo (con `<article>`, `<h1>`, `<h2>` de las notas) o directamente los titulares ya extraídos en texto plano. Si podés pegar eso, te tiro el resumen ejecutivo real en el formato pedido.
