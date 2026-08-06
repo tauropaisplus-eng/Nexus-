@@ -1,9 +1,7 @@
-# NEXUS Daily — 2026-08-05
+# NEXUS Daily — 2026-08-06
 
 **NEXUS Daily — Resumen ejecutivo**
 
-Che, aviso: el scraping de hoy vino flojo. La mayoría de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) devolvieron solo metadata HTML cruda —scripts, links de CSS, favicons— sin texto de notas real. Investing.com directamente tiró error 403 (bloqueo de acceso).
+No pude armar el resumen: el contenido recibido de las fuentes son solo fragmentos de HTML crudo (metadata, links de CSS, tags de imagen), sin titulares ni texto de las notas reales. Infobae, La Nación, Inteligencia Argentina, RedUsers y KeepCoding devolvieron únicamente código de cabecera. Investing.com directamente tiró error 403 (acceso bloqueado).
 
-Lo único rescatable: en La Nación Tecnología aparece una nota con título parcial "Chau WhatsApp: la lista definitiva de los..." (probablemente celulares que dejan de ser compatibles con la app, nota recurrente en el rubro).
-
-**Conclusión:** no hay data suficiente para armar un panorama real de titulares hoy. Recomiendo re-scrapear con render de JS (headless browser) o pegarme el HTML completo/texto plano de cada nota para poder laburar en serio. ¿Querés que lo intentemos de nuevo con otro método de extracción?
+Para armar el resumen necesito el HTML renderizado o el texto plano de cada nota (títulos + bajadas), no el crudo de `<head>`. Si podés pasarme eso, saco el resumen en el toque.
