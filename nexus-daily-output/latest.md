@@ -1,7 +1,7 @@
-# NEXUS Daily — 2026-08-06
+# NEXUS Daily — 2026-08-07
 
-**NEXUS Daily — Resumen ejecutivo**
+No puedo armar el resumen: el contenido que me pasaste son solo fragmentos de código HTML (metadatos, head, scripts, hojas de estilo), sin los titulares ni el texto real de las notas. No hay información periodística extraíble de estos snippets.
 
-No pude armar el resumen: el contenido recibido de las fuentes son solo fragmentos de HTML crudo (metadata, links de CSS, tags de imagen), sin titulares ni texto de las notas reales. Infobae, La Nación, Inteligencia Argentina, RedUsers y KeepCoding devolvieron únicamente código de cabecera. Investing.com directamente tiró error 403 (acceso bloqueado).
+Para que NEXUS Daily funcione necesito el contenido renderizado de cada página —los títulos de las noticias, bajadas o cuerpo del texto—, no el código fuente crudo del `<head>`.
 
-Para armar el resumen necesito el HTML renderizado o el texto plano de cada nota (títulos + bajadas), no el crudo de `<head>`. Si podés pasarme eso, saco el resumen en el toque.
+Si me pasás el texto visible de cada sitio (los titulares que aparecen en pantalla), armo el resumen ejecutivo sin problema.
