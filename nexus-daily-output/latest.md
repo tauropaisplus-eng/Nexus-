@@ -1,11 +1,7 @@
-# NEXUS Daily — 2026-08-11
+# NEXUS Daily — 2026-08-12
 
-**NEXUS Daily — Resumen ejecutivo**
+**NEXUS Daily — Resumen Ejecutivo**
 
-El rastreo de hoy trajo poco jugo: la mayoría de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) devolvieron solo código HTML crudo sin titulares legibles, e Investing.com bloqueó el acceso (error 403).
+No pude extraer titulares reales de las fuentes de hoy: el contenido recibido son solo fragmentos de HTML crudo (metadatos, scripts, headers de página), sin texto de noticias ni títulos legibles. Infobae, La Nación, Inteligencia Argentina, RedUsers y KeepCoding devolvieron código fuente sin contenido editorial visible, e Investing.com directamente tiró error 403 (acceso bloqueado).
 
-El único dato concreto que asoma es de **La Nación Tecnología**: una nota con imagen de **Michael Saylor**, cofundador de Strategy (ex MicroStrategy), lo que sugiere cobertura sobre Bitcoin y su estrategia corporativa de acumulación cripto.
-
-⚠️ Limitación: no se pudo extraer contenido textual real (títulos, bajadas) del resto de los sitios; se necesita scraping renderizado o acceso a la versión API/RSS para un resumen con más sustancia.
-
-**Para mañana:** recomendaría apuntar a feeds RSS directos de cada medio en vez de HTML crudo, así evitamos el ruido de scripts y meta tags.
+Para armar el resumen necesito el HTML renderizado, una versión de texto extraído, o los titulares/copetes ya parseados de cada nota. Si me pasás eso, te tiro el resumen ejecutivo en el toque.
