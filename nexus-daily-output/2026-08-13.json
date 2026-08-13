@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-08-13",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nNo pude armar el resumen: el contenido crudo recibido de las fuentes (Infobae, La Nación, Inteligencia Argentina, RedUsers, KeepCoding) son solo fragmentos de código HTML (meta tags, headers, links de CSS/favicon), sin texto de titulares ni notas reales. Investing.com devolvió error 403 (acceso bloqueado).\n\nPara generar el resumen necesito el contenido renderizado de las páginas (texto visible de los artículos), no el HTML crudo del `<head>`. Si podés pasarme el texto extraído de los titulares (por ejemplo copiando el cuerpo visible de cada sitio o usando un scraper que parsee el `<body>`), armo el resumen ejecutivo al toque.\n\n¿Querés que lo intente de nuevo con otro formato de input, o tenés los titulares ya en texto plano?"
+}
