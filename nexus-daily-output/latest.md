@@ -1,9 +1,7 @@
-# NEXUS Daily — 2026-08-13
+# NEXUS Daily — 2026-08-14
 
 **NEXUS Daily — Resumen ejecutivo**
 
-No pude armar el resumen: el contenido crudo recibido de las fuentes (Infobae, La Nación, Inteligencia Argentina, RedUsers, KeepCoding) son solo fragmentos de código HTML (meta tags, headers, links de CSS/favicon), sin texto de titulares ni notas reales. Investing.com devolvió error 403 (acceso bloqueado).
+No pude extraer titulares reales de este envío: el contenido crudo son solo fragmentos de HTML (metadatos, tags `<head>`, scripts de carga) de cada sitio, sin el cuerpo de las notas ni títulos de artículos visibles. Infobae, La Nación, Inteligencia Argentina, RedUsers y KeepCoding devolvieron únicamente código de encabezado. Investing.com directamente dio error 403 (acceso bloqueado).
 
-Para generar el resumen necesito el contenido renderizado de las páginas (texto visible de los artículos), no el HTML crudo del `<head>`. Si podés pasarme el texto extraído de los titulares (por ejemplo copiando el cuerpo visible de cada sitio o usando un scraper que parsee el `<body>`), armo el resumen ejecutivo al toque.
-
-¿Querés que lo intente de nuevo con otro formato de input, o tenés los titulares ya en texto plano?
+**Sugerencia:** para armar el resumen necesito el HTML del `<body>` con los títulos (`<h1>`, `<h2>`, tags de artículo) o, mejor, los feeds RSS de cada medio, que traen titular + bajada limpios y evitan bloqueos como el de Investing. Si me pasás eso, armo el resumen real sin inventar contenido.
