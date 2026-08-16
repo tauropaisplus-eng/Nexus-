@@ -1,9 +1,11 @@
-# NEXUS Daily — 2026-08-15
+# NEXUS Daily — 2026-08-16
 
-**NEXUS Daily — Resumen Ejecutivo**
+**NEXUS Daily — Resumen ejecutivo**
 
-No pude extraer contenido real de las fuentes: lo que llegó fueron solo fragmentos de código HTML (metadatos, scripts, links de imágenes), sin titulares ni texto de las notas. Investing.com además devolvió error 403 (acceso bloqueado).
+No puedo armar el resumen: el contenido que pegaste son solo fragmentos de código HTML (metadatos, scripts, tags de imagen) de cada sitio, sin los titulares ni el texto de las notas en sí. Infobae, La Nación, Inteligencia Argentina, RedUsers y KeepCoding devolvieron básicamente el `<head>` de la página, y Investing directamente tiró error 403 (acceso bloqueado).
 
-Para armar el resumen necesito el HTML completo renderizado o, mejor, el texto plano de los titulares de cada portada. Si podés pegar el contenido visible de la página (lo que se ve en pantalla, no el código fuente crudo), o usar una herramienta de scraping que extraiga el `<title>`, `<h1>`, `<h2>` de las notas, puedo armarte el resumen ejecutivo al toque.
+Para poder extraer temas reales necesitaría:
+- El HTML del `<body>` con los títulos de las notas (buscá elementos tipo `<h2>`, `<article>`, o clases como "title", "headline").
+- O mejor: copiá y pegá directamente los titulares que ves en pantalla al navegar esos sitios.
 
-¿Querés que te pase una consulta/prompt tipo para scrapear esos sitios correctamente?
+¿Querés reintentar pegando el contenido visible de las notas en vez del código fuente crudo?
