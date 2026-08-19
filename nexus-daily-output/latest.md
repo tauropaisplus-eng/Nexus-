@@ -1,13 +1,13 @@
-# NEXUS Daily — 2026-08-18
+# NEXUS Daily — 2026-08-19
 
-**NEXUS Daily — Resumen ejecutivo**
+**NEXUS Daily — Resumen Ejecutivo**
 
-Ojo: el scraping de hoy vino bastante pobre, la mayoría de las fuentes solo trajeron código HTML de cabecera (metadatos, CSS, scripts) sin el contenido real de las notas. Esto es lo que se puede rescatar:
+Che, hoy el rastrillaje viene flaco: la mayoría de las fuentes devolvieron solo código HTML crudo (headers, metadatos, scripts) sin texto de las notas en sí. Un solo dato rescatable:
 
-- **La Nación Tecnología**: destaca la historia de un ingeniero argentino que ganó un "mundial" (probablemente de programación/esports, no queda claro cuál) — único dato concreto que asomó del crudo.
-- **Infobae, Inteligencia Argentina, RedUsers, KeepCoding**: solo devolvieron estructura de página (head/meta), sin titulares legibles.
-- **Investing.com (sección tech)**: devolvió error 403, fuente bloqueada.
+- **La Nación**: WhatsApp estaría preparando una "función clave" nueva (sin detalles concretos en el fragmento disponible).
 
-**Conclusión**: no hay material suficiente para armar un panorama real de noticias tech hoy. Recomiendo re-scrapear apuntando al `<body>` o usar RSS/APIs de cada medio en vez de HTML crudo, porque el `<head>` no sirve para esto.
+El resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trajeron titulares legibles, y Investing.com tiró error 403 (acceso bloqueado).
 
-¿Querés que intente sacar algo más del fragmento de La Nación o preferís que ajustemos el método de extracción?
+**Sugerencia**: para el próximo informe necesito que el scraping traiga el HTML renderizado o el texto plano de los artículos, no solo el `<head>` de las páginas. Así te tiro un resumen con jugo real y no un "no hay datos" con gomina.
+
+¿Querés que reintente con otro enfoque de captura o tenés el contenido de los artículos posteado en otro formato?
