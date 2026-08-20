@@ -1,13 +1,12 @@
-# NEXUS Daily — 2026-08-19
+# NEXUS Daily — 2026-08-20
 
-**NEXUS Daily — Resumen Ejecutivo**
+**NEXUS Daily - Resumen Ejecutivo**
 
-Che, hoy el rastrillaje viene flaco: la mayoría de las fuentes devolvieron solo código HTML crudo (headers, metadatos, scripts) sin texto de las notas en sí. Un solo dato rescatable:
+No pude armar el resumen: el contenido crudo que pegaste son solo fragmentos de código HTML (metadatos, links de CSS, scripts de tracking), no el texto de las noticias en sí. Ninguna de las fuentes trajo titulares legibles —Investing directamente devolvió error 403.
 
-- **La Nación**: WhatsApp estaría preparando una "función clave" nueva (sin detalles concretos en el fragmento disponible).
+Para que pueda extraer los temas reales necesito:
+- El texto visible de la página (títulos de las notas, bajadas)
+- O que copies manualmente los titulares que aparecen en cada sitio
+- O un endpoint/API que devuelva el contenido renderizado, no el HTML crudo sin parsear
 
-El resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trajeron titulares legibles, y Investing.com tiró error 403 (acceso bloqueado).
-
-**Sugerencia**: para el próximo informe necesito que el scraping traiga el HTML renderizado o el texto plano de los artículos, no solo el `<head>` de las páginas. Así te tiro un resumen con jugo real y no un "no hay datos" con gomina.
-
-¿Querés que reintente con otro enfoque de captura o tenés el contenido de los artículos posteado en otro formato?
+¿Querés que lo intentemos de nuevo pegando el texto plano de los titulares, o tenés otra fuente con contenido más accesible?
