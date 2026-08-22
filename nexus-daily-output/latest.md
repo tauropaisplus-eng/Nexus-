@@ -1,11 +1,11 @@
-# NEXUS Daily — 2026-08-21
+# NEXUS Daily — 2026-08-22
 
 **NEXUS Daily - Resumen Ejecutivo**
 
-⚠️ No pude extraer contenido real de las fuentes: el material recibido son solo encabezados HTML, metadatos y scripts de carga (sin titulares ni cuerpo de noticias).
+Che, el scraping de hoy vino flojo: la mayoría de las fuentes devolvieron solo código HTML crudo (headers, scripts, metadata) sin titulares extraíbles. Investing.com directamente tiró error 403.
 
-Único dato rescatable: La Nación tiene una nota sobre un **dron MK-30 de Amazon**, sin más contexto disponible.
+Lo único rescatable es de La Nación: nota sobre cotización de iPhone 17 usados en el mercado.
 
-Investing.com devolvió error 403 (acceso bloqueado).
+De Infobae, Inteligencia Argentina, RedUsers y KeepCoding no se pudo extraer contenido editorial real, solo boilerplate t��cnico (favicons, CSS, scripts de analytics).
 
-**Sugerencia**: para armar el resumen necesito el HTML completo de cada nota o, mejor aún, los titulares y bajadas ya extraídos (texto plano). Si me pasás eso, te tiro el resumen ejecutivo en el formato NEXUS sin problema.
+**Recomendación:** habría que ajustar el método de extracción (renderizado JS o acceso a la API/RSS de cada sitio) para pescar los titulares reales en la próxima corrida. Si querés, te tiro un resumen con fuentes alternativas o esperamos el próximo scraping con mejor data.
