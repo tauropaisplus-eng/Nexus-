@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-08-23",
+  "resumen": "No puedo armar el resumen ejecutivo porque el contenido que pegaste no trae información real: son solo fragmentos de código HTML (metadatos, links de CSS, favicons, scripts de tracking) de la parte `<head>` de cada sitio, sin ningún titular ni cuerpo de noticia visible. Además la fuente de Investing.com devolvió error 403 (acceso bloqueado).\n\nPara poder generar el resumen necesito que me pegues:\n- El texto visible de los titulares (los `<h1>`, `<h2>` o directamente copiando el texto de la página como se ve en el navegador), o\n- Un dump del HTML renderizado (no solo el `<head>`), o\n- Los titulares ya extraídos manualmente de cada sitio.\n\nSi me pasás eso, te armo el resumen ejecutivo en el tono de NEXUS Daily sin problema."
+}
