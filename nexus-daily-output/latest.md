@@ -1,10 +1,11 @@
-# NEXUS Daily — 2026-08-23
+# NEXUS Daily — 2026-08-24
 
-No puedo armar el resumen ejecutivo porque el contenido que pegaste no trae información real: son solo fragmentos de código HTML (metadatos, links de CSS, favicons, scripts de tracking) de la parte `<head>` de cada sitio, sin ningún titular ni cuerpo de noticia visible. Además la fuente de Investing.com devolvió error 403 (acceso bloqueado).
+**NEXUS Daily - Reporte de estado**
 
-Para poder generar el resumen necesito que me pegues:
-- El texto visible de los titulares (los `<h1>`, `<h2>` o directamente copiando el texto de la página como se ve en el navegador), o
-- Un dump del HTML renderizado (no solo el `<head>`), o
-- Los titulares ya extraídos manualmente de cada sitio.
+No pude armar el resumen ejecutivo: el contenido que me pasaste son fragmentos crudos de HTML (metadatos, scripts, links de CSS/favicon), no el texto real de las notas. No hay titulares, bajadas ni cuerpo de artículos extraíbles de ninguna de las seis fuentes.
 
-Si me pasás eso, te armo el resumen ejecutivo en el tono de NEXUS Daily sin problema.
+Para laburar necesito:
+- El HTML renderizado completo de cada portada (o al menos las secciones con títulos y links de las notas), o
+- Una lista ya extraída de titulares con sus URLs.
+
+Si me pasás el contenido real de las notas (títulos + bajadas), te armo el resumen ejecutivo en el formato pedido sin problema.
