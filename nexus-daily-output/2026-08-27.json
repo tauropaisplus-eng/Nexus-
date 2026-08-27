@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-08-27",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nNo pude extraer titulares reales: el contenido crudo recibido de las fuentes (Infobae, La Nación, Inteligencia Argentina, RedUsers, KeepCoding) son solo fragmentos de código HTML/CSS (metadatos, headers, scripts de carga), sin texto de noticias visible. Investing.com devolvió error 403 (acceso bloqueado).\n\nPara armar el resumen necesito el contenido renderizado de las páginas (texto de titulares y bajadas), no el HTML crudo de carga inicial. Si podés pegar los titulares tal como aparecen en pantalla, o el HTML después de que cargue el JavaScript, arranco el resumen al toque.\n\n¿Querés que lo intente igual con algún dato parcial que sí se ve (como el título de la imagen de La Nación sobre \"nuevas funciones que llegan a este software\"), o preferís reenviar el contenido completo?"
+}
