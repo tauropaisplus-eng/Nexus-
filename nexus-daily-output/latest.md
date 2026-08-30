@@ -1,9 +1,15 @@
-# NEXUS Daily — 2026-08-29
+# NEXUS Daily — 2026-08-30
 
-**NEXUS Daily — Resumen ejecutivo**
+**NEXUS Daily — Resumen Ejecutivo**
 
-Che, hoy no hay mucho para bajar: el contenido que llegó de las fuentes (Infobae, La Nación, Inteligencia Argentina, RedUsers, KeepCoding) es puro código HTML crudo —metadatos, scripts, links de imágenes— sin texto real de notas ni titulares legibles. Investing.com directamente tiró error 403 (acceso bloqueado).
+No pude laburar con esto: lo que me pasaste son solo fragmentos de código HTML (meta tags, headers, links de CSS) de las páginas fuente, no el contenido real de las notas ni titulares.
 
-No puedo armar un resumen de temas tech con esto porque no hay contenido periodístico extraíble, solo la estructura técnica de las páginas.
+De estas 6 fuentes solo tengo:
+- Infobae Tecno: sin datos de artículos, solo boilerplate del head
+- La Nación Tecnología: una sola pista — imagen sobre "IA del CONICET que puede detectar..." (título cortado, sin más contexto)
+- Inteligencia Argentina: solo metadata del sitio, sin notas
+- RedUsers: solo CSS/theme, sin contenido
+- KeepCoding: solo estilos del hero, sin posts
+- Investing.com: error 403 (bloqueado, sin acceso)
 
-**Sugerencia:** para que pueda laburar posta, necesito el HTML renderizado completo (con los `<h1>`, `<h2>`, `<article>` de las notas) o directamente el texto de los titulares copiado de cada sitio. Si me pasás eso, te tiro el resumen ejecutivo en el toque.
+**Para armar el resumen necesito el contenido real**: los `<h1>`, `<h2>`, títulos de artículos, bajadas o el texto visible de cada nota. Si me pasás eso (aunque sea copiado y pegado del texto visible en pantalla, no el código fuente), te armo el resumen ejecutivo en el toque.
