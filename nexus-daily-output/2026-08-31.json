@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-08-31",
+  "resumen": "No puedo armar el resumen ejecutivo porque el contenido que pegaste son solo fragmentos de código HTML (metadatos, links de CSS, scripts de tracking, favicons), no hay texto de titulares ni notas reales extraíble de ahí. Ejemplos de lo que llegó:\n\n- Infobae Tecno: solo head con scripts de ads (adnami, ebx)\n- La Nación Tecnología: un link de imagen con nombre de archivo (\"lucia-caminos-y-jason-duval...\") pero sin titular asociado\n- Inteligencia Argentina: solo meta tags de Open Graph genéricos\n- RedUsers: solo hojas de estilo y pingback\n- KeepCoding: script anti-IE, nada de contenido\n- Investing.com: error 403 (bloqueado)\n\nPara hacer el resumen necesito que me pases el HTML renderizado completo (con el `<body>`) o directamente copies los titulares en texto plano de cada sitio. Si me pasás eso, te armo el resumen ejecutivo en el momento."
+}

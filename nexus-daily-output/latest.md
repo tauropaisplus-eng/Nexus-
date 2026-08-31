@@ -1,15 +1,12 @@
-# NEXUS Daily — 2026-08-30
+# NEXUS Daily — 2026-08-31
 
-**NEXUS Daily — Resumen Ejecutivo**
+No puedo armar el resumen ejecutivo porque el contenido que pegaste son solo fragmentos de código HTML (metadatos, links de CSS, scripts de tracking, favicons), no hay texto de titulares ni notas reales extraíble de ahí. Ejemplos de lo que llegó:
 
-No pude laburar con esto: lo que me pasaste son solo fragmentos de código HTML (meta tags, headers, links de CSS) de las páginas fuente, no el contenido real de las notas ni titulares.
+- Infobae Tecno: solo head con scripts de ads (adnami, ebx)
+- La Nación Tecnología: un link de imagen con nombre de archivo ("lucia-caminos-y-jason-duval...") pero sin titular asociado
+- Inteligencia Argentina: solo meta tags de Open Graph genéricos
+- RedUsers: solo hojas de estilo y pingback
+- KeepCoding: script anti-IE, nada de contenido
+- Investing.com: error 403 (bloqueado)
 
-De estas 6 fuentes solo tengo:
-- Infobae Tecno: sin datos de artículos, solo boilerplate del head
-- La Nación Tecnología: una sola pista — imagen sobre "IA del CONICET que puede detectar..." (título cortado, sin más contexto)
-- Inteligencia Argentina: solo metadata del sitio, sin notas
-- RedUsers: solo CSS/theme, sin contenido
-- KeepCoding: solo estilos del hero, sin posts
-- Investing.com: error 403 (bloqueado, sin acceso)
-
-**Para armar el resumen necesito el contenido real**: los `<h1>`, `<h2>`, títulos de artículos, bajadas o el texto visible de cada nota. Si me pasás eso (aunque sea copiado y pegado del texto visible en pantalla, no el código fuente), te armo el resumen ejecutivo en el toque.
+Para hacer el resumen necesito que me pases el HTML renderizado completo (con el `<body>`) o directamente copies los titulares en texto plano de cada sitio. Si me pasás eso, te armo el resumen ejecutivo en el momento.
