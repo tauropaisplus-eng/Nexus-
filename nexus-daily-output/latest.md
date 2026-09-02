@@ -1,11 +1,13 @@
-# NEXUS Daily — 2026-09-01
+# NEXUS Daily — 2026-09-02
 
 **NEXUS Daily - Resumen Ejecutivo**
 
-Ojo: el scraping crudo que me pasaste no trajo titulares reales, solo metadata HTML (headers, CSS, scripts de tracking). La única pista concreta es una imagen en La Nación sobre el **Galaxy Z Fold8** y su pantalla frontal, lo que sugiere cobertura del nuevo plegable de Samsung.
+Che, hoy el scraping vino flojo: la mayoría de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) solo devolvieron metadata HTML cruda —headers, scripts, favicons— sin titulares reales para laburar. Investing.com directamente tiró error 403 (bloqueo de acceso).
 
-De Infobae, Inteligencia Argentina, RedUsers y KeepCoding no se pudo extraer texto de artículos, solo boilerplate técnico. Investing.com devolvió error 403 (bloqueado).
+Lo único rescatable es de **La Nación Tecnología**: hay contenido sobre el **iPhone 18**, mostrando posibles colores y diseño del próximo modelo de Apple.
 
-**Sugerencia:** para armar un resumen real necesito el HTML con el contenido visible (títulos, bajadas) o mejor directamente los titulares en texto plano. Si me pasás eso, te tiro el resumen ejecutivo posta en 10 líneas.
+**Diagnóstico:** las páginas están armadas con render dinámico (JS/React) y el HTML crudo no expone los titulares reales, que probablemente cargan después vía JavaScript.
 
-¿Querés que lo intente igual con lo poco que hay, o preferís reenviar la data con más contenido?
+**Sugerencia:** para el próximo informe conviene usar una fuente que entregue el HTML ya renderizado, RSS feeds, o headers que evadan el bloqueo de Investing. Así evitamos entregarte solo "cáscara" técnica en vez de noticias posta.
+
+¿Querés que reintente con otro enfoque de captura?
