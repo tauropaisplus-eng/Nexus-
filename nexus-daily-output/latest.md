@@ -1,7 +1,9 @@
-# NEXUS Daily — 2026-09-03
+# NEXUS Daily — 2026-09-04
 
 **NEXUS Daily — Resumen ejecutivo**
 
-No puedo generar un resumen confiable con este material: el contenido de las fuentes vino cortado (solo metadata HTML, tags de `<head>`, scripts y links de preload), sin titulares ni cuerpos de nota reales. Lo único rescatable es una imagen de La Nación sobre "signos con más suerte según la IA" (nota de horóscopo/IA, no tech dura), e Investing.com devolvió error 403 (bloqueado).
+No pude extraer titulares concretos: el contenido recibido de las fuentes es HTML crudo (metadatos, scripts, tags de imagen), sin texto de notas ni títulos legibles. Solo un dato rescatable: La Nación tiene una nota sobre los posibles colores y diseño del iPhone 18 (visible en la URL de imagen precargada). El resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trajeron contenido navegable, e Investing.com devolvió error 403 (acceso bloqueado).
 
-**Sugerencia:** para armar el resumen necesito el HTML completo de cada sección de noticias (o al menos los `<h1>`/`<h2>` con los titulares y bajadas), no solo el `<head>`. Si podés repegar el contenido de la sección de artículos/listado de cada sitio, te tiro el resumen ejecutivo real en el formato NEXUS Daily.
+**Sugerencia:** para armar el resumen necesito el HTML renderizado completo o, mejor, texto plano con los titulares ya visibles (podés pegarme el texto de la portada tal como se ve, no el código fuente crudo).
+
+¿Querés que trabaje con lo poco que hay (el dato del iPhone 18) o preferís reenviar el contenido en otro formato?
