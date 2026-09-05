@@ -1,9 +1,16 @@
-# NEXUS Daily — 2026-09-04
+# NEXUS Daily — 2026-09-05
 
-**NEXUS Daily — Resumen ejecutivo**
+**NEXUS Daily — Resumen Ejecutivo**
 
-No pude extraer titulares concretos: el contenido recibido de las fuentes es HTML crudo (metadatos, scripts, tags de imagen), sin texto de notas ni títulos legibles. Solo un dato rescatable: La Nación tiene una nota sobre los posibles colores y diseño del iPhone 18 (visible en la URL de imagen precargada). El resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trajeron contenido navegable, e Investing.com devolvió error 403 (acceso bloqueado).
+⚠️ No pude armar el resumen: el contenido crudo que pasaste son solo fragmentos de código HTML (metadatos, scripts, links de CSS/favicon), sin texto de artículos ni titulares reales.
 
-**Sugerencia:** para armar el resumen necesito el HTML renderizado completo o, mejor, texto plano con los titulares ya visibles (podés pegarme el texto de la portada tal como se ve, no el código fuente crudo).
+Lo que veo por fuente:
+- **Infobae Tecno**: solo head con scripts de ads (ebx, adnami)
+- **La Nación Tecnología**: solo preload de imagen (ASUS ProArt con RTX)
+- **Inteligencia Argentina**: solo meta tags OG genéricos
+- **RedUsers**: solo CSS y favicon
+- **KeepCoding**: script de compatibilidad IE, sin contenido
+- **Investing.com**: error 403 (bloqueado)
 
-¿Querés que trabaje con lo poco que hay (el dato del iPhone 18) o preferís reenviar el contenido en otro formato?
+**Para que pueda armar el resumen necesito:**
+El HTML completo renderizado (o el texto ya extraído de los `<h1>`, `<h2>` y bajadas de cada nota), no solo el `<head>`. Si tenés el contenido del `<body>` con los titulares, pasámelo y armo el resumen ejecutivo al toque.

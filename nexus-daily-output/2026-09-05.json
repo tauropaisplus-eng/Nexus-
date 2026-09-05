@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-05",
+  "resumen": "**NEXUS Daily — Resumen Ejecutivo**\n\n⚠️ No pude armar el resumen: el contenido crudo que pasaste son solo fragmentos de código HTML (metadatos, scripts, links de CSS/favicon), sin texto de artículos ni titulares reales.\n\nLo que veo por fuente:\n- **Infobae Tecno**: solo head con scripts de ads (ebx, adnami)\n- **La Nación Tecnología**: solo preload de imagen (ASUS ProArt con RTX)\n- **Inteligencia Argentina**: solo meta tags OG genéricos\n- **RedUsers**: solo CSS y favicon\n- **KeepCoding**: script de compatibilidad IE, sin contenido\n- **Investing.com**: error 403 (bloqueado)\n\n**Para que pueda armar el resumen necesito:**\nEl HTML completo renderizado (o el texto ya extraído de los `<h1>`, `<h2>` y bajadas de cada nota), no solo el `<head>`. Si tenés el contenido del `<body>` con los titulares, pasámelo y armo el resumen ejecutivo al toque."
+}
