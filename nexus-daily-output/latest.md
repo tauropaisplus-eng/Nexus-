@@ -1,14 +1,9 @@
-# NEXUS Daily — 2026-09-06
+# NEXUS Daily — 2026-09-07
 
-**NEXUS Daily ��� Resumen ejecutivo**
+**NEXUS Daily — Resumen Ejecutivo**
 
-Che, el scraping de hoy vino flojo: la mayoría de las fuentes (Infobae, La Nación, Inteligencia Argentina, RedUsers, KeepCoding) solo devolvieron el `<head>` del HTML —metadatos, links a CSS y scripts— sin el cuerpo real con los titulares. Investing.com directamente tiró error 403 (acceso bloqueado).
+No pude armar el resumen: el contenido que me pasaste son fragmentos crudos de HTML (metadatos, scripts, links de CSS/favicon), no el texto de las notas ni los titulares reales de cada sitio. Solo rescato un dato suelto de La Nación: hay una nota sobre un plegable triple de Huawei, pero sin título ni cuerpo confirmado.
 
-Lo único rescatable con algo de sustancia es un thumbnail de **La Nación Tecnología** que referencia una nota sobre celulares que **dejarán de recibir soporte/funcionar a partir de mañana** (probablemente por fin de compatibilidad con apps o sistemas operativos viejos, tipo WhatsApp o Android/iOS antiguos).
+Para armar el resumen necesito el HTML renderizado (o al menos los `<h1>`, `<h2>`, títulos de artículos) de cada fuente, no la respuesta cruda del servidor. Investing.com además devolvió error 403 (bloqueado).
 
-**Conclusión:** no tengo material suficiente para armar un resumen ejecutivo real de titulares del día. Para la próxima corrida convendría:
-1. Scrapear el `<body>` renderizado (no solo el head).
-2. Usar un endpoint tipo RSS de cada medio, que es más liviano y confiable.
-3. Resolver el bloqueo 403 de Investing (headers/user-agent).
-
-¿Querés que lo intente de nuevo apuntando a los feeds RSS de estos sitios?
+¿Querés que reintente con el contenido ya parseado, o preferís pegarme directamente los titulares de cada sitio?
