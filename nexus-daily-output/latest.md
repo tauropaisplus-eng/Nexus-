@@ -1,9 +1,9 @@
-# NEXUS Daily — 2026-09-07
+# NEXUS Daily — 2026-09-08
 
-**NEXUS Daily — Resumen Ejecutivo**
+**NEXUS Daily — Resumen ejecutivo**
 
-No pude armar el resumen: el contenido que me pasaste son fragmentos crudos de HTML (metadatos, scripts, links de CSS/favicon), no el texto de las notas ni los titulares reales de cada sitio. Solo rescato un dato suelto de La Nación: hay una nota sobre un plegable triple de Huawei, pero sin título ni cuerpo confirmado.
+No pude extraer titulares reales: el contenido recibido de las fuentes es solo código HTML crudo (metadata, scripts, tags de carga de imágenes), sin texto de artículos ni títulos legibles. Investing.com devolvió error 403 (bloqueo de acceso).
 
-Para armar el resumen necesito el HTML renderizado (o al menos los `<h1>`, `<h2>`, títulos de artículos) de cada fuente, no la respuesta cruda del servidor. Investing.com además devolvió error 403 (bloqueado).
+Para armar el resumen necesito el HTML renderizado o el texto plano de los titulares (por ejemplo, copiando los `<h1>`, `<h2>` o el texto visible de cada portada), no el código fuente crudo con scripts y metadatos de carga.
 
-¿Querés que reintente con el contenido ya parseado, o preferís pegarme directamente los titulares de cada sitio?
+¿Podés reenviar el contenido ya parseado (títulos + bajadas) o el texto visible de cada sitio?
