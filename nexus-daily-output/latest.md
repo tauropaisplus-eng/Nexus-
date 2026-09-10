@@ -1,9 +1,12 @@
-# NEXUS Daily — 2026-09-09
+# NEXUS Daily — 2026-09-10
 
-**NEXUS Daily - Resumen ejecutivo**
+**NEXUS Daily - Resumen Ejecutivo**
 
-No pude extraer titulares concretos: el contenido crudo recibido de estas fuentes son solo cabeceras HTML, metadatos y scripts (viewport, favicons, fuentes CDN), sin el cuerpo real de las noticias. Un caso aparte es Investing.com, que directamente devolvió error 403 (acceso bloqueado).
+No pude armar un resumen con sustancia hoy: el contenido crudo que llegó de las fuentes es solo código HTML de cabecera (metadatos, scripts, links de CSS), sin titulares ni cuerpo de noticias real.
 
-Para armar el resumen ejecutivo necesito el HTML renderizado completo o, mejor, el texto plano de los titulares y bajadas de cada nota (podés pegarlos directo, o el contenido de la sección `<body>` con los `<h1>/<h2>` de las notas).
+Lo único rescatable como pista temática:
+- **La Nación** menciona algo sobre un "truco viral para mejorar la señal de Wi-Fi" (se ve en la URL de una imagen).
+- **Investing.com** devolvió error 403 (bloqueo de acceso).
+- El resto (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trajo texto de artículos, solo boilerplate técnico.
 
-¿Querés que reintente con otro formato de input, o tenés el contenido ya parseado de alguna de estas fuentes?
+**Sugerencia:** para el próximo scrape conviene apuntar a los `<h1>`, `<h2>` o elementos con clase de título/bajada, no al head completo del documento. Si querés, puedo trabajar con los titulares si me los pasás en texto plano.
