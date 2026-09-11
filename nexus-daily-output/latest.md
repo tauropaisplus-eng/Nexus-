@@ -1,12 +1,11 @@
-# NEXUS Daily — 2026-09-10
+# NEXUS Daily — 2026-09-11
 
-**NEXUS Daily - Resumen Ejecutivo**
+**NEXUS Daily — Resumen Ejecutivo**
 
-No pude armar un resumen con sustancia hoy: el contenido crudo que llegó de las fuentes es solo código HTML de cabecera (metadatos, scripts, links de CSS), sin titulares ni cuerpo de noticias real.
+Ojo: el contenido que pasaste es en su mayoría código HTML crudo (headers, metadatos, scripts) sin texto de noticias real. Solo pude rescatar un dato concreto:
 
-Lo único rescatable como pista temática:
-- **La Nación** menciona algo sobre un "truco viral para mejorar la señal de Wi-Fi" (se ve en la URL de una imagen).
-- **Investing.com** devolvió error 403 (bloqueo de acceso).
-- El resto (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trajo texto de artículos, solo boilerplate técnico.
+- **La Nación** adelanta que Apple presentó su primer smartphone plegable (aparece en una imagen destacada, sin más detalle en el crudo).
 
-**Sugerencia:** para el próximo scrape conviene apuntar a los `<h1>`, `<h2>` o elementos con clase de título/bajada, no al head completo del documento. Si querés, puedo trabajar con los titulares si me los pasás en texto plano.
+El resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding, Investing) no trajeron titulares ni bajadas legibles, solo metadata técnica o error 403.
+
+**Sugerencia:** si querés un resumen ejecutivo real y completo, pasame el HTML renderizado, el texto plano de los artículos, o los titulares copiados directo de cada sitio. Con el crudo de `<head>` no hay contenido editorial para trabajar.
