@@ -1,11 +1,7 @@
-# NEXUS Daily — 2026-09-11
+# NEXUS Daily — 2026-09-12
 
-**NEXUS Daily — Resumen Ejecutivo**
+**NEXUS Daily — Resumen ejecutivo**
 
-Ojo: el contenido que pasaste es en su mayoría código HTML crudo (headers, metadatos, scripts) sin texto de noticias real. Solo pude rescatar un dato concreto:
+No pude extraer titulares reales de las fuentes: el contenido que llegó es HTML crudo (metadatos, tags, CSS, scripts de tracking), sin el texto de los artículos ni títulos legibles. Solo rescato una pista parcial en La Nación sobre "investigadores preocupados por los riesgos" (probablemente IA), pero sin contexto suficiente para confirmarlo. Investing.com devolvió error 403 (bloqueo de acceso).
 
-- **La Nación** adelanta que Apple presentó su primer smartphone plegable (aparece en una imagen destacada, sin más detalle en el crudo).
-
-El resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding, Investing) no trajeron titulares ni bajadas legibles, solo metadata técnica o error 403.
-
-**Sugerencia:** si querés un resumen ejecutivo real y completo, pasame el HTML renderizado, el texto plano de los artículos, o los titulares copiados directo de cada sitio. Con el crudo de `<head>` no hay contenido editorial para trabajar.
+Para armar el resumen necesito el HTML renderizado, el texto plano de cada nota, o un scraper que capture titulares (h1/h2) y bajadas. Si me pasás ese contenido, te tiro el resumen posta en el toque.
