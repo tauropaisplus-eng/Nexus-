@@ -1,12 +1,9 @@
-# NEXUS Daily — 2026-09-13
+# NEXUS Daily — 2026-09-14
 
-**NEXUS Daily — Resumen Ejecutivo**
+**NEXUS Daily — Resumen ejecutivo**
 
-No pude extraer titulares concretos: el contenido que me pasaste son solo fragmentos de `<head>` HTML (metadatos, links de CSS, favicons, scripts de tracking) de cada sitio, sin el cuerpo de las notas ni los títulos reales de los artículos.
+No pude extraer titulares concretos: el contenido recibido de las fuentes son solo fragmentos de código HTML (head, metadatos, scripts de carga), sin el cuerpo de las notas ni títulos legibles. Investing.com además devolvió error 403 (acceso bloqueado).
 
-Un par de datos rescatables:
-- La Nación tiene una nota sobre WhatsApp y llamadas de voz (se ve en la imagen del preload).
-- Investing.com devolvió error 403 (bloqueo de acceso).
-- El resto (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trae texto de artículos, solo boilerplate técnico.
+Para armar el resumen necesito el HTML completo de cada nota o, mejor, los titulares ya extraídos en texto plano. Si me pasás el contenido del `<body>` de cada página (o directamente los títulos + copetes), te armo el resumen en el toque.
 
-**Sugerencia:** para armar el resumen necesito el HTML del `<body>` con los `<h1>`, `<h2>` o el listado de tarjetas de noticias, o directamente pegame los titulares en texto plano. Si me pasás eso, te tiro el resumen ejecutivo en el formato NEXUS Daily sin problema.
+¿Querés que lo intente igual con una búsqueda genérica, o preferís reenviar el contenido completo de las páginas?
