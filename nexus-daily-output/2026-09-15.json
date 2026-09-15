@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-15",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nNo pude armar el resumen: el contenido que me pasaste son solo fragmentos de código HTML (metadatos, headers, links de CSS/JS) de las páginas, no el texto real de las noticias. No hay titulares, bajadas ni cuerpo de artículos para extraer.\n\nFuentes con contenido inútil para este fin:\n- Infobae Tecno: solo head/meta tags\n- La Nación Tecnología: solo preload de imagen\n- Inteligencia Argentina: solo meta og\n- RedUsers: solo head/CSS\n- KeepCoding: script de compatibilidad IE\n- Investing.com: error 403 (bloqueado)\n\n**Para que pueda laburar necesito:** el HTML completo renderizado, texto plano copiado de la sección de noticias, o los titulares ya extraídos manualmente. Si me pasás eso, armo el resumen en el momento."
+}

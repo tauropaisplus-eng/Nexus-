@@ -1,9 +1,15 @@
-# NEXUS Daily — 2026-09-14
+# NEXUS Daily — 2026-09-15
 
 **NEXUS Daily — Resumen ejecutivo**
 
-No pude extraer titulares concretos: el contenido recibido de las fuentes son solo fragmentos de código HTML (head, metadatos, scripts de carga), sin el cuerpo de las notas ni títulos legibles. Investing.com además devolvió error 403 (acceso bloqueado).
+No pude armar el resumen: el contenido que me pasaste son solo fragmentos de código HTML (metadatos, headers, links de CSS/JS) de las páginas, no el texto real de las noticias. No hay titulares, bajadas ni cuerpo de artículos para extraer.
 
-Para armar el resumen necesito el HTML completo de cada nota o, mejor, los titulares ya extraídos en texto plano. Si me pasás el contenido del `<body>` de cada página (o directamente los títulos + copetes), te armo el resumen en el toque.
+Fuentes con contenido inútil para este fin:
+- Infobae Tecno: solo head/meta tags
+- La Nación Tecnología: solo preload de imagen
+- Inteligencia Argentina: solo meta og
+- RedUsers: solo head/CSS
+- KeepCoding: script de compatibilidad IE
+- Investing.com: error 403 (bloqueado)
 
-¿Querés que lo intente igual con una búsqueda genérica, o preferís reenviar el contenido completo de las páginas?
+**Para que pueda laburar necesito:** el HTML completo renderizado, texto plano copiado de la sección de noticias, o los titulares ya extraídos manualmente. Si me pasás eso, armo el resumen en el momento.
