@@ -1,11 +1,9 @@
-# NEXUS Daily — 2026-09-17
+# NEXUS Daily — 2026-09-18
 
 **NEXUS Daily — Resumen ejecutivo**
 
-No pude extraer titulares concretos: el contenido recibido son fragmentos de código HTML (metadatos, scripts, estilos) sin el texto real de las notas. Solo rescato un indicio en La Nación: una nota sobre "la frase clave para que la IA explique" algo (tema IA generativa).
+No pude extraer titulares reales: el contenido recibido de las fuentes son solo fragmentos de código HTML (metadatos, headers, estilos), sin el cuerpo de las noticias ni títulos legibles. Investing.com además devolvió error 403 (acceso bloqueado).
 
-De Investing.com Technology News, el acceso dio error 403 (bloqueado).
+Para armar el resumen necesito el HTML completo renderizado o, mejor, los titulares ya extraídos en texto plano de cada sitio.
 
-Del resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no hay texto de artículos, solo boilerplate técnico del sitio.
-
-**Sugerencia:** para armar el resumen necesito el HTML renderizado completo o los titulares ya parseados de cada sección de noticias, no solo el head/meta de las páginas. Si me pasás el bloque de texto con los títulos y bajadas, te armo el resumen ejecutivo real en el tono NEXUS.
+¿Querés que reintente con otro formato de scraping, o me pasás los titulares manualmente para que arme el resumen?
