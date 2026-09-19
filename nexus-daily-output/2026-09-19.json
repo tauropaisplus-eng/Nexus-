@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-19",
+  "resumen": "**NEXUS Daily - Resumen Ejecutivo**\n\n⚠️ No pude armar un resumen real: el contenido crudo recibido son solo fragmentos de HTML (headers, metadatos, CSS, scripts), sin texto de noticias extraíble.\n\nLo único rescatable:\n- **La Nación** parece tener una nota sobre el **mapeo del conectoma de una mosca** (neurociencia/IA).\n- **Investing.com** devolvió error 403 (bloqueado).\n- El resto de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trajeron contenido legible, solo boilerplate técnico.\n\n📌 Para armar el resumen necesito el HTML completo renderizado o, mejor, el texto plano de los titulares (podés pegarlo directo o pasarme resultados de scraping con selectores tipo `<h2>`, `<article>`).\n\n¿Querés que reintente con otro formato de datos?"
+}
