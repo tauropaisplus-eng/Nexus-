@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-20",
+  "resumen": "**NEXUS Daily — Resumen Ejecutivo**\n\nNo pude extraer titulares reales: el contenido crudo recibido son solo fragmentos de código HTML (metadatos, scripts, headers de página) sin el cuerpo de las noticias. Ningún sitio entregó texto de artículos legible.\n\nEstado por fuente:\n- **Infobae Tecno**: solo carga de assets/scripts, sin contenido.\n- **La Nación Tecnología**: una imagen sugiere nota sobre Wi-Fi hogareño, sin más data.\n- **Inteligencia Argentina**: solo metadata del sitio, sin notas.\n- **RedUsers**: solo hojas de estilo, sin contenido.\n- **KeepCoding Blog**: script de compatibilidad IE, sin notas.\n- **Investing.com Tech**: error 403 (acceso bloqueado).\n\n**Sugerencia**: para armar el resumen necesito el HTML renderizado completo (con `<body>` y textos de titulares) o los links directos a las notas, no solo el `<head>`. ¿Querés que reintente con ese formato?"
+}
