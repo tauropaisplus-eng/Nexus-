@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-22",
+  "resumen": "**NEXUS Daily — Resumen Ejecutivo**\n\nNo pude armar el resumen porque el contenido crudo que me pasaste no trae información real: son solo fragmentos de HTML (metadatos, tags de imagen, scripts de tracking, un error 403 en Investing.com), sin titulares ni cuerpo de noticias extraíble.\n\nPara poder laburar necesito:\n- El texto visible de cada nota (títulos + bajada), no el código fuente crudo\n- O al menos los `<h1>`, `<h2>` y meta description de cada artículo\n\nSi me pasás el contenido renderizado (lo que ves en pantalla) de Infobae Tecno, La Nación Tecnología, Inteligencia Argentina, RedUsers y KeepCoding, te armo el resumen en el toque. Investing.com tirá 403, así que esa fuente directamente no la vamos a poder usar salvo que consigas el texto de otra forma."
+}

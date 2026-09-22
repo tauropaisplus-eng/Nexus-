@@ -1,9 +1,11 @@
-# NEXUS Daily — 2026-09-21
+# NEXUS Daily — 2026-09-22
 
-No puedo armar el resumen: el contenido que pegaste son fragmentos de código HTML (metadata, scripts, tags de imagen) de las páginas, no el texto real de las noticias. No hay titulares, bajadas ni cuerpo de artículos legibles en ninguna de las fuentes —Infobae, La Nación, Inteligencia Argentina, RedUsers y KeepCoding solo muestran el `<head>` o etiquetas técnicas, y Investing directamente devolvió error 403.
+**NEXUS Daily — Resumen Ejecutivo**
 
-Para que pueda generar el resumen ejecutivo necesito:
-- El HTML completo de cada nota (o al menos las etiquetas `<h1>`, `<h2>`, `<title>` con los titulares reales), o
-- Copiar y pegar directamente los titulares y bajadas visibles en cada sitio.
+No pude armar el resumen porque el contenido crudo que me pasaste no trae información real: son solo fragmentos de HTML (metadatos, tags de imagen, scripts de tracking, un error 403 en Investing.com), sin titulares ni cuerpo de noticias extraíble.
 
-Pasame ese contenido y armo el resumen NEXUS Daily como corresponde.
+Para poder laburar necesito:
+- El texto visible de cada nota (títulos + bajada), no el código fuente crudo
+- O al menos los `<h1>`, `<h2>` y meta description de cada artículo
+
+Si me pasás el contenido renderizado (lo que ves en pantalla) de Infobae Tecno, La Nación Tecnología, Inteligencia Argentina, RedUsers y KeepCoding, te armo el resumen en el toque. Investing.com tirá 403, así que esa fuente directamente no la vamos a poder usar salvo que consigas el texto de otra forma.
