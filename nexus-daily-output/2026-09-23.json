@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-23",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nNo pude extraer titulares reales de las fuentes: el contenido crudo recibido son solo fragmentos de código HTML (metadatos, scripts, hojas de estilo), sin texto de noticias visible. Un solo dato concreto: LA NACIÓN tiene una nota sobre \"fórmula para crear fotos profesionales con IA\". Investing.com devolvió error 403 (acceso bloqueado).\n\nPara armar el resumen necesito el HTML renderizado o el texto plano de los titulares (los `<h1>`, `<h2>` o los sumarios de cada nota), no el `<head>` de las páginas. Si me pasás ese contenido, te armo el resumen de diez líneas sin problema."
+}

@@ -1,11 +1,7 @@
-# NEXUS Daily — 2026-09-22
+# NEXUS Daily — 2026-09-23
 
-**NEXUS Daily — Resumen Ejecutivo**
+**NEXUS Daily — Resumen ejecutivo**
 
-No pude armar el resumen porque el contenido crudo que me pasaste no trae información real: son solo fragmentos de HTML (metadatos, tags de imagen, scripts de tracking, un error 403 en Investing.com), sin titulares ni cuerpo de noticias extraíble.
+No pude extraer titulares reales de las fuentes: el contenido crudo recibido son solo fragmentos de código HTML (metadatos, scripts, hojas de estilo), sin texto de noticias visible. Un solo dato concreto: LA NACIÓN tiene una nota sobre "fórmula para crear fotos profesionales con IA". Investing.com devolvió error 403 (acceso bloqueado).
 
-Para poder laburar necesito:
-- El texto visible de cada nota (títulos + bajada), no el código fuente crudo
-- O al menos los `<h1>`, `<h2>` y meta description de cada artículo
-
-Si me pasás el contenido renderizado (lo que ves en pantalla) de Infobae Tecno, La Nación Tecnología, Inteligencia Argentina, RedUsers y KeepCoding, te armo el resumen en el toque. Investing.com tirá 403, así que esa fuente directamente no la vamos a poder usar salvo que consigas el texto de otra forma.
+Para armar el resumen necesito el HTML renderizado o el texto plano de los titulares (los `<h1>`, `<h2>` o los sumarios de cada nota), no el `<head>` de las páginas. Si me pasás ese contenido, te armo el resumen de diez líneas sin problema.
