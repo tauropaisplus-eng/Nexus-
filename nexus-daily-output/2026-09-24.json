@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-24",
+  "resumen": "**NEXUS Daily — Resumen Ejecutivo**\n\nNo pude extraer titulares reales hoy: las fuentes devolvieron contenido crudo sin información utilizable.\n\n- **Infobae Tecno**: solo código HTML de cabecera, sin notas visibles.\n- **La Nación Tecnología**: se detectó una nota sobre \"errores comunes\" (posiblemente tech/dispositivos), sin más detalle legible.\n- **Inteligencia Argentina**: error 524 (timeout del servidor).\n- **RedUsers**: solo estructura HTML, sin titulares extraídos.\n- **KeepCoding Blog**: solo script de compatibilidad, sin contenido.\n- **Investing.com Tech**: error 403 (acceso bloqueado).\n\n**Diagnóstico**: el scraping devolvió metadata/HTML crudo en vez de contenido renderizado. Para un resumen real necesito el HTML post-render (JS ejecutado) o una API/RSS de cada fuente.\n\n¿Querés que sugiera fuentes con RSS feeds estables para evitar este problema en próximas ediciones?"
+}
