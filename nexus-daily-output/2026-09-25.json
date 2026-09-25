@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-25",
+  "resumen": "**NEXUS Daily — Resumen Ejecutivo**\n\nNo pude armar el resumen: el contenido que me pasaste son fragmentos de código HTML crudo (headers, metadatos, scripts de carga), no el texto de las notas en sí. No hay titulares ni cuerpo de noticias legible en ninguna de las seis fuentes.\n\nPara que pueda extraer los temas reales necesito:\n- El HTML renderizado completo (después de que cargue el JS), o\n- Los titulares copiados directamente, o\n- Un scraper que apunte a los tags de título/headline (h1, h2, article-title, etc.)\n\nComo dato extra: **investing.com devolvió error 403** (bloqueo de acceso), así que esa fuente quedó afuera igual.\n\n¿Querés que te arme instrucciones de scraping para las otras cinco fuentes, o preferís pegarme los titulares a mano?"
+}

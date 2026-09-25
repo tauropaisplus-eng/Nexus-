@@ -1,16 +1,14 @@
-# NEXUS Daily — 2026-09-24
+# NEXUS Daily — 2026-09-25
 
 **NEXUS Daily — Resumen Ejecutivo**
 
-No pude extraer titulares reales hoy: las fuentes devolvieron contenido crudo sin información utilizable.
+No pude armar el resumen: el contenido que me pasaste son fragmentos de código HTML crudo (headers, metadatos, scripts de carga), no el texto de las notas en sí. No hay titulares ni cuerpo de noticias legible en ninguna de las seis fuentes.
 
-- **Infobae Tecno**: solo código HTML de cabecera, sin notas visibles.
-- **La Nación Tecnología**: se detectó una nota sobre "errores comunes" (posiblemente tech/dispositivos), sin más detalle legible.
-- **Inteligencia Argentina**: error 524 (timeout del servidor).
-- **RedUsers**: solo estructura HTML, sin titulares extraídos.
-- **KeepCoding Blog**: solo script de compatibilidad, sin contenido.
-- **Investing.com Tech**: error 403 (acceso bloqueado).
+Para que pueda extraer los temas reales necesito:
+- El HTML renderizado completo (después de que cargue el JS), o
+- Los titulares copiados directamente, o
+- Un scraper que apunte a los tags de título/headline (h1, h2, article-title, etc.)
 
-**Diagnóstico**: el scraping devolvió metadata/HTML crudo en vez de contenido renderizado. Para un resumen real necesito el HTML post-render (JS ejecutado) o una API/RSS de cada fuente.
+Como dato extra: **investing.com devolvió error 403** (bloqueo de acceso), así que esa fuente quedó afuera igual.
 
-¿Querés que sugiera fuentes con RSS feeds estables para evitar este problema en próximas ediciones?
+¿Querés que te arme instrucciones de scraping para las otras cinco fuentes, o preferís pegarme los titulares a mano?
