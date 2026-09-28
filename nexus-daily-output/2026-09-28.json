@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-28",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nNo pude extraer titulares concretos: el contenido recibido de las fuentes es HTML crudo (headers, metadatos, scripts de carga) sin el cuerpo de las notas ni títulos visibles. Solo se rescata una referencia tangencial en La Nación a una nota sobre \"el escritor Thelyson Orelien\", sin contexto suficiente. Investing.com devolvió error 403 (acceso bloqueado).\n\nPara armar el resumen necesito el HTML renderizado, texto plano de los artículos, o los titulares ya extraídos de cada sitio. ¿Podés repastear el contenido con los títulos y bajadas visibles en cada portada?"
+}

@@ -1,11 +1,7 @@
-# NEXUS Daily — 2026-09-27
+# NEXUS Daily — 2026-09-28
 
-**NEXUS Daily - Resumen ejecutivo**
+**NEXUS Daily — Resumen ejecutivo**
 
-Che, tengo que avisarte: el contenido que me pasaste de estas fuentes son puros headers HTML crudos (metadatos, tags, links a CSS, favicons), no hay texto de artículos ni titulares reales para extraer. Investing.com directamente tiró error 403 (acceso bloqueado).
+No pude extraer titulares concretos: el contenido recibido de las fuentes es HTML crudo (headers, metadatos, scripts de carga) sin el cuerpo de las notas ni títulos visibles. Solo se rescata una referencia tangencial en La Nación a una nota sobre "el escritor Thelyson Orelien", sin contexto suficiente. Investing.com devolvió error 403 (acceso bloqueado).
 
-No puedo armarte un resumen genuino de noticias con esto porque no hay información periodística real en el material, solo la estructura técnica de las páginas.
-
-**Sugerencia:** si me pasás el HTML completo renderizado (o mejor, el texto plano de los titulares que aparecen en cada home), te armo el resumen ejecutivo posta. También podés copiarme directamente los títulos de las notas que veas en cada portal y los proceso al toque.
-
-¿Querés que lo intentemos de nuevo con contenido más completo?
+Para armar el resumen necesito el HTML renderizado, texto plano de los artículos, o los titulares ya extraídos de cada sitio. ¿Podés repastear el contenido con los títulos y bajadas visibles en cada portada?
