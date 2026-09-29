@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-09-29",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nNo pude extraer titulares reales de las fuentes: el contenido recibido es solo código HTML de cabecera (metadatos, scripts, links de estilo), sin el cuerpo de las noticias. Solo un dato rescatable: La Nación menciona algo sobre \"videojuegos gratis que se financian con...\" pero está cortado.\n\nPara armar el resumen necesito el HTML completo del body o, mejor, el texto ya extraído de cada nota (título + bajada). Si podés pegar ese contenido, te tiro el resumen en el toque.\n\n¿Querés que lo intente igual con lo que hay, aclarando que es información parcial/no confiable?"
+}

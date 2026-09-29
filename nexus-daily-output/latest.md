@@ -1,7 +1,9 @@
-# NEXUS Daily — 2026-09-28
+# NEXUS Daily — 2026-09-29
 
 **NEXUS Daily — Resumen ejecutivo**
 
-No pude extraer titulares concretos: el contenido recibido de las fuentes es HTML crudo (headers, metadatos, scripts de carga) sin el cuerpo de las notas ni títulos visibles. Solo se rescata una referencia tangencial en La Nación a una nota sobre "el escritor Thelyson Orelien", sin contexto suficiente. Investing.com devolvió error 403 (acceso bloqueado).
+No pude extraer titulares reales de las fuentes: el contenido recibido es solo código HTML de cabecera (metadatos, scripts, links de estilo), sin el cuerpo de las noticias. Solo un dato rescatable: La Nación menciona algo sobre "videojuegos gratis que se financian con..." pero está cortado.
 
-Para armar el resumen necesito el HTML renderizado, texto plano de los artículos, o los titulares ya extraídos de cada sitio. ¿Podés repastear el contenido con los títulos y bajadas visibles en cada portada?
+Para armar el resumen necesito el HTML completo del body o, mejor, el texto ya extraído de cada nota (título + bajada). Si podés pegar ese contenido, te tiro el resumen en el toque.
+
+¿Querés que lo intente igual con lo que hay, aclarando que es información parcial/no confiable?
