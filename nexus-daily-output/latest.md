@@ -1,9 +1,12 @@
-# NEXUS Daily — 2026-09-29
+# NEXUS Daily — 2026-09-30
 
 **NEXUS Daily — Resumen ejecutivo**
 
-No pude extraer titulares reales de las fuentes: el contenido recibido es solo código HTML de cabecera (metadatos, scripts, links de estilo), sin el cuerpo de las noticias. Solo un dato rescatable: La Nación menciona algo sobre "videojuegos gratis que se financian con..." pero está cortado.
+No pude armar el resumen: el contenido recibido de las fuentes es solo código HTML crudo (metadatos, scripts, tags `<head>`), sin titulares ni texto de notas reales extraíbles.
 
-Para armar el resumen necesito el HTML completo del body o, mejor, el texto ya extraído de cada nota (título + bajada). Si podés pegar ese contenido, te tiro el resumen en el toque.
+- Infobae, La Nación, Inteligencia Argentina, RedUsers y KeepCoding devolvieron únicamente boilerplate técnico (viewport, favicons, preloads).
+- Investing.com directamente bloqueó el acceso (error 403).
 
-¿Querés que lo intente igual con lo que hay, aclarando que es información parcial/no confiable?
+Para generar el resumen necesito el HTML renderizado completo o, mejor aún, el texto ya extraído de los titulares (por ejemplo scrapeando `<h1>`, `<h2>` o los tags `og:title`/`og:description` de cada artículo).
+
+¿Querés que te pase un método de scraping más específico para esas fuentes, o preferís pegarme directamente los titulares en texto plano?
