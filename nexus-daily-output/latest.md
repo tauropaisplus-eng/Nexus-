@@ -1,12 +1,16 @@
-# NEXUS Daily — 2026-09-30
+# NEXUS Daily — 2026-10-01
 
-**NEXUS Daily — Resumen ejecutivo**
+**NEXUS Daily – Resumen Ejecutivo**
 
-No pude armar el resumen: el contenido recibido de las fuentes es solo código HTML crudo (metadatos, scripts, tags `<head>`), sin titulares ni texto de notas reales extraíbles.
+Che, hoy el scraping vino flojo: la mayoría de las fuentes devolvieron puro código crudo (HTML, metadatos, scripts) sin headlines legibles.
 
-- Infobae, La Nación, Inteligencia Argentina, RedUsers y KeepCoding devolvieron únicamente boilerplate técnico (viewport, favicons, preloads).
-- Investing.com directamente bloqueó el acceso (error 403).
+- **RedUsers**: error 524 (timeout del servidor, no cargó nada).
+- **Investing.com ES**: bloqueado con error 403 (acceso denegado).
+- **Infobae Tecno**: solo metadata del head, sin titulares extraíbles.
+- **KeepCoding**: trajo puro script anti-IE, cero contenido editorial.
+- **La Nación Tecnología**: lo único rescatable es una imagen con alt "Sam Altman, director ejecutivo de...", lo que sugiere nota sobre OpenAI/Sam Altman en tapa.
+- **Inteligencia Argentina**: solo metadata OG, sin cuerpo de noticias.
 
-Para generar el resumen necesito el HTML renderizado completo o, mejor aún, el texto ya extraído de los titulares (por ejemplo scrapeando `<h1>`, `<h2>` o los tags `og:title`/`og:description` de cada artículo).
+**Conclusión**: no hay material suficiente para armar un resumen de titulares real. Recomiendo reintentar el scraping con selectores más profundos (body/article) o probar los RSS feeds de cada sitio en lugar del HTML renderizado, que viene con mucho JS y poco contenido estático.
 
-¿Querés que te pase un método de scraping más específico para esas fuentes, o preferís pegarme directamente los titulares en texto plano?
+¿Querés que busque los feeds RSS de estos medios para la próxima edición?
