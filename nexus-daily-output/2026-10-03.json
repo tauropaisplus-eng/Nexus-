@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-10-03",
+  "resumen": "**NEXUS Daily — Resumen ejecutivo**\n\nChe, el scraping de hoy vino bastante pobre: la mayoría de las fuentes (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) solo devolvieron metadata de head —scripts, favicons, preloads— sin texto de notas ni titulares reales. Investing.com directamente tiró error 403 (bloqueo de acceso).\n\nLo único rescatable con señal real es La Nación Tecnología, que tiene una nota sobre **cómo usar NotebookLM (la IA de Google) para estudiar y preparar contenido** — tendencia que viene fuerte: herramientas de IA aplicadas a educación y productividad personal.\n\n**Conclusión:** no hay material suficiente para armar un panorama sólido de titulares hoy. Recomiendo re-scrapear con el HTML completo del body (no solo el head) o usar las APIs/RSS de cada medio para la próxima edición. Si querés, puedo armar el resumen en cuanto tengas el contenido completo de las notas."
+}
