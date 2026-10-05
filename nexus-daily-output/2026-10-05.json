@@ -1,0 +1,4 @@
+{
+  "fecha": "2026-10-05",
+  "resumen": "**NEXUS Daily – Resumen Ejecutivo**\n\n⚠️ Che, no puedo armarte un resumen real con esto. Lo que me pasaste son solo los headers HTML de cada sitio (metadata, CSS, scripts de analytics), no el contenido editorial con los titulares reales.\n\nLo único rescatable:\n- **La Nación** parece tener una nota sobre cómo usar NotebookLM para estudiar (se ve en el título de una imagen preload).\n- **Investing.com** tira error 403 (acceso bloqueado).\n- El resto (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trae texto de artículos, solo boilerplate técnico.\n\n**Para la próxima**, pasame:\n- El HTML completo después del `<body>`, o\n- Los titulares ya extraídos en texto plano, o\n- Un scraper que filtre por tags `<h1>`, `<h2>`, `<article>`\n\nCon eso sí te tiro un resumen ejecutivo real en rioplatense, corto y al pie. ¿Querés que lo intentemos de nuevo con más contenido?"
+}
