@@ -1,17 +1,12 @@
-# NEXUS Daily — 2026-10-05
+# NEXUS Daily — 2026-10-06
 
-**NEXUS Daily – Resumen Ejecutivo**
+**NEXUS Daily — Resumen ejecutivo**
 
-⚠️ Che, no puedo armarte un resumen real con esto. Lo que me pasaste son solo los headers HTML de cada sitio (metadata, CSS, scripts de analytics), no el contenido editorial con los titulares reales.
+No pude extraer titulares concretos: el contenido crudo recibido son solo fragmentos de código HTML (metadatos, headers, scripts de carga), sin el cuerpo de las noticias.
 
 Lo único rescatable:
-- **La Nación** parece tener una nota sobre cómo usar NotebookLM para estudiar (se ve en el título de una imagen preload).
-- **Investing.com** tira error 403 (acceso bloqueado).
-- El resto (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) no trae texto de artículos, solo boilerplate técnico.
+- **La Nación** tiene una nota en portada sobre Elon Musk (Tesla/SpaceX/X/xAI), a juzgar por la imagen destacada.
+- **Investing.com** devolvió error 403 (acceso bloqueado).
+- Infobae, Inteligencia Argentina, RedUsers y KeepCoding no mostraron contenido legible, solo configuración de página.
 
-**Para la próxima**, pasame:
-- El HTML completo después del `<body>`, o
-- Los titulares ya extraídos en texto plano, o
-- Un scraper que filtre por tags `<h1>`, `<h2>`, `<article>`
-
-Con eso sí te tiro un resumen ejecutivo real en rioplatense, corto y al pie. ¿Querés que lo intentemos de nuevo con más contenido?
+Para armar el resumen real necesito el HTML completo (o texto ya parseado) de cada sección de noticias, no solo el `<head>`. Si me pasás el body con los titulares, te tiro el resumen ejecutivo como corresponde.
