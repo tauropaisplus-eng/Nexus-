@@ -1,12 +1,12 @@
-# NEXUS Daily — 2026-10-08
+# NEXUS Daily — 2026-10-09
 
 **NEXUS Daily — Resumen ejecutivo**
 
-Che, el scraping vino bastante pobre esta vez: la mayoría de las fuentes solo devolvieron metadata de HTML (head, scripts, favicons) sin texto de artículos real. Infobae, Inteligencia Argentina, RedUsers y KeepCoding no trajeron titulares legibles. Investing.com directamente tiró error 403 (bloqueo de acceso).
+Che, hoy no hay mucho para rascar: el contenido que llegó de las fuentes es puro código HTML crudo (metadatos, scripts, headers de página), sin texto de artículos ni titulares reales extraíbles.
 
 Lo único rescatable:
-- **La Nación Tecnología**: se detecta por la URL de imagen un artículo sobre **Mercado Pago** y una nueva función de "dinero blindado" (probablemente seguridad/protección de saldo).
+- **La Nación** parece tener algo vinculado a Trump en la tapa de tecnología (se ve solo por el nombre de una imagen).
+- **Investing.com** devolvió error 403 (bloqueo de acceso).
+- El resto (Infobae, Inteligencia Argentina, RedUsers, KeepCoding) solo trajeron el esqueleto de la página, sin notas.
 
-**Diagnóstico**: no hay material suficiente para armar un panorama real de la jornada tech. Recomiendo re-scrapear con extracción de `<h1>`, `<h2>` o el feed RSS de cada sitio en vez de HTML crudo, así evitamos traer solo el `<head>`.
-
-¿Querés que intente reconstruir el resumen apuntando directamente a las secciones de artículos o RSS de estos medios?
+No puedo armarte titulares confiables con esto — necesitaría el HTML renderizado o el texto plano de las notas, no el head crudo. Si me pasás el contenido del body o los titulares copiados directamente, te armo el resumen posta.
