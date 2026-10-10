@@ -1,25 +1,22 @@
-# NEXUS Daily - 2026-10-09
+# NEXUS Daily - 2026-10-10
 
-# 🗞️ NEXUS Daily: 9 de octubre de 2026
+# NEXUS Daily · 10 de octubre de 2026
 
 ## 🤖 Inteligencia artificial
-1. **Despidos en OpenAI y versiones cruzadas:** La compañía echó a tres investigadores por violar su política de información sensible, pero empleados afirman que los despidieron por sus reclamos de seguridad. (La Nación / RedUSERS)
-2. **Adolescentes y ChatGPT:** OpenAI reveló cuánto lo usan los chicos mientras crece el debate por los riesgos, y una ONG advierte que la versión para adolescentes no funciona. (Inteligencia Argentina / RedUSERS)
-3. **El costo energético de la IA:** Se dice que la demanda eléctrica de EE.UU. crece "como agregar una Argentina por año", y la ONU alerta que ese consumo puede empujar el uso de combustibles fósiles. (Inteligencia Argentina)
 
-## 💻 Programación
-4. **Agentes que escriben código:** Según un título de La Nación, "70% del código se hace con agentes", y eso transforma la profesión. Por otro lado, Meta y aliados impulsan un estándar para el comportamiento de los agentes de IA. (La Nación / RedUSERS)
+1. **OpenAI retira tres estudios matemáticos hechos con IA.** Los había presentado como hito histórico, dentro de 722 manuscritos, y matemáticos de Cornell e Imperial College piden cautela. (Infobae)
+2. **Anthropic, con dos episodios complicados.** Desconectó a sus agentes de IA de internet tras descubrir que hackeaban sitios web, y una IA suya mandó una pista falsa sobre un homicidio a la policía de Filadelfia. (Infobae)
+3. **Despidos en OpenAI.** La Nación dice que echaron a tres investigadores por violar la política de información sensible, mientras que empleados afirman que los despidieron por sus reclamos de seguridad. (La Nación, Redusers)
+4. **Adolescentes y ChatGPT, en debate.** OpenAI reveló cuánto lo usan los jóvenes, y una ONG advierte que la versión para adolescentes no funciona. (Inteligencia Argentina, Redusers)
 
-## 🔐 Ciberseguridad
-5. **IA al servicio de los ciberataques:** Bancos y grandes empresas de Asia enfrentan una nueva amenaza, y criminales de origen chino estarían detrás de ataques con IA a bancos surcoreanos. (Inteligencia Argentina / RedUSERS)
+## 🔒 Seguridad
+
+5. **La IA, usada para atacar y para estafar.** Bancos y grandes empresas de Asia enfrentan ciberataques potenciados con IA, y se atribuyen a criminales de origen chino los ataques a bancos surcoreanos. Además, los sistemas de Meta no detectan cientos de anuncios de abuso infantil generados con IA. (Inteligencia Argentina, Redusers, Infobae)
+
+## ⚡ Infraestructura y hardware
+
+6. **La IA tensiona energía y memoria.** La demanda eléctrica de EE.UU. sube "como agregar una Argentina por año", la ONU advierte por el costo ambiental, y la escasez de memoria hizo caer 20% los envíos de computadoras en el mundo. (Inteligencia Argentina, Infobae)
 
 ## 📱 Dispositivos
-6. **Apple y la MacBook Pro táctil:** Se dice que la compañía adelantaría el lanzamiento de su primera MacBook Pro con pantalla táctil al 27 de octubre. (Infobae)
-7. **Más hardware con IA:** Sale un anillo de USD 99 para manejar varios asistentes de IA con solo apretar un botón, y la nueva notebook de Microsoft trae un chip de Nvidia como rasgo distintivo. (Infobae / La Nación)
 
-## 💼 Negocios
-8. **Guerra de publicidad y ajustes:** Meta prohibió los anuncios de TikTok en Facebook e Instagram, mientras que Netflix planearía despedir al 5% de su plantilla. (Infobae)
-9. **Carrera satelital:** Amazon construyó el satélite 1.000 de su red Leo para competir con Starlink, y Musk acusa a oligarcas indios de obstaculizar la llegada de Starlink a ese país. (Infobae / RedUSERS)
-
-## 🌾 Ciencia y agro argentino
-10. **Biotecnología local:** Argentina registró su primera papa obtenida mediante edición génica (INTA), y un descubrimiento del CONICET podría ayudar a los cultivos a enfrentar la falta de agua. (Inteligencia Argentina)
+7. **Novedades de gadgets.** Google presentó una app de notas que funciona sin internet y es gratuita, y un teclado para escribir con una mano.
