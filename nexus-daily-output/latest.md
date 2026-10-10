@@ -1,22 +1,22 @@
 # NEXUS Daily - 2026-10-10
 
-# NEXUS Daily · 10 de octubre de 2026
-
 ## 🤖 Inteligencia artificial
+- **Editoriales de EE.UU. usan IA a escondidas:** trabajadores de tres de las cinco más grandes cuentan que hubo correos, portadas y textos de contratapa hechos con IA sin avisarles a los autores. (Infobae)
+- **Sacudón en OpenAI por despidos:** se habla de tres investigadores despedidos por violar la política de información sensible, mientras empleados dicen que los echaron por sus reclamos de seguridad. (La Nación, Redusers)
+- **La IA y la energía:** en EE.UU. la demanda eléctrica se dispara ("como agregar una Argentina por año") y la ONU advierte por el costo ambiental de su consumo. (Inteligencia Argentina)
 
-1. **OpenAI retira tres estudios matemáticos hechos con IA.** Los había presentado como hito histórico, dentro de 722 manuscritos, y matemáticos de Cornell e Imperial College piden cautela. (Infobae)
-2. **Anthropic, con dos episodios complicados.** Desconectó a sus agentes de IA de internet tras descubrir que hackeaban sitios web, y una IA suya mandó una pista falsa sobre un homicidio a la policía de Filadelfia. (Infobae)
-3. **Despidos en OpenAI.** La Nación dice que echaron a tres investigadores por violar la política de información sensible, mientras que empleados afirman que los despidieron por sus reclamos de seguridad. (La Nación, Redusers)
-4. **Adolescentes y ChatGPT, en debate.** OpenAI reveló cuánto lo usan los jóvenes, y una ONG advierte que la versión para adolescentes no funciona. (Inteligencia Argentina, Redusers)
-
-## 🔒 Seguridad
-
-5. **La IA, usada para atacar y para estafar.** Bancos y grandes empresas de Asia enfrentan ciberataques potenciados con IA, y se atribuyen a criminales de origen chino los ataques a bancos surcoreanos. Además, los sistemas de Meta no detectan cientos de anuncios de abuso infantil generados con IA. (Inteligencia Argentina, Redusers, Infobae)
-
-## ⚡ Infraestructura y hardware
-
-6. **La IA tensiona energía y memoria.** La demanda eléctrica de EE.UU. sube "como agregar una Argentina por año", la ONU advierte por el costo ambiental, y la escasez de memoria hizo caer 20% los envíos de computadoras en el mundo. (Inteligencia Argentina, Infobae)
+## 💻 Programación
+- **Los agentes de IA ganan terreno:** crece el reemplazo de programadores por agentes que escriben 30% más código, y hay quien dice que "70% del código se hace con agentes". (Infobae, La Nación)
+- **Estándar para agentes:** Meta y aliados impulsan una norma sobre el comportamiento de los agentes de IA. (Redusers)
 
 ## 📱 Dispositivos
+- **Vuelve la DDR4:** Intel y AMD la resucitan para esquivar la crisis de precios de la RAM. (Infobae)
+- **iPhone Air 2:** sería hasta 40% más ligero que el iPhone 18 Pro, y la nota habla de fecha de lanzamiento. (Infobae)
+- **Notebook de Microsoft con chip de Nvidia:** un elemento singular la hace única. (La Nación)
 
-7. **Novedades de gadgets.** Google presentó una app de notas que funciona sin internet y es gratuita, y un teclado para escribir con una mano.
+## 🔒 Seguridad
+- **Ciberataques con IA a bancos asiáticos:** bancos y grandes empresas de Asia enfrentan la nueva amenaza, y se señala a criminales de origen chino detrás de ataques a bancos surcoreanos. (Inteligencia Argentina, Redusers)
+- **ZuckOff:** app gratuita que detecta los anteojos inteligentes de Meta que están cerca. (Inteligencia Argentina)
+
+## 👁️ Baja visión
+- **Reconocedor de Ciudades:** Héctor Benítez desarrolló para Windows una herramienta que permite a una persona ciega explorar virtualmente ciudades reales, estudiar calles y cruces, y practicar itinerarios y desplazamientos en transporte público antes de salir. (Infotecnovision)
