@@ -1,22 +1,22 @@
-# NEXUS Daily - 2026-10-10
+# NEXUS Daily - 2026-10-11
 
 ## 🤖 Inteligencia artificial
-- **Editoriales de EE.UU. usan IA a escondidas:** trabajadores de tres de las cinco más grandes cuentan que hubo correos, portadas y textos de contratapa hechos con IA sin avisarles a los autores. (Infobae)
-- **Sacudón en OpenAI por despidos:** se habla de tres investigadores despedidos por violar la política de información sensible, mientras empleados dicen que los echaron por sus reclamos de seguridad. (La Nación, Redusers)
-- **La IA y la energía:** en EE.UU. la demanda eléctrica se dispara ("como agregar una Argentina por año") y la ONU advierte por el costo ambiental de su consumo. (Inteligencia Argentina)
+- **OpenAI y los despidos:** La Nación cuenta que despidió a tres investigadores por violar su política de información sensible, mientras que Redusers dice que empleados afirman que los echaron por sus reclamos de seguridad (La Nación / Redusers).
+- **Claude pone límites al maltrato:** prohíbe la "crueldad sostenida e innecesaria" de los usuarios hacia su IA (La Nación).
+- **Estándar para agentes de IA:** Meta y aliados impulsan una norma sobre cómo deben comportarse los agentes (Redusers).
+- **La IA y la energía:** la demanda eléctrica de Estados Unidos se dispara, "como agregar una Argentina por año", y la ONU advierte por el costo ambiental de su consumo (Inteligencia Argentina).
+
+## 🔐 Seguridad
+- **Ciberataques potenciados por IA:** bancos y grandes empresas de Asia enfrentan una nueva amenaza, y se señala a criminales de origen chino detrás de ataques a bancos surcoreanos (Inteligencia Argentina / Redusers).
+- **Teams contra los deepfakes:** una nueva actualización identificará videos, audios e imágenes falsos o alterados (Infobae).
 
 ## 💻 Programación
-- **Los agentes de IA ganan terreno:** crece el reemplazo de programadores por agentes que escriben 30% más código, y hay quien dice que "70% del código se hace con agentes". (Infobae, La Nación)
-- **Estándar para agentes:** Meta y aliados impulsan una norma sobre el comportamiento de los agentes de IA. (Redusers)
+- **"70% del código se hace con agentes":** la nota plantea cómo la IA transforma toda una profesión (La Nación).
 
 ## 📱 Dispositivos
-- **Vuelve la DDR4:** Intel y AMD la resucitan para esquivar la crisis de precios de la RAM. (Infobae)
-- **iPhone Air 2:** sería hasta 40% más ligero que el iPhone 18 Pro, y la nota habla de fecha de lanzamiento. (Infobae)
-- **Notebook de Microsoft con chip de Nvidia:** un elemento singular la hace única. (La Nación)
-
-## 🔒 Seguridad
-- **Ciberataques con IA a bancos asiáticos:** bancos y grandes empresas de Asia enfrentan la nueva amenaza, y se señala a criminales de origen chino detrás de ataques a bancos surcoreanos. (Inteligencia Argentina, Redusers)
-- **ZuckOff:** app gratuita que detecta los anteojos inteligentes de Meta que están cerca. (Inteligencia Argentina)
+- **Apple, entre ventas flojas y evento:** el iPhone 18 Pro se vende poco y Apple reduce un 15% su fabricación, mientras ya hay filtraciones del evento del 13 de octubre (Infobae).
+- **Atari 800XL de vuelta:** revive el legendario ordenador con HDMI, puertos USB y 25 juegos (Infobae).
+- **Googlebook OS:** Infobae explica qué es este sistema operativo basado en Android y qué computadoras son compatibles (Infobae).
 
 ## 👁️ Baja visión
-- **Reconocedor de Ciudades:** Héctor Benítez desarrolló para Windows una herramienta que permite a una persona ciega explorar virtualmente ciudades reales, estudiar calles y cruces, y practicar itinerarios y desplazamientos en transporte público antes de salir. (Infotecnovision)
+- **Reconocedor de Ciudades:** Héctor Benítez desarrolló para Windows una herramienta que permite a una persona ciega explorar virtualmente ciudades reales, estudiar calles y cruces, y preparar y practicar itinerarios, incluida la simulación de desplazamientos en transporte público (Infotecnovisión).
