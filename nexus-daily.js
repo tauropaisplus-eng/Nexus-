@@ -1,5 +1,6 @@
 const https = require('https');
 const fs = require('fs');
+const path = require('path');
 
 // Sitios de tecnologia: se leen los titulares del HTML
 const FUENTES = [
@@ -21,6 +22,8 @@ const FUENTES_RSS = [
 const DIAS_RSS = 14;
 
 const MODELO = 'claude-sonnet-5-5';
+
+const CARPETA = 'nexus-daily-output';
 
 // Descarga una pagina, siguiendo redirecciones y con User-Agent de navegador
 function fetchUrl(url, redirecciones = 0) {
@@ -150,6 +153,18 @@ function llamarClaude(prompt) {
   });
 }
 
+// Borra los .json viejos de la carpeta de salida (ya no se usan; quedan en el historial de Git)
+function borrarJsonViejos() {
+  if (!fs.existsSync(CARPETA)) return;
+  const archivos = fs.readdirSync(CARPETA).filter((f) => f.endsWith('.json'));
+  for (const f of archivos) {
+    fs.unlinkSync(path.join(CARPETA, f));
+  }
+  if (archivos.length > 0) {
+    console.log(`Limpieza: se borraron ${archivos.length} archivos .json viejos`);
+  }
+}
+
 async function principal() {
   if (!process.env.ANTHROPIC_API_KEY) {
     throw new Error('Falta el secreto ANTHROPIC_API_KEY');
@@ -202,17 +217,14 @@ ${crudo}${bloqueVision}`;
   // Si el modelo igual puso un titulo principal (# ...), se saca para no duplicarlo
   resumen = resumen.replace(/^\s*#\s+[^\n]*\n+/, '').trim();
 
-  if (!fs.existsSync('nexus-daily-output')) {
-    fs.mkdirSync('nexus-daily-output');
+  if (!fs.existsSync(CARPETA)) {
+    fs.mkdirSync(CARPETA);
   }
 
-  fs.writeFileSync(
-    `nexus-daily-output/${hoy}.json`,
-    JSON.stringify({ fecha: hoy, fuentes: fuentesConDatos, resumen }, null, 2)
-  );
+  borrarJsonViejos();
 
   fs.writeFileSync(
-    'nexus-daily-output/latest.md',
+    path.join(CARPETA, 'latest.md'),
     `# NEXUS Daily - ${hoy}\n\n${resumen}\n`
   );
 
