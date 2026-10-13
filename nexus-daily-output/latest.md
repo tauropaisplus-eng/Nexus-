@@ -1,24 +1,24 @@
-# NEXUS Daily - 2026-10-12
+# NEXUS Daily - 2026-10-13
 
 ## 🤖 Inteligencia artificial
-- **OpenAI despidió a tres investigadores:** la empresa dice que violaron su política de información sensible, mientras que empleados afirman que los echaron por sus reclamos de seguridad (La Nación / Redusers).
-- **Clonaron con IA la voz de Batman y Ant-Man en español:** el actor de doblaje denunció que se usó su voz sin autorización (Infobae).
-- **La IA y la luz:** en Estados Unidos, la demanda eléctrica se dispara por la IA y la comparan con "agregar una Argentina por año" (Inteligencia Argentina).
+- **Epic Games y los juegos hechos con IA:** se dice que apostaría por desarrollar videojuegos con IA, y que por eso habría retrasado un juego con personajes de Star Wars y Marvel. Un shooter de Disney sería su primer gran proyecto. (Infobae)
+- **Tensión en OpenAI:** la empresa despidió a tres investigadores por violar su política de información sensible, mientras que empleados afirman que los echaron por sus reclamos sobre seguridad. (La Nación / RedUsers)
+- **Estándar para agentes de IA:** Meta y aliados impulsan un estándar que regule el comportamiento de estos agentes. (RedUsers)
 
 ## 💻 Programación
-- **"70% del código se hace con agentes":** una nota de La Nación cuenta cómo la IA está transformando una profesión entera (La Nación).
+- **Los agentes ya escriben el código:** una nota plantea que "70% del código se hace con agentes" y que la IA está transformando toda la profesión. (La Nación)
 
-## 🔐 Ciberseguridad
-- **La IA potencia los ciberataques:** bancos y grandes empresas de Asia enfrentan una nueva amenaza (Inteligencia Argentina).
-- **Q-Day:** Robert Covington advierte que gobiernos y empresas no están bien preparados para la era poscuántica (La Nación).
+## ⚡ Chips y energía
+- **Huawei le pisa los talones a Nvidia:** ya concentra el 28% del mercado de chips para IA. (Inteligencia Argentina)
+- **La IA y la luz:** la demanda eléctrica de Estados Unidos se dispara por la IA, algo que describen como "agregar una Argentina por año". (Inteligencia Argentina)
+
+## 🔐 Ciberseguridad y software
+- **Ataques con IA a bancos surcoreanos:** criminales de origen chino estarían detrás. (RedUsers)
+- **Aviso para Windows 11:** Microsoft alertó que algunos equipos dejarán de recibir actualizaciones de seguridad en 2027. (Infobae)
 
 ## 📱 Apps y dispositivos
-- **WhatsApp prueba programar envíos:** permitiría mandar mensajes, fotos y videos en una fecha elegida (Infobae).
-- **ZuckOff:** una app gratuita detecta los anteojos inteligentes de Meta que tenés cerca (Inteligencia Argentina).
-
-## 🎮 Videojuegos
-- **GTA 6 pone más difícil escapar de la policía:** habrá que cambiar de ropa, auto y peinado para despistarla (Infobae).
-- **Nintendo marca la diferencia con Sony:** dice que no tiene intención de abandonar los juegos físicos (Infobae).
+- **WhatsApp con mensajes programados:** permitiría agendar envíos hasta dos semanas después. (Infobae)
+- **Nuevo hogar inteligente de Apple:** llega con HomeView, Apple TV 4K y HomePod mini 2. (Infobae)
 
 ## 👁️ Baja visión
-- **Reconocedor de Ciudades:** Héctor Benítez desarrolló para Windows una herramienta que permite a una persona ciega explorar virtualmente ciudades reales, estudiar calles y cruces, y preparar y practicar itinerarios antes de salir (Infotecnovision).
+- **Reconocedor de Ciudades:** Héctor Benítez desarrolló para Windows una herramienta que permite a una persona ciega explorar virtualmente ciudades reales, estudiar calles y cruces, y preparar y practicar itinerarios antes de salir. (Infotecnovision)
