@@ -1,26 +1,26 @@
-# NEXUS Daily - 2026-10-18
+# NEXUS Daily - 2026-10-19
 
 ## 🤖 Inteligencia artificial
-- **Un modelo de Claude resolvió en 30 minutos un misterio de la NSA de 25 años.** Se trata de un caso que llevaba un cuarto de siglo sin resolverse. (Infobae)
-- **Los agentes de IA prometían hacer compras y reservas, pero las empresas les cierran la puerta.** El plan de delegarles trámites cotidianos choca con las propias compañías. (Infobae)
-- **Arrestaron al empleado de OpenAI que puso un micrófono espía en la oficina.** Según La Nación, se preparaba para irse del país con su pareja y siguen apareciendo datos del caso. (La Nación, Redusers)
+- **Sam Altman confirmó un robot humanoide de OpenAI.** Según el titular, estaría creado por la empresa y funcionaría con ChatGPT. (Infobae)
+- **Anthropic creó un fondo de interés público.** Destinará el 5% de sus acciones para ayudar a la sociedad mientras crece Claude. (Infobae)
+- **Google vuelve a tocar su oferta de IA.** Cambió otra vez los nombres de las funciones de Gemini y actualizó las respuestas generadas con IA en Modo IA y AI Overviews. (Infobae / La Nación)
 
-## 💻 Programación
-- **Epic Games no quiere más código escrito a mano.** El titular marca una postura fuerte de la compañía sobre cómo se programa hoy. (Redusers)
+## ⚡ Infraestructura y chips
+- **Estados Unidos destina USD 4.400 millones a reabrir tres centrales nucleares para la IA.** En paralelo, se dice que la IA dispara la demanda eléctrica del país: "es como agregar una Argentina por año". (Infobae / Inteligencia Argentina)
+- **Huawei ya concentra el 28% del mercado de chips para IA.** China le disputa a Nvidia el control de ese segmento. (Inteligencia Argentina)
 
 ## 📱 Dispositivos
-- **Nvidia y Microsoft crearon un PC con IA que funciona sin conexión a internet.** Jensen Huang lo definió como "un trabajo hecho con amor". (Infobae)
-- **El iPhone Duo, el primer plegable de Apple, se agotó en minutos.** Los envíos ya se corren a 2027. (La Nación)
+- **El iPhone Duo, el primer plegable de Apple, se agotó en minutos.** Los envíos ya se estiran hasta 2027. (Infobae / La Nación)
+- **Xbox presenta el control Nano, muy compacto, para consolas y PC.** Llega a Argentina en noviembre. (La Nación)
 
-## 🏢 Negocios y energía
-- **Huawei ya concentra el 28% del mercado de chips para IA.** China le disputa a Nvidia el control de ese segmento. (Inteligencia Argentina)
-- **La IA dispara la demanda eléctrica de Estados Unidos.** La comparación que se hace es que "es como agregar una Argentina por año". (Inteligencia Argentina)
+## 💬 Apps y mensajería
+- **WhatsApp sigue sumando funciones.** Desarrolla un navegador propio para abrir links sin salir del chat en iPhone, y permitiría programar mensajes hasta dos semanas antes. (Infobae / Inteligencia Argentina)
 
 ## 🔐 Seguridad
-- **Circula una app falsa que suplanta a WhatsApp y amenaza con robar toda tu información.** Hay notas sobre cómo reconocerla y sobre una estafa que vacía la cuenta con tocar un botón. (Infobae, La Nación)
+- **Detuvieron al empleado de OpenAI que puso un micrófono espía en la oficina.** Surgen más datos: se preparaba para irse del país con su pareja. (La Nación / RedUsers)
 
-## 🔬 Ciencia
-- **Google reduce hasta 40 veces los errores que dificultan el desarrollo de computadoras cuánticas.** Es un avance sobre uno de los problemas que frenan a esa tecnología. (Infobae)
+## 💻 Programación
+- **Epic usa "vibe code" para su nuevo lanzador.** Es un ejemplo de programación asistida por IA en una empresa grande de videojuegos. (RedUsers)
 
 ## 👁️ Baja visión
-- **VICTORIA: un afinador de guitarra accesible que se puede escuchar.** Es una app web gratuita que su autor logró desarrollar con ayuda de la IA, y las pruebas de un grupo de colaboradores fueron esenciales. (Infotecnovision)
+- **VICTORIA, un afinador de guitarra accesible que se puede escuchar.** Es una aplicación web gratuita que su autor desarrolló con ayuda de la IA, y las pruebas de un grupo de colaboradores fueron clave. (Infotecnovision)
