@@ -1,25 +1,30 @@
-# NEXUS Daily - 2026-10-20
+# NEXUS Daily - 2026-10-21
 
 ## 🤖 Inteligencia artificial
-- **Microsoft admite que sus agentes de IA tienen riesgos:** reconoció que "los modelos más avanzados no son confiables", y lo dijo sobre sus propios agentes. (Infobae)
-- **Gemini reorganiza sus herramientas:** desde noviembre cambia lo que pasa con Gems, Skills y las tareas automáticas, y además algunas funciones tienen nombres nuevos. (Infobae)
 
-## 🔐 Seguridad
-- **Falla en Plex bajo ataque:** hackers la explotan para instalar mineros de criptomonedas en miles de servidores. (Infobae)
-- **Hackeo a OpenCode:** los atacantes hicieron compras de hasta USD 1.700 en cuentas de OpenAI, Anthropic y Google. (Infobae)
+- **Gemini llega a los autos:** Android Auto va a sumar inteligencia personalizada que usa datos del conductor y del celular, y los autos recordarán correos, mapas y más. (Infobae)
+- **Google y Amazon van contra el monopolio de Nvidia:** Lanzaron herramientas para que los programadores de IA dejen de depender de los chips de Nvidia. (Infobae)
+- **Huawei le pisa los talones a Nvidia:** Ya concentra el 28% del mercado de chips para IA en China. (Inteligencia Argentina)
+- **Regulación y polémicas:** Anthropic pidió al Congreso de EEUU una ley de IA que solo actúe si hay 50 muertes en juego, y un juez obligó a Meta a revelar qué ejecutivos aprobaron piratear libros para entrenar su IA. (Infobae)
 
-## 📱 Dispositivos
-- **El iPhone Duo, un éxito de ventas:** el primer smartphone plegable de Apple se agotó en minutos y los envíos ya se pasan a 2027. (La Nación)
-- **Apple tiene evento el 28 de octubre:** se especula con que podría llegar el MacBook Pro táctil. (Infobae)
-- **Xbox presenta el control Nano:** es un mando muy compacto para consolas y PC que llega a la Argentina en noviembre. (La Nación)
+## 🔐 Ciberseguridad
 
-## 💼 Negocios e infraestructura
-- **Amazon apuesta a la energía nuclear:** tendrá 12 reactores pequeños para alimentar sus centros de datos de IA. (Infobae)
-- **Huawei le pisa los talones a Nvidia:** ya concentra el 28% del mercado de chips para inteligencia artificial en China. (Inteligencia Argentina)
+- **La IA potencia los ataques:** Un pirata chino usó agentes de IA y US$5000 para meterse en decenas de sitios web, y bancos y grandes empresas de Asia enfrentan una nueva amenaza. (La Nación / Inteligencia Argentina)
+- **Estafas y filtraciones:** Circulan falsas invitaciones y reuniones de calendario para robar datos y dinero, y el banco más grande de India confirmó un ciberataque que expuso datos de casi 4.000 clientes. (Infobae)
 
-## 💬 Apps
-- **WhatsApp suma una función muy esperada:** permitirá programar mensajes hasta dos semanas antes. (Inteligencia Argentina)
+## 📱 Dispositivos y apps
+
+- **Apple, a la espera del 28 de octubre:** Prepara un anuncio y hay rumores de una MacBook Pro con pantalla táctil. (La Nación)
+- **WhatsApp, de punta a punta:** Incorporará la función de programar mensajes hasta dos semanas antes, y hay una lista de celulares que perderán la app el 31 de octubre de 2026. (Inteligencia Argentina / Infobae)
+- **Gama baja en riesgo:** La Nación analiza qué va a pasar con los smartphones de gama baja en 2027. (La Nación)
+
+## 💼 Negocios y nube
+
+- **Amazon en la OTAN:** Se convierte en el primer proveedor de nube de la OTAN para información restringida. (Infobae)
+- **Netflix, bien pero con miedo:** Superó las expectativas de ganancias, pero sus acciones cayeron por el temor a perder audiencia. (Infobae)
 
 ## 👁️ Baja visión
-- **Movilidad para personas ciegas:** se pregunta si .lumen marca una nueva generación de ayudas, con tecnología que ayude a interpretar el entorno al desplazarse por la ciudad. (Infotecnovision)
-- **Un afinador de guitarra que se escucha:** VICTORIA es una app web gratuita y accesible, creada con ayuda de la IA y probada por un grupo de colaboradores. (Infotecnovision)
+
+- **Nuevo boletín:** Estrenaron Radar Tecnovisión, con novedades tecnológicas y científicas de la primera quincena de octubre de 2026, con foco en innovación y accesibilidad. (Infotecnovisión)
+- **Movilidad para personas ciegas:** .lumen plantea si estamos ante una nueva generación de ayudas para moverse con autonomía por la ciudad. (Infotecnovisión)
+- **Afinador accesible:** VICTORIA es un afinador de guitarra que se puede escuchar, desarrollado como aplicación web gratuita con ayuda de la IA. (Infotecnovisión)
