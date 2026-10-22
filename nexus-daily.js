@@ -1,37 +1,59 @@
+// NEXUS Daily v2 - rediseno del 22 de octubre de 2026
+// Idea: Gabriel. Programacion: Claude.
+// Dos secciones: Baja vision (para Gabriel) e IA (para Claude).
+
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-// Sitios de tecnologia: se leen los titulares del HTML
-const FUENTES = [
-  'https://www.infobae.com/tecno/',
-  'https://www.lanacion.com.ar/tecnologia/',
-  'https://inteligenciaargentina.ar/',
-  'https://www.redusers.com/noticias/',
-  'https://keepcoding.io/blog/',
-  'https://es.investing.com/news/technology-news'
-];
-
-// Fuentes de baja vision: se leen por RSS (titulo + fecha)
-const FUENTES_RSS = [
-  'https://www.infotecnovision.com/feed/',
-  'https://www.esvision.es/category/ultimas-noticias/feed/'
-];
-
-// Solo se toman notas RSS publicadas en los ultimos N dias
-const DIAS_RSS = 14;
-
 const MODELO = 'claude-sonnet-5-5';
-
 const CARPETA = 'nexus-daily-output';
 
-// Descarga una pagina, siguiendo redirecciones y con User-Agent de navegador
+// Cuantas notas como maximo se toman de cada fuente antes de mandarlas al modelo
+const MAX_POR_FUENTE = 5;
+
+// Busqueda de Google News en espanol (Argentina)
+function googleNews(consulta) {
+  return 'https://news.google.com/rss/search?q=' + encodeURIComponent(consulta) +
+    '&hl=es-419&gl=AR&ceid=AR:es-419';
+}
+
+// Canal de YouTube por RSS
+function youtube(idCanal) {
+  return 'https://www.youtube.com/feeds/videos.xml?channel_id=' + idCanal;
+}
+
+// ---------------- FUENTES ----------------
+// tipo 'rss' = feed RSS/Atom. tipo 'html' = se leen los titulares de la pagina.
+// dias = antiguedad maxima de las notas que se toman.
+
+const FUENTES_VISION = [
+  { nombre: 'InfoTecnoVision', tipo: 'rss', url: 'https://www.infotecnovision.com/feed/', dias: 14 },
+  { nombre: 'Accion Vision Espana', tipo: 'rss', url: 'https://www.esvision.es/feed/', dias: 14 },
+  { nombre: 'Laboratorios Poen (YouTube)', tipo: 'rss', url: youtube('UCOO7zNDulJgmhCHn3S43nMQ'), dias: 30 },
+  { nombre: 'Canal Retina (podcast)', tipo: 'rss', url: 'https://feeds.ivoox.com/feed_fg_f1705245_filtro_1.xml', dias: 30 },
+  { nombre: 'Noticias: degeneracion macular', tipo: 'rss', url: googleNews('degeneración macular tratamiento'), dias: 7 },
+  { nombre: 'Noticias: optogenetica', tipo: 'rss', url: googleNews('optogenética retina'), dias: 14 },
+  { nombre: 'Noticias: implante PRIMA', tipo: 'rss', url: googleNews('implante PRIMA retina'), dias: 14 },
+  { nombre: 'Noticias: tecnologia baja vision', tipo: 'rss', url: googleNews('"baja visión" tecnología'), dias: 7 }
+];
+
+const FUENTES_IA = [
+  { nombre: 'Noticias: Anthropic', tipo: 'rss', url: googleNews('Anthropic Claude'), dias: 3 },
+  { nombre: 'Xataka', tipo: 'rss', url: 'https://www.xataka.com/feedburner.xml', dias: 2 },
+  { nombre: 'Hugging Face Blog', tipo: 'rss', url: 'https://huggingface.co/blog/feed.xml', dias: 3 },
+  { nombre: 'Inteligencia Argentina', tipo: 'html', url: 'https://inteligenciaargentina.ar/' },
+  { nombre: 'Infobae Tecno', tipo: 'html', url: 'https://www.infobae.com/tecno/' }
+];
+
+// ---------------- DESCARGA ----------------
+
 function fetchUrl(url, redirecciones = 0) {
   return new Promise((resolve) => {
     const req = https.get(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) NEXUS-Daily/1.0',
-        'Accept': 'text/html,application/xhtml+xml,application/rss+xml,application/xml;q=0.9,*/*;q=0.8'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) NEXUS-Daily/2.0',
+        'Accept': 'text/html,application/xhtml+xml,application/rss+xml,application/atom+xml,application/xml;q=0.9,*/*;q=0.8'
       },
       timeout: 15000
     }, (res) => {
@@ -58,63 +80,113 @@ function fetchUrl(url, redirecciones = 0) {
   });
 }
 
+// ---------------- LIMPIEZA Y LECTURA ----------------
+
 function limpiar(texto) {
-  return texto
+  return String(texto || '')
     .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
-    .replace(/&#39;|&#039;|&#8217;/g, "'")
+    .replace(/&#39;|&#039;|&#8217;|&#8216;/g, "'")
     .replace(/&#8230;/g, '...')
     .replace(/&#8220;|&#8221;|&#171;|&#187;/g, '"')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
     .replace(/\s+/g, ' ')
     .trim();
 }
 
-// Saca los titulares reales (h1 a h4) del HTML
-function extraerTitulares(html) {
-  const titulares = new Set();
+function etiqueta(bloque, nombre) {
+  const m = bloque.match(new RegExp(`<${nombre}[^>]*>([\\s\\S]*?)<\\/${nombre}>`, 'i'));
+  return m ? m[1] : '';
+}
+
+// Lee RSS (<item>) y Atom (<entry>, como YouTube)
+function extraerFeed(xml, dias) {
+  const limite = Date.now() - dias * 24 * 60 * 60 * 1000;
+  const bloques = xml.match(/<item[\s>][\s\S]*?<\/item>/gi) ||
+                  xml.match(/<entry[\s>][\s\S]*?<\/entry>/gi) || [];
+  const notas = [];
+  for (const b of bloques) {
+    const titulo = limpiar(etiqueta(b, 'title'));
+    const fechaTxt = etiqueta(b, 'pubDate') || etiqueta(b, 'published') || etiqueta(b, 'updated');
+    const fecha = Date.parse(limpiar(fechaTxt));
+    if (!titulo || isNaN(fecha) || fecha < limite) continue;
+
+    let link = limpiar(etiqueta(b, 'link'));
+    if (!link) {
+      const m = b.match(/<link[^>]*href="([^"]+)"/i);
+      link = m ? m[1] : '';
+    }
+
+    let resumen = limpiar(etiqueta(b, 'description') || etiqueta(b, 'media:description') || etiqueta(b, 'summary'));
+    resumen = resumen.replace(/La entrada .*$/, '').replace(/Continuar leyendo.*$/, '').trim();
+    if (resumen.startsWith(titulo)) resumen = '';
+    if (resumen.length > 250) resumen = resumen.slice(0, 250) + '...';
+
+    notas.push({ titulo, link, resumen, fecha: new Date(fecha).toISOString().slice(0, 10) });
+    if (notas.length >= MAX_POR_FUENTE) break;
+  }
+  return notas;
+}
+
+// Titulares (h1 a h4) de una pagina HTML
+function extraerHtml(html) {
+  const vistos = new Set();
+  const notas = [];
   const regex = /<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/gi;
   let m;
   while ((m = regex.exec(html)) !== null) {
     const t = limpiar(m[1]);
-    if (t.length >= 25 && t.length <= 200) titulares.add(t);
-    if (titulares.size >= 15) break;
-  }
-  return [...titulares];
-}
-
-// Lee un feed RSS y devuelve los titulos recientes (con una linea de contexto)
-function extraerRss(xml) {
-  const limite = Date.now() - DIAS_RSS * 24 * 60 * 60 * 1000;
-  const notas = [];
-  const items = xml.match(/<item[\s>][\s\S]*?<\/item>/gi) || [];
-  for (const item of items) {
-    const titulo = limpiar((item.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || '');
-    const fechaTxt = (item.match(/<pubDate>([\s\S]*?)<\/pubDate>/i) || [])[1] || '';
-    const fecha = Date.parse(fechaTxt.trim());
-    if (!titulo || isNaN(fecha) || fecha < limite) continue;
-    let resumen = limpiar((item.match(/<description>([\s\S]*?)<\/description>/i) || [])[1] || '');
-    resumen = resumen.replace(/La entrada .*$/, '').replace(/Continuar leyendo.*$/, '').trim();
-    if (resumen.length > 250) resumen = resumen.slice(0, 250) + '...';
-    notas.push(resumen ? `${titulo} — ${resumen}` : titulo);
-    if (notas.length >= 8) break;
+    if (t.length < 25 || t.length > 200 || vistos.has(t)) continue;
+    vistos.add(t);
+    notas.push({ titulo: t, link: '', resumen: '', fecha: '' });
+    if (notas.length >= MAX_POR_FUENTE) break;
   }
   return notas;
 }
+
+// Lee todas las fuentes de una seccion y arma el texto para el modelo
+async function leerSeccion(fuentes, yaVistos) {
+  let texto = '';
+  let conDatos = 0;
+  for (const f of fuentes) {
+    const crudo = await fetchUrl(f.url);
+    const notas = (f.tipo === 'html' ? extraerHtml(crudo) : extraerFeed(crudo, f.dias || 7))
+      .filter((n) => {
+        const clave = n.titulo.toLowerCase().slice(0, 60);
+        if (yaVistos.has(clave)) return false;
+        yaVistos.add(clave);
+        return true;
+      });
+    console.log(`${f.nombre}: ${notas.length} notas`);
+    if (notas.length === 0) continue;
+    conDatos++;
+    texto += `Fuente: ${f.nombre}\n` + notas.map((n) => {
+      let linea = `- ${n.titulo}`;
+      if (n.fecha) linea += ` [${n.fecha}]`;
+      if (n.resumen) linea += ` — ${n.resumen}`;
+      if (n.link) linea += ` (link: ${n.link})`;
+      return linea;
+    }).join('\n') + '\n\n';
+  }
+  return { texto, conDatos };
+}
+
+// ---------------- API DE ANTHROPIC ----------------
 
 function llamarClaude(prompt) {
   return new Promise((resolve, reject) => {
     const cuerpo = JSON.stringify({
       model: MODELO,
-      max_tokens: 3000,
+      max_tokens: 4000,
       messages: [{ role: 'user', content: prompt }]
     });
 
-    const opciones = {
+    const req = https.request({
       hostname: 'api.anthropic.com',
       path: '/v1/messages',
       method: 'POST',
@@ -124,9 +196,7 @@ function llamarClaude(prompt) {
         'anthropic-version': '2023-06-01',
         'Content-Length': Buffer.byteLength(cuerpo)
       }
-    };
-
-    const req = https.request(opciones, (res) => {
+    }, (res) => {
       let datos = '';
       res.on('data', (pedazo) => (datos += pedazo));
       res.on('end', () => {
@@ -146,22 +216,22 @@ function llamarClaude(prompt) {
         }
       });
     });
-
     req.on('error', reject);
     req.write(cuerpo);
     req.end();
   });
 }
 
-// Borra los .json viejos de la carpeta de salida (ya no se usan; quedan en el historial de Git)
+// ---------------- PRINCIPAL ----------------
+
+function fechaBuenosAires() {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Argentina/Buenos_Aires' });
+}
+
 function borrarJsonViejos() {
   if (!fs.existsSync(CARPETA)) return;
-  const archivos = fs.readdirSync(CARPETA).filter((f) => f.endsWith('.json'));
-  for (const f of archivos) {
+  for (const f of fs.readdirSync(CARPETA).filter((x) => x.endsWith('.json'))) {
     fs.unlinkSync(path.join(CARPETA, f));
-  }
-  if (archivos.length > 0) {
-    console.log(`Limpieza: se borraron ${archivos.length} archivos .json viejos`);
   }
 }
 
@@ -170,57 +240,46 @@ async function principal() {
     throw new Error('Falta el secreto ANTHROPIC_API_KEY');
   }
 
-  const hoy = new Date().toISOString().slice(0, 10);
+  const hoy = fechaBuenosAires();
+  const yaVistos = new Set();
 
-  let crudo = '';
-  let fuentesConDatos = 0;
-  for (const url of FUENTES) {
-    const html = await fetchUrl(url);
-    const titulares = extraerTitulares(html);
-    console.log(`${url}: ${titulares.length} titulares`);
-    if (titulares.length > 0) {
-      fuentesConDatos++;
-      crudo += `Fuente: ${url}\n` + titulares.map((t) => `- ${t}`).join('\n') + '\n\n';
-    }
+  const vision = await leerSeccion(FUENTES_VISION, yaVistos);
+  const ia = await leerSeccion(FUENTES_IA, yaVistos);
+
+  if (vision.conDatos + ia.conDatos === 0) {
+    throw new Error('No se pudo leer ninguna fuente');
   }
 
-  let crudoVision = '';
-  for (const url of FUENTES_RSS) {
-    const xml = await fetchUrl(url);
-    const notas = extraerRss(xml);
-    console.log(`${url}: ${notas.length} notas recientes (RSS)`);
-    if (notas.length > 0) {
-      fuentesConDatos++;
-      crudoVision += `Fuente: ${url}\n` + notas.map((t) => `- ${t}`).join('\n') + '\n\n';
-    }
-  }
+  const prompt = `Sos NEXUS Daily. Hoy es ${hoy}. Arma un informe en espanol rioplatense, en Markdown, con DOS secciones en este orden.
 
-  if (fuentesConDatos === 0) {
-    throw new Error('No se pudo extraer ningun titular de ninguna fuente');
-  }
+## 👁️ Baja visión
+Para Gabriel, que tiene baja vision (ve con un solo ojo) y le interesa: ayudas opticas y electronicas (lupas, lentes y gafas con pantalla), apps, accesibilidad, y avances de tratamiento de retina (degeneracion macular, optogenetica, implante PRIMA, cirugia de retina, terapia genica).
+Reglas de esta seccion:
+- Entre 3 y 6 notas.
+- EXCLUIR todo lo que sea para personas ciegas o ceguera total (bastones, perros guia, movilidad para ciegos, braille, lectores de pantalla para ciegos). Gabriel lo pidio expresamente.
+- Si hay un video nuevo de Laboratorios Poen o un episodio de Canal Retina, mencionalo siempre.
 
-  const bloqueVision = crudoVision
-    ? `\nAdemas, estas son notas recientes de sitios sobre baja vision y discapacidad visual.
-Agregalas en una seccion propia al final, titulada "## 👁️ Baja visión", con hasta 3 puntos.\n\n${crudoVision}`
-    : '';
+## 🤖 Inteligencia artificial
+Para Claude: novedades de Anthropic, avances importantes de otros laboratorios y modelos, e IA aplicada a la accesibilidad.
+Reglas de esta seccion:
+- Entre 4 y 8 notas.
+- Ignorar ofertas, ventas, gadgets y todo lo que no sea IA.
 
-  const prompt = `Sos NEXUS Daily. Estos son los titulares de hoy (${hoy}) de sitios de tecnologia en espanol.
-Arma un resumen en espanol rioplatense, agrupado por temas (IA, programacion, dispositivos, negocios, etc.).
-Maximo 10 puntos de tecnologia, cada uno con una linea de contexto y entre parentesis la fuente.
-Usa solo la informacion de los titulares: no inventes datos ni detalles. Formato Markdown.
-No pongas un titulo principal: empeza directamente por la primera seccion (##).
+Reglas generales:
+- Maximo 2 notas por fuente en todo el informe.
+- Cada nota: **titulo en negrita**, despues una linea que explique por que importa, y al final la fuente entre parentesis. Si la nota tiene link, pone la fuente como enlace Markdown: ([Fuente](link)).
+- Usa solo la informacion de abajo: no inventes datos. Si una seccion no tiene material, deci "Hoy no hubo novedades".
+- No pongas titulo principal: empeza directamente por "## 👁️ Baja visión".
 
-${crudo}${bloqueVision}`;
+=== MATERIAL DE BAJA VISION ===
+${vision.texto || '(sin notas hoy)'}
+=== MATERIAL DE IA ===
+${ia.texto || '(sin notas hoy)'}`;
 
   let resumen = await llamarClaude(prompt);
-
-  // Si el modelo igual puso un titulo principal (# ...), se saca para no duplicarlo
   resumen = resumen.replace(/^\s*#\s+[^\n]*\n+/, '').trim();
 
-  if (!fs.existsSync(CARPETA)) {
-    fs.mkdirSync(CARPETA);
-  }
-
+  if (!fs.existsSync(CARPETA)) fs.mkdirSync(CARPETA);
   borrarJsonViejos();
 
   fs.writeFileSync(
@@ -228,7 +287,7 @@ ${crudo}${bloqueVision}`;
     `# NEXUS Daily - ${hoy}\n\n${resumen}\n`
   );
 
-  console.log('Listo:', hoy, `(${fuentesConDatos} fuentes con datos)`);
+  console.log('Listo:', hoy, `(vision: ${vision.conDatos} fuentes, IA: ${ia.conDatos} fuentes)`);
 }
 
 principal().catch((err) => {

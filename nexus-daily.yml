@@ -1,0 +1,29 @@
+name: NEXUS Daily Update
+permissions:
+  contents: write
+
+on:
+  schedule:
+    # 13:00 UTC = 10:00 de Buenos Aires
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+jobs:
+  nexus-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run NEXUS aggregation
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          node nexus-daily.js
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "NEXUS Bot"
+          git add nexus-daily-output/
+          git commit -m "Actualización diaria NEXUS" || echo "Nada para commitear"
+          git push
