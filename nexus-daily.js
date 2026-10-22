@@ -121,6 +121,9 @@ function extraerFeed(xml, dias) {
       const m = b.match(/<link[^>]*href="([^"]+)"/i);
       link = m ? m[1] : '';
     }
+    // Los links de Google News son redirecciones larguisimas: no se usan (la fuente ya va en el titulo)
+    if (link.includes('news.google.com')) link = '';
+    if (link.length > 200) link = '';
 
     let resumen = limpiar(etiqueta(b, 'description') || etiqueta(b, 'media:description') || etiqueta(b, 'summary'));
     resumen = resumen.replace(/La entrada .*$/, '').replace(/Continuar leyendo.*$/, '').trim();
@@ -182,7 +185,7 @@ function llamarClaude(prompt) {
   return new Promise((resolve, reject) => {
     const cuerpo = JSON.stringify({
       model: MODELO,
-      max_tokens: 4000,
+      max_tokens: 16000,
       messages: [{ role: 'user', content: prompt }]
     });
 
@@ -205,10 +208,11 @@ function llamarClaude(prompt) {
           if (res.statusCode !== 200 || json.error) {
             return reject(new Error(`API ${res.statusCode}: ${json.error ? json.error.message : datos}`));
           }
+          let texto = (json.content || []).map((b) => b.text || '').join('');
           if (json.stop_reason === 'max_tokens') {
             console.warn('Aviso: la respuesta se corto por el limite de max_tokens');
+            texto += '\n\n_(Aviso: el informe de hoy salio incompleto, se corto la respuesta.)_';
           }
-          const texto = (json.content || []).map((b) => b.text || '').join('');
           if (!texto.trim()) return reject(new Error('La API devolvio una respuesta vacia'));
           resolve(texto);
         } catch (e) {
