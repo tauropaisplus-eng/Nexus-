@@ -2,19 +2,43 @@
 
 ## 👁️ Baja visión
 
-**Video nuevo de Laboratorios Poen: Actualización en Glaucoma, terapéutica farmacológica**
-Es el Encuentro 1 del ciclo "Del paper a la experiencia de mundo real", a cargo de la Dra. Ana Sanseau, con la Dra. Madeleine Saint Martin. Lo organizaron la Sociedad Oftalmológica de Neuquén y una asociación más. Sirve para estar al día con el tratamiento de una enfermedad que daña el nervio óptico, aunque no sea de retina. ([Laboratorios Poen](https://www.youtube.com/watch?v=FbW1x5BspGM))
+**Video nuevo de Laboratorios Poen: actualización en glaucoma, terapéutica farmacológica**
+Es el primer encuentro del ciclo "Del paper a la experiencia de mundo real", a cargo de la Dra. Ana Sanseau, con la participación de la Dra. Madeleine Saint Martin. Lo organizaron la Sociedad Oftalmológica de Neuquén y una asociación más. Sirve para ver cómo se aplican en la práctica los tratamientos con fármacos. ([Laboratorios Poen (YouTube)](https://www.youtube.com/watch?v=FbW1x5BspGM))
 
-**Un paciente con Stargardt vuelve a leer una palabra gracias al implante retinal PRIMA**
-Importa porque es un resultado concreto con el implante PRIMA de Science Corp. en una enfermedad macular hereditaria, justo en el área de retina que te interesa. ([WWWhat's new](https://news.google.com/rss/articles/CBMinAFBVV95cUxPNlhqM0Q3SExKMVhtQjgteU1ZMldVeUQ2OTN2VEZfWE10cnlucGhHSmRKQkhYTkRlWHJaUGoyZXJPT00tTUhBcUNPTk5qQ1VaVjVIeDJBRFN3X3ZDLUVvbDZoNlp3T2s1cFVkNnRNdkpuMzVPcG1fa00xX2tIalR2UXFlaUxGbmZfQWR1QURGalN6Yl9wOHBGOVZVU0I?oc=5))
+**Un paciente con Stargardt volvió a leer una palabra gracias al implante retinal PRIMA**
+Science Corp probó el chip PRIMA en una enfermedad rara de la retina que afecta la visión central. Que alguien lea una palabra es un avance concreto, aunque todavía es un resultado muy puntual. (WWWhat's new)
 
-**La optogenética devuelve parte de la visión a pacientes con retinosis pigmentaria, en un ensayo publicado en NEJM**
-Es una terapia que apunta a restaurar parcialmente la visión en una degeneración retiniana, y el ensayo salió en una de las revistas médicas más importantes. ([La Razón](https://news.google.com/rss/articles/CBMimwJBVV95cUxNMG9oSURtWGhSc0I0bEtNSFotNktHRzVNbWxrR3pZTHp6X2sxUUd3MXJWSEhMakRZRVpLcmxFdDJNb2tObC1rWE82MjFQQXFwWDIzRjF2SVJtRjBFelNvQTBldElmdWlDMlc4TE1Cdk5aZWs1UUlrRmJaQ0c4aTZ2S0FnempLT1I2ak03MWtlVXoyd2NKSFF3aEdPZ3lzTzJzMmpCMkx6ZVJEMnVFVF92ZkFPSm53TEItWVQ4bV96Zk8tOXUzUkdiLUtFa0dmd3p5bEtLWmNZV0Y5aWF1Qk44Mk1VQXlQTEVhWVZESHZRZkFaem53cmY0R19iWmNaSTFIa09mbF9ia1lCV2FVRkt0b3Y3TkdMczVYY0dR?oc=5))
+**La optogenética recuperó parcialmente la visión en pacientes con retinosis pigmentaria**
+Según el ensayo publicado en NEJM, la terapia devolvió respuestas visuales parciales. Se da justo cuando la optogenética ganó el Nobel de Medicina 2026, y es una de las líneas de terapia retinal que más se siguen. (La Razón)
 
-**Lentes con IA y realidad aumentada transforman la vida de personas con ceguera y baja visión**
-Habla de gafas con pantalla e inteligencia artificial, que es una de las ayudas electrónicas que seguís. La nota también nombra a personas ciegas, pero incluye la baja visión. ([La Voz del Interior](https://news.google.com/rss/articles/CBMixwFBVV95cUxQZmp2bkRRUEhHLTlnOXZreFJqems4bjdPZFRFTGZpTTBzTDBZNHhCWXhpM3RJRXIxdThUUE1JYzBEaHJZR181aFQyb014dXhlcTRUbnNNUFNRaGRQUDFPM3JxVFRqSkZzbmt5dm1iNUVINzZXbkpXX3dFeHpqTGpOcHNIazRtamc4X2VzVk95MlpmVjVOT2x4TVlnZ1c0TVRzRFMtNFkzdEhmTmQxM29CQmRrdmZUYmltWFdCRVI1dHF3WFFKREhZ?oc=5))
+**EyePoint reduce a la mitad su plantilla tras el fracaso de su candidato para la degeneración macular**
+Es un recordatorio de que no todos los tratamientos en desarrollo llegan a buen puerto. Conviene tomar con cautela los anuncios antes de que haya resultados sólidos. (ConSalud)
 
-**Bausch+Lomb prepara para 2027 los ensayos clínicos de un tratamiento oral contra la DMAE seca**
-Importa porque la DMAE seca tiene pocas opciones, y acá se anuncia un tratamiento oral que entraría a ensayos clínicos el año que viene. ([Modaengafas.com](https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcURNeVhaaFB1TTRWVzJfWVFValExaWR6Z2cwcU52bzFQMzZzUktOVGZvdUpNbjJWNVJfNXc0VWhZYWNVNFhVeHNueC0teEJpNXZqbk8xbERLUlVrV0RxaEZwNmoyZHg2S0tHelZFOTFITzZkd3FCWmpZYXFFdXE4ZEgxOGVRR3NVTl9TU0pxdjJsLXZhOG5XaHFpdjg1M3JkX1I0ejRrVUluYjVEMzNVUW9uYnRURjRG?oc=5))
+**Un nuevo tratamiento para la maculopatía llegó a Río Cuarto**
+Es una novedad local en Argentina sobre maculopatía. El material que tenemos solo trae el titular, así que no hay detalles de qué tratamiento es. (puntal.com.ar)
 
-**EyePoint reduce a la mitad su plantilla tras el fracaso de su candidato para la degeneración
+**Campaña #TienesQueVernos: cómo ves y qué reacciones te encuentras por tener baja visión**
+Carlos, Pelayo e Inma cuentan en un video que la baja visión abarca muchas formas de ver y las dificultades y reacciones que enfrentan a diario. Es útil para visibilizar esa diversidad. ([Acción Visión España](https://www.esvision.es/como-ves-y-que-reacciones-te-encuentras-por-tener-baja-vision/))
+
+## 🤖 Inteligencia artificial
+
+**Claude Duet: cómo funciona el agente de IA de Anthropic, quiénes pueden probarlo y qué tareas hace sin que se las pidan**
+Es la novedad grande de Anthropic del día: un agente que puede encarar tareas sin que se lo pidan explícitamente. Hay que ver quiénes pueden probarlo por ahora. (La Nación)
+
+**Anthropic presenta Claude Duet para competir con Meta y OpenAI**
+Muestra que la pelea de los grandes laboratorios se está moviendo hacia los agentes de IA. (Quartz)
+
+**A OpenAI y Anthropic les han adelantado por la derecha en los agentes de IA: por WhatsApp**
+Según el título, otros jugadores ya están ganando terreno en agentes a través de WhatsApp. Es un contrapunto al lanzamiento de Anthropic. (Xataka)
+
+**Una firma de inversión aseguró que la IA de Anthropic diseñó un antídoto contra el veneno de escorpión, pero no es así**
+Es un caso de desinformación sobre lo que puede hacer la IA, y recuerda que hay que chequear estas afirmaciones. (Infobae Tecno)
+
+**OlmoEarth v1.3: embeddings de última generación para todo el planeta**
+Es un modelo abierto de Allen AI para representar datos de observación de la Tierra. ([Hugging Face Blog](https://huggingface.co/blog/allenai/olmoearth-v1-3))
+
+**Cómo especializar el vocabulario de los SLM puede reducir el costo de inferencia hasta un 77% en aplicaciones reales**
+Si el resultado se sostiene, abarata el uso de modelos de lenguaje chicos en producción. ([Hugging Face Blog](https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization))
+
+**La IA dispara la demanda eléctrica de Estados Unidos: "Es como agregar una Argentina por año"**
+Muestra el costo energético de la expansión de la IA, que puede condicionar su crecimiento. (Inteligencia Argentina)
