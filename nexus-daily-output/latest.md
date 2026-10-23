@@ -1,44 +1,44 @@
-# NEXUS Daily - 2026-10-22
+# NEXUS Daily - 2026-10-23
 
 ## 👁️ Baja visión
 
-**Video nuevo de Laboratorios Poen: actualización en glaucoma, terapéutica farmacológica**
-Es el primer encuentro del ciclo "Del paper a la experiencia de mundo real", a cargo de la Dra. Ana Sanseau, con la participación de la Dra. Madeleine Saint Martin. Lo organizaron la Sociedad Oftalmológica de Neuquén y una asociación más. Sirve para ver cómo se aplican en la práctica los tratamientos con fármacos. ([Laboratorios Poen (YouTube)](https://www.youtube.com/watch?v=FbW1x5BspGM))
+**Glaucoma: video nuevo de Laboratorios Poen sobre terapéutica farmacológica**
+Es el encuentro 1 del ciclo "Actualización en Glaucoma", del paper a la experiencia de mundo real, a cargo de la Dra. Ana Sanseau con la Dra. Madeleine Saint Martin. Sirve para seguir lo último en tratamientos oculares. ([Laboratorios Poen en YouTube](https://www.youtube.com/watch?v=FbW1x5BspGM))
 
-**Un paciente con Stargardt volvió a leer una palabra gracias al implante retinal PRIMA**
-Science Corp probó el chip PRIMA en una enfermedad rara de la retina que afecta la visión central. Que alguien lea una palabra es un avance concreto, aunque todavía es un resultado muy puntual. (WWWhat's new)
+**Science Corp: un paciente con Stargardt vuelve a leer una palabra gracias al implante PRIMA**
+Stargardt es una enfermedad macular, así que este avance del implante retinal PRIMA toca de lleno tu área de interés. Varios medios lo publicaron entre el 13 y el 19 de octubre. (WWWhat's new)
 
-**La optogenética recuperó parcialmente la visión en pacientes con retinosis pigmentaria**
-Según el ensayo publicado en NEJM, la terapia devolvió respuestas visuales parciales. Se da justo cuando la optogenética ganó el Nobel de Medicina 2026, y es una de las líneas de terapia retinal que más se siguen. (La Razón)
+**La optogenética logra restaurar parcialmente la visión en pacientes con retinosis pigmentaria**
+Es otro avance de terapia retinal que devuelve respuestas visuales parciales, y por eso importa para seguir cómo evoluciona este campo. (Redacción médica)
 
 **EyePoint reduce a la mitad su plantilla tras el fracaso de su candidato para la degeneración macular**
-Es un recordatorio de que no todos los tratamientos en desarrollo llegan a buen puerto. Conviene tomar con cautela los anuncios antes de que haya resultados sólidos. (ConSalud)
+Es un recordatorio de lo difícil que es llevar nuevos tratamientos de DMAE hasta la meta: un candidato fracasó y la empresa recortó personal. (ConSalud)
 
-**Un nuevo tratamiento para la maculopatía llegó a Río Cuarto**
-Es una novedad local en Argentina sobre maculopatía. El material que tenemos solo trae el titular, así que no hay detalles de qué tratamiento es. (puntal.com.ar)
-
-**Campaña #TienesQueVernos: cómo ves y qué reacciones te encuentras por tener baja visión**
-Carlos, Pelayo e Inma cuentan en un video que la baja visión abarca muchas formas de ver y las dificultades y reacciones que enfrentan a diario. Es útil para visibilizar esa diversidad. ([Acción Visión España](https://www.esvision.es/como-ves-y-que-reacciones-te-encuentras-por-tener-baja-vision/))
+**Bausch+Lomb prepara para 2027 los ensayos clínicos de un tratamiento oral contra la DMAE seca**
+Es una línea de investigación a seguir: un tratamiento oral para la forma seca de la degeneración macular, que entraría en ensayos clínicos en 2027. (Modaengafas.com)
 
 ## 🤖 Inteligencia artificial
 
-**Claude Duet: cómo funciona el agente de IA de Anthropic, quiénes pueden probarlo y qué tareas hace sin que se las pidan**
-Es la novedad grande de Anthropic del día: un agente que puede encarar tareas sin que se lo pidan explícitamente. Hay que ver quiénes pueden probarlo por ahora. (La Nación)
+**Anthropic lanza Claude Duet, su asistente de IA para competir con Meta Muse y OpenAI Dots**
+Es la novedad grande de Anthropic: según la prensa, es un agente que sigue trabajando con tus aplicaciones aunque cierres el ordenador o apagues el teléfono, y hace tareas sin que se las pidan. Se suma a la pelea de los asistentes. ([WIRED], La Nación)
 
-**Anthropic presenta Claude Duet para competir con Meta y OpenAI**
-Muestra que la pelea de los grandes laboratorios se está moviendo hacia los agentes de IA. (Quartz)
+**Anthropic ofrece hasta USD 345.000 al año por un escritor humano para sus ejecutivos**
+Llama la atención porque la oferta llega semanas después de que la empresa redujera a la mitad la contratación de técnicos junior por su propia IA. (Infobae Tecno)
 
-**A OpenAI y Anthropic les han adelantado por la derecha en los agentes de IA: por WhatsApp**
-Según el título, otros jugadores ya están ganando terreno en agentes a través de WhatsApp. Es un contrapunto al lanzamiento de Anthropic. (Xataka)
+**Sam Altman: "No encuentro una palabra lo bastante dramática para describir el problema que se nos viene encima"**
+Altman suma incertidumbre a los responsables de seguridad, que todavía están con la resaca de la amenaza de ataques a sistemas basados en PHP. ([Xataka](https://www.xataka.com/robotica-e-ia/sam-altman-no-encuentro-palabra-bastante-dramatica-para-describir-problema-que-se-nos-viene-encima))
 
-**Una firma de inversión aseguró que la IA de Anthropic diseñó un antídoto contra el veneno de escorpión, pero no es así**
-Es un caso de desinformación sobre lo que puede hacer la IA, y recuerda que hay que chequear estas afirmaciones. (Infobae Tecno)
+**Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox**
+Microsoft muestra cómo convertir la evaluación de bases de datos en recompensas de aprendizaje por refuerzo para el post-entrenamiento de agentes. ([Hugging Face Blog](https://huggingface.co/blog/microsoft/thinkingbox-training))
 
-**OlmoEarth v1.3: embeddings de última generación para todo el planeta**
-Es un modelo abierto de Allen AI para representar datos de observación de la Tierra. ([Hugging Face Blog](https://huggingface.co/blog/allenai/olmoearth-v1-3))
-
-**Cómo especializar el vocabulario de los SLM puede reducir el costo de inferencia hasta un 77% en aplicaciones reales**
-Si el resultado se sostiene, abarata el uso de modelos de lenguaje chicos en producción. ([Hugging Face Blog](https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization))
+**NVIDIA Kumo Relational supera al machine learning supervisado en datos relacionales, sin entrenamiento**
+Es relevante porque, según el título, rinde mejor que los modelos supervisados sin necesidad de entrenar. ([Hugging Face Blog](https://huggingface.co/blog/nvidia/kumo-relational))
 
 **La IA dispara la demanda eléctrica de Estados Unidos: "Es como agregar una Argentina por año"**
-Muestra el costo energético de la expansión de la IA, que puede condicionar su crecimiento. (Inteligencia Argentina)
+Muestra el costo energético de la expansión de la IA, que ya se nota en la demanda eléctrica de EE.UU. (Inteligencia Argentina)
+
+**Más de 30 grandes empresas despidieron personal este año mientras redirigen su inversión a la IA**
+Es una señal del impacto laboral del giro corporativo hacia la IA. (Infobae Tecno)
+
+**VICTORIA: un afinador de guitarra que se puede escuchar**
+Es un ejemplo de IA aplicada a la accesibilidad: el autor usó inteligencia artificial para convertir en una app web gratuita una idea de años, y las pruebas de un grupo de colaboradores fueron clave. ([InfoTecnoVision](https://www.infotecnovision.com/victoria-un-afinador-de-guitarra-que-se-puede-escuchar/))
