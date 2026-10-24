@@ -1,44 +1,42 @@
-# NEXUS Daily - 2026-10-23
+# NEXUS Daily - 2026-10-24
 
 ## 👁️ Baja visión
 
-**Glaucoma: video nuevo de Laboratorios Poen sobre terapéutica farmacológica**
-Es el encuentro 1 del ciclo "Actualización en Glaucoma", del paper a la experiencia de mundo real, a cargo de la Dra. Ana Sanseau con la Dra. Madeleine Saint Martin. Sirve para seguir lo último en tratamientos oculares. ([Laboratorios Poen en YouTube](https://www.youtube.com/watch?v=FbW1x5BspGM))
+**Video nuevo de Laboratorios Poen: Actualización en Glaucoma, terapéutica farmacológica**
+Es el primer encuentro del ciclo "Del paper a la experiencia de mundo real", a cargo de la Dra. Ana Sanseau, con la participación de la Dra. Madeleine Saint Martin. Sirve para ponerse al día con los tratamientos farmacológicos del glaucoma desde la práctica clínica. ([Laboratorios Poen](https://www.youtube.com/watch?v=FbW1x5BspGM))
 
-**Science Corp: un paciente con Stargardt vuelve a leer una palabra gracias al implante PRIMA**
-Stargardt es una enfermedad macular, así que este avance del implante retinal PRIMA toca de lleno tu área de interés. Varios medios lo publicaron entre el 13 y el 19 de octubre. (WWWhat's new)
+**La optogenética abre la puerta a terapias para mejorar la visión en atrofia geográfica avanzada**
+La atrofia geográfica es la forma avanzada de la DMAE seca. Que la optogenética aparezca como una vía posible para mejorar la visión en esa etapa es una de las líneas de investigación más prometedoras para quienes conviven con una pérdida central de visión. (Asociación Mácula Retina)
 
-**La optogenética logra restaurar parcialmente la visión en pacientes con retinosis pigmentaria**
-Es otro avance de terapia retinal que devuelve respuestas visuales parciales, y por eso importa para seguir cómo evoluciona este campo. (Redacción médica)
-
-**EyePoint reduce a la mitad su plantilla tras el fracaso de su candidato para la degeneración macular**
-Es un recordatorio de lo difícil que es llevar nuevos tratamientos de DMAE hasta la meta: un candidato fracasó y la empresa recortó personal. (ConSalud)
+**Science Corp: un paciente con Stargardt vuelve a leer una palabra gracias al implante retinal PRIMA**
+Es un avance concreto en implantes de retina: un paciente con enfermedad de Stargardt recuperó parte de la visión lectora con PRIMA. Todavía es un caso puntual, pero muestra hacia dónde va esta tecnología. (WWWhat's new)
 
 **Bausch+Lomb prepara para 2027 los ensayos clínicos de un tratamiento oral contra la DMAE seca**
-Es una línea de investigación a seguir: un tratamiento oral para la forma seca de la degeneración macular, que entraría en ensayos clínicos en 2027. (Modaengafas.com)
+Hoy la DMAE seca tiene muy pocas opciones de tratamiento. Una pastilla en camino a ensayos clínicos, aunque recién en 2027, sería una alternativa menos invasiva que las inyecciones o los implantes. (Modaengafas.com)
+
+**EyePoint reduce a la mitad su plantilla tras el fracaso de su candidato para la degeneración macular**
+Es un recordatorio de que no todos los tratamientos llegan a buen puerto. Un candidato fallido para la DMAE y un recorte fuerte de personal muestran lo difícil que es el desarrollo en esta área. (ConSalud)
+
+**Estrenamos RADÁR TECNOVISIÓN: primer número de nuestro boletín de innovación y accesibilidad**
+InfoTecnoVision lanzó un boletín que resume las novedades tecnológicas y científicas de la primera quincena de octubre de 2026, con foco en accesibilidad. Puede servirte como resumen para enterarte de ayudas y herramientas nuevas. ([InfoTecnoVision](https://www.infotecnovision.com/estrenamos-radar-tecnovision-primer-numero-de-nuestro-boletin-de-innovacion-y-accesibilidad/))
+
+Hoy no hubo episodios nuevos de Canal Retina.
 
 ## 🤖 Inteligencia artificial
 
-**Anthropic lanza Claude Duet, su asistente de IA para competir con Meta Muse y OpenAI Dots**
-Es la novedad grande de Anthropic: según la prensa, es un agente que sigue trabajando con tus aplicaciones aunque cierres el ordenador o apagues el teléfono, y hace tareas sin que se las pidan. Se suma a la pelea de los asistentes. ([WIRED], La Nación)
+**La IA ya no espera a que le escribas: Anthropic presenta Claude Duet, un agente que revisa tu correo, tu agenda y tus facturas**
+Es una novedad importante de Anthropic: un asistente proactivo que trabaja por su cuenta, sin que le pidas cada tarea. Marca un cambio de los chatbots que responden a los agentes que actúan solos. (Gizmodo en Español)
 
-**Anthropic ofrece hasta USD 345.000 al año por un escritor humano para sus ejecutivos**
-Llama la atención porque la oferta llega semanas después de que la empresa redujera a la mitad la contratación de técnicos junior por su propia IA. (Infobae Tecno)
+**Reino Unido creará un laboratorio de bioseguridad con IA financiado con OpenAI y Anthropic**
+El Gobierno británico lo presenta como la primera organización del mundo dedicada por completo a usar IA contra amenazas biológicas. Importa porque dos laboratorios competidores cofinancian un proyecto de seguridad. (Infobae Tecno)
 
-**Sam Altman: "No encuentro una palabra lo bastante dramática para describir el problema que se nos viene encima"**
-Altman suma incertidumbre a los responsables de seguridad, que todavía están con la resaca de la amenaza de ataques a sistemas basados en PHP. ([Xataka](https://www.xataka.com/robotica-e-ia/sam-altman-no-encuentro-palabra-bastante-dramatica-para-describir-problema-que-se-nos-viene-encima))
+**Ensemble forecasting with IBM Granite time-series models**
+IBM Research publicó una técnica de pronóstico por ensamble con sus modelos Granite de series temporales. Muestra que los modelos especializados en series de tiempo siguen avanzando. ([Hugging Face Blog](https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1))
 
-**Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox**
-Microsoft muestra cómo convertir la evaluación de bases de datos en recompensas de aprendizaje por refuerzo para el post-entrenamiento de agentes. ([Hugging Face Blog](https://huggingface.co/blog/microsoft/thinkingbox-training))
-
-**NVIDIA Kumo Relational supera al machine learning supervisado en datos relacionales, sin entrenamiento**
-Es relevante porque, según el título, rinde mejor que los modelos supervisados sin necesidad de entrenar. ([Hugging Face Blog](https://huggingface.co/blog/nvidia/kumo-relational))
+**NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required**
+Según el título, NVIDIA presenta un modelo que supera al aprendizaje supervisado clásico en datos relacionales sin necesidad de entrenamiento. Si se confirma, simplifica mucho el trabajo con bases de datos empresariales. ([Hugging Face Blog](https://huggingface.co/blog/nvidia/kumo-relational))
 
 **La IA dispara la demanda eléctrica de Estados Unidos: "Es como agregar una Argentina por año"**
-Muestra el costo energético de la expansión de la IA, que ya se nota en la demanda eléctrica de EE.UU. (Inteligencia Argentina)
+Muestra el costo energético del boom de la IA: la demanda eléctrica que genera equivale al consumo de un país entero por año. Esto presiona la infraestructura y la discusión sobre energía. (Inteligencia Argentina)
 
-**Más de 30 grandes empresas despidieron personal este año mientras redirigen su inversión a la IA**
-Es una señal del impacto laboral del giro corporativo hacia la IA. (Infobae Tecno)
-
-**VICTORIA: un afinador de guitarra que se puede escuchar**
-Es un ejemplo de IA aplicada a la accesibilidad: el autor usó inteligencia artificial para convertir en una app web gratuita una idea de años, y las pruebas de un grupo de colaboradores fueron clave. ([InfoTecnoVision](https://www.infotecnovision.com/victoria-un-afinador-de-guitarra-que-se-puede-escuchar/))
+En accesibilidad con IA, hoy no hubo novedades.
