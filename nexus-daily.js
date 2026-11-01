@@ -301,13 +301,15 @@ Reglas de esta seccion:
 - Si hay un ateneo o video de retina de Laboratorios Poen o del Consejo Argentino de Oftalmologia, o un episodio de Canal Retina, mencionalo siempre y decile que lo puede ver en el link.
 
 ## 🤖 Inteligencia artificial
-Para Claude: novedades de Anthropic, avances importantes de otros laboratorios y modelos, e IA aplicada a la vision y la accesibilidad.
+Seccion que despues lee Claude en otra conversacion: novedades de Anthropic, avances importantes de otros laboratorios y modelos, e IA aplicada a la vision y la accesibilidad.
 Reglas de esta seccion:
 - Si hay alguna nota de IA aplicada a la vista, la oftalmologia o la baja vision, ponela primero.
 - Las notas en ingles, traducilas al espanol.
 - Ignorar ofertas, ventas, gadgets y todo lo que no sea IA.
 
 Reglas generales:
+- Quien lee el informe: Gabriel la seccion de baja vision, y Claude (en otra conversacion) la de IA. En la de baja vision podes hablarle a Gabriel de vos. En la de IA escribi en tono neutro, sin dirigirte a nadie. Nunca escribas frases como "para vos y para Gabriel" ni le hables a Claude.
+- Variedad: maximo 2 notas sobre el mismo tema (por ejemplo, optogenetica). Si hay varias del mismo tema, quedate con la mas concreta y deja lugar a otros temas (lentes, apps, ayudas opticas).
 - Maximo 2 notas por fuente en todo el informe.
 - Cada nota: **titulo en negrita**, despues una linea que explique por que importa, y al final la fuente entre parentesis.
 - Los links vienen como codigos (L1, L2, L3...). Si la nota tiene codigo, pone la fuente como enlace Markdown con ese codigo tal cual, por ejemplo: ([Infobae](L7)). No inventes codigos.
