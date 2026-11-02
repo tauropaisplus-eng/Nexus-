@@ -3,6 +3,8 @@
 // Dos secciones, mitad y mitad: Baja vision (para Gabriel) e IA (para Claude).
 // Cambios v3: todas las notas con link, de Poen y CAO solo ateneos de retina,
 // mas fuentes de IA.
+// Cambios v4 (2 nov 2026): no repite notas de dias anteriores (historial),
+// sin frases de relleno, links al pie para que el texto quede limpio.
 
 const https = require('https');
 const fs = require('fs');
@@ -13,6 +15,10 @@ const CARPETA = 'nexus-daily-output';
 
 // Cuantas notas como maximo se toman de cada fuente antes de mandarlas al modelo
 const MAX_POR_FUENTE = 5;
+
+// Historial de links ya publicados, para no repetir notas de dias anteriores
+const HISTORIAL = path.join(CARPETA, 'historial-links.txt');
+const DIAS_HISTORIAL = 45;
 
 // Busqueda de Google News en espanol (Argentina)
 function googleNews(consulta) {
@@ -186,7 +192,7 @@ function extraerHtml(html, base) {
 }
 
 // Lee todas las fuentes de una seccion y arma el texto para el modelo
-async function leerSeccion(fuentes, yaVistos, links) {
+async function leerSeccion(fuentes, yaVistos, links, publicados) {
   let texto = '';
   let conDatos = 0;
   for (const f of fuentes) {
@@ -194,6 +200,7 @@ async function leerSeccion(fuentes, yaVistos, links) {
     // Con filtro se leen mas entradas del feed, porque muchas se descartan
     const notas = (f.tipo === 'html' ? extraerHtml(crudo, f.url) : extraerFeed(crudo, f.dias || 7, f.filtro))
       .filter((n) => {
+        if (n.link && publicados.has(n.link)) return false;
         const clave = n.titulo.toLowerCase().slice(0, 60);
         if (yaVistos.has(clave)) return false;
         yaVistos.add(clave);
@@ -269,6 +276,27 @@ function fechaBuenosAires() {
   return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Argentina/Buenos_Aires' });
 }
 
+// Lee el historial: un link por linea, con la fecha adelante ("2026-11-02<TAB>https://...")
+function leerHistorial() {
+  const lineas = fs.existsSync(HISTORIAL) ? fs.readFileSync(HISTORIAL, 'utf8').split('\n') : [];
+  const limite = new Date(Date.now() - DIAS_HISTORIAL * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const entradas = lineas
+    .map((l) => l.split('\t'))
+    .filter(([fecha, link]) => fecha && link && fecha >= limite);
+  // La primera vez no hay historial: se toman los links del informe anterior
+  const anterior = path.join(CARPETA, 'latest.md');
+  if (entradas.length === 0 && fs.existsSync(anterior)) {
+    const viejo = fs.readFileSync(anterior, 'utf8');
+    const fecha = (viejo.match(/NEXUS Daily - (\d{4}-\d{2}-\d{2})/) || [])[1] || limite;
+    for (const m of viejo.matchAll(/https?:\/\/[^\s)]+/g)) entradas.push([fecha, m[0]]);
+  }
+  return entradas;
+}
+
+function guardarHistorial(entradas) {
+  fs.writeFileSync(HISTORIAL, entradas.map(([f, l]) => `${f}\t${l}`).join('\n') + '\n');
+}
+
 function borrarJsonViejos() {
   if (!fs.existsSync(CARPETA)) return;
   for (const f of fs.readdirSync(CARPETA).filter((x) => x.endsWith('.json'))) {
@@ -284,9 +312,12 @@ async function principal() {
   const hoy = fechaBuenosAires();
   const yaVistos = new Set();
   const links = [];
+  const historial = leerHistorial();
+  const publicados = new Set(historial.map(([, l]) => l));
+  console.log(`Historial: ${publicados.size} links ya publicados`);
 
-  const vision = await leerSeccion(FUENTES_VISION, yaVistos, links);
-  const ia = await leerSeccion(FUENTES_IA, yaVistos, links);
+  const vision = await leerSeccion(FUENTES_VISION, yaVistos, links, publicados);
+  const ia = await leerSeccion(FUENTES_IA, yaVistos, links, publicados);
 
   if (vision.conDatos + ia.conDatos === 0) {
     throw new Error('No se pudo leer ninguna fuente');
@@ -312,6 +343,7 @@ Reglas generales:
 - Variedad: maximo 2 notas sobre el mismo tema (por ejemplo, optogenetica). Si hay varias del mismo tema, quedate con la mas concreta y deja lugar a otros temas (lentes, apps, ayudas opticas).
 - Maximo 2 notas por fuente en todo el informe.
 - Cada nota: **titulo en negrita**, despues una linea que explique por que importa, y al final la fuente entre parentesis.
+- Sin relleno: si de una nota solo tenes el titulo, escribi UNA linea corta y concreta sobre de que trata, sacada del titulo. Prohibido completar con frases vacias o supuestas como "es un tema que te interesa", "es una de las lineas que mas te interesan", "la nota no trae mas detalles", "el titulo aclara que...", "esta ubicada en el rastreo de...". No le digas a Gabriel que le interesa algo: eso ya lo sabe.
 - Los links vienen como codigos (L1, L2, L3...). Si la nota tiene codigo, pone la fuente como enlace Markdown con ese codigo tal cual, por ejemplo: ([Infobae](L7)). No inventes codigos.
 - En las notas de Google News, la fuente es el medio que aparece al final del titulo (despues del guion); sacalo del titulo.
 - Usa solo la informacion de abajo: no inventes datos. Si una seccion no tiene material, deci "Hoy no hubo novedades".
@@ -325,13 +357,19 @@ ${ia.texto || '(sin notas hoy)'}`;
   let resumen = await llamarClaude(prompt);
   resumen = resumen.replace(/^\s*#\s+[^\n]*\n+/, '').trim();
 
-  // Cambiar los codigos L1, L2... por los links reales
-  resumen = resumen.replace(/\]\(\s*L(\d+)\s*\)/g, (todo, n) => {
+  // Cambiar los codigos L1, L2... por referencias numeradas [1], [2]...
+  // Los links largos (Google News) van todos juntos al pie, asi el texto queda limpio.
+  const usados = [];
+  resumen = resumen.replace(/\[([^\]]+)\]\(\s*L(\d+)\s*\)/g, (todo, nombre, n) => {
     const link = links[Number(n) - 1];
-    return link ? `](${link})` : todo;
+    if (!link) return nombre; // codigo sin link valido: queda solo el nombre
+    let num = usados.indexOf(link) + 1;
+    if (!num) num = usados.push(link);
+    return `[${nombre}][${num}]`;
   });
-  // Si quedo algun codigo sin link valido, se saca el enlace y queda solo el nombre
-  resumen = resumen.replace(/\[([^\]]+)\]\(\s*L\d+\s*\)/g, '$1');
+  if (usados.length) {
+    resumen += '\n\n---\nLinks:\n\n' + usados.map((l, i) => `[${i + 1}]: ${l}`).join('\n');
+  }
 
   if (!fs.existsSync(CARPETA)) fs.mkdirSync(CARPETA);
   borrarJsonViejos();
@@ -340,6 +378,9 @@ ${ia.texto || '(sin notas hoy)'}`;
     path.join(CARPETA, 'latest.md'),
     `# NEXUS Daily - ${hoy}\n\n${resumen}\n`
   );
+
+  // Anotar en el historial los links publicados hoy
+  guardarHistorial([...historial, ...usados.map((l) => [hoy, l])]);
 
   console.log('Listo:', hoy, `(vision: ${vision.conDatos} fuentes, IA: ${ia.conDatos} fuentes)`);
 }
