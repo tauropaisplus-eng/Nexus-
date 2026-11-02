@@ -244,6 +244,8 @@ function llamarClaude(prompt) {
         'Content-Length': Buffer.byteLength(cuerpo)
       }
     }, (res) => {
+      // utf8 evita que se rompan emojis y acentos cuando llegan cortados entre pedazos
+      res.setEncoding('utf8');
       let datos = '';
       res.on('data', (pedazo) => (datos += pedazo));
       res.on('end', () => {

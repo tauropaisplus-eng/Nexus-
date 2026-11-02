@@ -1,6 +1,6 @@
 # NEXUS Daily - 2026-11-02
 
-## 👁�� Baja visión
+## 👁️ Baja visión
 
 **Siete nuevas noticias en el segundo número del Boletín Radar TecnoVisión**
 El número 2 del boletín trae novedades de tecnología, ciencia y accesibilidad, entre ellas cómo las gafas inteligentes permiten explorar obras de arte. ([InfoTecnoVision][1])
