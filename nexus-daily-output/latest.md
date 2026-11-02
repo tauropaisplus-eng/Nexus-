@@ -1,45 +1,45 @@
-# NEXUS Daily - 2026-11-01
+# NEXUS Daily - 2026-11-02
 
 ## 👁️ Baja visión
 
-**30 Minutos de Videos de Retina: 57.ª edición**
-Gabriel, este es el ciclo de videos de retina del Consejo Argentino de Oftalmología. La edición del martes 27 de octubre, de 19:30 a 20 h, tuvo a los Dres. Damián Bianco, Juan Pablo Torres y Fernando García, y la podés ver en el link.
+**Video de retina del Consejo Argentino de Oftalmología: 57° edición de "30 Minutos de Videos de Retina"**
+El ciclo tuvo su 57° encuentro el martes 27 de octubre, de 19:30 a 20 hs, con los Dres. Damián Bianco, Juan Pablo Torres y Fernando García. Es material de retina de especialistas argentinos y lo podés ver en el link.
 ([Consejo Argentino de Oftalmología (YouTube)](https://www.youtube.com/watch?v=EIksheKVXbE))
 
 **La optogenética abre la puerta a terapias para mejorar la visión en atrofia geográfica avanzada**
-Es un avance sobre la atrofia geográfica avanzada, una forma de degeneración macular, y apunta a mejorar la visión con terapias.
+Es una de las líneas de tratamiento de retina que más te interesan. Apunta a mejorar la visión en una etapa avanzada de la enfermedad.
 ([Asociación Mácula Retina](https://news.google.com/rss/articles/CBMivgFBVV95cUxPaUJEclZZZm5VMFJhMEZwWHJQLW1HTmlxRFBaNU5xc3BqUEF4MGhfby14U19KVE1wZHJjMWc0VkZIZWNYZWNvMTFBc2VISmhZdjFyLUdhdHVXcDJITzNDZ1Y0WmNQT2JUM0FoQnRLeVdreVF3QTBuOGdnNTRsdnhrN2VENE5mN01XS2gzTl9lNzk2bkFwX1B0RXdidm9wa05aMjhsUXB5bVplS05zeW1HQkc1czM0ZGszRXdvclFR?oc=5))
 
 **El Nobel de Medicina reconoce a los pioneros de la optogenética**
-El premio a los pioneros de esta técnica refuerza una línea de investigación que hoy se explora en tratamientos de retina.
+El premio le da un respaldo muy fuerte a la técnica en la que se apoyan estas terapias de retina en investigación.
 ([Asociación Mácula Retina](https://news.google.com/rss/articles/CBMikwFBVV95cUxPOW5rV2FITkJ5dW5IVVNVYmxMeDVtcmlLcUJlNWdkbWd0TlNlcVpaZlhJam52Q1R1UXdHWTVpa2xKWlV1VE4xazV0UmxfSUNxUnNLZlRONlc4dGpxZ0xtSXUxZGxXTnpmaWxYLVNLMWtWeTdFOXFnSTg2a2RtMG1DTU93QUltZUk0T3RKWmo5YkFVTUE?oc=5))
 
-**¿Sabías qué? La terapia génica optogenética está devolviendo parcialmente la vista a personas con ceguera avanzada**
-Muestra que la terapia génica optogenética ya logra recuperar parte de la visión en casos avanzados, algo que interesa a quien sigue los tratamientos de retina.
-([Fundación Instituto De Ingeniería](https://news.google.com/rss/articles/CBMizAFBVV95cUxPTzZXVzhkOEFKWkI1NUpBek9pYlRCZmFQdE8tRVJNNkNka2RnZ2JabTI1TW55ZDZIbFZYRWZLQ2ZwdV92VTFzdWFKbEttbzMxcy1seEdaUmY4MmJRbkgtSGZNZ25QWVl5VkRUY3dUX3JVeWVGWTdiUWl5V1ltdjZiNTlFdXNndUptS0xjdFd4eFNBd0hBYndkN2gxRTk0ZG9rV2VTZWVfRGt5QTA1enNGNm5GSVFxSWFGUmgzeTZWQllqcld4bU9GU2RqcDg?oc=5))
+**¿Cómo cambia lo que ve una persona según la causa de su baja visión?**
+Muestra con una simulación cómo se ve con distintas patologías. Sirve para entender que la baja visión tiene muchas formas y que cada una trae dificultades distintas.
+([Acción Visión España](https://www.esvision.es/como-cambia-lo-que-ve-una-persona-segun-la-causa-de-su-baja-vision/))
 
-**Siete nuevas noticias en el segundo número del Boletín Radar TecnoVisión**
-Este número trae novedades de tecnología, ciencia y accesibilidad, entre ellas cómo las gafas inteligentes permiten explorar obras de arte. Sirve para seguir de cerca las ayudas electrónicas.
-([InfoTecnoVision](https://www.infotecnovision.com/siete-nuevas-noticias-en-nuestro-segundo-numero-del-boletin-radar-tecnovision/))
+**6 formas de reducir la fatiga visual digital**
+Si pasás muchas horas frente a TV, celular o compu, estos hábitos ayudan a evitar o minimizar el cansancio visual.
+([Acción Visión España](https://www.esvision.es/6-formas-de-reducir-la-fatiga-visual-digital/))
 
 ## 🤖 Inteligencia artificial
 
-**Dos estudiantes de Hanói usan inteligencia artificial para apoyar el aprendizaje de personas con discapacidad visual**
-Es un ejemplo de IA aplicada a la accesibilidad visual, en este caso en la educación.
-([Vietnam.vn](https://news.google.com/rss/articles/CBMilwFBVV95cUxQT1hTdEhXVEdYQU96VmFGZ3V3S1FXNmpJWWNjZkJwQmV4NmxyaXpaNFFwdTJPVEtFd1hMX3NtQU54d3JvTmlRX2plQnNyaUhjNGh4aFlMbUMwODdLc0xKM2YyRTg1ellCbk1JaDUtRkxVQnptdERHMGtjSkJYSE9XdWRWNktaV1RLd3JFTTNWeU0yY2dFa1ZB?oc=5))
+**Mobilio: la app de Harvard que guía a ciegos sin Google Maps**
+Es una novedad de accesibilidad visual, ubicada en el rastreo de IA y accesibilidad. Propone orientar a personas ciegas sin depender de Google Maps.
+([El Ecosistema Startup](https://news.google.com/rss/articles/CBMilAFBVV95cUxOSFZGRzBaODRxc1cwbnhUakk0cF9iU2JhYVB3S2R2VFhhVEdrUVd2UVpVd2QyYXNReExOaUhjbUpqVDYtUXN5Z0NnY0tIRldpRXVfVGdNYjhHWlJzS3BYUC1xZzZlbmtiNDVfWVowcm9qQUVQY256RzRobGF3RHJ2SlU1RS1FVFN1a0pfdUVJckNOS2Vm?oc=5))
 
-**Anthropic sorprende con la compra de una startup de un solo empleado que usa Claude para desarrollar medicamentos**
-Muestra a Anthropic moviéndose hacia el desarrollo de medicamentos con Claude, un terreno nuevo para la empresa.
-([Forbes Argentina](https://news.google.com/rss/articles/CBMi1AFBVV95cUxPbTJSWGsxQnRaZXVFVndzd3RGUUZSRXk1MC1vYU53SjJSbWlNNGtuTGd0ell4YzRKaXBZUDJPYWRMUlhZdTVJMXcyMVQ4SmNBMVlfWEVXaWFmRDh0VXhQS0F3Y2pQR2hZXzVLT3NqRkRva1RZUTRDaWRQWXB6dEVCRE83Q0VMcEVFeTJidjR2eHA3VV8ySUpaXzcxNm9nVHJnRmFyMXVNa1JKNEhENm9Md0NTZmo4RmRWZVYybVBzQlJpa21VZGNfWTFDMWZqRlNpcndredIB2gFBVV95cUxOSE1OQVNOSWt2ZG5CWmJzQmJ6WlRfYWFOSkN6a203WDM2M1NvaElteWROcGRfVzA1UnU5M2dUOEdReG1aZnJSMmczdUNhcVpqODZSTTJxOTc1SnZBLVhIT2JSUHRrekxSbnVqNER2NHNMem1SazBkcDJnZGt0LTF0QkwzOTlVV0lvVFNZdVNxVVhvblBRTEFxVUpVOW03UHZlLU40TDFMRFpnRkJFUkRWeGV2eXV1UTR6TWFTalBzZEdjTTVsMFY4eUVueXNWRGJtZGhIZ3RmZFQ5Zw?oc=5))
+**Anthropic le ordenó a Claude no recrear videojuegos de otras empresas y ya hay desarrolladores bloqueados**
+Es un límite concreto en el comportamiento de Claude que ya afecta a desarrolladores. Muestra cómo Anthropic maneja los riesgos de propiedad intelectual en herramientas de generación de código.
+([Infobae](https://news.google.com/rss/articles/CBMi4AFBVV95cUxNR3hXdWZkM2V6blRubXdsci1BMkU1SlJsdTd5R1FlVnVNbDJUdldSZFVjUF9tLTBSdEZrWHlhcXRmZWVWWlF6MzZ2VjREVXgzLVM0X0hiY2xWVktHOHZzYVp4ZXozRWtZRmZqXzJoalVkTHhHMVNjb3REbFFpcG1aQXZ5M0lKWmlmTUJLU3N0Q2RKcXVSaXlmNFd4Wlk2S0lYUkdVS0dJQmVuaUVYRXhzOHlNVVk0encwalE4YjdrUFRla3g3ekc2aVlBN3YxWjM0Vm0xZFpEWnRRb3V4UUd2RNIB-wFBVV95cUxQaFJ2Wk5NcDdENDZIdXlLMEswa0Jpd051UFpieTJuSk15UzB6U3kzNUtkNV9MRVBJeHZBY3BwSFRjdDF5LXhHYUpPeDVQMU9PMmpRX1lZTGNoWlJtYk9uRUN2dUZRZkpEb0RjN01EQWRrQzVLNk14YVlKeExBMU00LVVWYWE4dS1IeDItUDRZRlE3OG1TQjFPTjEtUnlUNXhGU0NtcmZMVEExX1NGOGdYQ3NWWHNqdWp5d2MzWW1odGhaR2xMS3p6Z3VnM0dLd3F4NG1ndWxXZVNOUFo1SFBYWTRyd0lCWnBESk1tWWJTV0hEMWt4ZGtmYktfSQ?oc=5))
 
-**Anthropic eliminó las entrevistas de programación porque Claude resuelve mejor las pruebas**
-Habla de cómo cambia la selección de personal técnico cuando un modelo de IA resuelve esas pruebas mejor que los candidatos.
-([Infobae](https://news.google.com/rss/articles/CBMizAFBVV95cUxQbEVPcHJmQXlEcU5jdU1FS1VmazBmLUFsTFpVcXRmOGNnV1JGWlg1OEI2ZEp3QkctaWVoWHZ6b3pWY3RQdzExRjlxS25lNXIyTGN5TWRkVVM4bG5xRG51V1BKN3ZYejliV3FWVFlCSU5lcklXNFRsVTRCNk0tYVo0cmNKZGJCeXhHV05WcDJfT0R4RHZpUEpQRFZveEs5dnc4dHNnOGJrNmxNLUhEam5hYWdJZVJ4SW5XZXluU1A4OFhvRHNjQlc5WUdRV2vSAecBQVVfeXFMUHMzcnZ2Qy1BY1hQdnA2REliNXVLZGV6VUprUEJ1a2M4aHFJVVhPVWVnQ1FIbG9DWlJwTzRaUXBkLVUzX3BVN242VllscGI1REZOblRmWGQ4aHNOQXRwbDlja3ZpZTdKN1U2aG1oQ291UExNRV9JWENMMHVVUUFkVUlzMWVXZkFRNGloRmFvUkpkSHFVZUpneU0tS3RIWXFfRnFpOV9ERVN1WV81cjZkUHFyRlQ1aFMwV1VwVHk5ajNCRk83c25abDdlU1BPWHFadjk3R2t5cFFvcnhFSktIUjlKNzZDRU5R?oc=5))
+**Anthropic dice que no se puede tratar mal a Claude: "No se trata de sentimientos"**
+Refleja la postura de Anthropic sobre cómo deben comportarse los usuarios con su modelo. El título aclara que el argumento no pasa por los sentimientos.
+([CNN en Español](https://news.google.com/rss/articles/CBMimAFBVV95cUxNVjZaTUFGN0pIeFp6UF9fUXU0TW5nU1BhWFJFUzJwdnFieUw3WG9xbHRTZEp6YTZYUGswVTlGLXk3VE55Q3EtaTdWU3NBOWVGLWVvRGV5MmdvR2IwaFJCRTEwUGF5cFFZWXZCMGp2dTlqUkE5eV9YWnJoekRFekkzSDFHMjREbDBocUtwVkIwN2JRdXdETEljag?oc=5))
 
-**Un Claude Code falso en Cursor afectó a 5.000 usuarios**
-Es una alerta de seguridad para quienes usan herramientas de programación con IA: conviene verificar bien lo que se instala.
-([El Ecosistema Startup](https://news.google.com/rss/articles/CBMiigFBVV95cUxOSjVZWURPZXh6VzJGakJIRTJlejdoRkZ6MXhJU1ZlczRfVmlrTWY4VHZsMm1jbWd4TVlfYW50TlJXaHN2N0tIN0QwOVhvUDdwUW1KUWpRcU9nTnRCbXkzWUVlWDhRN252Tk9BMVdndVFleVY3WkFoejdtMVJTZFZleXc5UFBMclh0cFE?oc=5))
+**Gemini 4 Carbon: nuestro próximo modelo de frontera**
+Google DeepMind anunció un nuevo modelo de frontera, lo que mueve la competencia entre los grandes laboratorios. La nota disponible no trae más detalles.
+([Google DeepMind](https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/))
 
-**OpenAI actualiza su Model Spec para una IA más capaz y beneficiosa**
-El documento define cinco valores centrales para guiar a una IA más capaz hacia el buen juicio, la autonomía de las personas y la fidelidad a la intención humana. Es una referencia para ver cómo piensan los laboratorios el comportamiento de los modelos.
-([OpenAI](https://openai.com/index/updated-model-spec))
+**OpenAI presenta el programa Grid Protectors**
+OpenAI trabajará con empresas eléctricas para que los futuros campus de cómputo ayuden a la confiabilidad de la red y protejan los costos de electricidad de los consumidores. Muestra cómo la infraestructura de IA se cruza con el tema energético.
+([OpenAI](https://openai.com/index/grid-protectors-program))
