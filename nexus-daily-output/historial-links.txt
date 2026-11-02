@@ -16,3 +16,10 @@
 2026-11-02	https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/
 2026-11-02	https://www.xataka.com/robotica-e-ia/google-ha-mejorado-su-buscador-ia-que-se-ha-encontrado-problema-necesita-empeorarlo-para-ganar-dinero
 2026-11-02	https://www.xataka.com/empresas-y-economia/nuevo-cuello-botella-ia-no-chips-energia-dinero-barato
+2026-11-02	https://news.google.com/rss/articles/CBMirwFBVV95cUxOaHl0LWh0T3BqYVpDTDBtMzl3N0lJdmtzQXZBZHExMVZvTVJ4TFdUZG5mQkpWZjJLOTYzWnA5R0xKTE1kQkkybi1SQnU2YTMwMjQ0U0JvNk1mSm9LbVVLLXRtNDAwUFA1ckRmektBY0ZBUWx3WlJka2tLRWttUnlOekI3VGd0Wm92S084SVQ1LWlvdmcxRHB5R1F5ajRmWlJlUks0ODdlcDRsQW9KSndB?oc=5
+2026-11-02	https://www.infotecnovision.com/radar-tecnovision-3-nuevas-maneras-de-orientarse-leer-y-conectar-con-el-entorno/
+2026-11-02	https://www.esvision.es/12623-2/
+2026-11-02	https://news.google.com/rss/articles/CBMitAFBVV95cUxPMkpJcU92a2hBWWY5d0h3YXJmaWlBZE41T1JvUjl5NGdaN1dRcFdyc1FjZGtad2JvZkh2b2ptemx5ZFpVVkVKS2xfdS1ScW5sUTN2UzA0bmozRG4wVVIzSWdRd01iQjBPVXhTTHFEdXZ2OGRSdlRGTDhpVEI1djF3NmdXMmpyVlFnWG5BYmJzaEl6ZHlLYVRKVkw2emhrM2hNcGxHeDFKVWt0RmdBdnF6WTAxYks?oc=5
+2026-11-02	https://news.google.com/rss/articles/CBMibEFVX3lxTE5QMzdBOXFnNXR0aUFLT0JrTW5jYW83eVctOEFxbzh2Rjd4UmdFYlFvbEM3SXZBX18tSENENWI3d2NmTXFGSUlvRXdGaWY5UUF5UzFXMjBiU0FuV2ZBVWxVdWRqRjd6N3FEeGNJSg?oc=5
+2026-11-02	https://openai.com/index/lifeval
+2026-11-02	https://inteligenciaargentina.ar/energia/la-ia-dispara-la-demanda-electrica-de-estados-unidos-es-como-agregar-una-argentina-por-ano

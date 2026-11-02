@@ -2,40 +2,39 @@
 
 ## 👁️ Baja visión
 
-**Siete nuevas noticias en el segundo número del Boletín Radar TecnoVisión**
-El número 2 del boletín trae novedades de tecnología, ciencia y accesibilidad, entre ellas cómo las gafas inteligentes permiten explorar obras de arte. ([InfoTecnoVision][1])
+**Optogenética a la vista en retinitis pigmentosa**
+Es una nota sobre el uso de la optogenética, un tratamiento de retina, en pacientes con retinitis pigmentosa. ([SAVALnet][1])
 
-**Estrenamos Radar Tecnovisión: primer número de nuestro boletín de innovación y accesibilidad**
-Reúne las novedades tecnológicas y científicas más interesantes de la primera quincena de octubre de 2026, con foco en accesibilidad. ([InfoTecnoVision][2])
+**¿Sabías qué? La terapia génica optogenética está devolviendo parcialmente la vista a personas con ceguera avanzada**
+Cuenta que esta terapia génica ya logra devolver parte de la visión en casos de ceguera avanzada. (Fundación Instituto De Ingeniería)
 
-**¿Cómo ves y qué reacciones te encuentras por tener baja visión?**
-En este video de la campaña #TienesQueVernos, Carlos, Pelayo e Inma cuentan que la baja visión incluye muchas formas de ver y comparten las dificultades y reacciones que encuentran a diario. ([Accion Vision Espana][3])
+**Radar Tecnovisión 3: nuevas maneras de orientarse, leer y conectar con el entorno**
+Es el tercer número del boletín de tecnología, ciencia y accesibilidad de InfoTecnoVision. Esta edición presenta, entre otras novedades, una pulsera que transforma gestos. ([InfoTecnoVision][2])
 
-**Jornada Nacional y X Aniversario de la asociación AUVEA**
-El sábado 24 de octubre, en el Hospital Clínic de Barcelona, se habló de uveítis en adultos y en la infancia, y de los avances en su abordaje. ([Accion Vision Espana][4])
+**10 factores a los que echar un ojo en la visión de tu hijo o hija**
+Repasa señales que ayudan a detectar un problema de visión en chicos que no pueden reconocerlo ni contarlo. ([Acción Visión España][3])
 
 ## 🤖 Inteligencia artificial
 
-**Anthropic limita Claude Code para evitar la recreación de videojuegos comerciales**
-Anthropic actualizó Claude Code con restricciones para que no copie ni recree videojuegos comerciales originales. ([Geeknetic][5])
+**Anthropic actualizó Claude para evitar que copie o recree videojuegos originales**
+Anthropic modificó Claude para que no copie ni reproduzca videojuegos originales. ([Mnews][4])
 
-**Acelerando las decisiones de planificación con IA**
-Google DeepMind y el gobierno del Reino Unido trabajan juntos para reducir los tiempos de evaluación de los trámites de planificación. ([Google DeepMind][6])
+**Resumen semanal: Incorporación al S&P SmallCap 600 y expansión de la detección de Claude**
+El resumen semanal reúne una incorporación al índice S&P SmallCap 600 y la expansión de la detección de Claude. ([TradingView][5])
 
-**Google mejoró tanto su buscador con IA que se encontró con un problema: necesita empeorarlo para ganar dinero**
-La nota plantea una tensión entre la calidad del buscador con IA y su monetización, en un contexto donde los chatbots y las herramientas generativas están en casi cualquier app o servicio. ([Xataka][7])
+**LifeVal: un benchmark de OpenAI para tareas cotidianas**
+OpenAI presenta LifeVal, un benchmark que mide qué tan bien ayuda la IA a completar tareas del día a día, como buscar cuidado infantil, manejar las finanzas o hacer trámites con el Estado. ([OpenAI][6])
 
-**El nuevo cuello de botella de la IA no son los chips ni la energía: es el dinero barato**
-Según el WSJ, los inversores se volvieron más exigentes a la hora de prestar a empresas como CoreWeave, Nebius y Nscale, que se endeudan para construir centros de datos y alquilar potencia de cálculo. ([Xataka][8])
+**La IA dispara la demanda eléctrica de Estados Unidos: "Es como agregar una Argentina por año"**
+Señala que el crecimiento de la IA presiona fuerte sobre el consumo de electricidad en EE.UU. ([Inteligencia Argentina][7])
 
 ---
 Links:
 
-[1]: https://www.infotecnovision.com/siete-nuevas-noticias-en-nuestro-segundo-numero-del-boletin-radar-tecnovision/
-[2]: https://www.infotecnovision.com/estrenamos-radar-tecnovision-primer-numero-de-nuestro-boletin-de-innovacion-y-accesibilidad/
-[3]: https://www.esvision.es/como-ves-y-que-reacciones-te-encuentras-por-tener-baja-vision/
-[4]: https://www.esvision.es/jornada-nacional-y-x-aniversario-de-la-asociacion-auvea/
-[5]: https://news.google.com/rss/articles/CBMiwwFBVV95cUxOU3NPRXYyWmpyUm5aMXViY1pBWFdseGNHeVBoQnJ5T1dBTG9zd181ek9LWTdWcExMT3FYYWxSeTRGT2xDc2Z0ZFZod0ZuM3NzNzBIcXhsRm1EMDFNVTVfbXNveEdZeDJoZzN2Z0N4ZGtjTGpPaWJiazhRVkNfY0tzOXlzWmUtNmpwU1VjRjFjLTktSF81YUMzMXY2TUVFSkQ4dlhMaWhLV0JHWkdfeU5EaldpWjZaVHZyUjlXUHFEcThBSk0?oc=5
-[6]: https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/
-[7]: https://www.xataka.com/robotica-e-ia/google-ha-mejorado-su-buscador-ia-que-se-ha-encontrado-problema-necesita-empeorarlo-para-ganar-dinero
-[8]: https://www.xataka.com/empresas-y-economia/nuevo-cuello-botella-ia-no-chips-energia-dinero-barato
+[1]: https://news.google.com/rss/articles/CBMirwFBVV95cUxOaHl0LWh0T3BqYVpDTDBtMzl3N0lJdmtzQXZBZHExMVZvTVJ4TFdUZG5mQkpWZjJLOTYzWnA5R0xKTE1kQkkybi1SQnU2YTMwMjQ0U0JvNk1mSm9LbVVLLXRtNDAwUFA1ckRmektBY0ZBUWx3WlJka2tLRWttUnlOekI3VGd0Wm92S084SVQ1LWlvdmcxRHB5R1F5ajRmWlJlUks0ODdlcDRsQW9KSndB?oc=5
+[2]: https://www.infotecnovision.com/radar-tecnovision-3-nuevas-maneras-de-orientarse-leer-y-conectar-con-el-entorno/
+[3]: https://www.esvision.es/12623-2/
+[4]: https://news.google.com/rss/articles/CBMitAFBVV95cUxPMkpJcU92a2hBWWY5d0h3YXJmaWlBZE41T1JvUjl5NGdaN1dRcFdyc1FjZGtad2JvZkh2b2ptemx5ZFpVVkVKS2xfdS1ScW5sUTN2UzA0bmozRG4wVVIzSWdRd01iQjBPVXhTTHFEdXZ2OGRSdlRGTDhpVEI1djF3NmdXMmpyVlFnWG5BYmJzaEl6ZHlLYVRKVkw2emhrM2hNcGxHeDFKVWt0RmdBdnF6WTAxYks?oc=5
+[5]: https://news.google.com/rss/articles/CBMibEFVX3lxTE5QMzdBOXFnNXR0aUFLT0JrTW5jYW83eVctOEFxbzh2Rjd4UmdFYlFvbEM3SXZBX18tSENENWI3d2NmTXFGSUlvRXdGaWY5UUF5UzFXMjBiU0FuV2ZBVWxVdWRqRjd6N3FEeGNJSg?oc=5
+[6]: https://openai.com/index/lifeval
+[7]: https://inteligenciaargentina.ar/energia/la-ia-dispara-la-demanda-electrica-de-estados-unidos-es-como-agregar-una-argentina-por-ano
