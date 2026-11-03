@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: '0 8 * * *'
   workflow_dispatch:
+    inputs:
+      diagnostico:
+        description: 'Solo diagnosticar fuentes (no genera informe)'
+        type: boolean
+        default: false
 
 jobs:
   nexus-update:
@@ -16,6 +21,7 @@ jobs:
       - name: Run NEXUS aggregation
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DIAGNOSTICO: ${{ inputs.diagnostico && '1' || '' }}
         run: |
           node nexus-daily.js
 

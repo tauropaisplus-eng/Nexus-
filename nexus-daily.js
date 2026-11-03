@@ -207,6 +207,14 @@ async function leerSeccion(fuentes, yaVistos, links, publicados) {
         return true;
       });
     console.log(`${f.nombre}: ${notas.length} notas`);
+    if (process.env.DIAGNOSTICO) {
+      const todas = f.tipo === 'html' ? extraerHtml(crudo, f.url) : extraerFeed(crudo, 60);
+      console.log(`   [diag] bytes=${crudo.length}, ultimos 60 dias sin filtro=${todas.length}`);
+      for (const n of todas.slice(0, 5)) {
+        const marca = publicados.has(n.link) ? 'YA PUBLICADA' : (f.filtro && !f.filtro(n.titulo) ? 'NO PASA FILTRO' : '');
+        console.log(`   [diag] ${n.fecha} ${n.titulo.slice(0, 100)} ${marca}`);
+      }
+    }
     if (notas.length === 0) continue;
     conDatos++;
     texto += `Fuente: ${f.nombre}\n` + notas.map((n) => {
@@ -320,6 +328,11 @@ async function principal() {
 
   const vision = await leerSeccion(FUENTES_VISION, yaVistos, links, publicados);
   const ia = await leerSeccion(FUENTES_IA, yaVistos, links, publicados);
+
+  if (process.env.DIAGNOSTICO) {
+    console.log('Modo diagnostico: no se genera informe');
+    return;
+  }
 
   if (vision.conDatos + ia.conDatos === 0) {
     throw new Error('No se pudo leer ninguna fuente');
