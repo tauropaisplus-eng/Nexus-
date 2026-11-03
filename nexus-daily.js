@@ -5,6 +5,7 @@
 // mas fuentes de IA.
 // Cambios v4 (2 nov 2026): no repite notas de dias anteriores (historial),
 // sin frases de relleno, links al pie para que el texto quede limpio.
+// 3 nov 2026: ventanas de tiempo mas largas en baja vision (30-45 dias); el historial evita repetir.
 
 const https = require('https');
 const fs = require('fs');
@@ -43,21 +44,21 @@ function esDeRetina(titulo) {
 }
 
 const FUENTES_VISION = [
-  { nombre: 'InfoTecnoVision', tipo: 'rss', url: 'https://www.infotecnovision.com/feed/', dias: 14 },
-  { nombre: 'Accion Vision Espana', tipo: 'rss', url: 'https://www.esvision.es/feed/', dias: 14 },
-  { nombre: 'Laboratorios Poen (YouTube)', tipo: 'rss', url: youtube('UCOO7zNDulJgmhCHn3S43nMQ'), dias: 14, filtro: esDeRetina },
-  { nombre: 'Consejo Argentino de Oftalmologia (YouTube)', tipo: 'rss', url: youtube('UCa063M8BXgWL2SHwy-piXew'), dias: 14, filtro: esDeRetina },
+  { nombre: 'InfoTecnoVision', tipo: 'rss', url: 'https://www.infotecnovision.com/feed/', dias: 30 },
+  { nombre: 'Accion Vision Espana', tipo: 'rss', url: 'https://www.esvision.es/feed/', dias: 30 },
+  { nombre: 'Laboratorios Poen (YouTube)', tipo: 'rss', url: youtube('UCOO7zNDulJgmhCHn3S43nMQ'), dias: 45, filtro: esDeRetina },
+  { nombre: 'Consejo Argentino de Oftalmologia (YouTube)', tipo: 'rss', url: youtube('UCa063M8BXgWL2SHwy-piXew'), dias: 45, filtro: esDeRetina },
   { nombre: 'Canal Retina (podcast)', tipo: 'rss', url: 'https://feeds.ivoox.com/feed_fg_f1705245_filtro_1.xml', dias: 30 },
-  { nombre: 'Noticias: degeneracion macular', tipo: 'rss', url: googleNews('degeneración macular tratamiento'), dias: 7 },
-  { nombre: 'Noticias: optogenetica', tipo: 'rss', url: googleNews('optogenética retina'), dias: 14 },
-  { nombre: 'Noticias: implante PRIMA', tipo: 'rss', url: googleNews('implante PRIMA retina'), dias: 14 },
-  { nombre: 'Noticias: tecnologia baja vision', tipo: 'rss', url: googleNews('"baja visión" tecnología'), dias: 7 }
+  { nombre: 'Noticias: degeneracion macular', tipo: 'rss', url: googleNews('degeneración macular tratamiento'), dias: 30 },
+  { nombre: 'Noticias: optogenetica', tipo: 'rss', url: googleNews('optogenética retina'), dias: 30 },
+  { nombre: 'Noticias: implante PRIMA', tipo: 'rss', url: googleNews('implante PRIMA retina'), dias: 30 },
+  { nombre: 'Noticias: tecnologia baja vision', tipo: 'rss', url: googleNews('"baja visión" tecnología'), dias: 30 }
 ];
 
 const FUENTES_IA = [
   { nombre: 'Noticias: Anthropic', tipo: 'rss', url: googleNews('Anthropic Claude'), dias: 3 },
-  { nombre: 'Noticias: IA y accesibilidad visual', tipo: 'rss', url: googleNews('inteligencia artificial "baja visión" OR "discapacidad visual"'), dias: 7 },
-  { nombre: 'Noticias: IA en oftalmologia', tipo: 'rss', url: googleNews('inteligencia artificial oftalmología retina'), dias: 7 },
+  { nombre: 'Noticias: IA y accesibilidad visual', tipo: 'rss', url: googleNews('inteligencia artificial "baja visión" OR "discapacidad visual"'), dias: 21 },
+  { nombre: 'Noticias: IA en oftalmologia', tipo: 'rss', url: googleNews('inteligencia artificial oftalmología retina'), dias: 21 },
   { nombre: 'OpenAI', tipo: 'rss', url: 'https://openai.com/news/rss.xml', dias: 3 },
   { nombre: 'Google DeepMind', tipo: 'rss', url: 'https://deepmind.google/blog/rss.xml', dias: 5 },
   { nombre: 'Xataka', tipo: 'rss', url: 'https://www.xataka.com/feedburner.xml', dias: 2 },
