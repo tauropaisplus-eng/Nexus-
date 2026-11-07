@@ -66,3 +66,10 @@
 2026-11-06	https://openai.com/index/introducing-gpt-6-cyber
 2026-11-06	https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation
 2026-11-06	https://www.infobae.com/tecno/2026/11/06/japon-lanzo-un-plan-de-emergencia-con-ia-y-equipos-de-elite-contra-la-ola-de-filtraciones-de-datos/
+2026-11-07	https://news.google.com/rss/articles/CBMiswFBVV95cUxORG12cEg4MHVBOXZDZ0FObC1hak1RZGhtZE9tMllHY1lnRGhfXzRxQjBmX0FmSklPSW00LU1Jc1ZpbmVJdTV4YmpxZm04UXoyRHdoZm9QWXZuSVBGZmZKZ2NXWk5xLVN0b1pTbGdLcElCcTgyanZIS1Q2NGl1Tl85WHN3emJPMlVWYjFUUERpVGVTdi1sWGVNTU5MRERIelg5ZGtDMnR3M3B0ZUl2NW9jNHlZcw?oc=5
+2026-11-07	https://www.infotecnovision.com/victoria-un-afinador-de-guitarra-que-se-puede-escuchar/
+2026-11-07	https://www.esvision.es/encuentro-de-entidades-adheridas-accion-vision-espana/
+2026-11-07	https://news.google.com/rss/articles/CBMibEFVX3lxTE11VWExVDY0QUFXNzNxSV9sa3RIckF1Szc1MzhaaUhXYkFma0NyT1p4UnluRkN5Uk5YdTlvWGJtdXMzS1Z4WFlHMWN2TW9pQnlGQzhCWk9nRW5DNm45TlJoZ1BLZHE2RVJNckMxeA?oc=5
+2026-11-07	https://news.google.com/rss/articles/CBMikAFBVV95cUxNU3Q2c0xsT1g0UXRZUVNyZGlLaHc3Zy1Zb2VYa2gzYnc4aW5URXg1cG9YeHVsYWN6ckIzdUJBT0s2MjdsUDRaSXBlN0JtZmVSNkROTXRVMjV1X21UaXJSX0RuZ0tNdTFORER0eUd5WnI0c1U3SUd4NnVGb29hWmdNUnpWR0lidUhBdEMtMWJ2cjY?oc=5
+2026-11-07	https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science
+2026-11-07	https://huggingface.co/blog/phonon-tts

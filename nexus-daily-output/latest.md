@@ -1,33 +1,37 @@
-# NEXUS Daily - 2026-11-06
+# NEXUS Daily - 2026-11-07
 
 ## 👁️ Baja visión
 
-**Science Corporation prueba su implante PRIMA en un paciente con Stargardt**
-Science Corporation probó su implante PRIMA en un paciente con Stargardt, un dato para seguir de cerca en el avance de los implantes de retina. ([DiarioBitcoin][1])
+**La primera inyección para corregir los problemas de la vista asociados a la edad está más cerca que nunca**
+Una inyección pensada para corregir los problemas de visión que aparecen con los años estaría más cerca que nunca de concretarse. ([El Confidencial][1])
+
+**VICTORIA: un afinador de guitarra que se puede escuchar**
+Es una app web gratuita y accesible, creada con ayuda de inteligencia artificial y probada por un grupo de colaboradores. ([InfoTecnoVision][2])
+
+**Encuentro de entidades adheridas a Acción Visión España**
+Del 5 al 8 de noviembre, Burgos reúne a Acción Visión España y sus asociaciones para compartir experiencias y armar redes de colaboración. ([Acción Visión España][3])
 
 ## 🤖 Inteligencia artificial
 
-**Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude**
-Anthropic endureció su postura frente a los clones de videojuegos creados con Claude. ([Xataka][2])
+**Anthropic presenta su S-1 y registra ingresos de $16,3 mil millones; Claude logra 354 moléculas de unión**
+Anthropic presentó su S-1 con ingresos de $16,3 mil millones, y Claude logró 354 moléculas de unión. ([TradingView][4])
 
-**Claude ya puede decirte en qué se te va el dinero del banco. Lo que no puede es tocar ni un euro**
-Claude puede analizar los gastos de una cuenta bancaria, pero no puede mover dinero. ([Xataka][3])
+**Anthropic: cómo Claude organiza la memoria de sus agentes**
+La nota explica cómo Claude organiza la memoria de los agentes que construye Anthropic. ([El Ecosistema Startup][5])
 
-**GPT‑6 Cyber: avanzando la frontera de los agentes de ciberseguridad alineados**
-OpenAI presentó un modelo de ciberseguridad que encuentra vulnerabilidades explotables y desarrolla correcciones, entrenado para mantenerse dentro del alcance autorizado. ([OpenAI][4])
+**OpenAI presenta BioBasicsBench para medir cómo los agentes de IA manejan la ciencia cotidiana de laboratorio**
+Es un benchmark de 100 tareas que mide qué tan bien los agentes de IA interpretan datos experimentales en bruto y resuelven trabajo básico de laboratorio húmedo. ([OpenAI][6])
 
-**Nuevos modelos abiertos NVIDIA Cosmos 3 para simulación interactiva de mundos**
-NVIDIA lanzó Cosmos 3, una nueva familia de modelos abiertos para simular mundos de forma interactiva. ([Hugging Face Blog][5])
-
-**Japón lanzó un plan de emergencia con IA y equipos de élite contra la ola de filtraciones de datos**
-Japón combina inteligencia artificial y equipos especializados para responder a las filtraciones de datos. ([Infobae Tecno][6])
+**Phonon TTS: voz de alta calidad en el dispositivo que lidera los benchmarks**
+Se lanza un sistema de síntesis de voz que corre directamente en el dispositivo y, según el título, encabeza los benchmarks. ([Hugging Face Blog][7])
 
 ---
 Links:
 
-[1]: https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa29kQmxtdkI3S01pYUxVbWprSXM0UnhFQVI4YzRVLXBRME9NODJmMjFDQTkya0g4M3dKck1rV0o5eDNCbDl0ZTJCdGdybDlHQmNNdV9KY3p2Y1BaSVh5U0l2cC04TV9TOWxsZHZSVDdINnZOeDYtRVRDSzQ3N01BeURaVG9uY0xfQmhiV0pmWHlqNWo2dE1Ec216ajA4bjBRTVdyc3F4SmE1aFVmX255YUt6RG1NSHlNemEwclFBVUlZUQ?oc=5
-[2]: https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkhJc2l4bmRraEd3RmVYcXc2ZnFzb1BSWTBIOHNVNHZXeGtpd2pGclJEUUxOeV9VMkw1Qm50Z2V3V1JNMndhblp1eVpCT0tqWHRLd2JRT0FlRHB4eTVIbkFZS0N1dEN1d1Nvczd4T3lOanRFeXNyM183aXp3MVppb20xczJCemdJbW9rNXVZZ2Zjd2tNVlVicGNGWTlMRFVnYlhwcTVQNjJCNTBBalRJMGVYUUlYck05b2ZEQVh2eURQb2d6LW5hRkUyaDTSAdIBQVVfeXFMTnpuX2ViSEI0ZmU5ZWZudWl4VVYtai00a2VGa0ZwOU40UTRmOG9Kd3FENHhncThKQXpkeGdCM05wcGlFM1pybURqRUhucFMyclhEZWVmY3hncS10bUpqRU5iU2cwaFVRTFg4Zmp1WDlrd0RkbXVLek9rdDFJWlN2UWlpMmhIbnRfUGhjUXJsVWx0cXpleldzLTVIOWllQkc4SWdSQjdKNVBjd1dKck40cHZ2UUtwZW5sNkJLTXdBblJuMHlwOWF4aERHQUpoZl9aNDR3?oc=5
-[3]: https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUUh1eXFydnZLZkpISU9aeFVfaFVLSFduMmlvZTBfaFVsRkUxdkpRdDlHNEkxNXh2Vk5kb0N6aE9xQUo5cmFGcm5INU40blNpRi1ZeDBaTnlDdFhHYTlSZjVfZTI4VWQxY0h0cXBzR0NVTkdkN2RQOGhUd19tSFl3U0wwUFlxdGhSTXBTOTZDQ29jWkZiMFV2Z2pkNXI2SWtnOUhndHZnZGVtcWfSAbABQVVfeXFMTzhqeTdLQ2lsWFlERVNwUUQ2NURHMjYteVpPMEVvUVVQRU5rY2NQWXMzc2dOelduREk3aWF4UEF5RGNfUXVFamF0WDYxMHMxQ2dYNkZRZFozM0xadVMyQ2JsTVM0R1dMSEZrZlBldUhKRUFnbTRNVERYOUZVMkp3TFpOd0htbzRabzR5SjFrMTlHdDA4TDFrOFR0U2tXbGQ3Z0ZDX1NvbnQ1d0NIenFlWjI?oc=5
-[4]: https://openai.com/index/introducing-gpt-6-cyber
-[5]: https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation
-[6]: https://www.infobae.com/tecno/2026/11/06/japon-lanzo-un-plan-de-emergencia-con-ia-y-equipos-de-elite-contra-la-ola-de-filtraciones-de-datos/
+[1]: https://news.google.com/rss/articles/CBMiswFBVV95cUxORG12cEg4MHVBOXZDZ0FObC1hak1RZGhtZE9tMllHY1lnRGhfXzRxQjBmX0FmSklPSW00LU1Jc1ZpbmVJdTV4YmpxZm04UXoyRHdoZm9QWXZuSVBGZmZKZ2NXWk5xLVN0b1pTbGdLcElCcTgyanZIS1Q2NGl1Tl85WHN3emJPMlVWYjFUUERpVGVTdi1sWGVNTU5MRERIelg5ZGtDMnR3M3B0ZUl2NW9jNHlZcw?oc=5
+[2]: https://www.infotecnovision.com/victoria-un-afinador-de-guitarra-que-se-puede-escuchar/
+[3]: https://www.esvision.es/encuentro-de-entidades-adheridas-accion-vision-espana/
+[4]: https://news.google.com/rss/articles/CBMibEFVX3lxTE11VWExVDY0QUFXNzNxSV9sa3RIckF1Szc1MzhaaUhXYkFma0NyT1p4UnluRkN5Uk5YdTlvWGJtdXMzS1Z4WFlHMWN2TW9pQnlGQzhCWk9nRW5DNm45TlJoZ1BLZHE2RVJNckMxeA?oc=5
+[5]: https://news.google.com/rss/articles/CBMikAFBVV95cUxNU3Q2c0xsT1g0UXRZUVNyZGlLaHc3Zy1Zb2VYa2gzYnc4aW5URXg1cG9YeHVsYWN6ckIzdUJBT0s2MjdsUDRaSXBlN0JtZmVSNkROTXRVMjV1X21UaXJSX0RuZ0tNdTFORER0eUd5WnI0c1U3SUd4NnVGb29hWmdNUnpWR0lidUhBdEMtMWJ2cjY?oc=5
+[6]: https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science
+[7]: https://huggingface.co/blog/phonon-tts
