@@ -5,6 +5,10 @@ permissions:
 on:
   schedule:
     - cron: '0 8 * * *'
+  # Cuando se cambia el script, corre solo para probarlo
+  push:
+    paths:
+      - 'nexus-daily.js'
   workflow_dispatch:
     inputs:
       diagnostico:

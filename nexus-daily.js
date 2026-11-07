@@ -6,6 +6,11 @@
 // Cambios v4 (2 nov 2026): no repite notas de dias anteriores (historial),
 // sin frases de relleno, links al pie para que el texto quede limpio.
 // 3 nov 2026: ventanas de tiempo mas largas en baja vision (30-45 dias); el historial evita repetir.
+// Cambios v5 (7 nov 2026, aprobados por Gabriel):
+//  - Se saca el "mitad y mitad": cada seccion lleva lo que haya, sin recortar la otra.
+//  - Resumenes de verdad: el script entra a cada nota y le pasa al modelo el texto,
+//    no solo el titulo. Los links de Google News se traducen al link real del medio.
+//  - Filtro firme: afuera todo lo que sea de ceguera o para personas ciegas.
 
 const https = require('https');
 const fs = require('fs');
@@ -30,6 +35,21 @@ function googleNews(consulta) {
 // Canal de YouTube por RSS
 function youtube(idCanal) {
   return 'https://www.youtube.com/feeds/videos.xml?channel_id=' + idCanal;
+}
+
+// Gabriel pidio que no entre nada de ceguera ni de cosas para personas ciegas.
+function esDeCeguera(texto) {
+  const t = String(texto || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  if (/\bciegos?\b|\bciegas?\b|\binvidentes?\b|ceguera total|baston|perros? (guia|de asistencia)|braille|lectores? de pantalla|audiodescrip/.test(t)) return true;
+  // "ceguera" sola: afuera, salvo que sea un tratamiento de retina (eso a Gabriel le sirve)
+  return /ceguera/.test(t) && !(esDeRetina(t) || /tratamiento|terapia|ensayo|implante|farmaco|cirugia|vacuna|inyeccion/.test(t));
+}
+
+// Para el texto completo de la nota: si habla de personas ciegas y no menciona baja vision, afuera
+function cuerpoEsParaCiegos(cuerpo) {
+  const t = String(cuerpo || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const ciegos = (t.match(/\bciegos?\b|\bciegas?\b|invidente|ceguera total|braille|baston/g) || []).length;
+  return ciegos >= 2 && !/baja vision|resto visual|vision reducida/.test(t);
 }
 
 // ---------------- FUENTES ----------------
@@ -69,15 +89,22 @@ const FUENTES_IA = [
 
 // ---------------- DESCARGA ----------------
 
-function fetchUrl(url, redirecciones = 0) {
+function fetchUrl(url, redirecciones = 0, post = null) {
   return new Promise((resolve) => {
-    const req = https.get(url, {
+    const opciones = {
+      method: post ? 'POST' : 'GET',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) NEXUS-Daily/2.0',
-        'Accept': 'text/html,application/xhtml+xml,application/rss+xml,application/atom+xml,application/xml;q=0.9,*/*;q=0.8'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/rss+xml,application/atom+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'es-AR,es;q=0.9'
       },
       timeout: 15000
-    }, (res) => {
+    };
+    if (post) {
+      opciones.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+      opciones.headers['Content-Length'] = Buffer.byteLength(post);
+    }
+    const req = https.request(url, opciones, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location && redirecciones < 5) {
         res.resume();
         const siguiente = new URL(res.headers.location, url).toString();
@@ -98,7 +125,69 @@ function fetchUrl(url, redirecciones = 0) {
       console.warn(`Aviso: no se pudo leer ${url}: ${e.message}`);
       resolve('');
     });
+    if (post) req.write(post);
+    req.end();
   });
+}
+
+// ---------------- TEXTO DE CADA NOTA (v5) ----------------
+
+// Los links de Google News no llevan directo a la nota: hay que pedirle a Google el link real.
+// Si algo falla, se devuelve '' y la nota sigue con el link de Google y sin texto.
+async function linkRealGoogleNews(link) {
+  try {
+    const m = link.match(/news\.google\.com\/(?:rss\/)?articles\/([^?\/]+)/);
+    if (!m) return '';
+    const id = m[1];
+    const pagina = await fetchUrl('https://news.google.com/rss/articles/' + id);
+    const firma = (pagina.match(/data-n-a-sg="([^"]+)"/) || [])[1];
+    const hora = (pagina.match(/data-n-a-ts="([^"]+)"/) || [])[1];
+    if (!firma || !hora) return '';
+    const pedido = JSON.stringify(['garturlreq', [['X', 'X', ['X', 'X'], null, null, 1, 1, 'US:en', null, 1, null, null, null, null, null, 0, 1], 'X', 'X', 1, [1, 1, 1], 1, 1, null, 0, 0, null, 0], id, Number(hora), firma]);
+    const cuerpo = 'f.req=' + encodeURIComponent(JSON.stringify([[['Fpe8Ab', pedido, null, 'generic']]]));
+    const resp = await fetchUrl('https://news.google.com/_/DotsSplashUi/data/batchexecute', 0, cuerpo);
+    const parte = resp.split('\n\n')[1];
+    if (!parte) return '';
+    const real = JSON.parse(JSON.parse(parte)[0][2])[1];
+    return /^https?:\/\//.test(real) ? real : '';
+  } catch (e) {
+    return '';
+  }
+}
+
+// Saca el texto principal de una pagina: la descripcion y los primeros parrafos
+function textoDeLaPagina(html) {
+  if (!html) return '';
+  const meta = (html.match(/<meta[^>]+(?:property="og:description"|name="description")[^>]+content="([^"]*)"/i) || [])[1] || '';
+  let zona = (html.match(/<article[\s\S]*?<\/article>/i) || [html])[0];
+  zona = zona.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<nav[\s\S]*?<\/nav>|<footer[\s\S]*?<\/footer>/gi, ' ');
+  const parrafos = [...zona.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map((p) => limpiar(p[1]))
+    .filter((p) => p.length > 60 && !/cookie|suscrib|newsletter|todos los derechos/i.test(p));
+  let texto = limpiar(meta);
+  for (const p of parrafos) {
+    if (texto.length > 1500) break;
+    if (!texto.includes(p.slice(0, 50))) texto += (texto ? ' ' : '') + p;
+  }
+  return texto.slice(0, 1500);
+}
+
+// Entra a cada nota (de a 6 a la vez) y le agrega el texto; traduce los links de Google News
+async function completarNotas(notas) {
+  let i = 0;
+  async function trabajador() {
+    while (i < notas.length) {
+      const n = notas[i++];
+      if (!n.link || /youtube\.com|ivoox\.com/.test(n.link)) continue; // videos y podcast ya traen descripcion
+      if (/news\.google\.com/.test(n.link)) {
+        const real = await linkRealGoogleNews(n.link);
+        if (real) { n.linkGoogle = n.link; n.link = real; }
+        else continue;
+      }
+      n.cuerpo = textoDeLaPagina(await fetchUrl(n.link));
+    }
+  }
+  await Promise.all(Array.from({ length: 6 }, trabajador));
 }
 
 // ---------------- LIMPIEZA Y LECTURA ----------------
@@ -150,7 +239,7 @@ function extraerFeed(xml, dias, filtro) {
     let resumen = limpiar(etiqueta(b, 'description') || etiqueta(b, 'media:description') || etiqueta(b, 'summary'));
     resumen = resumen.replace(/La entrada .*$/, '').replace(/Continuar leyendo.*$/, '').trim();
     if (resumen.startsWith(titulo)) resumen = '';
-    if (resumen.length > 250) resumen = resumen.slice(0, 250) + '...';
+    if (resumen.length > 600) resumen = resumen.slice(0, 600) + '...';
 
     notas.push({ titulo, link, resumen, fecha: new Date(fecha).toISOString().slice(0, 10) });
     if (notas.length >= MAX_POR_FUENTE) break;
@@ -193,21 +282,28 @@ function extraerHtml(html, base) {
 }
 
 // Lee todas las fuentes de una seccion y arma el texto para el modelo
+// Link real -> link de Google News, para anotar los dos en el historial
+const originales = {};
+
 async function leerSeccion(fuentes, yaVistos, links, publicados) {
   let texto = '';
   let conDatos = 0;
   for (const f of fuentes) {
     const crudo = await fetchUrl(f.url);
     // Con filtro se leen mas entradas del feed, porque muchas se descartan
-    const notas = (f.tipo === 'html' ? extraerHtml(crudo, f.url) : extraerFeed(crudo, f.dias || 7, f.filtro))
+    let notas = (f.tipo === 'html' ? extraerHtml(crudo, f.url) : extraerFeed(crudo, f.dias || 7, f.filtro))
       .filter((n) => {
         if (n.link && publicados.has(n.link)) return false;
+        if (esDeCeguera(n.titulo) || esDeCeguera(n.resumen)) return false;
         const clave = n.titulo.toLowerCase().slice(0, 60);
         if (yaVistos.has(clave)) return false;
         yaVistos.add(clave);
         return true;
       });
-    console.log(`${f.nombre}: ${notas.length} notas`);
+    await completarNotas(notas);
+    notas = notas.filter((n) => !(n.link && publicados.has(n.link)) && !cuerpoEsParaCiegos(n.cuerpo));
+    const conTexto = notas.filter((n) => n.cuerpo).length;
+    console.log(`${f.nombre}: ${notas.length} notas (${conTexto} con texto completo)`);
     if (process.env.DIAGNOSTICO) {
       const todas = f.tipo === 'html' ? extraerHtml(crudo, f.url) : extraerFeed(crudo, 60);
       console.log(`   [diag] bytes=${crudo.length}, ultimos 60 dias sin filtro=${todas.length}`);
@@ -222,8 +318,10 @@ async function leerSeccion(fuentes, yaVistos, links, publicados) {
       let linea = `- ${n.titulo}`;
       if (n.fecha) linea += ` [${n.fecha}]`;
       if (n.resumen) linea += ` — ${n.resumen}`;
+      if (n.cuerpo) linea += `\n  Texto de la nota: ${n.cuerpo}`;
       if (n.link) {
         links.push(n.link);
+        if (n.linkGoogle) originales[n.link] = n.linkGoogle;
         linea += ` (link: L${links.length})`;
       }
       return linea;
@@ -339,12 +437,13 @@ async function principal() {
     throw new Error('No se pudo leer ninguna fuente');
   }
 
-  const prompt = `Sos NEXUS Daily. Hoy es ${hoy}. Arma un informe en espanol rioplatense, en Markdown, con DOS secciones en este orden. Las dos secciones valen lo mismo: tienen que tener la misma cantidad de notas (entre 4 y 6 cada una), salvo que una no tenga material suficiente.
+  const prompt = `Sos NEXUS Daily. Hoy es ${hoy}. Arma un informe en espanol rioplatense, en Markdown, con DOS secciones en este orden. Cada seccion lleva lo que haya: en baja vision todas las notas buenas que encuentres (hasta 6), aunque sean pocas; en IA entre 4 y 6. No recortes una seccion para emparejarla con la otra.
 
 ## 👁️ Baja visión
 Para Gabriel, que tiene baja vision (ve con un solo ojo) y le interesa: ayudas opticas y electronicas (lupas, lentes y gafas con pantalla), apps, accesibilidad, y avances de tratamiento de retina (degeneracion macular, optogenetica, implante PRIMA, cirugia de retina, terapia genica).
 Reglas de esta seccion:
-- EXCLUIR todo lo que sea para personas ciegas o ceguera total (bastones, perros guia, movilidad para ciegos, braille, lectores de pantalla para ciegos). Gabriel lo pidio expresamente.
+- EXCLUIR todo lo que sea para personas ciegas o sobre ceguera (bastones, perros guia, movilidad para ciegos, braille, lectores de pantalla, apps o aparatos que se manejan solo por audio porque el usuario no ve). Fijate en el "Texto de la nota": si esta pensada para gente que no ve, va afuera. Gabriel lo pidio expresamente y es firme.
+- No uses nunca las palabras "ceguera", "ciego" o "ciega". Si un tratamiento evita perder la vista, deci "perdida de vision".
 - Si hay un ateneo o video de retina de Laboratorios Poen o del Consejo Argentino de Oftalmologia, o un episodio de Canal Retina, mencionalo siempre y decile que lo puede ver en el link.
 
 ## 🤖 Inteligencia artificial
@@ -358,8 +457,9 @@ Reglas generales:
 - Quien lee el informe: Gabriel la seccion de baja vision, y Claude (en otra conversacion) la de IA. En la de baja vision podes hablarle a Gabriel de vos. En la de IA escribi en tono neutro, sin dirigirte a nadie. Nunca escribas frases como "para vos y para Gabriel" ni le hables a Claude.
 - Variedad: maximo 2 notas sobre el mismo tema (por ejemplo, optogenetica). Si hay varias del mismo tema, quedate con la mas concreta y deja lugar a otros temas (lentes, apps, ayudas opticas).
 - Maximo 2 notas por fuente en todo el informe.
-- Cada nota: **titulo en negrita**, despues una linea que explique por que importa, y al final la fuente entre parentesis.
-- Sin relleno: si de una nota solo tenes el titulo, escribi UNA linea corta y concreta sobre de que trata, sacada del titulo. Prohibido completar con frases vacias o supuestas como "es un tema que te interesa", "es una de las lineas que mas te interesan", "la nota no trae mas detalles", "el titulo aclara que...", "esta ubicada en el rastreo de...". No le digas a Gabriel que le interesa algo: eso ya lo sabe.
+- Cada nota: **titulo en negrita**, despues un resumen de 1 a 3 lineas con lo concreto: que se hizo, quien, en cuantos pacientes o con que resultado, y en que etapa esta (por ejemplo: ensayo, aprobado, a la venta). Al final la fuente entre parentesis.
+- El resumen sale del "Texto de la nota". No repitas el titulo con otras palabras: conta lo que el titulo no dice.
+- Sin relleno: si de una nota solo tenes el titulo, escribi UNA linea corta y concreta sobre de que trata. Nunca escribas "segun el titulo" ni nada parecido. Prohibido completar con frases vacias o supuestas como "es un tema que te interesa", "es una de las lineas que mas te interesan", "la nota no trae mas detalles", "el titulo aclara que...", "esta ubicada en el rastreo de...". No le digas a Gabriel que le interesa algo: eso ya lo sabe.
 - Los links vienen como codigos (L1, L2, L3...). Si la nota tiene codigo, pone la fuente como enlace Markdown con ese codigo tal cual, por ejemplo: ([Infobae](L7)). No inventes codigos.
 - En las notas de Google News, la fuente es el medio que aparece al final del titulo (despues del guion); sacalo del titulo.
 - Usa solo la informacion de abajo: no inventes datos. Si una seccion no tiene material, deci "Hoy no hubo novedades".
@@ -396,7 +496,12 @@ ${ia.texto || '(sin notas hoy)'}`;
   );
 
   // Anotar en el historial los links publicados hoy
-  guardarHistorial([...historial, ...usados.map((l) => [hoy, l])]);
+  const nuevos = [];
+  for (const l of usados) {
+    nuevos.push([hoy, l]);
+    if (originales[l]) nuevos.push([hoy, originales[l]]);
+  }
+  guardarHistorial([...historial, ...nuevos]);
 
   console.log('Listo:', hoy, `(vision: ${vision.conDatos} fuentes, IA: ${ia.conDatos} fuentes)`);
 }
