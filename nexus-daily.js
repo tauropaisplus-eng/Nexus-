@@ -1,4 +1,4 @@
-// NEXUS Daily v3 - 24 de octubre de 2026
+// NEXUS Daily v6 - 8 de noviembre de 2026 (empezo como v3 el 24 de octubre)
 // Idea: Gabriel. Programacion: Claude.
 // Dos secciones, mitad y mitad: Baja vision (para Gabriel) e IA (para Claude).
 // Cambios v3: todas las notas con link, de Poen y CAO solo ateneos de retina,
@@ -11,6 +11,10 @@
 //  - Resumenes de verdad: el script entra a cada nota y le pasa al modelo el texto,
 //    no solo el titulo. Los links de Google News se traducen al link real del medio.
 //  - Filtro firme: afuera todo lo que sea de ceguera o para personas ciegas.
+// Cambios v6 (8 nov 2026, aprobados por Gabriel):
+//  - Google cambio la forma de traducir sus links (error 400) y nunca se llegaba al texto.
+//    Las busquedas de noticias pasan a Bing News, que trae el link real del medio.
+//    Si Bing no responde, se usa Google News de respaldo.
 
 const https = require('https');
 const fs = require('fs');
@@ -30,6 +34,29 @@ const DIAS_HISTORIAL = 45;
 function googleNews(consulta) {
   return 'https://news.google.com/rss/search?q=' + encodeURIComponent(consulta) +
     '&hl=es-419&gl=AR&ceid=AR:es-419';
+}
+
+// v6 (8 nov 2026): busqueda de noticias por Bing News. A diferencia de Google News,
+// cada noticia trae adentro el link real del medio, asi el script puede entrar y leer el texto.
+// Si Bing no responde, se usa Google News como respaldo (url2).
+function noticias(consulta) {
+  return {
+    url: 'https://www.bing.com/news/search?q=' + encodeURIComponent(consulta) +
+      '&format=rss&setlang=es&mkt=es-AR&count=30',
+    url2: googleNews(consulta)
+  };
+}
+
+// Los links de Bing pasan por apiclick.aspx?...&url=<link real>: se saca el link real
+function linkRealBing(link) {
+  try {
+    const u = new URL(link);
+    if (!/bing\.com$/.test(u.hostname)) return link;
+    const real = u.searchParams.get('url');
+    return real && /^https?:\/\//.test(real) ? real : link;
+  } catch (e) {
+    return link;
+  }
 }
 
 // Canal de YouTube por RSS
@@ -69,16 +96,21 @@ const FUENTES_VISION = [
   { nombre: 'Laboratorios Poen (YouTube)', tipo: 'rss', url: youtube('UCOO7zNDulJgmhCHn3S43nMQ'), dias: 45, filtro: esDeRetina },
   { nombre: 'Consejo Argentino de Oftalmologia (YouTube)', tipo: 'rss', url: youtube('UCa063M8BXgWL2SHwy-piXew'), dias: 45, filtro: esDeRetina },
   { nombre: 'Canal Retina (podcast)', tipo: 'rss', url: 'https://feeds.ivoox.com/feed_fg_f1705245_filtro_1.xml', dias: 30 },
-  { nombre: 'Noticias: degeneracion macular', tipo: 'rss', url: googleNews('degeneración macular tratamiento'), dias: 30 },
-  { nombre: 'Noticias: optogenetica', tipo: 'rss', url: googleNews('optogenética retina'), dias: 30 },
-  { nombre: 'Noticias: implante PRIMA', tipo: 'rss', url: googleNews('implante PRIMA retina'), dias: 30 },
-  { nombre: 'Noticias: tecnologia baja vision', tipo: 'rss', url: googleNews('"baja visión" tecnología'), dias: 30 }
+  { nombre: 'Noticias: degeneracion macular', tipo: 'rss', ...noticias('degeneración macular tratamiento'), dias: 30 },
+  { nombre: 'Noticias: optogenetica', tipo: 'rss', ...noticias('optogenética retina'), dias: 30 },
+  { nombre: 'Noticias: implante PRIMA', tipo: 'rss', ...noticias('implante PRIMA retina'), dias: 30 },
+  { nombre: 'Noticias: tecnologia baja vision', tipo: 'rss', ...noticias('"baja visión" tecnología'), dias: 30 },
+  // v6: mas busquedas para que haya menos dias sin novedades
+  { nombre: 'Noticias: terapia genica retina', tipo: 'rss', ...noticias('terapia génica retina'), dias: 30 },
+  { nombre: 'Noticias: atrofia geografica', tipo: 'rss', ...noticias('atrofia geográfica tratamiento'), dias: 30 },
+  { nombre: 'Noticias: Stargardt', tipo: 'rss', ...noticias('Stargardt tratamiento'), dias: 30 },
+  { nombre: 'Noticias: gafas para baja vision', tipo: 'rss', ...noticias('gafas inteligentes "baja visión"'), dias: 30 }
 ];
 
 const FUENTES_IA = [
-  { nombre: 'Noticias: Anthropic', tipo: 'rss', url: googleNews('Anthropic Claude'), dias: 3 },
-  { nombre: 'Noticias: IA y accesibilidad visual', tipo: 'rss', url: googleNews('inteligencia artificial "baja visión" OR "discapacidad visual"'), dias: 21 },
-  { nombre: 'Noticias: IA en oftalmologia', tipo: 'rss', url: googleNews('inteligencia artificial oftalmología retina'), dias: 21 },
+  { nombre: 'Noticias: Anthropic', tipo: 'rss', ...noticias('Anthropic Claude'), dias: 3 },
+  { nombre: 'Noticias: IA y accesibilidad visual', tipo: 'rss', ...noticias('inteligencia artificial "baja visión" OR "discapacidad visual"'), dias: 21 },
+  { nombre: 'Noticias: IA en oftalmologia', tipo: 'rss', ...noticias('inteligencia artificial oftalmología retina'), dias: 21 },
   { nombre: 'OpenAI', tipo: 'rss', url: 'https://openai.com/news/rss.xml', dias: 3 },
   { nombre: 'Google DeepMind', tipo: 'rss', url: 'https://deepmind.google/blog/rss.xml', dias: 5 },
   { nombre: 'Xataka', tipo: 'rss', url: 'https://www.xataka.com/feedburner.xml', dias: 2 },
@@ -235,13 +267,17 @@ function extraerFeed(xml, dias, filtro) {
     // Los links de Google News son largos pero funcionan: al tocarlos llevan a la nota.
     // Al modelo no se le pasa el link real sino un codigo corto (L1, L2...) que despues se reemplaza.
     if (!/^https?:\/\//.test(link)) link = '';
+    link = linkRealBing(link);
+    // Bing trae el nombre del medio aparte: se lo agrega al titulo como hace Google News
+    const medio = limpiar(etiqueta(b, 'News:Source'));
+    const tituloFinal = medio && !titulo.includes(medio) ? `${titulo} - ${medio}` : titulo;
 
     let resumen = limpiar(etiqueta(b, 'description') || etiqueta(b, 'media:description') || etiqueta(b, 'summary'));
     resumen = resumen.replace(/La entrada .*$/, '').replace(/Continuar leyendo.*$/, '').trim();
     if (resumen.startsWith(titulo)) resumen = '';
     if (resumen.length > 600) resumen = resumen.slice(0, 600) + '...';
 
-    notas.push({ titulo, link, resumen, fecha: new Date(fecha).toISOString().slice(0, 10) });
+    notas.push({ titulo: tituloFinal, link, resumen, fecha: new Date(fecha).toISOString().slice(0, 10) });
     if (notas.length >= MAX_POR_FUENTE) break;
   }
   return notas;
@@ -289,7 +325,12 @@ async function leerSeccion(fuentes, yaVistos, links, publicados) {
   let texto = '';
   let conDatos = 0;
   for (const f of fuentes) {
-    const crudo = await fetchUrl(f.url);
+    let crudo = await fetchUrl(f.url);
+    // Si Bing no trae nada, respaldo con Google News
+    if (f.url2 && !/<item[\s>]/i.test(crudo)) {
+      console.log(`${f.nombre}: Bing sin respuesta, uso Google News`);
+      crudo = await fetchUrl(f.url2);
+    }
     // Con filtro se leen mas entradas del feed, porque muchas se descartan
     let notas = (f.tipo === 'html' ? extraerHtml(crudo, f.url) : extraerFeed(crudo, f.dias || 7, f.filtro))
       .filter((n) => {
@@ -461,7 +502,7 @@ Reglas generales:
 - El resumen sale del "Texto de la nota". No repitas el titulo con otras palabras: conta lo que el titulo no dice.
 - Sin relleno: si de una nota solo tenes el titulo, escribi UNA linea corta y concreta sobre de que trata. Nunca escribas "segun el titulo" ni nada parecido. Prohibido completar con frases vacias o supuestas como "es un tema que te interesa", "es una de las lineas que mas te interesan", "la nota no trae mas detalles", "el titulo aclara que...", "esta ubicada en el rastreo de...". No le digas a Gabriel que le interesa algo: eso ya lo sabe.
 - Los links vienen como codigos (L1, L2, L3...). Si la nota tiene codigo, pone la fuente como enlace Markdown con ese codigo tal cual, por ejemplo: ([Infobae](L7)). No inventes codigos.
-- En las notas de Google News, la fuente es el medio que aparece al final del titulo (despues del guion); sacalo del titulo.
+- En las notas de busqueda de noticias, la fuente es el medio que aparece al final del titulo (despues del guion); sacalo del titulo y no lo repitas en el titulo en negrita.
 - Usa solo la informacion de abajo: no inventes datos. Si una seccion no tiene material, deci "Hoy no hubo novedades".
 - No pongas titulo principal: empeza directamente por "## 👁️ Baja visión".
 
