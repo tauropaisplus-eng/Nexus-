@@ -85,3 +85,15 @@
 2026-11-08	https://www.infobae.com/tecno/2026/11/08/el-metodo-con-inteligencia-artificial-que-utiliza-una-autoridad-de-alemania-para-gestionar-reclamos-por-privacidad/
 2026-11-08	https://www.infobae.com/tecno/2026/11/08/altman-dijo-que-quienes-dejaron-openai-para-crear-laboratorios-rivales-solo-confian-en-si-mismos/
 2026-11-08	https://huggingface.co/blog/allenai/toyblocks
+2026-11-08	https://www.infobae.com/salud/ciencia/2026/11/02/el-avance-medico-que-busca-combatir-la-ceguera-una-terapia-logro-recuperar-parte-de-la-vision-en-humanos/
+2026-11-08	https://www.infobae.com/tecno/2026/10/21/cuatro-formas-en-las-que-las-gafas-inteligentes-pueden-ayudar-a-las-personas-con-problemas-de-vision/
+2026-11-08	https://wwwhatsnew.com/2026/10/16/science-corp-prima-implante-retinal-stargardt-primer-paciente/
+2026-11-08	https://www.teletica.com/salud/nino-recibira-por-primera-vez-en-la-ccss-terapia-genetica-para-combatir-perdida-de-vision_420208
+2026-11-08	https://es.marketscreener.com/noticias/belite-bio-solicita-la-autorizaci-n-de-comercializaci-n-de-tinlarebant-para-el-tratamiento-de-la-enf-ce785dd3d98dff22
+2026-11-08	https://es.marketscreener.com/noticias/opus-genetics-recibe-la-autorizaci-n-de-la-fda-para-una-terapia-genica-contra-la-ceguera-infantil-ce785cd9d98efe26
+2026-11-08	https://www.msn.com/es-es/noticias/otras/el-servicio-de-oftalmolog%C3%ADa-de-valdecilla-rebaja-en-2000-pacientes-la-lista-de-espera-tras-filtrar-las-consultas-con-inteligencia-artificial/ar-AA2gwB7q
+2026-11-08	https://www.farodevigo.es/sociedad/2026/10/26/ia-permite-anticipar-riesgo-enfermedades-135764133.html
+2026-11-08	https://www.diariobitcoin.com/regulacion/anthropic-enfrentara-reclamos-por-la-publicidad-de-claude-max/
+2026-11-08	https://www.abc.es/tecnologia/anthropic-openai-fichaje-cat-mente-detras-claude-20261106191156-nt.html
+2026-11-08	https://openai.com/index/cultfit-builds-with-codex
+2026-11-08	https://openai.com/index/australian-universities-ai-native-graduates
