@@ -15,6 +15,8 @@
 //  - Google cambio la forma de traducir sus links (error 400) y nunca se llegaba al texto.
 //    Las busquedas de noticias pasan a Bing News, que trae el link real del medio.
 //    Si Bing no responde, se usa Google News de respaldo.
+//  - Historial de titulos: el modelo recibe lo ya publicado y no repite la misma noticia
+//    aunque venga de otro medio. Mas busquedas de baja vision.
 
 const https = require('https');
 const fs = require('fs');
@@ -29,6 +31,17 @@ const MAX_POR_FUENTE = 5;
 // Historial de links ya publicados, para no repetir notas de dias anteriores
 const HISTORIAL = path.join(CARPETA, 'historial-links.txt');
 const DIAS_HISTORIAL = 45;
+// v6: tambien se guardan los titulos publicados, para que el modelo no repita
+// la misma noticia aunque llegue desde otro medio o con otro link
+const HISTORIAL_TITULOS = path.join(CARPETA, 'historial-titulos.txt');
+
+function leerTitulos() {
+  if (!fs.existsSync(HISTORIAL_TITULOS)) return [];
+  const limite = new Date(Date.now() - DIAS_HISTORIAL * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  return fs.readFileSync(HISTORIAL_TITULOS, 'utf8').split('\n')
+    .map((l) => l.split('\t'))
+    .filter(([fecha, titulo]) => fecha && titulo && fecha >= limite);
+}
 
 // Busqueda de Google News en espanol (Argentina)
 function googleNews(consulta) {
@@ -464,6 +477,7 @@ async function principal() {
   const links = [];
   const historial = leerHistorial();
   const publicados = new Set(historial.map(([, l]) => l));
+  const titulosViejos = leerTitulos();
   console.log(`Historial: ${publicados.size} links ya publicados`);
 
   const vision = await leerSeccion(FUENTES_VISION, yaVistos, links, publicados);
@@ -503,8 +517,12 @@ Reglas generales:
 - Sin relleno: si de una nota solo tenes el titulo, escribi UNA linea corta y concreta sobre de que trata. Nunca escribas "segun el titulo" ni nada parecido. Prohibido completar con frases vacias o supuestas como "es un tema que te interesa", "es una de las lineas que mas te interesan", "la nota no trae mas detalles", "el titulo aclara que...", "esta ubicada en el rastreo de...". No le digas a Gabriel que le interesa algo: eso ya lo sabe.
 - Los links vienen como codigos (L1, L2, L3...). Si la nota tiene codigo, pone la fuente como enlace Markdown con ese codigo tal cual, por ejemplo: ([Infobae](L7)). No inventes codigos.
 - En las notas de busqueda de noticias, la fuente es el medio que aparece al final del titulo (despues del guion); sacalo del titulo y no lo repitas en el titulo en negrita.
+- NO REPETIR: abajo esta la lista de noticias ya publicadas en dias anteriores. Si una nota cuenta el mismo hecho que alguna de esa lista (aunque sea de otro medio o con otro titulo), dejala afuera. Solo entra si trae un hecho nuevo (por ejemplo, un resultado o una aprobacion que antes no estaba).
 - Usa solo la informacion de abajo: no inventes datos. Si una seccion no tiene material, deci "Hoy no hubo novedades".
 - No pongas titulo principal: empeza directamente por "## 👁️ Baja visión".
+
+=== YA PUBLICADAS (NO REPETIR) ===
+${titulosViejos.map(([, t]) => '- ' + t).join('\n') || '(ninguna)'}
 
 === MATERIAL DE BAJA VISION ===
 ${vision.texto || '(sin notas hoy)'}
@@ -543,6 +561,10 @@ ${ia.texto || '(sin notas hoy)'}`;
     if (originales[l]) nuevos.push([hoy, originales[l]]);
   }
   guardarHistorial([...historial, ...nuevos]);
+
+  // Anotar los titulos publicados hoy
+  const titulosHoy = [...resumen.matchAll(/^\*\*([^*]+)\*\*/gm)].map((m) => [hoy, m[1].replace(/\t/g, ' ').trim()]);
+  fs.writeFileSync(HISTORIAL_TITULOS, [...titulosViejos, ...titulosHoy].map(([f, t]) => `${f}\t${t}`).join('\n') + '\n');
 
   console.log('Listo:', hoy, `(vision: ${vision.conDatos} fuentes, IA: ${ia.conDatos} fuentes)`);
 }

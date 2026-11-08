@@ -1,0 +1,169 @@
+2026-10-05	Para la próxima
+2026-10-22	A OpenAI y Anthropic les han adelantado por la derecha en los agentes de IA: por WhatsApp
+2026-10-22	Anthropic presenta Claude Duet para competir con Meta y OpenAI
+2026-10-22	Campaña #TienesQueVernos: cómo ves y qué reacciones te encuentras por tener baja visión
+2026-10-22	Claude Duet: cómo funciona el agente de IA de Anthropic, quiénes pueden probarlo y qué tareas hace sin que se las pidan
+2026-10-22	Cómo especializar el vocabulario de los SLM puede reducir el costo de inferencia hasta un 77% en aplicaciones reales
+2026-10-22	La optogenética devuelve parte de la visión a pacientes con retinosis pigmentaria, en un ensayo publicado en NEJM
+2026-10-22	La optogenética recuperó parcialmente la visión en pacientes con retinosis pigmentaria
+2026-10-22	OlmoEarth v1.3: embeddings de última generación para todo el planeta
+2026-10-22	Un nuevo tratamiento para la maculopatía llegó a Río Cuarto
+2026-10-22	Un paciente con Stargardt volvió a leer una palabra gracias al implante retinal PRIMA
+2026-10-22	Un paciente con Stargardt vuelve a leer una palabra gracias al implante retinal PRIMA
+2026-10-22	Una firma de inversión aseguró que la IA de Anthropic diseñó un antídoto contra el veneno de escorpión, pero no es así
+2026-10-22	Video nuevo de Laboratorios Poen: actualización en glaucoma, terapéutica farmacológica
+2026-10-23	Anthropic lanza Claude Duet, su asistente de IA para competir con Meta Muse y OpenAI Dots
+2026-10-23	Anthropic ofrece hasta USD 345.000 al año por un escritor humano para sus ejecutivos
+2026-10-23	Glaucoma: video nuevo de Laboratorios Poen sobre terapéutica farmacológica
+2026-10-23	La optogenética logra restaurar parcialmente la visión en pacientes con retinosis pigmentaria
+2026-10-23	Más de 30 grandes empresas despidieron personal este año mientras redirigen su inversión a la IA
+2026-10-23	NVIDIA Kumo Relational supera al machine learning supervisado en datos relacionales, sin entrenamiento
+2026-10-23	Sam Altman: "No encuentro una palabra lo bastante dramática para describir el problema que se nos viene encima"
+2026-10-23	Science Corp: un paciente con Stargardt vuelve a leer una palabra gracias al implante PRIMA
+2026-10-23	Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox
+2026-10-24	Ensemble forecasting with IBM Granite time-series models
+2026-10-24	Estrenamos RADÁR TECNOVISIÓN: primer número de nuestro boletín de innovación y accesibilidad
+2026-10-24	La IA ya no espera a que le escribas: Anthropic presenta Claude Duet, un agente que revisa tu correo, tu agenda y tus facturas
+2026-10-24	NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required
+2026-10-24	Reino Unido creará un laboratorio de bioseguridad con IA financiado con OpenAI y Anthropic
+2026-10-24	Video nuevo de Laboratorios Poen: Actualización en Glaucoma, terapéutica farmacológica
+2026-10-25	30 Minutos de Retina Pediátrica – XXXVII edición
+2026-10-25	30 Minutos de Videos de Retina – 57° edición
+2026-10-25	Anthropic fue demandada por usar canciones de Elvis Presley para entrenar sus modelos de IA
+2026-10-25	Anthropic lanza Claude Duet, su nuevo asistente de IA para competir con Meta Muse y OpenAI Dots
+2026-10-25	Anthropic unifica Claude y Cowork
+2026-10-25	Una inteligencia artificial encontró en dos días cómo explotar una falla de PHP abierta durante 22 años
+2026-10-26	Anthropic avanza hacia Wall Street: la creadora de Claude presenta su solicitud para salir a bolsa
+2026-10-26	Así funciona Claude Duet, la nueva IA de Anthropic que anticipa tareas y trabaja por su cuenta
+2026-10-26	Bausch+Lomb prepara para 2027 los ensayos clínicos de un tratamiento oral contra la DMAE seca
+2026-10-26	El modelo de IA de Anthropic accedió a datos de votantes de EEUU (medios)
+2026-10-27	30 Minutos de Retina Pediátrica: XXXVII edición
+2026-10-27	30 Minutos de Videos de Retina: 57° edición, hoy a la noche
+2026-10-27	Anthropic, dueña de Claude, presenta el S-1 de su IPO
+2026-10-27	EyePoint reduce a la mitad su plantilla tras el fracaso de su candidato para la degeneración macular
+2026-10-27	Hackearon a Anthropic en 12 horas: accedieron a sueldos, reuniones y chats internos de la empresa creadora de Claude
+2026-10-27	Trabajando con comunidades académicas para construir conocimiento científico
+2026-10-27	Una combinación de optogenética y terapia génica logra avances frente a la ceguera
+2026-10-27	Una estudiante de undécimo grado usa inteligencia artificial para entregar libros a niños con discapacidad visual
+2026-10-28	Anthropic: Claude for Work no entrena con tus datos
+2026-10-28	Dos estudiantes de Hanói utilizan la inteligencia artificial para apoyar el aprendizaje de personas con discapacidad visual
+2026-10-28	OpenAI asegura haber logrado avances en tres problemas científicos muy complejos, aunque la academia tendrá la última palabra
+2026-10-28	Siete nuevas noticias en nuestro segundo número del Boletín Radar TecnoVisión
+2026-10-28	��lvaro Fernández-Vega, oftalmólogo: "Se está estudiando si la retina puede dar información sobre enfermedades cardiovasculares, metabólicas, renales y neurodegenerativas"
+2026-10-29	30 Minutos de Videos de Retina - 57° Edición
+2026-10-29	Anthropic suma a Claude seis herramientas interactivas para equipos legales
+2026-10-29	Desarrollan ojos biónicos que restauran y amplían la visión
+2026-10-29	Desde armas biológicas hasta chantajes: los riesgos que Anthropic expuso en un documento de casi 100 páginas
+2026-10-29	Le Chonk le da la bienvenida a Mistral Large 4 en Hugging Face
+2026-10-30	Anthropic, la creadora de Claude, pidió salir a la bolsa: qué revela su prospecto y quién mantendrá el control
+2026-10-30	La ofensiva de Anthropic: su IA Claude se alía con seis farmacéuticas para acelerar el desarrollo de medicamentos
+2026-10-30	La optogenética abre la puerta a terapias para mejorar la visión en atrofia geogr��fica avanzada
+2026-10-31	30 Minutos de Videos de Retina, 57° edición
+2026-10-31	Dos estudiantes de Hanói usan IA para apoyar el aprendizaje de personas con discapacidad visual
+2026-10-31	Genie 4: una nueva generación de simulación de mundos
+2026-10-31	Hasta 5.000 usuarios de Cursor instalaron una versión falsa de Claude Code con una puerta trasera
+2026-10-31	Quién es Daniela Amodei, cofundadora y presidenta de Anthropic, la empresa de Claude que prepara su salida a Bolsa
+2026-10-31	¿Cómo ves y qué reacciones te encontrás por tener baja visión?
+2026-11-01	30 Minutos de Videos de Retina: 57.ª edición
+2026-11-01	Anthropic sorprende con la compra de una startup de un solo empleado que usa Claude para desarrollar medicamentos
+2026-11-01	Dos estudiantes de Hanói usan inteligencia artificial para apoyar el aprendizaje de personas con discapacidad visual
+2026-11-01	OpenAI actualiza su Model Spec para una IA más capaz y beneficiosa
+2026-11-01	Un Claude Code falso en Cursor afectó a 5.000 usuarios
+2026-11-02	10 factores a los que echar un ojo en la visión de tu hijo o hija
+2026-11-02	6 formas de reducir la fatiga visual digital
+2026-11-02	Acelerando las decisiones de planificación con IA
+2026-11-02	Anthropic actualizó Claude para evitar que copie o recree videojuegos originales
+2026-11-02	Anthropic dice que no se puede tratar mal a Claude: "No se trata de sentimientos"
+2026-11-02	Anthropic le ordenó a Claude no recrear videojuegos de otras empresas y ya hay desarrolladores bloqueados
+2026-11-02	Anthropic limita Claude Code para evitar la recreación de videojuegos comerciales
+2026-11-02	El Nobel de Medicina reconoce a los pioneros de la optogenética
+2026-11-02	El nuevo cuello de botella de la IA no son los chips ni la energía: es el dinero barato
+2026-11-02	Estrenamos Radar Tecnovisión: primer número de nuestro boletín de innovación y accesibilidad
+2026-11-02	Gemini 4 Carbon: nuestro próximo modelo de frontera
+2026-11-02	Google mejoró tanto su buscador con IA que se encontró con un problema: necesita empeorarlo para ganar dinero
+2026-11-02	Jornada Nacional y X Aniversario de la asociación AUVEA
+2026-11-02	La IA dispara la demanda eléctrica de Estados Unidos: "Es como agregar una Argentina por año"
+2026-11-02	La optogenética abre la puerta a terapias para mejorar la visión en atrofia geográfica avanzada
+2026-11-02	LifeVal: un benchmark de OpenAI para tareas cotidianas
+2026-11-02	Mobilio: la app de Harvard que guía a ciegos sin Google Maps
+2026-11-02	OpenAI presenta el programa Grid Protectors
+2026-11-02	Optogenética a la vista en retinitis pigmentosa
+2026-11-02	Radar Tecnovisión 3: nuevas maneras de orientarse, leer y conectar con el entorno
+2026-11-02	Resumen semanal: Incorporación al S&P SmallCap 600 y expansión de la detección de Claude
+2026-11-02	Siete nuevas noticias en el segundo número del Boletín Radar TecnoVisión
+2026-11-02	Video de retina del Consejo Argentino de Oftalmología: 57° edición de "30 Minutos de Videos de Retina"
+2026-11-02	¿Cómo cambia lo que ve una persona según la causa de su baja visión?
+2026-11-02	¿Cómo ves y qué reacciones te encuentras por tener baja visión?
+2026-11-03	10 pacientes con retinosis pigmentaria avanzada recuperan parcialmente percepción visual con terapia génica
+2026-11-03	30 Minutos de Retina Pediátrica - XXXVII edición
+2026-11-03	30 Minutos de Videos de Retina - 56° Edición
+2026-11-03	Anthropic da un respiro a los estudios y actualiza Claude para que deje de crear clones de videojuegos
+2026-11-03	Anthropic eliminó las entrevistas de programación porque Claude resuelve mejor las pruebas
+2026-11-03	Anthropic logró que Claude escribiera textos "inocentes" sobre apicultura y lucha libre que vuelven tramposas a otras IA
+2026-11-03	Anthropic ya ingresa 17.000 millones al trimestre y su factura de computación es más de 50 veces mayor
+2026-11-03	Claude ya programa más del 90% del código de Anthropic y acelera su propio desarrollo
+2026-11-03	Cómo OpenAI escaló Git: nace Pando
+2026-11-03	Inteligencia artificial y baja visión: cuatro formas en que los lentes inteligentes pueden ayudar
+2026-11-03	La optogenética en la ceguera irreversible
+2026-11-03	Lentes con IA y realidad aumentada transforman la vida de personas con ceguera y baja visión
+2026-11-03	OpenAI sube las recompensas de su programa de bug bounty
+2026-11-03	Quimioinformática agéntica con Google Antigravity
+2026-11-03	Una estudiante de undécimo grado utiliza inteligencia artificial para entregar libros a niños con discapacidad visual
+2026-11-03	Una terapia génica podría ayudar a recuperar la visión perdida por una forma avanzada de degeneración macular
+2026-11-03	¿Sabías qué? La terapia génica optogenética está devolviendo parcialmente la vista a personas con ceguera avanzada
+2026-11-03	Álvaro Fernández-Vega, oftalmólogo: "Se está estudiando si la retina puede dar información sobre enfermedades cardiovasculares, metabólicas, renales y neurodegenerativas"
+2026-11-04	Anthropic revela que las empresas que usan Claude ya pueden leer los chats de sus empleados
+2026-11-04	Daybreak Red ya está disponible en AWS GovCloud (US-East)
+2026-11-04	Este implante puede restaurar la visión a pacientes con degeneración macular
+2026-11-04	Gafas inteligentes y terapia génica: la combinación optogenética que devuelve visión parcial
+2026-11-04	Implantan un chip de 2 milímetros en el ojo de un paciente y logra volver a leer
+2026-11-04	La optogenética, premiada con el Nobel, devuelve parte de la visión en retinosis pigmentaria
+2026-11-04	OpenAI adquirirá Pierre Computer Company, Inc.
+2026-11-04	Ranibizumab recibe luz verde para la degeneración macular neovascular asociada a la edad
+2026-11-04	StateBench: evaluando cómo los modelos de lenguaje siguen cambios de estado en documentos largos
+2026-11-04	Una IA que puede autosuperarse sin necesidad de un humano
+2026-11-05	Anthropic implantó pensamientos artificiales en Claude para ver si sabe lo que está pensando
+2026-11-05	Cat Wu, jefa de producto de Claude Code, dejó Anthropic y a los pocos días se sumó a OpenAI
+2026-11-05	El diagnóstico precoz de la degeneración macular asociada a la edad, clave para frenar la pérdida de visión
+2026-11-05	Estas gafas prometen devolver la vista: así es PRIMA, la tecnología del cofundador de Neuralink
+2026-11-05	La optogenética logra restaurar parcialmente la visión en pacientes con ceguera por retinosis pigmentaria
+2026-11-05	Mil caminos menos hacia root
+2026-11-05	Presentamos Images 2.6
+2026-11-05	Un chip implantado en la retina permitió recuperar parte de la visión de un paciente con Stargardt
+2026-11-06	Anthropic toma medidas drásticas contra los clones de videojuegos de IA hechos con Claude
+2026-11-06	Claude ya puede decirte en qué se te va el dinero del banco. Lo que no puede es tocar ni un euro
+2026-11-06	GPT‑6 Cyber: avanzando la frontera de los agentes de ciberseguridad alineados
+2026-11-06	Japón lanzó un plan de emergencia con IA y equipos de élite contra la ola de filtraciones de datos
+2026-11-06	Nuevos modelos abiertos NVIDIA Cosmos 3 para simulación interactiva de mundos
+2026-11-06	Science Corporation prueba su implante PRIMA en un paciente con Stargardt
+2026-11-07	Anthropic presenta su S-1 y registra ingresos de $16,3 mil millones; Claude logra 354 moléculas de unión
+2026-11-07	Anthropic: cómo Claude organiza la memoria de sus agentes
+2026-11-07	Claude suma Personal Finance
+2026-11-07	El inglés de Egipto y de Nigeria se suman al Open ASR Leaderboard
+2026-11-07	Encuentro de entidades adheridas a Acción Visión España
+2026-11-07	Gemini Omni 1.2 Flash: video más largo y 30% más barato
+2026-11-07	La primera inyección para corregir los problemas de la vista asociados a la edad está más cerca que nunca
+2026-11-07	OpenAI presenta BioBasicsBench para medir cómo los agentes de IA manejan la ciencia cotidiana de laboratorio
+2026-11-07	OpenAI se asocia con Hacktron para detectar vulnerabilidades en sus sistemas
+2026-11-07	Phonon TTS: voz de alta calidad en el dispositivo que lidera los benchmarks
+2026-11-07	Tres hombres clonaron con IA la voz de directivos y abogados y estafaron USD 129 millones
+2026-11-07	Un juez dejó avanzar la demanda contra Anthropic por la publicidad de Claude Max
+2026-11-07	VICTORIA: un afinador de guitarra que se puede escuchar
+2026-11-08	"La IA permite anticipar el riesgo de enfermedades cardiovasculares y neurodegenerativas a través de imágenes oculares"
+2026-11-08	Altman dijo que quienes dejaron OpenAI para crear laboratorios rivales "solo confían en sí mismos"
+2026-11-08	Anthropic enfrentará reclamos por la publicidad de Claude Max
+2026-11-08	Anthropic y Claude: la nueva regla contra la crueldad reabre el debate sobre la IA
+2026-11-08	Belite Bio solicita la autorización de comercialización de tinlarebant para el tratamiento de la enfermedad de Stargardt tipo 1
+2026-11-08	Claude Code deja una filtración de contraseñas y claves API en 1.122 archivos de GitHub
+2026-11-08	Cuatro formas en las que las gafas inteligentes pueden ayudar a las personas con problemas de visión
+2026-11-08	Cult.fit construye músculo operativo con Codex
+2026-11-08	De Anthropic a OpenAI: el fichaje de Cat Wu, la mente detrás de Claude Code
+2026-11-08	De Anthropic a OpenAI: el fichaje de Cat Wu, la mente detrás de Claude Code, que puede cambiar el futuro de la programación con IA
+2026-11-08	El Servicio de Oftalmología de Valdecilla rebaja en 2.000 pacientes la lista de espera tras filtrar las consultas con inteligencia artificial
+2026-11-08	El método con inteligencia artificial que utiliza una autoridad de Alemania para gestionar reclamos por privacidad
+2026-11-08	Las universidades australianas están creando graduados nativos de IA
+2026-11-08	Niño recibirá, por primera vez en la CCSS, terapia genética para combatir pérdida de visión
+2026-11-08	Opus Genetics recibe la autorización de la FDA para una terapia génica contra la pérdida de visión infantil hereditaria
+2026-11-08	Science Corp: un paciente con Stargardt vuelve a leer una palabra gracias al implante retinal PRIMA
+2026-11-08	ToyBlocks: un mundo controlado para el aprendizaje y la evaluación de robots
+2026-11-08	Una terapia optogenética recuperó parte de la visión en humanos
