@@ -1,4 +1,4 @@
-# NEXUS Daily - 2026-11-07
+# NEXUS Daily - 2026-11-08
 
 ## 👁️ Baja visión
 
@@ -6,30 +6,30 @@ Hoy no hubo novedades.
 
 ## 🤖 Inteligencia artificial
 
-**Un juez dejó avanzar la demanda contra Anthropic por la publicidad de Claude Max**
-La causa sigue en curso: la demanda cuestiona cómo se promocionaron los planes Claude Max. ([Infobae][1])
+**De Anthropic a OpenAI: el fichaje de Cat Wu, la mente detrás de Claude Code, que puede cambiar el futuro de la programación con IA**
+Cat Wu, una de las responsables de Claude Code, pasa de Anthropic a OpenAI. ([ABC][1])
 
-**Claude suma Personal Finance**
-Nueva función de Claude para analizar los gastos personales de los usuarios. ([Infosertec][2])
+**Anthropic y Claude: la nueva regla contra la crueldad reabre el debate sobre la IA**
+Anthropic sumó una regla para Claude contra la crueldad, y eso reabrió la discusión sobre los límites de la IA. ([DiarioBitcoin][2])
 
-**Gemini Omni 1.2 Flash: video más largo y 30% más barato**
-Google DeepMind lanzó el modelo y ya está disponible de forma general en la API de Gemini y en Gemini para empresas. Genera y edita video de forma nativa hasta 15 segundos (antes eran 10), con duración configurable de 3 a 15 segundos. Mejora el seguimiento de referencias y permite edición conversacional en varios turnos. El precio baja 30% frente a Omni 1.1: USD 0,07 por segundo en 720p, con borradores en 360p o 720p y escalado final a 1080p o 4K. (Google DeepMind, [Google DeepMind][3])
+**Claude Code deja una filtración de contraseñas y claves API en 1.122 archivos de GitHub**
+Se detectaron contraseñas y claves API expuestas en 1.122 archivos de GitHub vinculados al uso de Claude Code. ([Pasquale Pillitteri][3])
 
-**OpenAI se asocia con Hacktron para detectar vulnerabilidades en sus sistemas**
-La alianza busca encontrar fallas, probar las conexiones con servicios de terceros y reforzar las defensas usando IA de frontera. ([OpenAI][4])
+**El método con inteligencia artificial que utiliza una autoridad de Alemania para gestionar reclamos por privacidad**
+La autoridad de protección de datos de Hamburgo usa un chatbot basado en un modelo de OpenAI para redactar borradores de cartas en la tramitación de quejas. Recibió 4.220 reclamos en 2025, un 62% más que los 2.607 de 2024, sin que el personal creciera al mismo ritmo. El sistema opera con restricciones y con supervisión humana en cada caso, según un estudio de nueve páginas del 5 de noviembre. ([Infobae][4])
 
-**El inglés de Egipto y de Nigeria se suman al Open ASR Leaderboard**
-Hugging Face amplió esta tabla comparativa de modelos de reconocimiento de voz en inglés con dos variantes regionales nuevas. ([Hugging Face Blog][5])
+**Altman dijo que quienes dejaron OpenAI para crear laboratorios rivales "solo confían en sí mismos"**
+En una entrevista con el podcaster Raj Shamani, el CEO de OpenAI respondió así cuando le preguntaron por las salidas de Mira Murati, Ilya Sutskever, Dario Amodei y Elon Musk. Los nombres los puso el entrevistador; Altman no mencionó a nadie. Sostuvo que repartir el desarrollo de modelos entre varias organizaciones reduce dos riesgos: perder el control humano de la tecnología y que un solo actor concentre sus beneficios. ([Infobae][5])
 
-**Tres hombres clonaron con IA la voz de directivos y abogados y estafaron USD 129 millones**
-La fiscalía federal de Nueva York hizo pública el 5 de noviembre una acusación contra Jacob Soall, Sharon Hazan y Guy Sheetrit, con siete cargos cada uno, entre ellos fraude electrónico y lavado de dinero. Según la acusación, entre julio de 2024 y febrero de 2026 imitaron la voz, y a veces la imagen, de CEOs y abogados de grandes estudios para que empleados de miles de empresas hicieran transferencias. Entre las víctimas hay dos sistemas hospitalarios, que perdieron unos USD 4,8 millones y casi USD 3 millones, y un banco de Rhode Island, que transfirió cerca de USD 2,7 millones. ([Infobae Tecno][6])
+**ToyBlocks: un mundo controlado para el aprendizaje y la evaluación de robots**
+Ai2 publicó en el blog de Hugging Face este entorno controlado para entrenar y evaluar robots. ([Hugging Face Blog][6])
 
 ---
 Links:
 
-[1]: https://news.google.com/rss/articles/CBMizwFBVV95cUxOVHMzMVpjRkE5eHVEM2xmUmFGSHpud0Q1MTZXWmplUnBWMVdNV000UU9fMXB5R19tZVRkd0ZwMC1IeUZBV1R4TzNWT3YybjlZd0R6TTFBTUk2cW9lM2JIbUVCcFNNaHYzNDhGOEpaOXFpbjRhSUFIaDJDbkl5bHVtcURJZEZUMnhmY2JjVHg5UFhuTWQ0ZmFyN0dsenZoM1FGbFVnTW9GTndXRDNWb1R1RGs2SjR1WGduNlhwNXpNb3pfa2xCMEUwX0VubmdOb03SAeoBQVVfeXFMUFNTWnhCaWtfVUV4YWNaaFRBVmlXRVVCbVl2TGhlN1ItWm11cjl5SWRxT1E3THhBZzFHTkNkMG1tY1h5VkpHREdzZDM4aTN4WFgwOTRhS0RpOF9XTFJYYURNdl9TRHUwc0F2ZEN2UkNSblpkRldwMkRJS1pzaUVUNlVJYXdNQjhUX25tSzRjUGlnRUpNRVV4TUtPeVZOSGtocDlHZlFnblVhX01KbmV6d0tySy1DVDVVa2gzRnpwUk9xSmVMT0JuYWxEcy1iMi1aaTA1SnFoSHlRX0Nab1gyU1ZTNHNTNktrTDNR?oc=5
-[2]: https://news.google.com/rss/articles/CBMilAFBVV95cUxPTU1xcVdFbmE3RkpLX1NDTnI1ZEVSR0FoMzd3aV9jak5idXlZVFkxZ0xubVRWdm5GOWktYktDbmlsRlpUSTZxaHI0TmxIaXVJTFNHNnBwaTViVlRLUTY4VFZrNFVyclEtekZ3c3VkTklJVHpLUFQ2UUF3Y1UtY2FkUUR1ZHNQeFd1elhGMG5rOS0ycnZ6?oc=5
-[3]: https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/
-[4]: https://openai.com/index/partnering-with-hacktron
-[5]: https://huggingface.co/blog/open-asr-leaderboard-liva
-[6]: https://www.infobae.com/tecno/2026/11/07/tres-hombres-imitaron-con-ia-la-voz-de-directores-ejecutivos-y-robaron-usd-129-millones-a-empresas/
+[1]: https://news.google.com/rss/articles/CBMiowFBVV95cUxOOHNwZEIyMmRTMFhCYW5nOEFwTTBrb084d1BDT2tudDBGNG5BeUFBTXBJRFRVblhJV3F4Rks3T1ZFWmVPZm9LeVpBclJsWUVuVGxsYVVEUmJLRy1KSmJOWU1IMGpLdm9mU1YzSGRMVGZKMXQwMUh1Sm84WFRDb1JzTXFZZDJIYk5IeVM5dGVBVHpFeHR6eDFlRTVtSDZzaXAwZ2840gGoAUFVX3lxTE5zUUgwSTJNMlZWNWM4R0xpZll0bnk0ODdRb29xWmJnNG5lVVpUWXl5N01PUS1SMmpYYTlFU3VDdEEtUFdfdUlzQU9EV25STHhqekZrd3Y1eF9oN1pJcXF0SzZiME81cUtCSm5qUktRSUd2ZFBLbndLWnVlZzZqY0hncTFDdHpTZGZhLVNFTmQzSjNseEUyMEVOOWIwT2p0Q3o1X0VMLW8wQw?oc=5
+[2]: https://news.google.com/rss/articles/CBMiwAFBVV95cUxOV2hJcGlyVm9ZTmhHWVBGUWxIY3ZjQUhXRWZYWDVsVnFzQ3V2N1BIUGVRaDAzTXcxX3RsdnNiVmxjZXcwUXR2RUNFSUFpTVFuaGw2YVMxUlVYdFFpa01JMEVjcGgzZWlvV2xYbGVIX3BGWUx0ZmZCVEtiUTMwUEFmbXNfUTZRYnJtWTJWNVA1RkMxWFNDMk5qN1BzSzdIV1JreWtndy1QdVphZUx5WGNScHdnRnV0di14eC1kRzZjQVk?oc=5
+[3]: https://news.google.com/rss/articles/CBMipgFBVV95cUxNVmlaYWxSekpUN3RsXzN6a09DYUhWRUxEeWktcGxZbk1FZ0VSZGlmeWxiYUNCZVFfVGFEZXpmS292TXA5anNWUmNycFlSUElFRmpNOUJTNmNOd01ySUJXS2labXNmUU9LLUVVYzluaHlkT3R0ekxPVHlaSmRMMG9DMWl1bGlvS2hpWnJ1ZHgzV3ctaEFtY05xQ1p6Y0xvUGRubDRRcHlR?oc=5
+[4]: https://www.infobae.com/tecno/2026/11/08/el-metodo-con-inteligencia-artificial-que-utiliza-una-autoridad-de-alemania-para-gestionar-reclamos-por-privacidad/
+[5]: https://www.infobae.com/tecno/2026/11/08/altman-dijo-que-quienes-dejaron-openai-para-crear-laboratorios-rivales-solo-confian-en-si-mismos/
+[6]: https://huggingface.co/blog/allenai/toyblocks

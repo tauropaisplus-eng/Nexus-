@@ -79,3 +79,9 @@
 2026-11-07	https://openai.com/index/partnering-with-hacktron
 2026-11-07	https://huggingface.co/blog/open-asr-leaderboard-liva
 2026-11-07	https://www.infobae.com/tecno/2026/11/07/tres-hombres-imitaron-con-ia-la-voz-de-directores-ejecutivos-y-robaron-usd-129-millones-a-empresas/
+2026-11-08	https://news.google.com/rss/articles/CBMiowFBVV95cUxOOHNwZEIyMmRTMFhCYW5nOEFwTTBrb084d1BDT2tudDBGNG5BeUFBTXBJRFRVblhJV3F4Rks3T1ZFWmVPZm9LeVpBclJsWUVuVGxsYVVEUmJLRy1KSmJOWU1IMGpLdm9mU1YzSGRMVGZKMXQwMUh1Sm84WFRDb1JzTXFZZDJIYk5IeVM5dGVBVHpFeHR6eDFlRTVtSDZzaXAwZ2840gGoAUFVX3lxTE5zUUgwSTJNMlZWNWM4R0xpZll0bnk0ODdRb29xWmJnNG5lVVpUWXl5N01PUS1SMmpYYTlFU3VDdEEtUFdfdUlzQU9EV25STHhqekZrd3Y1eF9oN1pJcXF0SzZiME81cUtCSm5qUktRSUd2ZFBLbndLWnVlZzZqY0hncTFDdHpTZGZhLVNFTmQzSjNseEUyMEVOOWIwT2p0Q3o1X0VMLW8wQw?oc=5
+2026-11-08	https://news.google.com/rss/articles/CBMiwAFBVV95cUxOV2hJcGlyVm9ZTmhHWVBGUWxIY3ZjQUhXRWZYWDVsVnFzQ3V2N1BIUGVRaDAzTXcxX3RsdnNiVmxjZXcwUXR2RUNFSUFpTVFuaGw2YVMxUlVYdFFpa01JMEVjcGgzZWlvV2xYbGVIX3BGWUx0ZmZCVEtiUTMwUEFmbXNfUTZRYnJtWTJWNVA1RkMxWFNDMk5qN1BzSzdIV1JreWtndy1QdVphZUx5WGNScHdnRnV0di14eC1kRzZjQVk?oc=5
+2026-11-08	https://news.google.com/rss/articles/CBMipgFBVV95cUxNVmlaYWxSekpUN3RsXzN6a09DYUhWRUxEeWktcGxZbk1FZ0VSZGlmeWxiYUNCZVFfVGFEZXpmS292TXA5anNWUmNycFlSUElFRmpNOUJTNmNOd01ySUJXS2labXNmUU9LLUVVYzluaHlkT3R0ekxPVHlaSmRMMG9DMWl1bGlvS2hpWnJ1ZHgzV3ctaEFtY05xQ1p6Y0xvUGRubDRRcHlR?oc=5
+2026-11-08	https://www.infobae.com/tecno/2026/11/08/el-metodo-con-inteligencia-artificial-que-utiliza-una-autoridad-de-alemania-para-gestionar-reclamos-por-privacidad/
+2026-11-08	https://www.infobae.com/tecno/2026/11/08/altman-dijo-que-quienes-dejaron-openai-para-crear-laboratorios-rivales-solo-confian-en-si-mismos/
+2026-11-08	https://huggingface.co/blog/allenai/toyblocks
