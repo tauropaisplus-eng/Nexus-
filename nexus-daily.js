@@ -3,6 +3,7 @@
 // Dos secciones, mitad y mitad: Baja vision (para Gabriel) e IA (para Claude).
 // Cambios v3: todas las notas con link, de Poen y CAO solo ateneos de retina,
 // mas fuentes de IA.
+// 9 nov 2026: la corrida programada no repite si ya hay edicion del dia; afuera notas de hechos viejos.
 // Cambios v4 (2 nov 2026): no repite notas de dias anteriores (historial),
 // sin frases de relleno, links al pie para que el texto quede limpio.
 // 3 nov 2026: ventanas de tiempo mas largas en baja vision (30-45 dias); el historial evita repetir.
@@ -473,6 +474,16 @@ async function principal() {
   }
 
   const hoy = fechaBuenosAires();
+
+  // 9 nov 2026: GitHub atrasa la corrida programada varias horas. Si para entonces
+  // ya se genero la edicion del dia (a mano o por un cambio del script), no se repite.
+  const ultimo = path.join(CARPETA, 'latest.md');
+  if (process.env.GITHUB_EVENT_NAME === 'schedule' && fs.existsSync(ultimo) &&
+      fs.readFileSync(ultimo, 'utf8').startsWith(`# NEXUS Daily - ${hoy}`)) {
+    console.log(`La edicion de ${hoy} ya existe: la corrida programada no hace nada`);
+    return;
+  }
+
   const yaVistos = new Set();
   const links = [];
   const historial = leerHistorial();
@@ -518,6 +529,7 @@ Reglas generales:
 - Los links vienen como codigos (L1, L2, L3...). Si la nota tiene codigo, pone la fuente como enlace Markdown con ese codigo tal cual, por ejemplo: ([Infobae](L7)). No inventes codigos.
 - En las notas de busqueda de noticias, la fuente es el medio que aparece al final del titulo (despues del guion); sacalo del titulo y no lo repitas en el titulo en negrita.
 - NO REPETIR: abajo esta la lista de noticias ya publicadas en dias anteriores. Si una nota cuenta el mismo hecho que alguna de esa lista (aunque sea de otro medio o con otro titulo), dejala afuera. Solo entra si trae un hecho nuevo (por ejemplo, un resultado o una aprobacion que antes no estaba).
+- SOLO NOVEDADES: deja afuera las notas que cuentan un hecho viejo aunque el articulo sea nuevo (por ejemplo, un informe, lanzamiento o anuncio de hace mas de un mes que un medio recien ahora publica). Si el texto menciona que el hecho es de otro mes anterior al actual, va afuera.
 - Usa solo la informacion de abajo: no inventes datos. Si una seccion no tiene material, deci "Hoy no hubo novedades".
 - No pongas titulo principal: empeza directamente por "## 👁️ Baja visión".
 
