@@ -97,3 +97,8 @@
 2026-11-08	https://www.abc.es/tecnologia/anthropic-openai-fichaje-cat-mente-detras-claude-20261106191156-nt.html
 2026-11-08	https://openai.com/index/cultfit-builds-with-codex
 2026-11-08	https://openai.com/index/australian-universities-ai-native-graduates
+2026-11-09	https://ecosistemastartup.com/anthropic-soporte-y-documentos-lideran-el-uso-de-claude/
+2026-11-09	https://www.ambito.com/tecnologia/anthropic-acordo-una-operacion-us3400-millones-garantizar-energia-sus-centros-datos-n6342934
+2026-11-09	https://www.infobae.com/tecno/2026/11/09/google-presento-un-chip-de-ia-que-protege-los-datos-confidenciales-mientras-se-procesan/
+2026-11-09	https://huggingface.co/blog/amazon/higher-order-pruning-experts
+2026-11-09	https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan

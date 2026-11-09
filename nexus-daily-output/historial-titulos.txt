@@ -167,3 +167,8 @@
 2026-11-08	Science Corp: un paciente con Stargardt vuelve a leer una palabra gracias al implante retinal PRIMA
 2026-11-08	ToyBlocks: un mundo controlado para el aprendizaje y la evaluación de robots
 2026-11-08	Una terapia optogenética recuperó parte de la visión en humanos
+2026-11-09	Soporte y documentos lideran el uso de Claude
+2026-11-09	Anthropic cierra un acuerdo por u$s3.400 millones para asegurar energía de sus centros de datos
+2026-11-09	Google presenta un chip de IA que protege los datos confidenciales mientras se procesan
+2026-11-09	HOPE: poda de expertos de orden superior en modelos Mixture-of-Experts
+2026-11-09	Nemotron-Personas-Finance-Japan
