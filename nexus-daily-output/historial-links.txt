@@ -102,3 +102,9 @@
 2026-11-09	https://www.infobae.com/tecno/2026/11/09/google-presento-un-chip-de-ia-que-protege-los-datos-confidenciales-mientras-se-procesan/
 2026-11-09	https://huggingface.co/blog/amazon/higher-order-pruning-experts
 2026-11-09	https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan
+2026-11-10	https://www.diariobitcoin.com/tecnologia/anthropic-lanza-claude-fable-5-2-y-mythos-5-2-antes-de-su-posible-opi/
+2026-11-10	https://www.ellitoral.com/internacionales/anthropic-wallstreet-opi-inteligenciaartificial-claude_0_Ij0HNOK1bh.html
+2026-11-10	https://deepmind.google/blog/gemini-4-carbon-is-now-available/
+2026-11-10	https://deepmind.google/blog/introducing-alphaproof-code/
+2026-11-10	https://openai.com/index/control-room
+2026-11-10	https://huggingface.co/blog/decision

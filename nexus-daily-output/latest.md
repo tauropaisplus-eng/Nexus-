@@ -1,4 +1,4 @@
-# NEXUS Daily - 2026-11-09
+# NEXUS Daily - 2026-11-10
 
 ## 👁️ Baja visión
 
@@ -6,26 +6,30 @@ Hoy no hubo novedades.
 
 ## 🤖 Inteligencia artificial
 
-**Soporte y documentos lideran el uso de Claude**
-La actualización de junio de 2026 del Anthropic Economic Index cruza el volumen de uso de Claude.ai con cada ocupación. Mide la porción de conversaciones, no la productividad ni los recortes de plantilla, y la propia Anthropic admite que sobrerrepresenta a usuarios pioneros. También separa las tareas en automatización total y aumento, pero no publica el porcentaje exacto por cargo. ([ecosistemastartup][1])
+**Anthropic lanza Claude Fable 5.2 y Mythos 5.2 antes de su posible OPI**
+Anthropic presentó los modelos el 9 de noviembre. Según la empresa, generan resultados un 30% más rápido que la versión anterior y mejoran en programación, razonamiento y visión. Fable 5.2 ya está disponible y cuesta 20% menos por token. Mythos 5.2 queda limitado a programas de ciencias de la vida y ciberseguridad. ([DiarioBitcoin][1])
 
-**Anthropic cierra un acuerdo por u$s3.400 millones para asegurar energía de sus centros de datos**
-El acuerdo le da acceso a generadores eléctricos a gas con 1,7 gigavatios de capacidad. Lo informó el Financial Times. ([Ámbito Financiero][2])
+**La inteligencia artificial llega a Wall Street: Anthropic busca una valoración de US$ 1,4 billones**
+Según la documentación presentada ante la SEC, Anthropic proyecta ofrecer 825 millones de acciones Clase A a entre US$ 70 y US$ 78 cada una. Busca recaudar hasta US$ 64.300 millones, lo que sería una de las mayores colocaciones de la historia bursátil de Estados Unidos. La oferta pública inicial todavía no se concretó. ([El Litoral][2])
 
-**Google presenta un chip de IA que protege los datos confidenciales mientras se procesan**
-El TPU 8tx usa computación confidencial para aislar datos y parámetros de modelos en memoria, y apunta a gobiernos y empresas reguladas. Junto con el TPU 8i Max, pensado para volúmenes muy grandes de información, la octava generación de TPU suma cuatro sistemas en un año. Google dice que los TPU ya tienen cerca de 100 clientes. ([Infobae][3])
+**Gemini 4 Carbon ya está disponible**
+Google DeepMind abrió Carbon a desarrolladores, empresas, científicos y consumidores. Dos semanas antes lo había liberado solo para defensores de ciberseguridad, a través del programa Fairwind. Está pensado para tareas de programación de varios pasos y para investigación científica abierta. Según Google, queda primero en CursorBench 4.0, WANDR de Perplexity y AutomationBench de Zapier, con un costo por tarea más de dos veces menor que el del mejor modelo externo siguiente. También lanzó en versión preliminar /swarm en Google Antigravity, que convierte un solo pedido en un equipo coordinado de agentes. ([Google DeepMind][3])
 
-**HOPE: poda de expertos de orden superior en modelos Mixture-of-Experts**
-Amazon propone podar expertos sin entrenamiento y de forma compatible con la cuantización. En Qwen3.5-122B hay 256 expertos por capa en 48 capas y solo 8 se usan por token, pero los expertos ocupan el 95% de los ~250 GB de memoria. Los métodos actuales puntúan cada experto por separado, y HOPE los evalúa en conjunto para decidir cuáles eliminar. ([Hugging Face Blog][4])
+**Presentamos AlphaProof Code: un avance para verificar software complejo en profundidad**
+Los agentes de AlphaProof Code escribieron tres millones de líneas de pruebas en Lean para verificar el cifrado central de Signal. ([Google DeepMind][4])
 
-**Nemotron-Personas-Finance-Japan**
-NVIDIA publicó un dataset sintético que reproduce la demografía y el contexto financiero de Japón. ([Hugging Face Blog][5])
+**Control Room: un sistema central para rastrear y detener cargas de trabajo de modelos en nuestra infraestructura de investigación**
+OpenAI describe cómo rastrea las cargas de trabajo de sus modelos en la infraestructura de investigación. El sistema puede frenarlas rápido cuando surgen problemas de seguridad. ([OpenAI][5])
+
+**Modelos de decisión en Hugging Face**
+Hugging Face explica una alternativa a pedirle a un LLM que genere texto: modelos que evalúan directamente las opciones disponibles y devuelven una distribución de probabilidad. El ejemplo es un ticket de soporte, donde hay que decidir qué equipo lo atiende, qué urgencia tiene y si pide un reembolso. ([Hugging Face Blog][6])
 
 ---
 Links:
 
-[1]: https://ecosistemastartup.com/anthropic-soporte-y-documentos-lideran-el-uso-de-claude/
-[2]: https://www.ambito.com/tecnologia/anthropic-acordo-una-operacion-us3400-millones-garantizar-energia-sus-centros-datos-n6342934
-[3]: https://www.infobae.com/tecno/2026/11/09/google-presento-un-chip-de-ia-que-protege-los-datos-confidenciales-mientras-se-procesan/
-[4]: https://huggingface.co/blog/amazon/higher-order-pruning-experts
-[5]: https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan
+[1]: https://www.diariobitcoin.com/tecnologia/anthropic-lanza-claude-fable-5-2-y-mythos-5-2-antes-de-su-posible-opi/
+[2]: https://www.ellitoral.com/internacionales/anthropic-wallstreet-opi-inteligenciaartificial-claude_0_Ij0HNOK1bh.html
+[3]: https://deepmind.google/blog/gemini-4-carbon-is-now-available/
+[4]: https://deepmind.google/blog/introducing-alphaproof-code/
+[5]: https://openai.com/index/control-room
+[6]: https://huggingface.co/blog/decision

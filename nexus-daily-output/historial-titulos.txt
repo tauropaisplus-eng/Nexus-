@@ -172,3 +172,9 @@
 2026-11-09	Google presenta un chip de IA que protege los datos confidenciales mientras se procesan
 2026-11-09	HOPE: poda de expertos de orden superior en modelos Mixture-of-Experts
 2026-11-09	Nemotron-Personas-Finance-Japan
+2026-11-10	Anthropic lanza Claude Fable 5.2 y Mythos 5.2 antes de su posible OPI
+2026-11-10	La inteligencia artificial llega a Wall Street: Anthropic busca una valoración de US$ 1,4 billones
+2026-11-10	Gemini 4 Carbon ya está disponible
+2026-11-10	Presentamos AlphaProof Code: un avance para verificar software complejo en profundidad
+2026-11-10	Control Room: un sistema central para rastrear y detener cargas de trabajo de modelos en nuestra infraestructura de investigación
+2026-11-10	Modelos de decisión en Hugging Face
