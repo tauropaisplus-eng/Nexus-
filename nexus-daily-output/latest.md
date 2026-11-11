@@ -1,35 +1,37 @@
-# NEXUS Daily - 2026-11-10
+# NEXUS Daily - 2026-11-11
 
 ## 👁️ Baja visión
 
-Hoy no hubo novedades.
+**Los oftalmólogos de Valdecilla estrenan las operaciones en 3D de retina y córnea**
+El Hospital de Liencres incorporó en uno de sus dos quirófanos diarios un microscopio digital Artevo 850, valuado en 320.000 euros, con OCT intraoperatoria. Con él se ve la retina o la córnea en 3D durante la cirugía y se sigue todo en pantallas 4K de alta definición. Por ahora se usa en patología de retina y córnea, y después se va a extender a cataratas. ([El Diario Montañés][1])
 
 ## 🤖 Inteligencia artificial
 
-**Anthropic lanza Claude Fable 5.2 y Mythos 5.2 antes de su posible OPI**
-Anthropic presentó los modelos el 9 de noviembre. Según la empresa, generan resultados un 30% más rápido que la versión anterior y mejoran en programación, razonamiento y visión. Fable 5.2 ya está disponible y cuesta 20% menos por token. Mythos 5.2 queda limitado a programas de ciencias de la vida y ciberseguridad. ([DiarioBitcoin][1])
+**Anthropic convierte Claude en una suite ofimática: hojas de cálculo, pizarras y datos dentro del chat**
+Anthropic presentó nuevos tipos de artefactos (hojas de cálculo, pizarras y cuadros de mando en equipo) que comparten el contexto de la conversación. También sumó conectores interactivos que permiten a socios como Adobe y Atlassian incrustar sus apps en Claude, además de plugins de Salesforce (beta), NetSuite y Workday (beta). Se apoyan en MCP, cuyo marketplace ya supera los 9.000 conectores y plugins, y se anunció además Claude Meetings. ([MuyComputerPRO][2])
 
-**La inteligencia artificial llega a Wall Street: Anthropic busca una valoración de US$ 1,4 billones**
-Según la documentación presentada ante la SEC, Anthropic proyecta ofrecer 825 millones de acciones Clase A a entre US$ 70 y US$ 78 cada una. Busca recaudar hasta US$ 64.300 millones, lo que sería una de las mayores colocaciones de la historia bursátil de Estados Unidos. La oferta pública inicial todavía no se concretó. ([El Litoral][2])
+**Eléctricas de Estados Unidos usan la IA Mythos de Anthropic para detectar fallas que podrían aprovechar hackers**
+Según Bloomberg, Duke Energy y otras eléctricas estadounidenses prueban Mythos, un modelo que Anthropic no ofrece al público general, y lo integran en sus defensas para buscar vulnerabilidades de software. Anthropic les habilitó el acceso a fines del verano boreal, tras meses de pedidos al gobierno y a la empresa. El modelo se presentó dentro de la alianza Project Glasswing, orientada a proteger software crítico. ([Infobae Tecno][3])
 
-**Gemini 4 Carbon ya está disponible**
-Google DeepMind abrió Carbon a desarrolladores, empresas, científicos y consumidores. Dos semanas antes lo había liberado solo para defensores de ciberseguridad, a través del programa Fairwind. Está pensado para tareas de programación de varios pasos y para investigación científica abierta. Según Google, queda primero en CursorBench 4.0, WANDR de Perplexity y AutomationBench de Zapier, con un costo por tarea más de dos veces menor que el del mejor modelo externo siguiente. También lanzó en versión preliminar /swarm en Google Antigravity, que convierte un solo pedido en un equipo coordinado de agentes. ([Google DeepMind][3])
+**AlphaGenome 2: descifrando cómo las células leen el ADN para entender mejor las enfermedades**
+Google DeepMind anunció hoy la segunda generación de su modelo de secuencias de ADN, que predice cómo las variantes genéticas afectan a cientos de tipos de células humanas. La primera versión, lanzada el año pasado, trabajaba con tejidos amplios, y se amplió con AlphaGenome Atlas, que reúne predicciones para los 9.000 millones de cambios posibles de una sola letra en el genoma humano. ([Google DeepMind][4])
 
-**Presentamos AlphaProof Code: un avance para verificar software complejo en profundidad**
-Los agentes de AlphaProof Code escribieron tres millones de líneas de pruebas en Lean para verificar el cifrado central de Signal. ([Google DeepMind][4])
+**Gemini Robotics 2.5 acelera la destreza general en el mundo real**
+Google DeepMind presentó su modelo de visión-lenguaje-acción más capaz hasta ahora, que mejora la destreza, la confiabilidad y la seguridad de los robots. ([Google DeepMind][5])
 
-**Control Room: un sistema central para rastrear y detener cargas de trabajo de modelos en nuestra infraestructura de investigación**
-OpenAI describe cómo rastrea las cargas de trabajo de sus modelos en la infraestructura de investigación. El sistema puede frenarlas rápido cuando surgen problemas de seguridad. ([OpenAI][5])
+**BotPsy: asistente personal en el dispositivo con un modelo de lenguaje agéntico de menos de mil millones de parámetros**
+Tether AI Research (QVAC) presentó BotPsy, un modelo de 0,8B parámetros pensado para llamadas a funciones y flujos agénticos, construido sobre Qwen3.5-0.8B. Está diseñado para correr en el dispositivo, con foco en privacidad y menor costo frente a los grandes modelos en la nube. ([Hugging Face Blog][6])
 
-**Modelos de decisión en Hugging Face**
-Hugging Face explica una alternativa a pedirle a un LLM que genere texto: modelos que evalúan directamente las opciones disponibles y devuelven una distribución de probabilidad. El ejemplo es un ticket de soporte, donde hay que decidir qué equipo lo atiende, qué urgencia tiene y si pide un reembolso. ([Hugging Face Blog][6])
+**Presentamos Businesses en ChatGPT**
+OpenAI lanzó una función para que los negocios gestionen su información dentro de ChatGPT, vean cómo aparecen allí y conviertan el interés de los usuarios en acciones. ([OpenAI][7])
 
 ---
 Links:
 
-[1]: https://www.diariobitcoin.com/tecnologia/anthropic-lanza-claude-fable-5-2-y-mythos-5-2-antes-de-su-posible-opi/
-[2]: https://www.ellitoral.com/internacionales/anthropic-wallstreet-opi-inteligenciaartificial-claude_0_Ij0HNOK1bh.html
-[3]: https://deepmind.google/blog/gemini-4-carbon-is-now-available/
-[4]: https://deepmind.google/blog/introducing-alphaproof-code/
-[5]: https://openai.com/index/control-room
-[6]: https://huggingface.co/blog/decision
+[1]: https://www.eldiariomontanes.es/cantabria/oftalmologos-valdecilla-estrenan-operaciones-retina-cornea-20261110071141-nt.html
+[2]: https://www.muycomputerpro.com/2026/11/11/anthropic-convierte-claude-en-una-suite-ofimatica-hojas-de-calculo-pizarras-y-datos-dentro-del-chat
+[3]: https://www.infobae.com/tecno/2026/11/11/electricas-de-estados-unidos-usan-la-ia-mythos-de-anthropic-para-detectar-fallas-que-podrian-aprovechar-hackers/
+[4]: https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/
+[5]: https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/
+[6]: https://huggingface.co/blog/qvac/botpsy
+[7]: https://openai.com/index/introducing-businesses-chatgpt

@@ -178,3 +178,10 @@
 2026-11-10	Presentamos AlphaProof Code: un avance para verificar software complejo en profundidad
 2026-11-10	Control Room: un sistema central para rastrear y detener cargas de trabajo de modelos en nuestra infraestructura de investigación
 2026-11-10	Modelos de decisión en Hugging Face
+2026-11-11	Los oftalmólogos de Valdecilla estrenan las operaciones en 3D de retina y córnea
+2026-11-11	Anthropic convierte Claude en una suite ofimática: hojas de cálculo, pizarras y datos dentro del chat
+2026-11-11	Eléctricas de Estados Unidos usan la IA Mythos de Anthropic para detectar fallas que podrían aprovechar hackers
+2026-11-11	AlphaGenome 2: descifrando cómo las células leen el ADN para entender mejor las enfermedades
+2026-11-11	Gemini Robotics 2.5 acelera la destreza general en el mundo real
+2026-11-11	BotPsy: asistente personal en el dispositivo con un modelo de lenguaje agéntico de menos de mil millones de parámetros
+2026-11-11	Presentamos Businesses en ChatGPT

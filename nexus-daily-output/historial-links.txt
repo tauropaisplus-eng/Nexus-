@@ -108,3 +108,10 @@
 2026-11-10	https://deepmind.google/blog/introducing-alphaproof-code/
 2026-11-10	https://openai.com/index/control-room
 2026-11-10	https://huggingface.co/blog/decision
+2026-11-11	https://www.eldiariomontanes.es/cantabria/oftalmologos-valdecilla-estrenan-operaciones-retina-cornea-20261110071141-nt.html
+2026-11-11	https://www.muycomputerpro.com/2026/11/11/anthropic-convierte-claude-en-una-suite-ofimatica-hojas-de-calculo-pizarras-y-datos-dentro-del-chat
+2026-11-11	https://www.infobae.com/tecno/2026/11/11/electricas-de-estados-unidos-usan-la-ia-mythos-de-anthropic-para-detectar-fallas-que-podrian-aprovechar-hackers/
+2026-11-11	https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/
+2026-11-11	https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/
+2026-11-11	https://huggingface.co/blog/qvac/botpsy
+2026-11-11	https://openai.com/index/introducing-businesses-chatgpt
