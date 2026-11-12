@@ -185,3 +185,11 @@
 2026-11-11	Gemini Robotics 2.5 acelera la destreza general en el mundo real
 2026-11-11	BotPsy: asistente personal en el dispositivo con un modelo de lenguaje agéntico de menos de mil millones de parámetros
 2026-11-11	Presentamos Businesses en ChatGPT
+2026-11-12	Sandoz lanza Ranluspec en Europa
+2026-11-12	Google abre la preventa de gafas inteligentes con Gemini desde USD 395
+2026-11-12	Anthropic presenta Claude Meetings, un asistente de IA que se suma a las videollamadas
+2026-11-12	OpenAI reaceleró su negocio días antes del debut bursátil de Anthropic
+2026-11-12	OpenAI destina USD 2 millones a investigación sobre IA y seguridad infantil
+2026-11-12	Jensen Huang renuncia como CEO de Nvidia y la acción cae más de 12%
+2026-11-12	Entrenamiento con token pooling para modelos de embeddings multivector
+2026-11-12	Guía definitiva de fine-tuning para modelos de generación 3D

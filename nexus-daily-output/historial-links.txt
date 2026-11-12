@@ -115,3 +115,11 @@
 2026-11-11	https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/
 2026-11-11	https://huggingface.co/blog/qvac/botpsy
 2026-11-11	https://openai.com/index/introducing-businesses-chatgpt
+2026-11-12	https://es.marketscreener.com/noticias/sandoz-lanza-ranluspec-en-europa-ce785ed8d981f726
+2026-11-12	https://www.diariobitcoin.com/estados-unidos/google-abre-la-preventa-de-gafas-inteligentes-con-gemini-desde-usd-395/
+2026-11-12	https://www.abc.es/tecnologia/informatica/claude-nuevo-participante-tus-reuniones-ia-anthropic-20261111191603-nt.html
+2026-11-12	https://www.businessinsider.es/big-tech/chatgpt-vs-claude-openai-ha-reacelerado-su-negocio-visperas-salida-bolsa-anthropic_7059920_0.html
+2026-11-12	https://openai.com/index/children-first-declaration
+2026-11-12	https://www.infobae.com/tecno/2026/11/12/que-hace-nvidia-y-como-logro-convertirse-en-una-de-las-empresas-mas-valiosas-del-mundo-gracias-a-la-inteligencia-artificial/
+2026-11-12	https://huggingface.co/blog/token-pooling
+2026-11-12	https://huggingface.co/blog/3d-lora-finetuning

@@ -1,37 +1,41 @@
-# NEXUS Daily - 2026-11-11
+# NEXUS Daily - 2026-11-12
 
 ## 👁️ Baja visión
 
-**Los oftalmólogos de Valdecilla estrenan las operaciones en 3D de retina y córnea**
-El Hospital de Liencres incorporó en uno de sus dos quirófanos diarios un microscopio digital Artevo 850, valuado en 320.000 euros, con OCT intraoperatoria. Con él se ve la retina o la córnea en 3D durante la cirugía y se sigue todo en pantallas 4K de alta definición. Por ahora se usa en patología de retina y córnea, y después se va a extender a cataratas. ([El Diario Montañés][1])
+**Sandoz lanza Ranluspec en Europa**
+Sandoz anunció el lanzamiento europeo de Ranluspec, un fármaco que la Comisión Europea aprobó en febrero de 2026. Según la compañía, tiene eficacia equivalente y un perfil de seguridad comparable. (MarketScreener, [L2][1])
+
+**Google abre la preventa de gafas inteligentes con Gemini desde USD 395**
+Las armó junto a Warby Parker (desde USD 395) y Gentle Monster (USD 449), con desarrollo en colaboración con Samsung. Traducen voz en más de 70 idiomas y la venta general está prevista para el 10 de diciembre de 2026. Google aclara que su función Guided Vision no está diseñada para orientar desplazamientos seguros. (DiarioBitcoin, [L8][2])
 
 ## 🤖 Inteligencia artificial
 
-**Anthropic convierte Claude en una suite ofimática: hojas de cálculo, pizarras y datos dentro del chat**
-Anthropic presentó nuevos tipos de artefactos (hojas de cálculo, pizarras y cuadros de mando en equipo) que comparten el contexto de la conversación. También sumó conectores interactivos que permiten a socios como Adobe y Atlassian incrustar sus apps en Claude, además de plugins de Salesforce (beta), NetSuite y Workday (beta). Se apoyan en MCP, cuyo marketplace ya supera los 9.000 conectores y plugins, y se anunció además Claude Meetings. ([MuyComputerPRO][2])
+**Anthropic presenta Claude Meetings, un asistente de IA que se suma a las videollamadas**
+Dentro de un paquete de herramientas de ofimática, Claude participa de la reunión como un integrante más: responde preguntas en el chat en tiempo real y se conecta a aplicaciones corporativas para consultar datos de la empresa mientras el equipo habla. No se limita a transcribir. ([ABC][3])
 
-**Eléctricas de Estados Unidos usan la IA Mythos de Anthropic para detectar fallas que podrían aprovechar hackers**
-Según Bloomberg, Duke Energy y otras eléctricas estadounidenses prueban Mythos, un modelo que Anthropic no ofrece al público general, y lo integran en sus defensas para buscar vulnerabilidades de software. Anthropic les habilitó el acceso a fines del verano boreal, tras meses de pedidos al gobierno y a la empresa. El modelo se presentó dentro de la alianza Project Glasswing, orientada a proteger software crítico. ([Infobae Tecno][3])
+**OpenAI reaceleró su negocio días antes del debut bursátil de Anthropic**
+OpenAI ingresó unos USD 10.000 millones entre julio y septiembre, un 49,2% más que los USD 6.700 millones del trimestre anterior. Es la primera vez en meses que crece más rápido que Anthropic, que debuta en el Nasdaq el 19 de noviembre. ([Business Insider España][4])
 
-**AlphaGenome 2: descifrando cómo las células leen el ADN para entender mejor las enfermedades**
-Google DeepMind anunció hoy la segunda generación de su modelo de secuencias de ADN, que predice cómo las variantes genéticas afectan a cientos de tipos de células humanas. La primera versión, lanzada el año pasado, trabajaba con tejidos amplios, y se amplió con AlphaGenome Atlas, que reúne predicciones para los 9.000 millones de cambios posibles de una sola letra en el genoma humano. ([Google DeepMind][4])
+**OpenAI destina USD 2 millones a investigación sobre IA y seguridad infantil**
+El financiamiento apoya el desarrollo de herramientas compartidas para medir los riesgos y las oportunidades que la IA implica para los jóvenes. ([OpenAI][5])
 
-**Gemini Robotics 2.5 acelera la destreza general en el mundo real**
-Google DeepMind presentó su modelo de visión-lenguaje-acción más capaz hasta ahora, que mejora la destreza, la confiabilidad y la seguridad de los robots. ([Google DeepMind][5])
+**Jensen Huang renuncia como CEO de Nvidia y la acción cae más de 12%**
+La renuncia fue con efecto inmediato. La junta designó a Colette Kress, hasta ahora directora financiera, como CEO interina mientras busca un reemplazo permanente. La caída puso en riesgo unos USD 500.000 millones de valor bursátil de una compañía capitalizada en unos USD 4,2 billones. ([Infobae Tecno][6])
 
-**BotPsy: asistente personal en el dispositivo con un modelo de lenguaje agéntico de menos de mil millones de parámetros**
-Tether AI Research (QVAC) presentó BotPsy, un modelo de 0,8B parámetros pensado para llamadas a funciones y flujos agénticos, construido sobre Qwen3.5-0.8B. Está diseñado para correr en el dispositivo, con foco en privacidad y menor costo frente a los grandes modelos en la nube. ([Hugging Face Blog][6])
+**Entrenamiento con token pooling para modelos de embeddings multivector**
+Artículo técnico del blog de Hugging Face sobre cómo entrenar modelos de embeddings multivector teniendo en cuenta el token pooling. ([Hugging Face Blog][7])
 
-**Presentamos Businesses en ChatGPT**
-OpenAI lanzó una función para que los negocios gestionen su información dentro de ChatGPT, vean cómo aparecen allí y conviertan el interés de los usuarios en acciones. ([OpenAI][7])
+**Guía definitiva de fine-tuning para modelos de generación 3D**
+Guía del blog de Hugging Face para ajustar modelos que generan contenido en 3D. ([Hugging Face Blog][8])
 
 ---
 Links:
 
-[1]: https://www.eldiariomontanes.es/cantabria/oftalmologos-valdecilla-estrenan-operaciones-retina-cornea-20261110071141-nt.html
-[2]: https://www.muycomputerpro.com/2026/11/11/anthropic-convierte-claude-en-una-suite-ofimatica-hojas-de-calculo-pizarras-y-datos-dentro-del-chat
-[3]: https://www.infobae.com/tecno/2026/11/11/electricas-de-estados-unidos-usan-la-ia-mythos-de-anthropic-para-detectar-fallas-que-podrian-aprovechar-hackers/
-[4]: https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/
-[5]: https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/
-[6]: https://huggingface.co/blog/qvac/botpsy
-[7]: https://openai.com/index/introducing-businesses-chatgpt
+[1]: https://es.marketscreener.com/noticias/sandoz-lanza-ranluspec-en-europa-ce785ed8d981f726
+[2]: https://www.diariobitcoin.com/estados-unidos/google-abre-la-preventa-de-gafas-inteligentes-con-gemini-desde-usd-395/
+[3]: https://www.abc.es/tecnologia/informatica/claude-nuevo-participante-tus-reuniones-ia-anthropic-20261111191603-nt.html
+[4]: https://www.businessinsider.es/big-tech/chatgpt-vs-claude-openai-ha-reacelerado-su-negocio-visperas-salida-bolsa-anthropic_7059920_0.html
+[5]: https://openai.com/index/children-first-declaration
+[6]: https://www.infobae.com/tecno/2026/11/12/que-hace-nvidia-y-como-logro-convertirse-en-una-de-las-empresas-mas-valiosas-del-mundo-gracias-a-la-inteligencia-artificial/
+[7]: https://huggingface.co/blog/token-pooling
+[8]: https://huggingface.co/blog/3d-lora-finetuning
