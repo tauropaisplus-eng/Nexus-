@@ -3,7 +3,7 @@
 ## 👁️ Baja visión
 
 **Susvimo con implante Contivue, aprobado en la Unión Europea para la DMAE húmeda**
-La Comisión Europea aprobó el ranibizumab (Susvimo) para usarse con el implante recargable Contivue. El implante es del tamaño de un grano de arroz y se coloca una sola vez, con anestesia local. Libera el fármaco de forma continua y se rellena cada seis meses. Es la primera vez que la UE aprueba un implante así para el anti-VEGF, que ahora se aplica con inyecciones repetidas. Ya está aprobado. (([Acción Visión España][1]))
+La Comisión Europea aprobó el ranibizumab (Susvimo) para usarse con el implante recargable Contivue. El implante es del tamaño de un grano de arroz y se coloca una sola vez, con anestesia local. Libera el fármaco de forma continua y se rellena cada seis meses. Es la primera vez que la UE aprueba un implante así para el anti-VEGF, que ahora se aplica con inyecciones repetidas. Ya está aprobado. ([Acción Visión España][1])
 
 **Tinlarebant para Stargardt: la FDA definirá el 12 de febrero de 2027**
 Belite Bio presentó resultados del tercer trimestre y la pérdida fue menor a la esperada. Lo importante es la fecha PDUFA del tinlarebant: el 12 de febrero de 2027. Hoy no hay ningún tratamiento aprobado para Stargardt y la FDA decidió no convocar a un comité asesor. Está en revisión regulatoria. ([24/7 Wall St.][2])

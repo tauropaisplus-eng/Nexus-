@@ -582,6 +582,8 @@ ${ia.texto || '(sin notas hoy)'}`;
     if (!num) num = usados.push(link);
     return `[${nombre}][${num}]`;
   });
+  // v7: a veces el modelo deja la fuente con doble parentesis: (([Medio][1]))
+  resumen = resumen.replace(/\(\((\[[^\]]+\]\[\d+\])\)\)/g, '($1)');
   if (usados.length) {
     resumen += '\n\n---\nLinks:\n\n' + usados.map((l, i) => `[${i + 1}]: ${l}`).join('\n');
   }
