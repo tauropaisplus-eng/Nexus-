@@ -15,6 +15,10 @@ on:
         description: 'Solo diagnosticar fuentes (no genera informe)'
         type: boolean
         default: false
+      estudios_prueba:
+        description: 'Probar el apartado de estudios clinicos (no toca la edicion del dia)'
+        type: boolean
+        default: false
 
 jobs:
   nexus-update:
@@ -26,6 +30,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DIAGNOSTICO: ${{ inputs.diagnostico && '1' || '' }}
+          ESTUDIOS_PRUEBA: ${{ inputs.estudios_prueba && '1' || '' }}
         run: |
           node nexus-daily.js
 

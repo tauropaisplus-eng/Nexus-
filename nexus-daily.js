@@ -24,6 +24,11 @@
 //  - IA: las notas de Google News cuyo link real no se puede sacar se descartan
 //    (salian con links larguisimos y sin texto). En baja vision se conservan.
 //  - El mismo anuncio no sale dos veces en la misma edicion aunque lo traigan dos medios.
+// Cambios v8 (13 nov 2026, idea de Gabriel, autorizada por el):
+//  - Los lunes se suma el apartado "Estudios en marcha": ensayos clinicos de retina y
+//    baja vision registrados en ClinicalTrials.gov que empezaron o avanzaron en la semana.
+//    Cada uno en una linea: para que es, fase, quien lo hace y donde. No repite un estudio
+//    salvo que cambie de estado. Para probarlo a mano: workflow_dispatch con "estudios_prueba".
 //    aunque venga de otro medio. Mas busquedas de baja vision.
 
 const https = require('https');
@@ -494,6 +499,104 @@ function borrarJsonViejos() {
   }
 }
 
+// ---------------- ESTUDIOS EN MARCHA (lunes) ----------------
+const HISTORIAL_ESTUDIOS = path.join(CARPETA, 'historial-estudios.txt');
+const CONDICIONES_ESTUDIOS = [
+  'macular degeneration', 'geographic atrophy', 'Stargardt disease', 'retinitis pigmentosa',
+  'diabetic macular edema', 'retinal vein occlusion', 'macular hole', 'low vision'
+];
+const ESTADOS = {
+  NOT_YET_RECRUITING: 'todavia no empezo a reclutar', RECRUITING: 'reclutando pacientes',
+  ACTIVE_NOT_RECRUITING: 'en curso, ya sin reclutar', COMPLETED: 'terminado',
+  ENROLLING_BY_INVITATION: 'reclutando por invitacion'
+};
+
+function leerHistorialEstudios() {
+  if (!fs.existsSync(HISTORIAL_ESTUDIOS)) return [];
+  const limite = new Date(Date.now() - 180 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  return fs.readFileSync(HISTORIAL_ESTUDIOS, 'utf8').split('\n').map((l) => l.split('\t'))
+    .filter(([fecha, id, estado]) => fecha && id && estado && fecha >= limite);
+}
+
+// Trae de ClinicalTrials.gov los estudios actualizados en los ultimos 7 dias.
+// Devuelve { texto, nuevos } o null si no hay nada / falla.
+async function buscarEstudios() {
+  const desde = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const vistos = new Set(leerHistorialEstudios().map(([, id, estado]) => id + '|' + estado));
+  const porId = new Map();
+  for (const cond of CONDICIONES_ESTUDIOS) {
+    const url = 'https://clinicaltrials.gov/api/v2/studies?format=json&pageSize=30' +
+      '&query.cond=' + encodeURIComponent(cond) +
+      '&filter.overallStatus=' + Object.keys(ESTADOS).join(',') +
+      '&filter.advanced=' + encodeURIComponent(`AREA[LastUpdatePostDate]RANGE[${desde},MAX] AND AREA[StudyType]INTERVENTIONAL`) +
+      '&sort=' + encodeURIComponent('LastUpdatePostDate:desc');
+    let datos;
+    try {
+      datos = JSON.parse(await fetchUrl(url));
+    } catch (e) {
+      console.log(`Estudios (${cond}): ClinicalTrials.gov no respondio bien`);
+      continue;
+    }
+    let cuenta = 0;
+    for (const e of datos.studies || []) {
+      const ps = e.protocolSection || {};
+      const id = ps.identificationModule?.nctId;
+      const estado = ps.statusModule?.overallStatus;
+      if (!id || !estado || porId.has(id) || vistos.has(id + '|' + estado)) continue;
+      const titulo = ps.identificationModule?.briefTitle || '';
+      const resumenEstudio = (ps.descriptionModule?.briefSummary || '').replace(/\s+/g, ' ').slice(0, 700);
+      if (esDeCeguera(titulo) || cuerpoEsParaCiegos(resumenEstudio)) continue;
+      const paises = [...new Set((ps.contactsLocationsModule?.locations || []).map((l) => l.country).filter(Boolean))];
+      porId.set(id, {
+        id, estado, titulo, resumen: resumenEstudio,
+        fases: (ps.designModule?.phases || []).filter((f) => f !== 'NA').join(', ') || 'sin fase',
+        pacientes: ps.designModule?.enrollmentInfo?.count || '',
+        sponsor: ps.sponsorCollaboratorsModule?.leadSponsor?.name || '',
+        tratamientos: (ps.armsInterventionsModule?.interventions || []).map((i) => i.name).slice(0, 4).join(', '),
+        paises: paises.slice(0, 6).join(', ') + (paises.length > 6 ? ` y ${paises.length - 6} paises mas` : ''),
+        argentina: paises.includes('Argentina'),
+        primerRegistro: ps.statusModule?.studyFirstPostDateStruct?.date || ''
+      });
+      cuenta++;
+    }
+    console.log(`Estudios (${cond}): ${cuenta} nuevos o con cambios`);
+  }
+  if (porId.size === 0) return null;
+  // Primero los que pasan en Argentina, despues los de fase mas avanzada
+  const lista = [...porId.values()].sort((a, b) => (b.argentina - a.argentina) || b.fases.localeCompare(a.fases)).slice(0, 25);
+  return { lista };
+}
+
+async function armarEstudios(links) {
+  const r = await buscarEstudios();
+  if (!r) return null;
+  const material = r.lista.map((e) => {
+    links.push('https://clinicaltrials.gov/study/' + e.id);
+    return `- ${e.id}: ${e.titulo} | Estado: ${ESTADOS[e.estado] || e.estado} | Fase: ${e.fases}` +
+      (e.pacientes ? ` | Pacientes: ${e.pacientes}` : '') + (e.sponsor ? ` | Quien lo hace: ${e.sponsor}` : '') +
+      (e.tratamientos ? ` | Que prueban: ${e.tratamientos}` : '') + (e.paises ? ` | Donde: ${e.paises}` : '') +
+      (e.primerRegistro ? ` | Registrado: ${e.primerRegistro}` : '') +
+      `\n  Resumen: ${e.resumen} (link: L${links.length})`;
+  }).join('\n');
+  const prompt = `Sos NEXUS Daily. Arma el apartado semanal de estudios clinicos para Gabriel, que tiene baja vision (ve con un solo ojo) y sigue los avances de retina. Espanol rioplatense, hablale de vos, en Markdown.
+
+Empeza exactamente con la linea "### 🔬 Estudios en marcha (resumen semanal)" y despues una lista de entre 3 y 8 estudios elegidos de abajo, los mas interesantes: tratamientos nuevos, fases avanzadas (fase 2 o 3), los que se hacen en Argentina, y variedad de enfermedades. Deja afuera los estudios chicos de un hospital que solo comparan tecnicas de cirugia de rutina, y todo lo que sea para personas que no ven nada.
+
+Cada estudio en UN renglon que empiece con "- " y diga: para que es en palabras simples (que enfermedad y que se prueba), la fase, quien lo hace y donde. Si se hace en Argentina, decilo primero ("En Argentina:"). Al final, el link como enlace Markdown con el codigo tal cual, por ejemplo ([ClinicalTrials.gov](L3)). Si el estado es "terminado", aclara que termino y que hay que esperar los resultados. No inventes datos. No uses las palabras "ceguera", "ciego" o "ciega". Nada de introducciones ni cierres: solo el titulo y la lista.
+
+=== ESTUDIOS DE LA SEMANA (ClinicalTrials.gov) ===
+${material}`;
+  const texto = (await llamarClaude(prompt)).trim();
+  return { texto, estudios: r.lista };
+}
+
+function guardarHistorialEstudios(hoy, texto, estudios) {
+  // Solo se anotan los estudios que el modelo efectivamente publico
+  const publicados = estudios.filter((e) => texto.includes('clinicaltrials.gov/study/' + e.id));
+  const filas = [...leerHistorialEstudios(), ...publicados.map((e) => [hoy, e.id, e.estado])];
+  fs.writeFileSync(HISTORIAL_ESTUDIOS, filas.map((f) => f.join('\t')).join('\n') + '\n');
+}
+
 async function principal() {
   if (!process.env.ANTHROPIC_API_KEY) {
     throw new Error('Falta el secreto ANTHROPIC_API_KEY');
@@ -507,6 +610,16 @@ async function principal() {
   if (process.env.GITHUB_EVENT_NAME === 'schedule' && fs.existsSync(ultimo) &&
       fs.readFileSync(ultimo, 'utf8').startsWith(`# NEXUS Daily - ${hoy}`)) {
     console.log(`La edicion de ${hoy} ya existe: la corrida programada no hace nada`);
+    return;
+  }
+
+  // v8: prueba del apartado de estudios, sin tocar la edicion del dia
+  if (process.env.ESTUDIOS_PRUEBA) {
+    const links = [];
+    const est = await armarEstudios(links);
+    let t = est ? est.texto : '(no hubo estudios nuevos en la semana)';
+    t = t.replace(/\(\s*L(\d+)\s*\)/g, (x, n) => '(' + (links[Number(n) - 1] || '') + ')');
+    console.log('===== PRUEBA ESTUDIOS =====\n' + t);
     return;
   }
 
@@ -572,6 +685,23 @@ ${ia.texto || '(sin notas hoy)'}`;
   let resumen = await llamarClaude(prompt);
   resumen = resumen.replace(/^\s*#\s+[^\n]*\n+/, '').trim();
 
+  // v8: los lunes, apartado de estudios en marcha al final de la seccion de baja vision
+  let estudios = null;
+  const esLunes = new Date(hoy + 'T12:00:00Z').getUTCDay() === 1;
+  if (esLunes) {
+    try {
+      estudios = await armarEstudios(links);
+    } catch (e) {
+      console.warn('Aviso: no se pudo armar el apartado de estudios:', e.message);
+    }
+    if (estudios && estudios.texto) {
+      const corte = resumen.indexOf('## 🤖');
+      resumen = corte >= 0
+        ? resumen.slice(0, corte).trimEnd() + '\n\n' + estudios.texto + '\n\n' + resumen.slice(corte)
+        : resumen + '\n\n' + estudios.texto;
+    }
+  }
+
   // Cambiar los codigos L1, L2... por referencias numeradas [1], [2]...
   // Los links largos (Google News) van todos juntos al pie, asi el texto queda limpio.
   const usados = [];
@@ -595,6 +725,8 @@ ${ia.texto || '(sin notas hoy)'}`;
     path.join(CARPETA, 'latest.md'),
     `# NEXUS Daily - ${hoy}\n\n${resumen}\n`
   );
+
+  if (estudios && estudios.texto) guardarHistorialEstudios(hoy, resumen, estudios.estudios);
 
   // Anotar en el historial los links publicados hoy
   const nuevos = [];
