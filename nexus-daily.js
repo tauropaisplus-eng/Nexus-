@@ -17,6 +17,13 @@
 //    Las busquedas de noticias pasan a Bing News, que trae el link real del medio.
 //    Si Bing no responde, se usa Google News de respaldo.
 //  - Historial de titulos: el modelo recibe lo ya publicado y no repite la misma noticia
+// Cambios v7 (13 nov 2026, autorizados por Gabriel):
+//  - Baja vision: busquedas en ingles (degeneracion macular, atrofia geografica,
+//    terapia genica, ayudas para baja vision); el modelo las traduce. En espanol sale poco.
+//  - Filtro de ceguera tambien en ingles (blind, guide dog, braille...).
+//  - IA: las notas de Google News cuyo link real no se puede sacar se descartan
+//    (salian con links larguisimos y sin texto). En baja vision se conservan.
+//  - El mismo anuncio no sale dos veces en la misma edicion aunque lo traigan dos medios.
 //    aunque venga de otro medio. Mas busquedas de baja vision.
 
 const https = require('https');
@@ -61,6 +68,15 @@ function noticias(consulta) {
   };
 }
 
+// v7: lo mismo pero en ingles (Estados Unidos), donde se publica mucho mas sobre retina
+function noticiasEn(consulta) {
+  return {
+    url: 'https://www.bing.com/news/search?q=' + encodeURIComponent(consulta) +
+      '&format=rss&setlang=en&mkt=en-US&count=30',
+    url2: 'https://news.google.com/rss/search?q=' + encodeURIComponent(consulta) + '&hl=en-US&gl=US&ceid=US:en'
+  };
+}
+
 // Los links de Bing pasan por apiclick.aspx?...&url=<link real>: se saca el link real
 function linkRealBing(link) {
   try {
@@ -82,15 +98,17 @@ function youtube(idCanal) {
 function esDeCeguera(texto) {
   const t = String(texto || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   if (/\bciegos?\b|\bciegas?\b|\binvidentes?\b|ceguera total|baston|perros? (guia|de asistencia)|braille|lectores? de pantalla|audiodescrip/.test(t)) return true;
-  // "ceguera" sola: afuera, salvo que sea un tratamiento de retina (eso a Gabriel le sirve)
-  return /ceguera/.test(t) && !(esDeRetina(t) || /tratamiento|terapia|ensayo|implante|farmaco|cirugia|vacuna|inyeccion/.test(t));
+  // v7: lo mismo en ingles
+  if (/\bthe blind\b|\bblind (people|person|users?|man|woman|community|athletes?)\b|totally blind|guide dogs?|white canes?|\bcanes?\b|braille|screen readers?|audio description/.test(t)) return true;
+  // "ceguera"/"blindness" sola: afuera, salvo que sea un tratamiento de retina (eso a Gabriel le sirve)
+  return /ceguera|blindness|\bblind\b/.test(t) && !(esDeRetina(t) || /tratamiento|terapia|ensayo|implante|farmaco|cirugia|vacuna|inyeccion|treatment|therapy|trial|implant|drug|surgery|injection|fda/.test(t));
 }
 
 // Para el texto completo de la nota: si habla de personas ciegas y no menciona baja vision, afuera
 function cuerpoEsParaCiegos(cuerpo) {
   const t = String(cuerpo || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  const ciegos = (t.match(/\bciegos?\b|\bciegas?\b|invidente|ceguera total|braille|baston/g) || []).length;
-  return ciegos >= 2 && !/baja vision|resto visual|vision reducida/.test(t);
+  const ciegos = (t.match(/\bciegos?\b|\bciegas?\b|invidente|ceguera total|braille|baston|blind (people|person|users?)|the blind\b|guide dog|white cane/g) || []).length;
+  return ciegos >= 2 && !/baja vision|resto visual|vision reducida|low vision|partial sight/.test(t);
 }
 
 // ---------------- FUENTES ----------------
@@ -101,7 +119,7 @@ function cuerpoEsParaCiegos(cuerpo) {
 // Solo videos de retina (Gabriel lo pidio: de Poen y CAO, nada de glaucoma ni otros temas)
 function esDeRetina(titulo) {
   const t = titulo.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-  return /retin|macul|dmae|vitre|coroid|desprendimiento|stargardt|edema macular/.test(t);
+  return /retin|macul|dmae|amd\b|vitre|coroid|desprendimiento|detachment|stargardt|edema macular|geographic atrophy/.test(t);
 }
 
 const FUENTES_VISION = [
@@ -118,7 +136,13 @@ const FUENTES_VISION = [
   { nombre: 'Noticias: terapia genica retina', tipo: 'rss', ...noticias('terapia génica retina'), dias: 30 },
   { nombre: 'Noticias: atrofia geografica', tipo: 'rss', ...noticias('atrofia geográfica tratamiento'), dias: 30 },
   { nombre: 'Noticias: Stargardt', tipo: 'rss', ...noticias('Stargardt tratamiento'), dias: 30 },
-  { nombre: 'Noticias: gafas para baja vision', tipo: 'rss', ...noticias('gafas inteligentes "baja visión"'), dias: 30 }
+  { nombre: 'Noticias: gafas para baja vision', tipo: 'rss', ...noticias('gafas inteligentes "baja visión"'), dias: 30 },
+  // v7: busquedas en ingles (el modelo traduce)
+  { nombre: 'News (EN): macular degeneration', tipo: 'rss', ...noticiasEn('macular degeneration treatment'), dias: 14 },
+  { nombre: 'News (EN): geographic atrophy', tipo: 'rss', ...noticiasEn('"geographic atrophy"'), dias: 21 },
+  { nombre: 'News (EN): retinal gene therapy', tipo: 'rss', ...noticiasEn('retinal gene therapy OR "retinitis pigmentosa" treatment'), dias: 21 },
+  { nombre: 'News (EN): low vision devices', tipo: 'rss', ...noticiasEn('"low vision" glasses OR device OR magnifier'), dias: 21 },
+  { nombre: 'News (EN): Stargardt', tipo: 'rss', ...noticiasEn('Stargardt disease'), dias: 30 }
 ];
 
 const FUENTES_IA = [
@@ -335,7 +359,7 @@ function extraerHtml(html, base) {
 // Link real -> link de Google News, para anotar los dos en el historial
 const originales = {};
 
-async function leerSeccion(fuentes, yaVistos, links, publicados) {
+async function leerSeccion(fuentes, yaVistos, links, publicados, descartarGoogle = false) {
   let texto = '';
   let conDatos = 0;
   for (const f of fuentes) {
@@ -357,6 +381,8 @@ async function leerSeccion(fuentes, yaVistos, links, publicados) {
       });
     await completarNotas(notas);
     notas = notas.filter((n) => !(n.link && publicados.has(n.link)) && !cuerpoEsParaCiegos(n.cuerpo));
+    // v7: en IA, afuera las notas de Google News sin link real (sin texto y con link ilegible)
+    if (descartarGoogle) notas = notas.filter((n) => !/news\.google\.com/.test(n.link || ''));
     const conTexto = notas.filter((n) => n.cuerpo).length;
     console.log(`${f.nombre}: ${notas.length} notas (${conTexto} con texto completo)`);
     if (process.env.DIAGNOSTICO) {
@@ -492,7 +518,7 @@ async function principal() {
   console.log(`Historial: ${publicados.size} links ya publicados`);
 
   const vision = await leerSeccion(FUENTES_VISION, yaVistos, links, publicados);
-  const ia = await leerSeccion(FUENTES_IA, yaVistos, links, publicados);
+  const ia = await leerSeccion(FUENTES_IA, yaVistos, links, publicados, true);
 
   if (process.env.DIAGNOSTICO) {
     console.log('Modo diagnostico: no se genera informe');
@@ -510,6 +536,7 @@ Para Gabriel, que tiene baja vision (ve con un solo ojo) y le interesa: ayudas o
 Reglas de esta seccion:
 - EXCLUIR todo lo que sea para personas ciegas o sobre ceguera (bastones, perros guia, movilidad para ciegos, braille, lectores de pantalla, apps o aparatos que se manejan solo por audio porque el usuario no ve). Fijate en el "Texto de la nota": si esta pensada para gente que no ve, va afuera. Gabriel lo pidio expresamente y es firme.
 - No uses nunca las palabras "ceguera", "ciego" o "ciega". Si un tratamiento evita perder la vista, deci "perdida de vision".
+- Hay notas en ingles: traducilas al espanol (titulo y resumen). Si la nota en ingles y una en espanol cuentan lo mismo, quedate con la que tenga mas datos.
 - Si hay un ateneo o video de retina de Laboratorios Poen o del Consejo Argentino de Oftalmologia, o un episodio de Canal Retina, mencionalo siempre y decile que lo puede ver en el link.
 
 ## 🤖 Inteligencia artificial
@@ -523,6 +550,7 @@ Reglas generales:
 - Quien lee el informe: Gabriel la seccion de baja vision, y Claude (en otra conversacion) la de IA. En la de baja vision podes hablarle a Gabriel de vos. En la de IA escribi en tono neutro, sin dirigirte a nadie. Nunca escribas frases como "para vos y para Gabriel" ni le hables a Claude.
 - Variedad: maximo 2 notas sobre el mismo tema (por ejemplo, optogenetica). Si hay varias del mismo tema, quedate con la mas concreta y deja lugar a otros temas (lentes, apps, ayudas opticas).
 - Maximo 2 notas por fuente en todo el informe.
+- UN SOLO ANUNCIO, UNA SOLA NOTA: si dos fuentes cuentan el mismo lanzamiento o hecho (por ejemplo, el mismo modelo nuevo contado por el laboratorio y por un diario), sale una sola vez; junta los datos de las dos en esa nota.
 - Cada nota: **titulo en negrita**, despues un resumen de 1 a 3 lineas con lo concreto: que se hizo, quien, en cuantos pacientes o con que resultado, y en que etapa esta (por ejemplo: ensayo, aprobado, a la venta). Al final la fuente entre parentesis.
 - El resumen sale del "Texto de la nota". No repitas el titulo con otras palabras: conta lo que el titulo no dice.
 - Sin relleno: si de una nota solo tenes el titulo, escribi UNA linea corta y concreta sobre de que trata. Nunca escribas "segun el titulo" ni nada parecido. Prohibido completar con frases vacias o supuestas como "es un tema que te interesa", "es una de las lineas que mas te interesan", "la nota no trae mas detalles", "el titulo aclara que...", "esta ubicada en el rastreo de...". No le digas a Gabriel que le interesa algo: eso ya lo sabe.

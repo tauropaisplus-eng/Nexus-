@@ -4,7 +4,7 @@ permissions:
 
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '37 7 * * *'
   # Cuando se cambia el script, corre solo para probarlo
   push:
     paths:
