@@ -193,3 +193,10 @@
 2026-11-12	Jensen Huang renuncia como CEO de Nvidia y la acción cae más de 12%
 2026-11-12	Entrenamiento con token pooling para modelos de embeddings multivector
 2026-11-12	Guía definitiva de fine-tuning para modelos de generación 3D
+2026-11-13	Los tres mejores teléfonos para personas con baja visión
+2026-11-13	Gemini 4 Hydrogen
+2026-11-13	Google suma Gemini 4 Hydrogen a su buscador
+2026-11-13	llama.cpp llega a la versión 1.0.0
+2026-11-13	Claude sufrió una caída mundial
+2026-11-13	Anthropic estudió cómo cuidan los modelos lo que consideran propio
+2026-11-13	Amplitude lanza mejoras de producto en 1 o 2 días con OpenAI

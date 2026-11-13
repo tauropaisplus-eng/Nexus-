@@ -123,3 +123,10 @@
 2026-11-12	https://www.infobae.com/tecno/2026/11/12/que-hace-nvidia-y-como-logro-convertirse-en-una-de-las-empresas-mas-valiosas-del-mundo-gracias-a-la-inteligencia-artificial/
 2026-11-12	https://huggingface.co/blog/token-pooling
 2026-11-12	https://huggingface.co/blog/3d-lora-finetuning
+2026-11-13	https://www.mdzol.com/tecnologia/2026/11/12/los-tres-mejores-telefonos-para-personas-con-baja-vision-1993884.html
+2026-11-13	https://deepmind.google/blog/introducing-gemini-4-hydrogen/
+2026-11-13	https://www.infobae.com/tecno/2026/11/13/google-incorpora-gemini-4-hydrogen-a-su-buscador-para-entender-preguntas-dificiles-y-mal-escritas/
+2026-11-13	https://huggingface.co/blog/ggml-org/llama-cpp-v1
+2026-11-13	https://news.google.com/rss/articles/CBMimwFBVV95cUxOOG5vTDc3Z1ZCcnlBb1pta1MzaUJ1T1ZMTlA5OFkxVTJtYlYwLUw1MElYS1RPQUtuNnpfTl9wSXZuSEowbGdBRnFIRWF0cFhseGNCWXQ3UV9FSllrTlB2dGQ3dkh0WGw0dFJqWl9oRHhfV0pPVXVFbllUV1ZoRE9ZY3hQN3c2TWQ5bGJLUGxzRGVmRFk4UHpzcVhKTdIBoAFBVV95cUxQTnUzWDRjVDNBQ19GcUYxdWp6SUx1NFNIRnNIMFlxd3NzdHBzOGtqU2NxTFNyRFFkYW13OG1yWTZhN0tkN243b1RBU3R3LXg4d09YWk14c0lMMTd6Z04xLTFFTWxTNHdOdVU4OUZqcjVxYmVlU1E0UGpaSWNTaTQySVRiTDFoZ0tPcXBTNGFTYVI3SldDZ1NkSkNvcmoxWkpz?oc=5
+2026-11-13	https://news.google.com/rss/articles/CBMi3gFBVV95cUxPV2ZNWkF5UTRkbDBBNXI5MGJ1TW81bzR6Vk1tLWxESWczd1BmS09IOUwzRGtKSGhmdUQ0MzBhQ25nTWxQbW1ZZE9kMm1KTnpEallOUC1JVTFaSG5hQmdBbnlqdE1rdlB5cGtmVGxaNWRGb3lrQUdWVmptMXBIQnplREhWeHhDbklvcS1qTmxnWEdUOWx4aE9ZaXN0NTZQWUF3VUxLX0xCZkxlQnQ0Nkt3WjlYSXpFYWdQdV9VN0N3VDNRUU15dHVTczlQWUtMRGIzNU01WU1hOVhQaENZaGfSAeMBQVVfeXFMTlozeGRXeWktY0RRaU03QVdhcHFwUFZWNjdvU0t4aW1adGc5T0ZHcllvTXVSd0J1dnVfSENlaG5zQTZ6WlEwWEg0bkxRTVNyanRxVXJ1VTZ6YnlmV1U3R3RHV1ZuWGtwQ003VFFLeW5DdmVHSEIzV0l6X3I2Q2Y1N0xoT0tITjhGVmxwTXA5SWhnTFdkN3R4VFczVi1CT1NFZzNhU3dRb2RlYVZVeXVhdGoxZlF2dWdTWmVLZ0lRenNyX1dQZ3EyblpxOGRhWW1pM1NqdVRlUjVIOUYxZlRGVDZPcDA?oc=5
+2026-11-13	https://openai.com/business/customer-stories/amplitude
