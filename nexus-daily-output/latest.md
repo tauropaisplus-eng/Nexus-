@@ -2,36 +2,56 @@
 
 ## 👁️ Baja visión
 
-**Los tres mejores teléfonos para personas con baja visión**
-Guía de los celulares más destacados del año, que traen herramientas de lectura, zoom avanzado y pantallas ultrabrillantes. ([MDZ Online][1])
+**Susvimo con implante Contivue, aprobado en la Unión Europea para la DMAE húmeda**
+La Comisión Europea aprobó el ranibizumab (Susvimo) para usarse con el implante recargable Contivue. El implante es del tamaño de un grano de arroz y se coloca una sola vez, con anestesia local. Libera el fármaco de forma continua y se rellena cada seis meses. Es la primera vez que la UE aprueba un implante así para el anti-VEGF, que ahora se aplica con inyecciones repetidas. Ya está aprobado. (([Acción Visión España][1]))
+
+**Tinlarebant para Stargardt: la FDA definirá el 12 de febrero de 2027**
+Belite Bio presentó resultados del tercer trimestre y la pérdida fue menor a la esperada. Lo importante es la fecha PDUFA del tinlarebant: el 12 de febrero de 2027. Hoy no hay ningún tratamiento aprobado para Stargardt y la FDA decidió no convocar a un comité asesor. Está en revisión regulatoria. ([24/7 Wall St.][2])
+
+**Atrofia geográfica: resultados de fase 2 de K8, con dosis pensada para comodidad**
+Jayakrishna Ambati explicó en el Empire Forum 2026 los resultados de fase 2 de K8. El fármaco actúa sobre el inflamasoma y su esquema de dosificación está diseñado para que sea cómodo. Está en desarrollo clínico. ([Ophthalmology Times][3])
+
+**Una biotecnológica coreana pidió autorización en EE.UU. para un fármaco de ARN contra la atrofia geográfica**
+OliX Pharmaceuticals presentó la solicitud IND ante la FDA para el OLX301A, un siRNA dirigido a MyD88, un amplificador de la inflamación en la retina. Según la nota, Syfovre e Izervay no logran silenciar esa vía. Todavía no empezó el ensayo en humanos. ([Tech Times][4])
+
+**Trasplante de epitelio pigmentario de la retina: mejoras visuales con evidencia de baja certeza**
+Una revisión sistemática indica que el trasplante podría mejorar la agudeza visual en la DMAE neovascular. La certeza de la evidencia es baja por la gran heterogeneidad y porque los estudios no tenían grupo control. Sigue en investigación. ([Bioengineer][5])
+
+**Ocugen espera en el primer trimestre de 2027 los datos pivotales de su terapia génica para retinosis pigmentaria**
+Es su terapia génica principal. Si los datos salen bien, la empresa presentaría la solicitud regulatoria más adelante en 2027. Está en ensayo pivotal. ([Yahoo Finance][6])
 
 ## 🤖 Inteligencia artificial
 
-**Gemini 4 Hydrogen**
-Google presentó este modelo rápido y económico para programación cotidiana y flujos de trabajo con agentes. Con razonamiento alto supera a Gemini 4 Argon en el Artificial Analysis Intelligence Index (51 contra 50), y llega a 54 en el nivel máximo. El precio es fijo en toda su ventana de 1 millón de tokens: USD 1,50 por millón de tokens de entrada y USD 7,50 por millón de salida. Ya está disponible en Google AI Studio, la API de Gemini, la app de Gemini, Search y Antigravity. ([Google DeepMind][2])
+**IA que lee tomografías de retina para detectar atrofia geográfica**
+Un estudio retrospectivo encontró que los modelos de aprendizaje profundo detectan con alta precisión la atrofia geográfica en imágenes OCT de retina. Todavía les cuesta separar de forma confiable los subtipos central y no central. ([Bioengineer][7])
 
-**Google suma Gemini 4 Hydrogen a su buscador**
-La actualización ya funciona a nivel global y en todos los idiomas compatibles con el modo IA. El modelo interpreta consultas complejas o con errores de tipeo, y responde con imágenes y tablas comparativas. ([Infobae Tecno][3])
+**Una IA identificó un blanco de tratamiento para la degeneración macular que los investigadores humanos habían pasado por alto**
+La nota la presenta como un nuevo potencial terapéutico para esta enfermedad. ([Sportschosun][8])
 
-**llama.cpp llega a la versión 1.0.0**
-El proyecto de inferencia local publicó la v1.0.0 de sus librerías, a 3,5 años de su inicio. De ahora en adelante, llama.cpp y ggml marcarán con cambios de versión mayor las incompatibilidades de API y ABI, para darles estabilidad a los desarrolladores que dependen de ellas. ([Hugging Face Blog][4])
+**LLMON: un lenguaje de marcado nativo para LLM, ahora en Granite 4.1 3B y 8B**
+IBM Granite incorporó LLMON a sus modelos Granite 4.1 de 3B y 8B parámetros. ([Hugging Face Blog][9])
 
-**Claude sufrió una caída mundial**
-El servicio de Anthropic falló en todo el mundo este 13 de noviembre, en simultáneo con las fallas de Outlook y Teams de Microsoft. ([Xataka][5])
+**Google DeepMind abre los conjuntos de datos detrás de sus modelos meteorológicos con IA**
+Publicó datos fundamentales de precipitación y de satélites geoestacionarios, usados para observar el planeta con mayor claridad. ([Google DeepMind][10])
 
-**Anthropic estudió cómo cuidan los modelos lo que consideran propio**
-Anthropic publicó un hallazgo sobre el comportamiento de la IA con recursos que cree suyos frente a los que no. ([Xataka][6])
+**SpaceX despidió a unas 60 personas del equipo de Grok Imagine**
+Según The Information, el recorte afectó al equipo que desarrolla la herramienta de Grok que genera imágenes y videos a partir de texto. Quedó un grupo pequeño para mantenerla. La dirección prioriza ahora las herramientas de programación con IA y el agente Grok Bot. Las pruebas citadas ubicaban a Grok Imagine por detrás de los mejores modelos de la competencia. SpaceX no confirmó los recortes. ([Infobae][11])
 
-**Amplitude lanza mejoras de producto en 1 o 2 días con OpenAI**
-Su agente de producto proactivo, Wave, está construido principalmente sobre modelos de OpenAI. Identifica qué desarrollar, ayuda a los equipos a publicar cambios con agentes de programación y mide el impacto. ([OpenAI][7])
+**OpenAI presenta ChatGPT Wallet**
+OpenAI lo anunció el 13 de noviembre de 2026. ([OpenAI][12])
 
 ---
 Links:
 
-[1]: https://www.mdzol.com/tecnologia/2026/11/12/los-tres-mejores-telefonos-para-personas-con-baja-vision-1993884.html
-[2]: https://deepmind.google/blog/introducing-gemini-4-hydrogen/
-[3]: https://www.infobae.com/tecno/2026/11/13/google-incorpora-gemini-4-hydrogen-a-su-buscador-para-entender-preguntas-dificiles-y-mal-escritas/
-[4]: https://huggingface.co/blog/ggml-org/llama-cpp-v1
-[5]: https://news.google.com/rss/articles/CBMimwFBVV95cUxOOG5vTDc3Z1ZCcnlBb1pta1MzaUJ1T1ZMTlA5OFkxVTJtYlYwLUw1MElYS1RPQUtuNnpfTl9wSXZuSEowbGdBRnFIRWF0cFhseGNCWXQ3UV9FSllrTlB2dGQ3dkh0WGw0dFJqWl9oRHhfV0pPVXVFbllUV1ZoRE9ZY3hQN3c2TWQ5bGJLUGxzRGVmRFk4UHpzcVhKTdIBoAFBVV95cUxQTnUzWDRjVDNBQ19GcUYxdWp6SUx1NFNIRnNIMFlxd3NzdHBzOGtqU2NxTFNyRFFkYW13OG1yWTZhN0tkN243b1RBU3R3LXg4d09YWk14c0lMMTd6Z04xLTFFTWxTNHdOdVU4OUZqcjVxYmVlU1E0UGpaSWNTaTQySVRiTDFoZ0tPcXBTNGFTYVI3SldDZ1NkSkNvcmoxWkpz?oc=5
-[6]: https://news.google.com/rss/articles/CBMi3gFBVV95cUxPV2ZNWkF5UTRkbDBBNXI5MGJ1TW81bzR6Vk1tLWxESWczd1BmS09IOUwzRGtKSGhmdUQ0MzBhQ25nTWxQbW1ZZE9kMm1KTnpEallOUC1JVTFaSG5hQmdBbnlqdE1rdlB5cGtmVGxaNWRGb3lrQUdWVmptMXBIQnplREhWeHhDbklvcS1qTmxnWEdUOWx4aE9ZaXN0NTZQWUF3VUxLX0xCZkxlQnQ0Nkt3WjlYSXpFYWdQdV9VN0N3VDNRUU15dHVTczlQWUtMRGIzNU01WU1hOVhQaENZaGfSAeMBQVVfeXFMTlozeGRXeWktY0RRaU03QVdhcHFwUFZWNjdvU0t4aW1adGc5T0ZHcllvTXVSd0J1dnVfSENlaG5zQTZ6WlEwWEg0bkxRTVNyanRxVXJ1VTZ6YnlmV1U3R3RHV1ZuWGtwQ003VFFLeW5DdmVHSEIzV0l6X3I2Q2Y1N0xoT0tITjhGVmxwTXA5SWhnTFdkN3R4VFczVi1CT1NFZzNhU3dRb2RlYVZVeXVhdGoxZlF2dWdTWmVLZ0lRenNyX1dQZ3EyblpxOGRhWW1pM1NqdVRlUjVIOUYxZlRGVDZPcDA?oc=5
-[7]: https://openai.com/business/customer-stories/amplitude
+[1]: https://www.esvision.es/nueva-opcion-de-tratamiento-para-la-dmae-humeda-administracion-de-farmacos-aprobada-mediante-un-implante-ocular/
+[2]: https://247wallst.com/cards/belite-bio-q3-2026-earnings-blte-01m77qgwmjdctc0x3b04n0n746
+[3]: https://www.ophthalmologytimes.com/view/empire-forum-2026-ambati-k8-phase-2-results-in-geographic-atrophy
+[4]: https://www.msn.com/en-us/news/other/korean-biotech-files-us-ind-for-rnai-drug-targeting-myd88-amplifier-in-geographic-atrophy/ar-AA2gCBjW
+[5]: https://bioengineer.org/retinal-pigment-epithelium-transplants-show-low-certainty-visual-gains-in-macular-degeneration/
+[6]: https://finance.yahoo.com/healthcare/articles/ocugen-eyes-2027-trial-results-181450429.html
+[7]: https://bioengineer.org/ai-reads-retinal-scans-to-tell-two-forms-of-blinding-atrophy-apart/
+[8]: https://www.msn.com/en-xl/news/other/ai-found-a-treatment-target-humans-had-missed-new-treatment-potential-for-macular-degeneration/ar-AA2gNk67
+[9]: https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite
+[10]: https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
+[11]: https://www.infobae.com/tecno/2026/11/13/spacex-despidio-a-unas-60-personas-del-equipo-que-crea-videos-con-ia-de-grok/
+[12]: https://openai.com/index/introducing-chatgpt-wallet

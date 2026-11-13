@@ -200,3 +200,15 @@
 2026-11-13	Claude sufrió una caída mundial
 2026-11-13	Anthropic estudió cómo cuidan los modelos lo que consideran propio
 2026-11-13	Amplitude lanza mejoras de producto en 1 o 2 días con OpenAI
+2026-11-13	Susvimo con implante Contivue, aprobado en la Unión Europea para la DMAE húmeda
+2026-11-13	Tinlarebant para Stargardt: la FDA definirá el 12 de febrero de 2027
+2026-11-13	Atrofia geográfica: resultados de fase 2 de K8, con dosis pensada para comodidad
+2026-11-13	Una biotecnológica coreana pidió autorización en EE.UU. para un fármaco de ARN contra la atrofia geográfica
+2026-11-13	Trasplante de epitelio pigmentario de la retina: mejoras visuales con evidencia de baja certeza
+2026-11-13	Ocugen espera en el primer trimestre de 2027 los datos pivotales de su terapia génica para retinosis pigmentaria
+2026-11-13	IA que lee tomografías de retina para detectar atrofia geográfica
+2026-11-13	Una IA identificó un blanco de tratamiento para la degeneración macular que los investigadores humanos habían pasado por alto
+2026-11-13	LLMON: un lenguaje de marcado nativo para LLM, ahora en Granite 4.1 3B y 8B
+2026-11-13	Google DeepMind abre los conjuntos de datos detrás de sus modelos meteorológicos con IA
+2026-11-13	SpaceX despidió a unas 60 personas del equipo de Grok Imagine
+2026-11-13	OpenAI presenta ChatGPT Wallet

@@ -130,3 +130,15 @@
 2026-11-13	https://news.google.com/rss/articles/CBMimwFBVV95cUxOOG5vTDc3Z1ZCcnlBb1pta1MzaUJ1T1ZMTlA5OFkxVTJtYlYwLUw1MElYS1RPQUtuNnpfTl9wSXZuSEowbGdBRnFIRWF0cFhseGNCWXQ3UV9FSllrTlB2dGQ3dkh0WGw0dFJqWl9oRHhfV0pPVXVFbllUV1ZoRE9ZY3hQN3c2TWQ5bGJLUGxzRGVmRFk4UHpzcVhKTdIBoAFBVV95cUxQTnUzWDRjVDNBQ19GcUYxdWp6SUx1NFNIRnNIMFlxd3NzdHBzOGtqU2NxTFNyRFFkYW13OG1yWTZhN0tkN243b1RBU3R3LXg4d09YWk14c0lMMTd6Z04xLTFFTWxTNHdOdVU4OUZqcjVxYmVlU1E0UGpaSWNTaTQySVRiTDFoZ0tPcXBTNGFTYVI3SldDZ1NkSkNvcmoxWkpz?oc=5
 2026-11-13	https://news.google.com/rss/articles/CBMi3gFBVV95cUxPV2ZNWkF5UTRkbDBBNXI5MGJ1TW81bzR6Vk1tLWxESWczd1BmS09IOUwzRGtKSGhmdUQ0MzBhQ25nTWxQbW1ZZE9kMm1KTnpEallOUC1JVTFaSG5hQmdBbnlqdE1rdlB5cGtmVGxaNWRGb3lrQUdWVmptMXBIQnplREhWeHhDbklvcS1qTmxnWEdUOWx4aE9ZaXN0NTZQWUF3VUxLX0xCZkxlQnQ0Nkt3WjlYSXpFYWdQdV9VN0N3VDNRUU15dHVTczlQWUtMRGIzNU01WU1hOVhQaENZaGfSAeMBQVVfeXFMTlozeGRXeWktY0RRaU03QVdhcHFwUFZWNjdvU0t4aW1adGc5T0ZHcllvTXVSd0J1dnVfSENlaG5zQTZ6WlEwWEg0bkxRTVNyanRxVXJ1VTZ6YnlmV1U3R3RHV1ZuWGtwQ003VFFLeW5DdmVHSEIzV0l6X3I2Q2Y1N0xoT0tITjhGVmxwTXA5SWhnTFdkN3R4VFczVi1CT1NFZzNhU3dRb2RlYVZVeXVhdGoxZlF2dWdTWmVLZ0lRenNyX1dQZ3EyblpxOGRhWW1pM1NqdVRlUjVIOUYxZlRGVDZPcDA?oc=5
 2026-11-13	https://openai.com/business/customer-stories/amplitude
+2026-11-13	https://www.esvision.es/nueva-opcion-de-tratamiento-para-la-dmae-humeda-administracion-de-farmacos-aprobada-mediante-un-implante-ocular/
+2026-11-13	https://247wallst.com/cards/belite-bio-q3-2026-earnings-blte-01m77qgwmjdctc0x3b04n0n746
+2026-11-13	https://www.ophthalmologytimes.com/view/empire-forum-2026-ambati-k8-phase-2-results-in-geographic-atrophy
+2026-11-13	https://www.msn.com/en-us/news/other/korean-biotech-files-us-ind-for-rnai-drug-targeting-myd88-amplifier-in-geographic-atrophy/ar-AA2gCBjW
+2026-11-13	https://bioengineer.org/retinal-pigment-epithelium-transplants-show-low-certainty-visual-gains-in-macular-degeneration/
+2026-11-13	https://finance.yahoo.com/healthcare/articles/ocugen-eyes-2027-trial-results-181450429.html
+2026-11-13	https://bioengineer.org/ai-reads-retinal-scans-to-tell-two-forms-of-blinding-atrophy-apart/
+2026-11-13	https://www.msn.com/en-xl/news/other/ai-found-a-treatment-target-humans-had-missed-new-treatment-potential-for-macular-degeneration/ar-AA2gNk67
+2026-11-13	https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite
+2026-11-13	https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
+2026-11-13	https://www.infobae.com/tecno/2026/11/13/spacex-despidio-a-unas-60-personas-del-equipo-que-crea-videos-con-ia-de-grok/
+2026-11-13	https://openai.com/index/introducing-chatgpt-wallet
