@@ -212,3 +212,11 @@
 2026-11-13	Google DeepMind abre los conjuntos de datos detrás de sus modelos meteorológicos con IA
 2026-11-13	SpaceX despidió a unas 60 personas del equipo de Grok Imagine
 2026-11-13	OpenAI presenta ChatGPT Wallet
+2026-11-14	Terapia génica AAV para retinosis pigmentaria: Andelyn y Celliaz
+2026-11-14	City Therapeutics empezó a dosificar su tratamiento de ARNi para Stargardt
+2026-11-14	La FDA acordó con VeonGen cómo será el ensayo de fase 3 de la terapia génica VG801 para Stargardt
+2026-11-14	Anthropic: la nota de seguridad de un modelo depende de cómo se lo evalúe
+2026-11-14	La GSA amplía su acuerdo con Anthropic: Claude con 40% de descuento para el Estado en EE.UU.
+2026-11-14	Shield usa agentes de OpenAI para delegar trabajo en portales heredados
+2026-11-14	Gondola duplicó sus ingresos mientras su equipo construye más con Codex
+2026-11-14	Noruega ya tiene 3.500 robots con IA que cazan piojos del salmón con láser

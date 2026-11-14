@@ -1,57 +1,41 @@
-# NEXUS Daily - 2026-11-13
+# NEXUS Daily - 2026-11-14
 
 ## 👁️ Baja visión
 
-**Susvimo con implante Contivue, aprobado en la Unión Europea para la DMAE húmeda**
-La Comisión Europea aprobó el ranibizumab (Susvimo) para usarse con el implante recargable Contivue. El implante es del tamaño de un grano de arroz y se coloca una sola vez, con anestesia local. Libera el fármaco de forma continua y se rellena cada seis meses. Es la primera vez que la UE aprueba un implante así para el anti-VEGF, que ahora se aplica con inyecciones repetidas. Ya está aprobado. ([Acción Visión España][1])
+**Terapia génica AAV para retinosis pigmentaria: Andelyn y Celliaz**
+Andelyn Biosciences desarrollará y fabricará la terapia génica con vector AAV que impulsa Celliaz para tratar la retinosis pigmentaria. ([Newswise][1])
 
-**Tinlarebant para Stargardt: la FDA definirá el 12 de febrero de 2027**
-Belite Bio presentó resultados del tercer trimestre y la pérdida fue menor a la esperada. Lo importante es la fecha PDUFA del tinlarebant: el 12 de febrero de 2027. Hoy no hay ningún tratamiento aprobado para Stargardt y la FDA decidió no convocar a un comité asesor. Está en revisión regulatoria. ([24/7 Wall St.][2])
+**City Therapeutics empezó a dosificar su tratamiento de ARNi para Stargardt**
+El primer participante ya recibió la dosis en el ensayo de fase 1 de CITY-RBP4, un tratamiento en investigación de interferencia de ARN para la enfermedad de Stargardt. ([InvestorsHub on MSN][2])
 
-**Atrofia geográfica: resultados de fase 2 de K8, con dosis pensada para comodidad**
-Jayakrishna Ambati explicó en el Empire Forum 2026 los resultados de fase 2 de K8. El fármaco actúa sobre el inflamasoma y su esquema de dosificación está diseñado para que sea cómodo. Está en desarrollo clínico. ([Ophthalmology Times][3])
-
-**Una biotecnológica coreana pidió autorización en EE.UU. para un fármaco de ARN contra la atrofia geográfica**
-OliX Pharmaceuticals presentó la solicitud IND ante la FDA para el OLX301A, un siRNA dirigido a MyD88, un amplificador de la inflamación en la retina. Según la nota, Syfovre e Izervay no logran silenciar esa vía. Todavía no empezó el ensayo en humanos. ([Tech Times][4])
-
-**Trasplante de epitelio pigmentario de la retina: mejoras visuales con evidencia de baja certeza**
-Una revisión sistemática indica que el trasplante podría mejorar la agudeza visual en la DMAE neovascular. La certeza de la evidencia es baja por la gran heterogeneidad y porque los estudios no tenían grupo control. Sigue en investigación. ([Bioengineer][5])
-
-**Ocugen espera en el primer trimestre de 2027 los datos pivotales de su terapia génica para retinosis pigmentaria**
-Es su terapia génica principal. Si los datos salen bien, la empresa presentaría la solicitud regulatoria más adelante en 2027. Está en ensayo pivotal. ([Yahoo Finance][6])
+**La FDA acordó con VeonGen cómo será el ensayo de fase 3 de la terapia génica VG801 para Stargardt**
+VG801 es una terapia génica de doble AAV. El acuerdo llega después de que un ensayo de fase 1/2 sin grupo control mostrara mejoras en la agudeza visual corregida (BCVA). El paso siguiente es el ensayo pivotal de fase 3. ([Ophthalmology Times][3])
 
 ## 🤖 Inteligencia artificial
 
-**IA que lee tomografías de retina para detectar atrofia geográfica**
-Un estudio retrospectivo encontró que los modelos de aprendizaje profundo detectan con alta precisión la atrofia geográfica en imágenes OCT de retina. Todavía les cuesta separar de forma confiable los subtipos central y no central. ([Bioengineer][7])
+**Anthropic: la nota de seguridad de un modelo depende de cómo se lo evalúe**
+En una guía sobre cómo diseñar pruebas de IA, Anthropic mostró que Claude Fable 5.1 respondió bien en el 94% de las conversaciones de prueba sobre autolesiones dentro de la app Claude, tras agregar una línea a sus instrucciones. Vía API llegó solo al 60%. La diferencia se atribuyó a la configuración de cada entorno, no a un cambio del modelo base. La empresa recomienda medir con más rigor e informar la incertidumbre. ([DiarioBitcoin][4])
 
-**Una IA identificó un blanco de tratamiento para la degeneración macular que los investigadores humanos habían pasado por alto**
-La nota la presenta como un nuevo potencial terapéutico para esta enfermedad. ([Sportschosun][8])
+**La GSA amplía su acuerdo con Anthropic: Claude con 40% de descuento para el Estado en EE.UU.**
+El 27 de octubre la agencia de compras públicas estadounidense anunció una rebaja del 40% en el uso de Claude para el Gobierno federal y las administraciones estatales, locales y tribales. Anthropic sumó las territoriales. El anuncio llega ocho meses después de que la GSA dijera que la sacaba de sus catálogos, decisión que retiró semanas más tarde. Anthropic cuenta unos 500 organismos públicos como usuarios y atribuye a uno de ellos una respuesta a un ransomware en 8 minutos, frente a los dos o tres días habituales. ([Okdiario][5])
 
-**LLMON: un lenguaje de marcado nativo para LLM, ahora en Granite 4.1 3B y 8B**
-IBM Granite incorporó LLMON a sus modelos Granite 4.1 de 3B y 8B parámetros. ([Hugging Face Blog][9])
+**Shield usa agentes de OpenAI para delegar trabajo en portales heredados**
+Los agentes Forge de Shield navegan sistemas viejos de TI para que los técnicos se concentren en los casos que requieren su criterio. ([OpenAI][6])
 
-**Google DeepMind abre los conjuntos de datos detrás de sus modelos meteorológicos con IA**
-Publicó datos fundamentales de precipitación y de satélites geoestacionarios, usados para observar el planeta con mayor claridad. ([Google DeepMind][10])
+**Gondola duplicó sus ingresos mientras su equipo construye más con Codex**
+Gondola, que ayuda a creativos a conseguir reconocimiento y empleo, informa que Codex aumentó un 50% la producción de su ingeniero jefe. ChatGPT, además, le simplifica el trabajo diario. ([OpenAI][7])
 
-**SpaceX despidió a unas 60 personas del equipo de Grok Imagine**
-Según The Information, el recorte afectó al equipo que desarrolla la herramienta de Grok que genera imágenes y videos a partir de texto. Quedó un grupo pequeño para mantenerla. La dirección prioriza ahora las herramientas de programación con IA y el agente Grok Bot. Las pruebas citadas ubicaban a Grok Imagine por detrás de los mejores modelos de la competencia. SpaceX no confirmó los recortes. ([Infobae][11])
-
-**OpenAI presenta ChatGPT Wallet**
-OpenAI lo anunció el 13 de noviembre de 2026. ([OpenAI][12])
+**Noruega ya tiene 3.500 robots con IA que cazan piojos del salmón con láser**
+Los robots de Stingray Marine Solutions operan sobre 112 millones de peces. Usan cámaras e IA para identificar a los parásitos en movimiento y eliminarlos con pulsos de láser, de forma preventiva y las 24 horas. Ya funcionan a escala industrial. ([Xataka][8])
 
 ---
 Links:
 
-[1]: https://www.esvision.es/nueva-opcion-de-tratamiento-para-la-dmae-humeda-administracion-de-farmacos-aprobada-mediante-un-implante-ocular/
-[2]: https://247wallst.com/cards/belite-bio-q3-2026-earnings-blte-01m77qgwmjdctc0x3b04n0n746
-[3]: https://www.ophthalmologytimes.com/view/empire-forum-2026-ambati-k8-phase-2-results-in-geographic-atrophy
-[4]: https://www.msn.com/en-us/news/other/korean-biotech-files-us-ind-for-rnai-drug-targeting-myd88-amplifier-in-geographic-atrophy/ar-AA2gCBjW
-[5]: https://bioengineer.org/retinal-pigment-epithelium-transplants-show-low-certainty-visual-gains-in-macular-degeneration/
-[6]: https://finance.yahoo.com/healthcare/articles/ocugen-eyes-2027-trial-results-181450429.html
-[7]: https://bioengineer.org/ai-reads-retinal-scans-to-tell-two-forms-of-blinding-atrophy-apart/
-[8]: https://www.msn.com/en-xl/news/other/ai-found-a-treatment-target-humans-had-missed-new-treatment-potential-for-macular-degeneration/ar-AA2gNk67
-[9]: https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite
-[10]: https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
-[11]: https://www.infobae.com/tecno/2026/11/13/spacex-despidio-a-unas-60-personas-del-equipo-que-crea-videos-con-ia-de-grok/
-[12]: https://openai.com/index/introducing-chatgpt-wallet
+[1]: https://news.google.com/rss/articles/CBMi1gFBVV95cUxQUE1GblN5QzVyWWc0SThkRm83VnVPWlVMbjJzS2Nidmc3R0hSeEg4ZWtrN0pkal9FUlNQRGRHdXJLNS1fMF9Hc0I0Vkg0Ulg0eDN2STZWUU9MTHM2SXhkZ3hOMFIzellsVFQ2b2tKRmh5a0doR1JHOUk4RlhWRms2N2RqT2pwZm1udnNfb2tlR3pGYmQ1ek55TlR2V1NDc1czQk4waV9hZ2Y2LVhLeXRMcy11eEJfd1NpUHRpc3BVVGNVMVZLc05vUVVjamhrbTdmRWVkWk5n0gHWAUFVX3lxTFBQTUZuU3lDNXJZZzRJOGRGbzdWdU9aVUxuMnNLY2J2ZzdHSFJ4SDhla2s3SmRqX0VSU1BEZEd1cks1LV8wX0dzQjRWSDRSWDR4M3ZJNlZRT0xMczZJeGRneE4wUjN6WWxUVDZva0pGaHlrR2hHUkc5SThGWFZGazY3ZGpPanBmbW52c19va2VHekZiZDV6TnlOVHZXU0NzVzNCTjBpX2FnZjYtWEt5dExzLXV4Ql93U2lQdGlzcFVUY1UxVktzTm9RVWNqaGttN2ZFZWRaTmc?oc=5
+[2]: https://www.msn.com/en-us/science/biochemistry/city-therapeutics-doses-first-participant-in-phase-1-trial-of-stargardt-disease-treatment-city-rbp4/ar-AA2h8UFE
+[3]: https://www.ophthalmologytimes.com/view/fda-aligns-veongen-pivotal-phase-3-design-vg801-dual-aav-gene-therapy-stargardt-disease
+[4]: https://www.diariobitcoin.com/tecnologia/anthropic-advierte-que-las-pruebas-pueden-cambiar-la-nota-de-seguridad-de-sus-modelos-de-ia/
+[5]: https://okdiario.com/techy/claude-descuento-40-gobierno-eeuu-gsa-anthropic-20738154
+[6]: https://openai.com/business/customer-stories/shield
+[7]: https://openai.com/business/customer-stories/gondola
+[8]: https://www.xataka.com/ecologia-y-naturaleza/noruega-tiene-3-500-robots-ia-armados-laser-cazando-piojos-sus-granjas-salmon

@@ -142,3 +142,11 @@
 2026-11-13	https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
 2026-11-13	https://www.infobae.com/tecno/2026/11/13/spacex-despidio-a-unas-60-personas-del-equipo-que-crea-videos-con-ia-de-grok/
 2026-11-13	https://openai.com/index/introducing-chatgpt-wallet
+2026-11-14	https://news.google.com/rss/articles/CBMi1gFBVV95cUxQUE1GblN5QzVyWWc0SThkRm83VnVPWlVMbjJzS2Nidmc3R0hSeEg4ZWtrN0pkal9FUlNQRGRHdXJLNS1fMF9Hc0I0Vkg0Ulg0eDN2STZWUU9MTHM2SXhkZ3hOMFIzellsVFQ2b2tKRmh5a0doR1JHOUk4RlhWRms2N2RqT2pwZm1udnNfb2tlR3pGYmQ1ek55TlR2V1NDc1czQk4waV9hZ2Y2LVhLeXRMcy11eEJfd1NpUHRpc3BVVGNVMVZLc05vUVVjamhrbTdmRWVkWk5n0gHWAUFVX3lxTFBQTUZuU3lDNXJZZzRJOGRGbzdWdU9aVUxuMnNLY2J2ZzdHSFJ4SDhla2s3SmRqX0VSU1BEZEd1cks1LV8wX0dzQjRWSDRSWDR4M3ZJNlZRT0xMczZJeGRneE4wUjN6WWxUVDZva0pGaHlrR2hHUkc5SThGWFZGazY3ZGpPanBmbW52c19va2VHekZiZDV6TnlOVHZXU0NzVzNCTjBpX2FnZjYtWEt5dExzLXV4Ql93U2lQdGlzcFVUY1UxVktzTm9RVWNqaGttN2ZFZWRaTmc?oc=5
+2026-11-14	https://www.msn.com/en-us/science/biochemistry/city-therapeutics-doses-first-participant-in-phase-1-trial-of-stargardt-disease-treatment-city-rbp4/ar-AA2h8UFE
+2026-11-14	https://www.ophthalmologytimes.com/view/fda-aligns-veongen-pivotal-phase-3-design-vg801-dual-aav-gene-therapy-stargardt-disease
+2026-11-14	https://www.diariobitcoin.com/tecnologia/anthropic-advierte-que-las-pruebas-pueden-cambiar-la-nota-de-seguridad-de-sus-modelos-de-ia/
+2026-11-14	https://okdiario.com/techy/claude-descuento-40-gobierno-eeuu-gsa-anthropic-20738154
+2026-11-14	https://openai.com/business/customer-stories/shield
+2026-11-14	https://openai.com/business/customer-stories/gondola
+2026-11-14	https://www.xataka.com/ecologia-y-naturaleza/noruega-tiene-3-500-robots-ia-armados-laser-cazando-piojos-sus-granjas-salmon
