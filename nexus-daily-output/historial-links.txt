@@ -150,3 +150,9 @@
 2026-11-14	https://openai.com/business/customer-stories/shield
 2026-11-14	https://openai.com/business/customer-stories/gondola
 2026-11-14	https://www.xataka.com/ecologia-y-naturaleza/noruega-tiene-3-500-robots-ia-armados-laser-cazando-piojos-sus-granjas-salmon
+2026-11-14	https://www.infobae.com/tecno/2026/11/14/la-salida-a-bolsa-de-anthropic-recibio-seis-veces-mas-pedidos-que-las-acciones-disponibles/
+2026-11-14	https://www.ambito.com/finanzas/inminente-desembarco-anthropic-wall-street-como-spacex-cambio-las-reglas-las-grandes-salidas-bolsa-n6344983
+2026-11-14	https://diarioversionfinal.com/tecnologia/la-salida-a-bolsa-de-anthropic-genera-una-demanda-sin-precedentes/
+2026-11-14	https://www.infobae.com/tecno/2026/11/14/blackstone-recorta-la-deuda-de-su-centro-de-datos-qts-por-baja-demanda/
+2026-11-14	https://openai.com/business/customer-stories/holidays-extras-codex
+2026-11-14	https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place

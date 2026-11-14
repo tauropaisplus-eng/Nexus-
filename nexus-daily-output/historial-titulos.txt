@@ -220,3 +220,7 @@
 2026-11-14	Shield usa agentes de OpenAI para delegar trabajo en portales heredados
 2026-11-14	Gondola duplicó sus ingresos mientras su equipo construye más con Codex
 2026-11-14	Noruega ya tiene 3.500 robots con IA que cazan piojos del salmón con láser
+2026-11-14	La salida a bolsa de Anthropic recibió seis veces más pedidos que las acciones disponibles
+2026-11-14	Blackstone recorta la deuda de su centro de datos QTS por baja demanda
+2026-11-14	Holiday Extras repiensa qué puede construir con Codex
+2026-11-14	Cómo armar una simulación robótica de recoger y colocar objetos con assets SimReady
