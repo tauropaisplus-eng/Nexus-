@@ -24,6 +24,11 @@
 //  - IA: las notas de Google News cuyo link real no se puede sacar se descartan
 //    (salian con links larguisimos y sin texto). En baja vision se conservan.
 //  - El mismo anuncio no sale dos veces en la misma edicion aunque lo traigan dos medios.
+// Cambios v9 (14 nov 2026, autorizados por Gabriel):
+//  - Links de Google News que no se pueden traducir: se busca la misma nota en Bing por el titulo.
+//    Si tampoco aparece, la nota se descarta en las DOS secciones (antes en baja vision quedaba
+//    con el link de Google ilegible).
+//  - Hechos viejos: regla mas firme con fecha (IA: mas de 10 dias afuera; baja vision: mas de 30).
 // Cambios v8 (13 nov 2026, idea de Gabriel, autorizada por el):
 //  - Los lunes se suma el apartado "Estudios en marcha": ensayos clinicos de retina y
 //    baja vision registrados en ClinicalTrials.gov que empezaron o avanzaron en la semana.
@@ -230,6 +235,31 @@ async function linkRealGoogleNews(link) {
   }
 }
 
+// v9 (14 nov 2026): busca en Bing News la misma nota por su titulo y devuelve el link real del medio.
+// Solo acepta el resultado si el titulo coincide bastante (para no traer otra nota).
+async function rescatarPorBing(titulo) {
+  try {
+    const limpio = String(titulo || '').replace(/\s+-\s+[^-]+$/, '').trim();
+    if (limpio.length < 15) return '';
+    const xml = await fetchUrl('https://www.bing.com/news/search?q=' + encodeURIComponent('"' + limpio.slice(0, 90) + '"') + '&format=rss&count=10');
+    const palabras = (t) => new Set(t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').match(/[a-z0-9]{4,}/g) || []);
+    const buscadas = palabras(limpio);
+    for (const item of xml.split(/<item[\s>]/i).slice(1)) {
+      const t = limpiar((item.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || '');
+      const l = limpiar((item.match(/<link>([\s\S]*?)<\/link>/i) || [])[1] || '');
+      if (!t || !l) continue;
+      const encontradas = palabras(t);
+      let comunes = 0;
+      for (const w of buscadas) if (encontradas.has(w)) comunes++;
+      if (buscadas.size && comunes / buscadas.size >= 0.6) {
+        const real = linkRealBing(l);
+        if (/^https?:\/\//.test(real) && !/bing\.com|news\.google\.com/.test(real)) return real;
+      }
+    }
+  } catch (e) { /* sin rescate */ }
+  return '';
+}
+
 // Saca el texto principal de una pagina: la descripcion y los primeros parrafos
 function textoDeLaPagina(html) {
   if (!html) return '';
@@ -255,7 +285,9 @@ async function completarNotas(notas) {
       const n = notas[i++];
       if (!n.link || /youtube\.com|ivoox\.com/.test(n.link)) continue; // videos y podcast ya traen descripcion
       if (/news\.google\.com/.test(n.link)) {
-        const real = await linkRealGoogleNews(n.link);
+        let real = await linkRealGoogleNews(n.link);
+        // v9: si Google no da el link real, se busca la misma nota en Bing por el titulo
+        if (!real) real = await rescatarPorBing(n.titulo);
         if (real) { n.linkGoogle = n.link; n.link = real; }
         else continue;
       }
@@ -386,8 +418,9 @@ async function leerSeccion(fuentes, yaVistos, links, publicados, descartarGoogle
       });
     await completarNotas(notas);
     notas = notas.filter((n) => !(n.link && publicados.has(n.link)) && !cuerpoEsParaCiegos(n.cuerpo));
-    // v7: en IA, afuera las notas de Google News sin link real (sin texto y con link ilegible)
-    if (descartarGoogle) notas = notas.filter((n) => !/news\.google\.com/.test(n.link || ''));
+    // v7: afuera las notas de Google News sin link real (sin texto y con link ilegible).
+    // v9: ahora en las dos secciones (antes en baja vision se conservaban), despues de intentar el rescate por Bing.
+    notas = notas.filter((n) => !/news\.google\.com/.test(n.link || ''));
     const conTexto = notas.filter((n) => n.cuerpo).length;
     console.log(`${f.nombre}: ${notas.length} notas (${conTexto} con texto completo)`);
     if (process.env.DIAGNOSTICO) {
@@ -670,7 +703,7 @@ Reglas generales:
 - Los links vienen como codigos (L1, L2, L3...). Si la nota tiene codigo, pone la fuente como enlace Markdown con ese codigo tal cual, por ejemplo: ([Infobae](L7)). No inventes codigos.
 - En las notas de busqueda de noticias, la fuente es el medio que aparece al final del titulo (despues del guion); sacalo del titulo y no lo repitas en el titulo en negrita.
 - NO REPETIR: abajo esta la lista de noticias ya publicadas en dias anteriores. Si una nota cuenta el mismo hecho que alguna de esa lista (aunque sea de otro medio o con otro titulo), dejala afuera. Solo entra si trae un hecho nuevo (por ejemplo, un resultado o una aprobacion que antes no estaba).
-- SOLO NOVEDADES: deja afuera las notas que cuentan un hecho viejo aunque el articulo sea nuevo (por ejemplo, un informe, lanzamiento o anuncio de hace mas de un mes que un medio recien ahora publica). Si el texto menciona que el hecho es de otro mes anterior al actual, va afuera.
+- SOLO NOVEDADES (regla firme): hoy es ${hoy}. Deja afuera toda nota cuyo hecho principal (anuncio, lanzamiento, acuerdo, informe, resultado) ocurrio hace mas de 10 dias, aunque el articulo sea nuevo. Lee las fechas que aparecen en el "Texto de la nota" y en el titulo: si dice que el anuncio fue, por ejemplo, "el 27 de octubre" y hoy es 14 de noviembre, va afuera. En la seccion de baja vision el limite es 30 dias. Ante la duda, si el texto menciona una fecha vieja para el hecho principal, deja la nota afuera.
 - Usa solo la informacion de abajo: no inventes datos. Si una seccion no tiene material, deci "Hoy no hubo novedades".
 - No pongas titulo principal: empeza directamente por "## 👁️ Baja visión".
 
