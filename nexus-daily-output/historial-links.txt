@@ -156,3 +156,7 @@
 2026-11-14	https://www.infobae.com/tecno/2026/11/14/blackstone-recorta-la-deuda-de-su-centro-de-datos-qts-por-baja-demanda/
 2026-11-14	https://openai.com/business/customer-stories/holidays-extras-codex
 2026-11-14	https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place
+2026-11-15	https://www.msn.com/en-us/news/other/everything-you-need-to-know-about-macular-degeneration/ar-AA2h8CJy
+2026-11-15	https://www.catalunyapress.es/articulo/saladeespera/2026-11-15/6090538-ia-ayuda-detectar-lesiones-diabetes-retina-resultados-11-minutos
+2026-11-15	https://www.diariobitcoin.com/tecnologia/anthropic-advierte-que-los-viejos-trucos-de-prompting-frenan-a-claude-opus-5-5/
+2026-11-15	https://huggingface.co/blog/allenai/xybench

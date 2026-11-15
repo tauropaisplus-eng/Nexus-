@@ -224,3 +224,7 @@
 2026-11-14	Blackstone recorta la deuda de su centro de datos QTS por baja demanda
 2026-11-14	Holiday Extras repiensa qué puede construir con Codex
 2026-11-14	Cómo armar una simulación robótica de recoger y colocar objetos con assets SimReady
+2026-11-15	Todo lo que hay que saber sobre la degeneración macular
+2026-11-15	IA para detectar lesiones de la diabetes en la retina, con resultados en 11 minutos
+2026-11-15	Anthropic advierte que los viejos trucos de prompting frenan a Claude Opus 5.5
+2026-11-15	XYBench
