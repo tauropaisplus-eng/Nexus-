@@ -160,3 +160,15 @@
 2026-11-15	https://www.catalunyapress.es/articulo/saladeespera/2026-11-15/6090538-ia-ayuda-detectar-lesiones-diabetes-retina-resultados-11-minutos
 2026-11-15	https://www.diariobitcoin.com/tecnologia/anthropic-advierte-que-los-viejos-trucos-de-prompting-frenan-a-claude-opus-5-5/
 2026-11-15	https://huggingface.co/blog/allenai/xybench
+2026-11-16	https://markets.businessinsider.com/news/stocks/macumira-receives-ce-mark-for-its-microcurrent-treatment-for-dry-amd-1036768635
+2026-11-16	https://clinicaltrials.gov/study/NCT07705555
+2026-11-16	https://clinicaltrials.gov/study/NCT07705607
+2026-11-16	https://clinicaltrials.gov/study/NCT06571045
+2026-11-16	https://clinicaltrials.gov/study/NCT07441642
+2026-11-16	https://clinicaltrials.gov/study/NCT07710196
+2026-11-16	https://clinicaltrials.gov/study/NCT07867080
+2026-11-16	https://clinicaltrials.gov/study/NCT05626114
+2026-11-16	https://clinicaltrials.gov/study/NCT06683742
+2026-11-16	https://www.infobae.com/estados-unidos/2026/11/16/anthropic-sale-a-bolsa-fecha-precio-y-claves-del-debut-en-wall-street/
+2026-11-16	https://openai.com/index/step-toward-defining-the-standard-model
+2026-11-16	https://openai.com/index/the-kings-trust-and-openai
