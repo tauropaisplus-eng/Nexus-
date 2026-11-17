@@ -232,3 +232,11 @@
 2026-11-16	Anthropic fija para el 18 de noviembre el precio de su salida a bolsa y debuta el 19 en el Nasdaq
 2026-11-16	OpenAI muestra cómo GPT-6 Astra ayudó a avanzar hacia definir el Modelo Estándar en una red
 2026-11-16	The King's Trust y OpenAI lanzan una alianza de 1 millón de libras para formar en IA a jóvenes del Reino Unido
+2026-11-17	Science Corporation recauda 400 millones de dólares para ampliar el acceso al implante PRIMA
+2026-11-17	El aflibercept de alta dosis mantiene la visión y espacia las inyecciones en la práctica diaria
+2026-11-17	Anthropic apunta a un precio de salida a bolsa superior a 78 dólares por acción
+2026-11-17	Anthropic dice que Claude adaptó parte de un modelo propio a GPU AMD en tres días
+2026-11-17	OpenAI ofrece acceso gratuito a sus modelos de frontera a 200.000 investigadores
+2026-11-17	OpenAI trabaja con la OTAN y agencias aliadas de ciberseguridad para fortalecer sus defensas
+2026-11-17	Hugging Face y OpenRouter se unen para facilitar la ejecución de modelos de pesos abiertos
+2026-11-17	Gemini Notebook permite convertir un cuaderno en una página web interactiva

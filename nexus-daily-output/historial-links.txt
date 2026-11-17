@@ -172,3 +172,11 @@
 2026-11-16	https://www.infobae.com/estados-unidos/2026/11/16/anthropic-sale-a-bolsa-fecha-precio-y-claves-del-debut-en-wall-street/
 2026-11-16	https://openai.com/index/step-toward-defining-the-standard-model
 2026-11-16	https://openai.com/index/the-kings-trust-and-openai
+2026-11-17	https://www.unite.ai/es/science-corporation-raises-400m-series-d-to-expand-prima-access/
+2026-11-17	https://bioengineer.org/high-dose-aflibercept-sustains-vision-and-lengthens-retinal-treatment-intervals-in-routine-practice/
+2026-11-17	https://www.abc.com.py/ciencia/2026/11/17/anthropic-apunta-a-un-precio-de-salida-a-bolsa-superior-a-78-dolares-segun-cnbc/
+2026-11-17	https://fomoera.com/anthropic-claude-mythos-amd-tres-dias/
+2026-11-17	https://openai.com/index/expanding-chatgpt-for-academic-researchers
+2026-11-17	https://openai.com/index/strengthening-nato-allied-cyber-defences-ai
+2026-11-17	https://huggingface.co/blog/openrouter
+2026-11-17	https://www.xataka.com/robotica-e-ia/he-convertido-presentacion-web-gemini-notebook-solo-tuve-que-pedirselo

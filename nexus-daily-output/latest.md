@@ -1,44 +1,41 @@
-# NEXUS Daily - 2026-11-16
+# NEXUS Daily - 2026-11-17
 
 ## 👁️ Baja visión
 
-**MacuMira recibe la marca CE para su tratamiento con microcorriente contra la DMAE seca**
-La empresa canadiense MacuMira Medical Devices anunció hoy que su dispositivo de estimulación retinal con microcorriente obtuvo la marca CE, bajo la normativa europea de dispositivos médicos, para la degeneración macular seca asociada a la edad. Con esto suma Europa a Canadá, Australia y Nueva Zelanda, donde el tratamiento ya está disponible. Es no invasivo, sin agujas, y se aplica en consultorio a cargo de un técnico capacitado. Se cree que actúa estimulando el metabolismo de los fotorreceptores y del epitelio pigmentario de la retina. Está aprobado en Europa. (Fuente: [Markets Insider][1])
+**Science Corporation recauda 400 millones de dólares para ampliar el acceso al implante PRIMA**
+Anunció la ronda de serie D el 17 de noviembre, con Khosla Ventures, Y Combinator y otros inversores. El capital total de la empresa supera los 900 millones de dólares. Va a financiar la expansión de PRIMA en Europa, donde ya tiene marcado CE, y la preparación del lanzamiento en EE. UU., que sigue pendiente de la revisión de la FDA. También se destina a su programa de interfaces neuronales biohíbridas, que sigue en fase de investigación. ([Unite.AI][1])
 
-### 🔬 Estudios en marcha (resumen semanal)
-
-- En Argentina: para el edema macular diabético (hinchazón en el centro de la retina por la diabetes), prueban un medicamento nuevo, MK-8748, contra aflibercept, el tratamiento habitual; fase 3, lo hace Merck Sharp & Dohme LLC, también en Estados Unidos, Australia y Reino Unido, y está reclutando pacientes ([ClinicalTrials.gov][2])
-- En Argentina: para el edema macular diabético, comparan el medicamento nuevo MK-8748 con aflibercept; fase 3, lo hace Merck Sharp & Dohme LLC, también en Estados Unidos, Israel y Puerto Rico, y está reclutando pacientes ([ClinicalTrials.gov][3])
-- En Argentina: para el edema macular diabético, prueban dos dosis de remigromig (EYE103) contra ranibizumab, un tratamiento ya usado; fase 2/3, lo hace EyeBiotech Ltd., también en Estados Unidos, Australia, Austria, Colombia, Croacia y otros países, y está en curso pero ya no recluta ([ClinicalTrials.gov][4])
-- En Argentina: para la atrofia geográfica (forma avanzada de la degeneración macular seca), prueban FWY003 contra placebo para ver qué dosis funciona mejor; fase 2, lo hace Novartis Pharmaceuticals, también en Estados Unidos, Australia, Brasil, Bulgaria, Canadá y otros países, y está reclutando pacientes ([ClinicalTrials.gov][5])
-- Para frenar la retinitis pigmentosa en adultos con síndrome de Usher, prueban NPI-001 (pastillas dos veces por día durante 24 meses) contra placebo, para ver si preserva los fotorreceptores; fase 3, lo hace Nacuity Pharmaceuticals, Inc. en Estados Unidos, y está reclutando pacientes ([ClinicalTrials.gov][6])
-- Para el edema macular diabético, prueban una única inyección en el ojo de 4D-150 contra aflibercept, para evaluar seguridad, eficacia y duración del efecto; fase 3, lo hace 4D Molecular Therapeutics en Estados Unidos, China, Japón y Puerto Rico, y está reclutando pacientes ([ClinicalTrials.gov][7])
-- Para la atrofia geográfica por degeneración macular, evalúan la cirugía subretiniana (bajo la retina) para colocar OpRegen, un tratamiento nuevo, y su actividad preliminar; fase 2, lo hace Genentech, Inc. en Estados Unidos e Israel, y está reclutando pacientes ([ClinicalTrials.gov][8])
-- Para la degeneración macular húmeda, prueban EYP-1901 contra aflibercept (estudio LUCIA, de 2 años); fase 3, lo hace EyePoint Pharmaceuticals, Inc. en Estados Unidos, Brasil, Chequia, Alemania, Hungría, India y otros países, y está en curso pero ya no recluta ([ClinicalTrials.gov][9])
+**El aflibercept de alta dosis mantiene la visión y espacia las inyecciones en la práctica diaria**
+Un estudio retrospectivo de 12 meses mostró que el aflibercept 8 mg mantuvo la agudeza visual y redujo el espesor central de la retina. También alargó de forma significativa los intervalos entre inyecciones. Los datos salen de la práctica clínica habitual, en pacientes con degeneración macular y edema macular diabético. ([BIOENGINEER][2])
 
 ## 🤖 Inteligencia artificial
 
-**Anthropic fija para el 18 de noviembre el precio de su salida a bolsa y debuta el 19 en el Nasdaq**
-Cotizará con el símbolo ANT y venderá 825 millones de acciones (801,4 millones nuevas y 23,6 millones de accionistas actuales) a entre USD 70 y USD 78. En el techo del rango recauda USD 64.400 millones y queda valuada en torno a 1,4 billones de dólares. Además, siete socios, entre ellos Google, Nvidia y Microsoft, comprarán USD 26.000 millones en una colocación privada al mismo precio. Con eso sería la segunda mayor salida a bolsa de la historia, detrás de SpaceX (USD 75.000 millones en junio); sumando la colocación privada, supera ese récord. La demanda es seis veces mayor que las acciones disponibles. (Fuente: [Infobae][10])
+**Anthropic apunta a un precio de salida a bolsa superior a 78 dólares por acción**
+Según CNBC, el precio final podría superar la horquilla de 70 a 78 dólares fijada el 10 de noviembre. El cierre de pedidos era el martes y el precio definitivo se publicaría el miércoles. El debut en el Nasdaq, con el símbolo ANT, está previsto para el jueves. La empresa busca captar más de 64.000 millones de dólares con una valuación cercana a 1,4 billones. Ofrece 825 millones de acciones, de las cuales 801,4 millones son nuevas. ([ABC Color][3])
 
-**OpenAI muestra cómo GPT-6 Astra ayudó a avanzar hacia definir el Modelo Estándar en una red**
-OpenAI publicó un trabajo que explora una definición candidata, no perturbativa, del Modelo Estándar de la física de partículas sobre una red (lattice). Cuenta cómo GPT-6 Astra ayudó a convertir la idea en una demostración detallada. (Fuente: [OpenAI][11])
+**Anthropic dice que Claude adaptó parte de un modelo propio a GPU AMD en tres días**
+Según la empresa, Claude Mythos Preview ayudó a poner en marcha una parte del procesamiento de un modelo de Anthropic en GPU AMD MI355X en unos tres días. ([fomoera.com][4])
 
-**The King's Trust y OpenAI lanzan una alianza de 1 millón de libras para formar en IA a jóvenes del Reino Unido**
-El programa apunta a que hasta 25.000 jóvenes de todo el país desarrollen habilidades prácticas de IA para el trabajo. (Fuente: [OpenAI][12])
+**OpenAI ofrece acceso gratuito a sus modelos de frontera a 200.000 investigadores**
+Amplía su programa ChatGPT for Academic Researchers para dar acceso gratuito a investigadores de todo el mundo. El anuncio es del 16 de noviembre. ([OpenAI][5])
+
+**OpenAI trabaja con la OTAN y agencias aliadas de ciberseguridad para fortalecer sus defensas**
+La iniciativa busca que defensores de confianza puedan encontrar vulnerabilidades, probar correcciones y proteger sistemas esenciales usando IA. Se anunció el 17 de noviembre. ([OpenAI][6])
+
+**Hugging Face y OpenRouter se unen para facilitar la ejecución de modelos de pesos abiertos**
+Hugging Face reemplazó el enrutador propio de Inference Providers por el de OpenRouter, que reparte cada pedido entre más de 80 proveedores según precio, velocidad y confiabilidad en tiempo real. Si un proveedor falla, reintenta con otro. Cualquier modelo abierto del Hub que algún proveedor sirva se puede llamar con el token de Hugging Face. Soporta las APIs Chat Completions y Responses de OpenAI y la Messages de Anthropic. ([Hugging Face][7])
+
+**Gemini Notebook permite convertir un cuaderno en una página web interactiva**
+Google sumó la opción a Gemini Notebook, el antiguo NotebookLM. Alcanza con pedir "Móntame una página web": la página queda guardada dentro del cuaderno, se abre en una pestaña nueva y se puede compartir. La generación tarda unos minutos, según el volumen de fuentes. ([Xataka][8])
 
 ---
 Links:
 
-[1]: https://markets.businessinsider.com/news/stocks/macumira-receives-ce-mark-for-its-microcurrent-treatment-for-dry-amd-1036768635
-[2]: https://clinicaltrials.gov/study/NCT07705555
-[3]: https://clinicaltrials.gov/study/NCT07705607
-[4]: https://clinicaltrials.gov/study/NCT06571045
-[5]: https://clinicaltrials.gov/study/NCT07441642
-[6]: https://clinicaltrials.gov/study/NCT07710196
-[7]: https://clinicaltrials.gov/study/NCT07867080
-[8]: https://clinicaltrials.gov/study/NCT05626114
-[9]: https://clinicaltrials.gov/study/NCT06683742
-[10]: https://www.infobae.com/estados-unidos/2026/11/16/anthropic-sale-a-bolsa-fecha-precio-y-claves-del-debut-en-wall-street/
-[11]: https://openai.com/index/step-toward-defining-the-standard-model
-[12]: https://openai.com/index/the-kings-trust-and-openai
+[1]: https://www.unite.ai/es/science-corporation-raises-400m-series-d-to-expand-prima-access/
+[2]: https://bioengineer.org/high-dose-aflibercept-sustains-vision-and-lengthens-retinal-treatment-intervals-in-routine-practice/
+[3]: https://www.abc.com.py/ciencia/2026/11/17/anthropic-apunta-a-un-precio-de-salida-a-bolsa-superior-a-78-dolares-segun-cnbc/
+[4]: https://fomoera.com/anthropic-claude-mythos-amd-tres-dias/
+[5]: https://openai.com/index/expanding-chatgpt-for-academic-researchers
+[6]: https://openai.com/index/strengthening-nato-allied-cyber-defences-ai
+[7]: https://huggingface.co/blog/openrouter
+[8]: https://www.xataka.com/robotica-e-ia/he-convertido-presentacion-web-gemini-notebook-solo-tuve-que-pedirselo
