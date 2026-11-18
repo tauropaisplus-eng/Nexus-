@@ -240,3 +240,13 @@
 2026-11-17	OpenAI trabaja con la OTAN y agencias aliadas de ciberseguridad para fortalecer sus defensas
 2026-11-17	Hugging Face y OpenRouter se unen para facilitar la ejecución de modelos de pesos abiertos
 2026-11-17	Gemini Notebook permite convertir un cuaderno en una página web interactiva
+2026-11-18	Sandoz lanza Enzeevu en Estados Unidos
+2026-11-18	La atrofia geográfica afecta la vida diaria más allá de la pérdida de visión, pero ya hay un primer tratamiento aprobado
+2026-11-18	Registro de EE.UU.: avacincaptad pegol se inyecta en promedio cada siete semanas
+2026-11-18	¿Qué es MOGENRY? Una terapia génica experimental para la pérdida de visión
+2026-11-18	OpenAI presenta GPT-6.2 Astra y Sol
+2026-11-18	Anthropic define el precio de su salida a bolsa: 825 millones de acciones y Amazon y Google con cerca del 30%
+2026-11-18	Claude Opus 5.5 hizo en menos de tres horas una investigación que a contratistas les lleva 16
+2026-11-18	Astra for Law lidera en inteligencia legal
+2026-11-18	Modelos de series temporales de IBM llegan de forma nativa a Confluent
+2026-11-18	Rumble-2-Flash: un modelo de voz abierto de 0,5B para más de 40 idiomas

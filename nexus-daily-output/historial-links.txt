@@ -180,3 +180,16 @@
 2026-11-17	https://openai.com/index/strengthening-nato-allied-cyber-defences-ai
 2026-11-17	https://huggingface.co/blog/openrouter
 2026-11-17	https://www.xataka.com/robotica-e-ia/he-convertido-presentacion-web-gemini-notebook-solo-tuve-que-pedirselo
+2026-11-18	https://es.marketscreener.com/noticias/sandoz-lanza-enzeevu-en-estados-unidos-ce785edcd981f526
+2026-11-18	https://www.kmib.co.kr/en/article/20261116501877
+2026-11-18	https://bioengineer.org/us-registry-analysis-finds-seven-week-average-interval-for-avacincaptad-pegol/
+2026-11-18	https://www.msn.com/en-in/health/general/what-is-mogenry-experimental-gene-therapy-brings-new-hope-for-people-with-vision-loss/ar-AA2hGpfc
+2026-11-18	https://news.google.com/rss/articles/CBMiwwFBVV95cUxOLTRWcURfSUF4LTVuM2JfN1RkVVp4QzZIc1lHU1MwTm94TnhrZjlxU0ZsazdTLWtRZjZFSVRPR2NUZWtsWGFLTHN5V0dROS1KRnZnWGoydkE1NnNQZU1KRTRucmVhOXd5V0d0U1BDUDlaTU1ITEpTMFBpTFB5cEczc0pVS24wX2ZKX3F4RmpXZGhzNzA1Wl9xazBHQjk5V3o3dXpRS3R5LUMwakh5UmpGNUZhemJ4dGZmR3N0QmcwQVY4WlnSAcgBQVVfeXFMTUktdXl0YVlhcl9LVHVEbDZUd3BKNm5ISzgtZU5BYVg2U3lfLVJvLTlNSGV4UzFNMzdJeHBHU2hZeGdKemcxdGVfaFRVVk1uRkZtVW1ZVE1DRDhrVjlyWVhVdUtqZGhCMTVid19qd2ozNDhVbFhmc1M4TGhsR3NWLVZUY0UtOWtkRGR0Z1JBejNmeVBMUXU4dU5IX2NJaTlfenB2c3plNzlsSUlBUTM4QW5uMFFPYjcxOXdTM2xVZ0xocWpxdURWdTU?oc=5
+2026-11-18	https://openai.com/index/introducing-gpt-6-2-astra-sol
+2026-11-18	https://www.rionegro.com.ar/tecnologia/anthropic-sale-a-la-bolsa-cuanto-cuestan-las-acciones-de-la-creadora-de-claude-y-cuando-empiezan-a-cotizar-en-wall-street-4803288/
+2026-11-18	https://www.ambito.com/tecnologia/amazon-y-google-controlaran-casi-el-30-anthropic-su-salida-bolsa-los-detalles-del-acuerdo-multimillonario-n6346661
+2026-11-18	https://www.itsitio.com/inteligencia-artificial/anthropic-sale-a-bolsa-fecha-de-debut-precio-de-las-acciones-y-valuacion-en-wall-street/
+2026-11-18	https://www.diariobitcoin.com/tecnologia/claude-de-anthropic-resuelve-en-menos-de-tres-horas-una-investigacion-que-suele-tomar-16/
+2026-11-18	https://openai.com/index/astra-law-6-2
+2026-11-18	https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse
+2026-11-18	https://huggingface.co/blog/rumble-2-flash

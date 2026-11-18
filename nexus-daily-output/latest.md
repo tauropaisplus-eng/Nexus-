@@ -1,41 +1,51 @@
-# NEXUS Daily - 2026-11-17
+# NEXUS Daily - 2026-11-18
 
 ## 👁️ Baja visión
 
-**Science Corporation recauda 400 millones de dólares para ampliar el acceso al implante PRIMA**
-Anunció la ronda de serie D el 17 de noviembre, con Khosla Ventures, Y Combinator y otros inversores. El capital total de la empresa supera los 900 millones de dólares. Va a financiar la expansión de PRIMA en Europa, donde ya tiene marcado CE, y la preparación del lanzamiento en EE. UU., que sigue pendiente de la revisión de la FDA. También se destina a su programa de interfaces neuronales biohíbridas, que sigue en fase de investigación. ([Unite.AI][1])
+**Sandoz lanza Enzeevu en Estados Unidos**
+Sandoz anunció el lanzamiento en EE.UU. de Enzeevu de 2 mg, que se vende en jeringa precargada. Está autorizado para tratar distintas patologías de la retina. (MarketScreener, [L1][1])
 
-**El aflibercept de alta dosis mantiene la visión y espacia las inyecciones en la práctica diaria**
-Un estudio retrospectivo de 12 meses mostró que el aflibercept 8 mg mantuvo la agudeza visual y redujo el espesor central de la retina. También alargó de forma significativa los intervalos entre inyecciones. Los datos salen de la práctica clínica habitual, en pacientes con degeneración macular y edema macular diabético. ([BIOENGINEER][2])
+**La atrofia geográfica afecta la vida diaria más allá de la pérdida de visión, pero ya hay un primer tratamiento aprobado**
+Un equipo del Kim's Eye Hospital y de la Facultad de Medicina de Sungkyunkwan analizó la calidad de vida con datos de 15.030 personas de 40 años o más de la encuesta nacional coreana de salud (2017-2021). El 27% de los pacientes con atrofia geográfica dijo tener dificultad para moverse, y los fumadores son el 61% de los casos. En Corea del Sur se aprobó recientemente por primera vez un tratamiento para frenar su avance. (KMIB, [L9][2])
+
+**Registro de EE.UU.: avacincaptad pegol se inyecta en promedio cada siete semanas**
+Un análisis de práctica real con más de 10.000 pacientes del IRIS Registry mostró que las inyecciones de avacincaptad pegol para atrofia geográfica se dieron en promedio cada siete semanas. La tasa de eventos adversos agudos fue baja. (BIOENGINEER, [L10][3])
+
+**¿Qué es MOGENRY? Una terapia génica experimental para la pérdida de visión**
+Explica en qué consiste MOGENRY, una terapia génica que todavía está en etapa experimental. (ABP Live English, [L12][4])
 
 ## 🤖 Inteligencia artificial
 
-**Anthropic apunta a un precio de salida a bolsa superior a 78 dólares por acción**
-Según CNBC, el precio final podría superar la horquilla de 70 a 78 dólares fijada el 10 de noviembre. El cierre de pedidos era el martes y el precio definitivo se publicaría el miércoles. El debut en el Nasdaq, con el símbolo ANT, está previsto para el jueves. La empresa busca captar más de 64.000 millones de dólares con una valuación cercana a 1,4 billones. Ofrece 825 millones de acciones, de las cuales 801,4 millones son nuevas. ([ABC Color][3])
+**OpenAI presenta GPT-6.2 Astra y Sol**
+Los nuevos modelos mejoran los resultados profesionales, la programación y el uso de la computadora, con más eficiencia y menor costo. Están disponibles en ChatGPT Work, Codex y la API. (OpenAI, [L21][5])
 
-**Anthropic dice que Claude adaptó parte de un modelo propio a GPU AMD en tres días**
-Según la empresa, Claude Mythos Preview ayudó a poner en marcha una parte del procesamiento de un modelo de Anthropic en GPU AMD MI355X en unos tres días. ([fomoera.com][4])
+**Anthropic define el precio de su salida a bolsa: 825 millones de acciones y Amazon y Google con cerca del 30%**
+Anthropic fija este miércoles el precio de una oferta de 825 millones de acciones, de entre US$70 y US$78, y el jueves empezaría a cotizar en el Nasdaq con el símbolo ANT. De ese total, 801,4 millones los vende la empresa y 23,6 millones los accionistas actuales, por lo que por estos últimos no recibe dinero. La operación suma US$26.000 millones de inversiones de Google, Nvidia, Microsoft y otras tecnológicas. Tras la salida, Amazon tendrá el 14,7% y Google el 13,7% (28,4% entre ambas), y la valuación potencial ronda los USD 1,4 billones. ([Diario Río Negro][6], [Ámbito Financiero][7], [itsitio][8])
 
-**OpenAI ofrece acceso gratuito a sus modelos de frontera a 200.000 investigadores**
-Amplía su programa ChatGPT for Academic Researchers para dar acceso gratuito a investigadores de todo el mundo. El anuncio es del 16 de noviembre. ([OpenAI][5])
+**Claude Opus 5.5 hizo en menos de tres horas una investigación que a contratistas les lleva 16**
+Epoch AI probó a Claude en una tarea que un contratista humano resuelve en unas 16 horas por centro de datos. Opus 5.5 la completó en menos de tres horas, con 87,5% de puntaje y a menor costo que un contratista. Fable 5.2 llegó a 97,5% en 6,5 horas, pero costó más. Ambos cometieron errores de anotación y clasificación, así que Epoch AI mantiene la revisión humana. ([DiarioBitcoin][9])
 
-**OpenAI trabaja con la OTAN y agencias aliadas de ciberseguridad para fortalecer sus defensas**
-La iniciativa busca que defensores de confianza puedan encontrar vulnerabilidades, probar correcciones y proteger sistemas esenciales usando IA. Se anunció el 17 de noviembre. ([OpenAI][6])
+**Astra for Law lidera en inteligencia legal**
+Quedó primero en una evaluación de lanzamiento que abarcó 24 áreas del derecho. Todos los clientes de ChatGPT Enterprise ya pueden pedir acceso. ([OpenAI][10])
 
-**Hugging Face y OpenRouter se unen para facilitar la ejecución de modelos de pesos abiertos**
-Hugging Face reemplazó el enrutador propio de Inference Providers por el de OpenRouter, que reparte cada pedido entre más de 80 proveedores según precio, velocidad y confiabilidad en tiempo real. Si un proveedor falla, reintenta con otro. Cualquier modelo abierto del Hub que algún proveedor sirva se puede llamar con el token de Hugging Face. Soporta las APIs Chat Completions y Responses de OpenAI y la Messages de Anthropic. ([Hugging Face][7])
+**Modelos de series temporales de IBM llegan de forma nativa a Confluent**
+Los modelos de IBM para pronóstico en tiempo real, detección de anomalías y optimización, con más de 50 millones de descargas, ahora están disponibles de forma nativa en Confluent. Funcionan en la nube y on premises, corriendo en CPU. ([Hugging Face Blog][11])
 
-**Gemini Notebook permite convertir un cuaderno en una página web interactiva**
-Google sumó la opción a Gemini Notebook, el antiguo NotebookLM. Alcanza con pedir "Móntame una página web": la página queda guardada dentro del cuaderno, se abre en una pestaña nueva y se puede compartir. La generación tarda unos minutos, según el volumen de fuentes. ([Xataka][8])
+**Rumble-2-Flash: un modelo de voz abierto de 0,5B para más de 40 idiomas**
+Es un modelo de habla abierto de 0,5B de parámetros que cubre más de 40 idiomas. ([Hugging Face Blog][12])
 
 ---
 Links:
 
-[1]: https://www.unite.ai/es/science-corporation-raises-400m-series-d-to-expand-prima-access/
-[2]: https://bioengineer.org/high-dose-aflibercept-sustains-vision-and-lengthens-retinal-treatment-intervals-in-routine-practice/
-[3]: https://www.abc.com.py/ciencia/2026/11/17/anthropic-apunta-a-un-precio-de-salida-a-bolsa-superior-a-78-dolares-segun-cnbc/
-[4]: https://fomoera.com/anthropic-claude-mythos-amd-tres-dias/
-[5]: https://openai.com/index/expanding-chatgpt-for-academic-researchers
-[6]: https://openai.com/index/strengthening-nato-allied-cyber-defences-ai
-[7]: https://huggingface.co/blog/openrouter
-[8]: https://www.xataka.com/robotica-e-ia/he-convertido-presentacion-web-gemini-notebook-solo-tuve-que-pedirselo
+[1]: https://es.marketscreener.com/noticias/sandoz-lanza-enzeevu-en-estados-unidos-ce785edcd981f526
+[2]: https://www.kmib.co.kr/en/article/20261116501877
+[3]: https://bioengineer.org/us-registry-analysis-finds-seven-week-average-interval-for-avacincaptad-pegol/
+[4]: https://www.msn.com/en-in/health/general/what-is-mogenry-experimental-gene-therapy-brings-new-hope-for-people-with-vision-loss/ar-AA2hGpfc
+[5]: https://openai.com/index/introducing-gpt-6-2-astra-sol
+[6]: https://www.rionegro.com.ar/tecnologia/anthropic-sale-a-la-bolsa-cuanto-cuestan-las-acciones-de-la-creadora-de-claude-y-cuando-empiezan-a-cotizar-en-wall-street-4803288/
+[7]: https://www.ambito.com/tecnologia/amazon-y-google-controlaran-casi-el-30-anthropic-su-salida-bolsa-los-detalles-del-acuerdo-multimillonario-n6346661
+[8]: https://www.itsitio.com/inteligencia-artificial/anthropic-sale-a-bolsa-fecha-de-debut-precio-de-las-acciones-y-valuacion-en-wall-street/
+[9]: https://www.diariobitcoin.com/tecnologia/claude-de-anthropic-resuelve-en-menos-de-tres-horas-una-investigacion-que-suele-tomar-16/
+[10]: https://openai.com/index/astra-law-6-2
+[11]: https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse
+[12]: https://huggingface.co/blog/rumble-2-flash
