@@ -250,3 +250,11 @@
 2026-11-18	Astra for Law lidera en inteligencia legal
 2026-11-18	Modelos de series temporales de IBM llegan de forma nativa a Confluent
 2026-11-18	Rumble-2-Flash: un modelo de voz abierto de 0,5B para más de 40 idiomas
+2026-11-19	Radar TecnoVisión 5: 20 noticias de accesibilidad, con un especial de gafas inteligentes
+2026-11-19	Canal Retina, episodio 80: pacientes e investigación, impulso mutuo
+2026-11-19	Opus Genetics dosificó al primer participante de su terapia génica OPGx-RDH12
+2026-11-19	Anthropic debutó en el Nasdaq con la mayor salida a bolsa de la historia
+2026-11-19	Aceleración de la investigación: la frontera irregular
+2026-11-19	Gestión del riesgo de la IA de frontera: del entrenamiento al despliegue
+2026-11-19	Por qué tu trabajo de fine-tuning tarda más de lo que dicen los FLOPs
+2026-11-19	180.000 millones de parámetros con 32 GB de RAM: llevando la inferencia MoE al límite con Transformers

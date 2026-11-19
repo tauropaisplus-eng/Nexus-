@@ -193,3 +193,15 @@
 2026-11-18	https://openai.com/index/astra-law-6-2
 2026-11-18	https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse
 2026-11-18	https://huggingface.co/blog/rumble-2-flash
+2026-11-19	https://www.infotecnovision.com/radar-tecnovision-5-phonon-lleva-sus-voces-a-voiceover-nvda-y-talkback-y-19-noticias-mas/
+2026-11-19	https://www.ivoox.com/episodio-80-pacientes-e-investigacion-impulso-mutuo-audios-mp3_rf_184070923_1.html
+2026-11-19	https://es.marketscreener.com/noticias/opus-genetics-administra-la-primera-dosis-en-el-ensayo-cl-nico-de-fase-1-2-de-su-terapia-genica-opgx-ce785ed2db88f023
+2026-11-19	https://www.vanguardia.com/mundo/tecnologia/2026/11/19/anthropic-debuta-en-wall-street-con-una-salida-a-bolsa-record-cuanto-vale-la-empresa-creadora-de-claude-ai/
+2026-11-19	https://www.ambito.com/finanzas/la-accion-anthropic-salta-mas-20-el-premarket-cuando-se-podra-comprar-el-cedear-argentina-n6347104
+2026-11-19	https://www.perfil.com/economia/como-invertir-desde-argentina-en-los-cedears-de-anthropic-abVBt2x0Uto3
+2026-11-19	https://www.lanacion.com.ar/tecnologia/anthropic-sale-a-la-bolsa-y-espera-superar-el-record-de-spacex-nid19112026/
+2026-11-19	https://www.xataka.com/empresas-y-economia/amazon-google-accionistas-proveedores-canal-venta-anthropic-todo-a-vez
+2026-11-19	https://openai.com/index/research-acceleration-jagged-frontier
+2026-11-19	https://openai.com/index/managing-frontier-ai-risk
+2026-11-19	https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time
+2026-11-19	https://huggingface.co/blog/moe-expert-streaming
