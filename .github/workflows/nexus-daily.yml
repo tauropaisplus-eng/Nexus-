@@ -4,7 +4,12 @@ permissions:
 
 on:
   schedule:
+    # 19 nov 2026: GitHub atrasa o saltea la corrida programada. Hay respaldos:
+    # la primera que corre arma la edicion y las otras no hacen nada (no gastan API).
     - cron: '37 7 * * *'
+    - cron: '13 9 * * *'
+    - cron: '47 10 * * *'
+    - cron: '23 12 * * *'
   # Cuando se cambia el script, corre solo para probarlo
   push:
     paths:
@@ -19,6 +24,11 @@ on:
         description: 'Probar el apartado de estudios clinicos (no toca la edicion del dia)'
         type: boolean
         default: false
+
+# Que nunca corran dos a la vez (evita dos ediciones el mismo dia)
+concurrency:
+  group: nexus-daily
+  cancel-in-progress: false
 
 jobs:
   nexus-update:

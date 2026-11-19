@@ -1,4 +1,4 @@
-// NEXUS Daily v6 - 8 de noviembre de 2026 (empezo como v3 el 24 de octubre)
+// NEXUS Daily v10 - 19 de noviembre de 2026 (empezo como v3 el 24 de octubre)
 // Idea: Gabriel. Programacion: Claude.
 // Dos secciones, mitad y mitad: Baja vision (para Gabriel) e IA (para Claude).
 // Cambios v3: todas las notas con link, de Poen y CAO solo ateneos de retina,
@@ -35,6 +35,11 @@
 //    Cada uno en una linea: para que es, fase, quien lo hace y donde. No repite un estudio
 //    salvo que cambie de estado. Para probarlo a mano: workflow_dispatch con "estudios_prueba".
 //    aunque venga de otro medio. Mas busquedas de baja vision.
+// Cambios v10 (19 nov 2026, autorizados por Gabriel):
+//  - Resumenes completos: nada de frases cortadas con "..." y se limpia el "(…" antes de la fuente.
+//  - Afuera la amaurosis congenita de Leber y otras enfermedades de perdida total desde el nacimiento.
+//  - Estudios: el mismo medicamento del mismo laboratorio sale una sola vez aunque haya dos ensayos.
+//  - Horario: corridas de respaldo por si GitHub atrasa o se saltea la programada.
 
 const https = require('https');
 const fs = require('fs');
@@ -107,6 +112,8 @@ function youtube(idCanal) {
 // Gabriel pidio que no entre nada de ceguera ni de cosas para personas ciegas.
 function esDeCeguera(texto) {
   const t = String(texto || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  // v10: enfermedades de perdida total de vision (amaurosis congenita de Leber, etc.)
+  if (/amaurosis|\bleber\b|\blca\d*\b|\brdh12\b|\bcep290\b|\brpe65\b/.test(t)) return true;
   if (/\bciegos?\b|\bciegas?\b|\binvidentes?\b|ceguera total|baston|perros? (guia|de asistencia)|braille|lectores? de pantalla|audiodescrip/.test(t)) return true;
   // v7: lo mismo en ingles
   if (/\bthe blind\b|\bblind (people|person|users?|man|woman|community|athletes?)\b|totally blind|guide dogs?|white canes?|\bcanes?\b|braille|screen readers?|audio description/.test(t)) return true;
@@ -596,7 +603,16 @@ async function buscarEstudios() {
   }
   if (porId.size === 0) return null;
   // Primero los que pasan en Argentina, despues los de fase mas avanzada
-  const lista = [...porId.values()].sort((a, b) => (b.argentina - a.argentina) || b.fases.localeCompare(a.fases)).slice(0, 25);
+  const ordenados = [...porId.values()].sort((a, b) => (b.argentina - a.argentina) || b.fases.localeCompare(a.fases));
+  // v10: el mismo medicamento del mismo laboratorio sale una sola vez (los "gemelos" se anotan juntos)
+  const porClave = new Map();
+  for (const e of ordenados) {
+    const remedio = (e.tratamientos.split(',')[0] || e.titulo).toLowerCase().replace(/[^a-z0-9]/g, '');
+    const clave = e.sponsor.toLowerCase() + '|' + remedio;
+    if (porClave.has(clave)) porClave.get(clave).gemelos.push(e);
+    else porClave.set(clave, Object.assign(e, { gemelos: [] }));
+  }
+  const lista = [...porClave.values()].slice(0, 25);
   return { lista };
 }
 
@@ -609,11 +625,12 @@ async function armarEstudios(links) {
       (e.pacientes ? ` | Pacientes: ${e.pacientes}` : '') + (e.sponsor ? ` | Quien lo hace: ${e.sponsor}` : '') +
       (e.tratamientos ? ` | Que prueban: ${e.tratamientos}` : '') + (e.paises ? ` | Donde: ${e.paises}` : '') +
       (e.primerRegistro ? ` | Registrado: ${e.primerRegistro}` : '') +
+      (e.gemelos.length ? ` | Hay ${e.gemelos.length + 1} estudios parecidos de este mismo medicamento` : '') +
       `\n  Resumen: ${e.resumen} (link: L${links.length})`;
   }).join('\n');
   const prompt = `Sos NEXUS Daily. Arma el apartado semanal de estudios clinicos para Gabriel, que tiene baja vision (ve con un solo ojo) y sigue los avances de retina. Espanol rioplatense, hablale de vos, en Markdown.
 
-Empeza exactamente con la linea "### 🔬 Estudios en marcha (resumen semanal)" y despues una lista de entre 3 y 8 estudios elegidos de abajo, los mas interesantes: tratamientos nuevos, fases avanzadas (fase 2 o 3), los que se hacen en Argentina, y variedad de enfermedades. Deja afuera los estudios chicos de un hospital que solo comparan tecnicas de cirugia de rutina, y todo lo que sea para personas que no ven nada.
+Empeza exactamente con la linea "### 🔬 Estudios en marcha (resumen semanal)" y despues una lista de entre 3 y 8 estudios elegidos de abajo, los mas interesantes: tratamientos nuevos, fases avanzadas (fase 2 o 3), los que se hacen en Argentina, y variedad de enfermedades. Deja afuera los estudios chicos de un hospital que solo comparan tecnicas de cirugia de rutina, y todo lo que sea para personas que no ven nada (incluida la amaurosis congenita de Leber). Si hay dos o mas estudios del mismo medicamento para la misma enfermedad, pone uno solo.
 
 Cada estudio en UN renglon que empiece con "- " y diga: para que es en palabras simples (que enfermedad y que se prueba), la fase, quien lo hace y donde. Si se hace en Argentina, decilo primero ("En Argentina:"). Al final, el link como enlace Markdown con el codigo tal cual, por ejemplo ([ClinicalTrials.gov](L3)). Si el estado es "terminado", aclara que termino y que hay que esperar los resultados. No inventes datos. No uses las palabras "ceguera", "ciego" o "ciega". Nada de introducciones ni cierres: solo el titulo y la lista.
 
@@ -625,7 +642,8 @@ ${material}`;
 
 function guardarHistorialEstudios(hoy, texto, estudios) {
   // Solo se anotan los estudios que el modelo efectivamente publico
-  const publicados = estudios.filter((e) => texto.includes('clinicaltrials.gov/study/' + e.id));
+  const publicados = estudios.filter((e) => texto.includes('clinicaltrials.gov/study/' + e.id))
+    .flatMap((e) => [e, ...(e.gemelos || [])]);
   const filas = [...leerHistorialEstudios(), ...publicados.map((e) => [hoy, e.id, e.estado])];
   fs.writeFileSync(HISTORIAL_ESTUDIOS, filas.map((f) => f.join('\t')).join('\n') + '\n');
 }
@@ -682,6 +700,7 @@ Para Gabriel, que tiene baja vision (ve con un solo ojo) y le interesa: ayudas o
 Reglas de esta seccion:
 - EXCLUIR todo lo que sea para personas ciegas o sobre ceguera (bastones, perros guia, movilidad para ciegos, braille, lectores de pantalla, apps o aparatos que se manejan solo por audio porque el usuario no ve). Fijate en el "Texto de la nota": si esta pensada para gente que no ve, va afuera. Gabriel lo pidio expresamente y es firme.
 - No uses nunca las palabras "ceguera", "ciego" o "ciega". Si un tratamiento evita perder la vista, deci "perdida de vision".
+- Tambien afuera las enfermedades de perdida total de vision desde el nacimiento o la infancia (amaurosis congenita de Leber y parecidas), aunque sea un tratamiento.
 - Hay notas en ingles: traducilas al espanol (titulo y resumen). Si la nota en ingles y una en espanol cuentan lo mismo, quedate con la que tenga mas datos.
 - Si hay un ateneo o video de retina de Laboratorios Poen o del Consejo Argentino de Oftalmologia, o un episodio de Canal Retina, mencionalo siempre y decile que lo puede ver en el link.
 
@@ -699,6 +718,7 @@ Reglas generales:
 - UN SOLO ANUNCIO, UNA SOLA NOTA: si dos fuentes cuentan el mismo lanzamiento o hecho (por ejemplo, el mismo modelo nuevo contado por el laboratorio y por un diario), sale una sola vez; junta los datos de las dos en esa nota.
 - Cada nota: **titulo en negrita**, despues un resumen de 1 a 3 lineas con lo concreto: que se hizo, quien, en cuantos pacientes o con que resultado, y en que etapa esta (por ejemplo: ensayo, aprobado, a la venta). Al final la fuente entre parentesis.
 - El resumen sale del "Texto de la nota". No repitas el titulo con otras palabras: conta lo que el titulo no dice.
+- Cada resumen termina con una frase completa y despues la fuente. Nunca uses puntos suspensivos ("..." o "…") ni dejes una frase cortada, aunque el texto de la nota venga cortado.
 - Sin relleno: si de una nota solo tenes el titulo, escribi UNA linea corta y concreta sobre de que trata. Nunca escribas "segun el titulo" ni nada parecido. Prohibido completar con frases vacias o supuestas como "es un tema que te interesa", "es una de las lineas que mas te interesan", "la nota no trae mas detalles", "el titulo aclara que...", "esta ubicada en el rastreo de...". No le digas a Gabriel que le interesa algo: eso ya lo sabe.
 - Los links vienen como codigos (L1, L2, L3...). Si la nota tiene codigo, pone la fuente como enlace Markdown con ese codigo tal cual, por ejemplo: ([Infobae](L7)). No inventes codigos.
 - En las notas de busqueda de noticias, la fuente es el medio que aparece al final del titulo (despues del guion); sacalo del titulo y no lo repitas en el titulo en negrita.
@@ -745,6 +765,9 @@ ${ia.texto || '(sin notas hoy)'}`;
     if (!num) num = usados.push(link);
     return `[${nombre}][${num}]`;
   });
+  // v10: puntos suspensivos pegados a la fuente: "(…[Medio][3])" o "... ([Medio][3])"
+  resumen = resumen.replace(/\(\s*(?:…|\.\.\.)\s*(\[[^\]]+\]\[\d+\])/g, '($1');
+  resumen = resumen.replace(/\s*(?:…|\.\.\.)\s*(\(\[[^\]]+\]\[\d+\])/g, '. $1').replace(/([.!?])\. \(\[/g, '$1 ([');
   // v7: a veces el modelo deja la fuente con doble parentesis: (([Medio][1]))
   resumen = resumen.replace(/\(\((\[[^\]]+\]\[\d+\])\)\)/g, '($1)');
   if (usados.length) {
