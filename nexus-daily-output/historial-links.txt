@@ -205,3 +205,17 @@
 2026-11-19	https://openai.com/index/managing-frontier-ai-risk
 2026-11-19	https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time
 2026-11-19	https://huggingface.co/blog/moe-expert-streaming
+2026-11-20	https://www.youtube.com/watch?v=ndR17VSzCco
+2026-11-20	https://www.rttnews.com/3716799/belite-bio-fda-extends-review-period-for-nda-for-tinlarebant.aspx
+2026-11-20	https://bioengineer.org/early-macular-leakage-resolution-linked-to-extended-faricimab-dosing-in-retinal-vein-occlusion/
+2026-11-20	https://www.65ymas.com/cuidatemas/actualidad-longevidad/envejecimiento-ocular-todas-claves-proteger-salud-tus-ojos_86900_102.html
+2026-11-20	https://www.infobae.com/economia/2026/11/19/las-acciones-de-anthropic-empiezan-a-cotizar-en-wall-street-despues-de-una-salida-record-a-la-bolsa/
+2026-11-20	https://news.google.com/rss/articles/CBMi3AFBVV95cUxNOTVxWGl5LTB4TkVRUV9ZT1kwZ2pvVDZlaGRCME1ldGdST0s2N1JPb1VacGlTX3lvWWtEdmVtWnpMNllXOFhFeFZwS1BTMUNuY1U1NURmVm1pQ1lxZ2NTTE9KV2NhUnhBVF8xQjRmUUZFMzBVelAxZExzQzdGRWdmNlZiMWh4QVpZMkd5MWl4ZXdfS180ODFKMWpFNzRIVDJQOUVGTFB4NUpyN2V2VWZLUGw2VFByUlY3elZiWV9NeFY3YlAxcFZxUXhpaXdVV2ZZS3BVc1liQkprbnZF0gH3AUFVX3lxTE10RGFkUzdZODZyaFBhc3pjblVOa2VuRGZ1ZWtiZlBranNKTTlYeWhXZVcwakt1MENhN04yZTRnUms1UWhJeUZqZkVXd2JfVW1QNFpzZ1JkN25KVXlBRHlEcGFFVVFSd19MTUROSGVOZFdNLUVYRVpfdWM3OWNfNUdSTDltWUFRWlYwMVNBZEFHdnFHcEtlTm9EVGU1MEc3WXdYZ1dVUEEtOUU3MGQwZmtUN29mSk5lR3pYNm5BTTE3WklkUFBXZzkzRzdVSWtNa0k4RzUxMDRoNlZjWGp6UERNMFd4QS1NV2NCU0tHSmZaNWQya3ZjUFE?oc=5
+2026-11-20	https://www.eldia.com/el-mundo/anthropic-la-creadora-de-claude-debuta-en-wall-street-el-mundo_1795063038
+2026-11-20	https://news.google.com/rss/articles/CBMipwFBVV95cUxNWlRzRFlPY0ZIN2pyc29xZTdjWWNlMlF2MVNINHFYbWllVlZNNE4zOG1BTTY3QTlLY2hnTEFLUFVIM01BWGtHc3hnNWgxUkJPRmwyeGMydDFxU3lSYTZtMlVaaGNZeDdFYUhFRDVpUl9UdXlRUERPbXd0ZVJpaS1vYVM4VmoycFdUZmptTEJWaW5uWWE0UU4wQkdEV2VoODE4MzU2LXQ0dw?oc=5
+2026-11-20	https://www.xataka.com/empresas-y-economia/anthropic-salio-a-bolsa-subida-17-ha-conseguido-algo-insolito-aguarle-fiesta-a-todos-sus-rivales
+2026-11-20	https://deepmind.google/blog/introducing-gemini-4-neon/
+2026-11-20	https://deepmind.google/blog/genie-4-is-now-available/
+2026-11-20	https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast
+2026-11-20	https://huggingface.co/blog/harness-adapters-at-scale
+2026-11-20	https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin

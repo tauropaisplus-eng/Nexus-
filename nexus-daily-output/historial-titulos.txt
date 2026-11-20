@@ -1,4 +1,3 @@
-2026-10-05	Para la próxima
 2026-10-22	A OpenAI y Anthropic les han adelantado por la derecha en los agentes de IA: por WhatsApp
 2026-10-22	Anthropic presenta Claude Duet para competir con Meta y OpenAI
 2026-10-22	Campaña #TienesQueVernos: cómo ves y qué reacciones te encuentras por tener baja visión
@@ -258,3 +257,13 @@
 2026-11-19	Gestión del riesgo de la IA de frontera: del entrenamiento al despliegue
 2026-11-19	Por qué tu trabajo de fine-tuning tarda más de lo que dicen los FLOPs
 2026-11-19	180.000 millones de parámetros con 32 GB de RAM: llevando la inferencia MoE al límite con Transformers
+2026-11-20	Ciclo "30 Minutos de Videos de Retina": 58° edición
+2026-11-20	La FDA extiende tres meses la revisión de tinlarebant para Stargardt tipo 1
+2026-11-20	Pérdida de fluido macular y dosificación extendida de faricimab en oclusión de vena retiniana
+2026-11-20	Envejecimiento ocular: qué revisiones hacer y cuáles son los problemas más comunes
+2026-11-20	Anthropic debutó en Wall Street y sus acciones subieron 17% en el primer día
+2026-11-20	Google presenta Gemini 4 Neon, un modelo de nivel frontera para programación y análisis a menor costo
+2026-11-20	Genie 4 ya está disponible para suscriptores de Google AI Ultra
+2026-11-20	Cómo la "Performance Factory" de OpenAI mantiene rápido a ChatGPT
+2026-11-20	Adaptadores de arnés (harness adapters) para ajustar un modelo a su entorno de ejecución
+2026-11-20	DaisyRose-27B: eficiencia en el post-entrenamiento
