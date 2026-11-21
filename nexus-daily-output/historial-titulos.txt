@@ -267,3 +267,10 @@
 2026-11-20	Cómo la "Performance Factory" de OpenAI mantiene rápido a ChatGPT
 2026-11-20	Adaptadores de arnés (harness adapters) para ajustar un modelo a su entorno de ejecución
 2026-11-20	DaisyRose-27B: eficiencia en el post-entrenamiento
+2026-11-21	Terapias innovadoras impulsan el avance en el campo de la retina
+2026-11-21	Los siete cofundadores de Anthropic suman una fortuna de más de US$ 140.000 millones tras la salida a Bolsa
+2026-11-21	OpenAI detalla cómo combate la destilación adversarial de sus modelos
+2026-11-21	MedChemBench: un benchmark de OpenAI para evaluar IA en química medicinal
+2026-11-21	Los agentes de OpenAI ya completan casi la mitad de las tareas de investigación de dos a cuatro horas sin ayuda humana
+2026-11-21	Google creó una "dimensión espejo" de internet para probar sus agentes de IA
+2026-11-21	Hugging Face presenta Inkling 2 Mini, un modelo pensado para ejecutarse en configuraciones locales

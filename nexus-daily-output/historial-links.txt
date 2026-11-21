@@ -219,3 +219,10 @@
 2026-11-20	https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast
 2026-11-20	https://huggingface.co/blog/harness-adapters-at-scale
 2026-11-20	https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin
+2026-11-21	https://www.healio.com/news/ophthalmology/20261119/innovative-therapies-driving-advancement-in-retina-field
+2026-11-21	https://www.clarin.com/economia/7-magnificos-anthropic-creadores-claude-fortuna-us-140000-millones_0_MyG4fB8kI9.html
+2026-11-21	https://openai.com/index/combatting-adversarial-distillation
+2026-11-21	https://openai.com/index/introducing-medchembench
+2026-11-21	https://www.infobae.com/tecno/2026/11/21/openai-revelo-que-sus-agentes-de-inteligencia-artificial-ya-completan-casi-la-mitad-de-las-tareas-de-investigacion-sin-ayuda-humana/
+2026-11-21	https://www.infobae.com/tecno/2026/11/21/que-es-la-dimension-espejo-de-google-y-como-ayuda-a-poner-a-prueba-sus-modelos-de-ia/
+2026-11-21	https://huggingface.co/blog/inkling2mini
