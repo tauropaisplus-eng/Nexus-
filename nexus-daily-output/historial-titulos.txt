@@ -274,3 +274,5 @@
 2026-11-21	Los agentes de OpenAI ya completan casi la mitad de las tareas de investigación de dos a cuatro horas sin ayuda humana
 2026-11-21	Google creó una "dimensión espejo" de internet para probar sus agentes de IA
 2026-11-21	Hugging Face presenta Inkling 2 Mini, un modelo pensado para ejecutarse en configuraciones locales
+2026-11-22	Un matemático de Anthropic afirma haber demostrado la hipótesis de Riemann con ayuda de Claude
+2026-11-22	Hebbia ve mejoras en investigación financiera con GPT-6 Astra

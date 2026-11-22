@@ -226,3 +226,7 @@
 2026-11-21	https://www.infobae.com/tecno/2026/11/21/openai-revelo-que-sus-agentes-de-inteligencia-artificial-ya-completan-casi-la-mitad-de-las-tareas-de-investigacion-sin-ayuda-humana/
 2026-11-21	https://www.infobae.com/tecno/2026/11/21/que-es-la-dimension-espejo-de-google-y-como-ayuda-a-poner-a-prueba-sus-modelos-de-ia/
 2026-11-21	https://huggingface.co/blog/inkling2mini
+2026-11-22	https://www.excelsior.com.mx/internacional/anthropic-dice-que-claude-resolvio-mayores-problemas-matematicos-hipotesis-riemann
+2026-11-22	https://www.eldia.com/el-mundo/el-santo-grial-matematico-un-experto-de-anthropic-afirma-haberlo-resuelto-con-ia-el-mundo_1795324540
+2026-11-22	https://www.lanacion.com.ar/estados-unidos/investigador-de-anthropic-dice-que-claude-resolvio-uno-de-los-mayores-problemas-de-las-matematicas-nid20112026/
+2026-11-22	https://openai.com/business/customer-stories/hebbia
