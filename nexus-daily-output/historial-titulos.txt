@@ -276,3 +276,9 @@
 2026-11-21	Hugging Face presenta Inkling 2 Mini, un modelo pensado para ejecutarse en configuraciones locales
 2026-11-22	Un matemático de Anthropic afirma haber demostrado la hipótesis de Riemann con ayuda de Claude
 2026-11-22	Hebbia ve mejoras en investigación financiera con GPT-6 Astra
+2026-11-23	Johnson & Johnson compra Ollin Biosciences, desarrolladora de tratamientos para enfermedades oculares
+2026-11-23	Un investigador de Anthropic proyecta que casi todos los humanos perderán el empleo para siempre
+2026-11-23	Perplejidad e inteligencia
+2026-11-23	Algoritmos cuánticos más rápidos con agentes y verificación formal
+2026-11-23	RoboTrack: seguimiento de puntos para manipulación robótica en el mundo real
+2026-11-23	Cómo construir y mantener una evaluación agéntica

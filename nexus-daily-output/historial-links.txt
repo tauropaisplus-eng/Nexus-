@@ -230,3 +230,16 @@
 2026-11-22	https://www.eldia.com/el-mundo/el-santo-grial-matematico-un-experto-de-anthropic-afirma-haberlo-resuelto-con-ia-el-mundo_1795324540
 2026-11-22	https://www.lanacion.com.ar/estados-unidos/investigador-de-anthropic-dice-que-claude-resolvio-uno-de-los-mayores-problemas-de-las-matematicas-nid20112026/
 2026-11-22	https://openai.com/business/customer-stories/hebbia
+2026-11-23	https://note.com/money_tec1129/n/n2b81acb99d54?hl=en
+2026-11-23	https://clinicaltrials.gov/study/NCT07440225
+2026-11-23	https://clinicaltrials.gov/study/NCT05407636
+2026-11-23	https://clinicaltrials.gov/study/NCT06962839
+2026-11-23	https://clinicaltrials.gov/study/NCT07392255
+2026-11-23	https://clinicaltrials.gov/study/NCT07951515
+2026-11-23	https://clinicaltrials.gov/study/NCT06467344
+2026-11-23	https://clinicaltrials.gov/study/NCT06591793
+2026-11-23	https://www.infobae.com/estados-unidos/2026/11/23/un-investigador-de-anthropic-advierte-que-casi-todos-los-humanos-van-a-quedar-sin-trabajo-para-siempre/
+2026-11-23	https://openai.com/index/perplexity-and-intelligence
+2026-11-23	https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/
+2026-11-23	https://huggingface.co/blog/allenai/robotrack
+2026-11-23	https://huggingface.co/blog/agentic-evals
