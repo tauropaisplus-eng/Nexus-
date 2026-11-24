@@ -288,3 +288,7 @@
 2026-11-24	Nvidia: el consejo votó por unanimidad el regreso de Jensen Huang
 2026-11-24	iFood escala agentes de programación en 15.000 repositorios
 2026-11-24	Microduck: evitar obstáculos de la simulación al robot real con Isaac Lab y Newton
+2026-11-24	Buscando planetas lejanos con Astra
+2026-11-24	"Automatizar toda la investigación en IA": el escenario que plantea Alexandr Wang, jefe de IA de Meta
+2026-11-24	Cómo Intentful usa dots para ganar tiempo y crecer
+2026-11-24	Una IA responde si el cambio climático traerá más rayos

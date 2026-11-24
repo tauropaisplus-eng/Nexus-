@@ -250,3 +250,7 @@
 2026-11-24	https://www.xataka.com/empresas-y-economia/nvidia-demasiado-grande-como-para-caer-riesgo-que-todo-ecosistema-ia-eeuu-dependa-sola-empresa
 2026-11-24	https://openai.com/index/ifood
 2026-11-24	https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance
+2026-11-24	https://openai.com/index/searching-for-distant-planets-with-astra
+2026-11-24	https://www.infobae.com/tecno/2026/11/24/automatizar-toda-la-investigacion-en-ia-el-escenario-que-describe-el-jefe-de-ia-de-meta-alexandr-wang/
+2026-11-24	https://openai.com/business/customer-stories/intentful-dots
+2026-11-24	https://www.xataka.com/ecologia-y-naturaleza/ciencia-llevaba-anos-debatiendo-cambio-climatico-traeria-rayos-ia-acaba-dar-respuesta-inquietante

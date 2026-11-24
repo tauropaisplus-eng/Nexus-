@@ -2,33 +2,26 @@
 
 ## 👁️ Baja visión
 
-**V Foro Social de la Discapacidad Visual: accesibilidad universal y nuevas tecnologías**
-Jornada organizada por el FSDV, con especialistas en accesibilidad, tecnología e inclusión social. Se hace el martes 1 de diciembre de 2026, de 10:00 a 18:00 h, en el salón de actos del INJUVE, en Madrid. La inscripción es por mail a forosocialdiscapacidadvisual@gmail.com. ([Acción Visión España][1])
+Hoy no hubo novedades.
 
 ## 🤖 Inteligencia artificial
 
-**Anthropic lanza Claude Ship, agentes que revisan, corrigen y aprueban cambios de código**
-Es un conjunto de herramientas en beta para equipos de desarrollo, que se prueba en planes de empresa en GitHub. Reúne Code Review, ya disponible para el público general con tres niveles de revisión (rápida, estándar o profunda), y dos agentes en beta. PR Steward actúa cuando fallan las verificaciones, pero no puede aprobar ni fusionar. Claude Approvals decide qué cambios se aprueban según las reglas de cada equipo y deja los casos delicados en manos de una persona. ([Infobae][2], [Diario El Mundo][3])
+**Buscando planetas lejanos con Astra**
+Dos astrónomos aficionados usaron Codex y Astra para analizar datos públicos de los telescopios espaciales Kepler y TESS de la NASA, en busca de señales de posibles exoplanetas. Con ese trabajo le dieron a astrónomos profesionales algunos puntos del cielo para estudiar más de cerca. (OpenAI, [fuente][1])
 
-**OpenAI y Cisco presentan Shirudo, un runtime de código abierto para proteger sistemas Linux mientras se aplican parches**
-En una prueba controlada, un "escudo" generado con Codex bloqueó un intento de explotación de Java4Shell contra un servicio Elasticsearch en funcionamiento, sin necesidad de reiniciarlo. El operador aprueba el escudo antes de desplegarlo y el servicio sigue andando. Convocan a desarrolladores, investigadores de seguridad y operadores de infraestructura a seguir desarrollando el proyecto. ([OpenAI][4])
+**"Automatizar toda la investigación en IA": el escenario que plantea Alexandr Wang, jefe de IA de Meta**
+Wang, director de IA de Meta y responsable de sus Laboratorios de Superinteligencia, publicó en X que "la superinteligencia está llegando". Afirmó que los modelos pronto serán capaces de automatizar toda la investigación en IA, es decir, de diseñar, probar y mejorar nuevos modelos sin trabajo humano. ([Infobae][2])
 
-**Nvidia: el consejo votó por unanimidad el regreso de Jensen Huang**
-Después de once días de caídas bursátiles casi continuas, el consejo recibió el domingo por la noche una llamada de Donald Trump pidiendo la vuelta de Huang, según Semafor. El mismo consejo había aceptado su renuncia el 11 de noviembre y buscaba reemplazo. Axios agrega que Elon Musk y Travis Kalanick también presionaron por su regreso. ([Xataka][5])
+**Cómo Intentful usa dots para ganar tiempo y crecer**
+Marina Petrova, CEO y cofundadora de Intentful, usa su dot, al que llamó Aria, para investigar sitios web, armar propuestas, marcar mensajes críticos y resolver problemas sin que ella lo pida. En una propuesta para un cliente de turismo, recurrió a Aria para definir qué sitios web cubriría un paquete de servicios de IA y cuánto había cobrado la empresa por trabajos similares. ([OpenAI][3])
 
-**iFood escala agentes de programación en 15.000 repositorios**
-Caso publicado por OpenAI sobre el uso de agentes de código en iFood. ([OpenAI][6])
-
-**Microduck: evitar obstáculos de la simulación al robot real con Isaac Lab y Newton**
-Entrada de NVIDIA en Hugging Face sobre un flujo de trabajo para llevar a un robot Microduck real una tarea de evasión de obstáculos entrenada en simulación. ([Hugging Face Blog][7])
+**Una IA responde si el cambio climático traerá más rayos**
+Un estudio con machine learning y seis variables estima que los rayos que caen sobre la superficie terrestre podrían aumentar entre un 76% y un 140% antes de que termine el siglo. El incremento medio sería cercano al 30% por cada grado de calentamiento global. Los trabajos previos daban conclusiones opuestas: un estudio de 2014 en Science calculó un 12% por grado, y otro de 2018 proyectó una caída de hasta el 15%. ([Xataka][4])
 
 ---
 Links:
 
-[1]: https://www.esvision.es/v-foro-social-de-la-discapacidad-visual/
-[2]: https://www.infobae.com/tecno/2026/11/24/anthropic-lanzo-claude-ship-una-ia-que-revisa-corrige-y-aprueba-el-codigo-de-los-programadores/
-[3]: https://diario.elmundo.sv/inteligencia-artificial/anthropic-lanza-claude-ship-una-herramienta-basada-en-agentes-de-ia-que-revisa-corrige-y-aprueba-cambios-de-codigo
-[4]: https://openai.com/index/introducing-shirudo
-[5]: https://www.xataka.com/empresas-y-economia/nvidia-demasiado-grande-como-para-caer-riesgo-que-todo-ecosistema-ia-eeuu-dependa-sola-empresa
-[6]: https://openai.com/index/ifood
-[7]: https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance
+[1]: https://openai.com/index/searching-for-distant-planets-with-astra
+[2]: https://www.infobae.com/tecno/2026/11/24/automatizar-toda-la-investigacion-en-ia-el-escenario-que-describe-el-jefe-de-ia-de-meta-alexandr-wang/
+[3]: https://openai.com/business/customer-stories/intentful-dots
+[4]: https://www.xataka.com/ecologia-y-naturaleza/ciencia-llevaba-anos-debatiendo-cambio-climatico-traeria-rayos-ia-acaba-dar-respuesta-inquietante
