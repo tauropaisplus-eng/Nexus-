@@ -282,3 +282,9 @@
 2026-11-23	Algoritmos cuánticos más rápidos con agentes y verificación formal
 2026-11-23	RoboTrack: seguimiento de puntos para manipulación robótica en el mundo real
 2026-11-23	Cómo construir y mantener una evaluación agéntica
+2026-11-24	V Foro Social de la Discapacidad Visual: accesibilidad universal y nuevas tecnologías
+2026-11-24	Anthropic lanza Claude Ship, agentes que revisan, corrigen y aprueban cambios de código
+2026-11-24	OpenAI y Cisco presentan Shirudo, un runtime de código abierto para proteger sistemas Linux mientras se aplican parches
+2026-11-24	Nvidia: el consejo votó por unanimidad el regreso de Jensen Huang
+2026-11-24	iFood escala agentes de programación en 15.000 repositorios
+2026-11-24	Microduck: evitar obstáculos de la simulación al robot real con Isaac Lab y Newton

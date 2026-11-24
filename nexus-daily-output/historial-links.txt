@@ -243,3 +243,10 @@
 2026-11-23	https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/
 2026-11-23	https://huggingface.co/blog/allenai/robotrack
 2026-11-23	https://huggingface.co/blog/agentic-evals
+2026-11-24	https://www.esvision.es/v-foro-social-de-la-discapacidad-visual/
+2026-11-24	https://www.infobae.com/tecno/2026/11/24/anthropic-lanzo-claude-ship-una-ia-que-revisa-corrige-y-aprueba-el-codigo-de-los-programadores/
+2026-11-24	https://diario.elmundo.sv/inteligencia-artificial/anthropic-lanza-claude-ship-una-herramienta-basada-en-agentes-de-ia-que-revisa-corrige-y-aprueba-cambios-de-codigo
+2026-11-24	https://openai.com/index/introducing-shirudo
+2026-11-24	https://www.xataka.com/empresas-y-economia/nvidia-demasiado-grande-como-para-caer-riesgo-que-todo-ecosistema-ia-eeuu-dependa-sola-empresa
+2026-11-24	https://openai.com/index/ifood
+2026-11-24	https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance
