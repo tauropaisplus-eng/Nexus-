@@ -1,4 +1,4 @@
-// NEXUS Daily v10 - 19 de noviembre de 2026 (empezo como v3 el 24 de octubre)
+// NEXUS Daily v11 - 24 de noviembre de 2026 (empezo como v3 el 24 de octubre)
 // Idea: Gabriel. Programacion: Claude.
 // Dos secciones, mitad y mitad: Baja vision (para Gabriel) e IA (para Claude).
 // Cambios v3: todas las notas con link, de Poen y CAO solo ateneos de retina,
@@ -40,6 +40,14 @@
 //  - Afuera la amaurosis congenita de Leber y otras enfermedades de perdida total desde el nacimiento.
 //  - Estudios: el mismo medicamento del mismo laboratorio sale una sola vez aunque haya dos ensayos.
 //  - Horario: corridas de respaldo por si GitHub atrasa o se saltea la programada.
+// Cambios v11 (24 nov 2026, autorizados por Gabriel):
+//  - Baja vision: afuera eventos presenciales (foros, jornadas, congresos) fuera de Argentina.
+//  - Estudios: el mismo medicamento sale una sola vez por lunes, aunque sea para otra enfermedad
+//    o lo registre otro laboratorio (antes se comparaba tambien el laboratorio).
+//  - Fuentes: afuera blogs personales y plataformas de autopublicacion (note.com, Medium, Substack...).
+//  - El resumen no puede cambiar nombres propios ni tecnicos (salio "Java4Shell").
+//  - Version corta para Gaston (medico de retina): nexus-daily-output/gaston.txt, solo baja vision
+//    y estudios, texto plano de menos de 1900 caracteres para pegar en Instagram.
 
 const https = require('https');
 const fs = require('fs');
@@ -403,6 +411,11 @@ function extraerHtml(html, base) {
 // Link real -> link de Google News, para anotar los dos en el historial
 const originales = {};
 
+// v11: plataformas donde cualquiera publica; no sirven como fuente de una noticia
+function esBlogPersonal(link) {
+  return /\/\/([^/]*\.)?(note\.com|medium\.com|substack\.com|blogspot\.com|wordpress\.com|tumblr\.com|linkedin\.com\/pulse|quora\.com|reddit\.com|livedoor\.blog|hatenablog\.com|ameblo\.jp)/i.test(link);
+}
+
 async function leerSeccion(fuentes, yaVistos, links, publicados, descartarGoogle = false) {
   let texto = '';
   let conDatos = 0;
@@ -428,6 +441,8 @@ async function leerSeccion(fuentes, yaVistos, links, publicados, descartarGoogle
     // v7: afuera las notas de Google News sin link real (sin texto y con link ilegible).
     // v9: ahora en las dos secciones (antes en baja vision se conservaban), despues de intentar el rescate por Bing.
     notas = notas.filter((n) => !/news\.google\.com/.test(n.link || ''));
+    // v11: afuera blogs personales y plataformas de autopublicacion (no son medios serios)
+    notas = notas.filter((n) => !esBlogPersonal(n.link || ''));
     const conTexto = notas.filter((n) => n.cuerpo).length;
     console.log(`${f.nombre}: ${notas.length} notas (${conTexto} con texto completo)`);
     if (process.env.DIAGNOSTICO) {
@@ -607,8 +622,12 @@ async function buscarEstudios() {
   // v10: el mismo medicamento del mismo laboratorio sale una sola vez (los "gemelos" se anotan juntos)
   const porClave = new Map();
   for (const e of ordenados) {
-    const remedio = (e.tratamientos.split(',')[0] || e.titulo).toLowerCase().replace(/[^a-z0-9]/g, '');
-    const clave = e.sponsor.toLowerCase() + '|' + remedio;
+    // v11: la clave es solo el medicamento (por su codigo tipo MK-8748 si lo tiene),
+    // sin el laboratorio ni la enfermedad: el mismo remedio sale una sola vez por lunes
+    const codigo = (e.tratamientos + ' ' + e.titulo).match(/\b[A-Z]{1,6}[- ]?\d{2,6}[A-Z]?\b/);
+    const remedio = codigo ? codigo[0].replace(/[- ]/g, '').toLowerCase()
+      : (e.tratamientos.split(',')[0] || e.titulo).toLowerCase().replace(/\(.*?\)/g, '').replace(/[^a-z0-9]/g, '');
+    const clave = remedio;
     if (porClave.has(clave)) porClave.get(clave).gemelos.push(e);
     else porClave.set(clave, Object.assign(e, { gemelos: [] }));
   }
@@ -630,7 +649,7 @@ async function armarEstudios(links) {
   }).join('\n');
   const prompt = `Sos NEXUS Daily. Arma el apartado semanal de estudios clinicos para Gabriel, que tiene baja vision (ve con un solo ojo) y sigue los avances de retina. Espanol rioplatense, hablale de vos, en Markdown.
 
-Empeza exactamente con la linea "### 🔬 Estudios en marcha (resumen semanal)" y despues una lista de entre 3 y 8 estudios elegidos de abajo, los mas interesantes: tratamientos nuevos, fases avanzadas (fase 2 o 3), los que se hacen en Argentina, y variedad de enfermedades. Deja afuera los estudios chicos de un hospital que solo comparan tecnicas de cirugia de rutina, y todo lo que sea para personas que no ven nada (incluida la amaurosis congenita de Leber). Si hay dos o mas estudios del mismo medicamento para la misma enfermedad, pone uno solo.
+Empeza exactamente con la linea "### 🔬 Estudios en marcha (resumen semanal)" y despues una lista de entre 3 y 8 estudios elegidos de abajo, los mas interesantes: tratamientos nuevos, fases avanzadas (fase 2 o 3), los que se hacen en Argentina, y variedad de enfermedades. Deja afuera los estudios chicos de un hospital que solo comparan tecnicas de cirugia de rutina, y todo lo que sea para personas que no ven nada (incluida la amaurosis congenita de Leber). Cada medicamento sale UNA sola vez en la lista, aunque haya estudios para distintas enfermedades o de distintos laboratorios (fijate tambien en los codigos, por ejemplo MK-8748): elegi el estudio mas avanzado o el que se haga en Argentina.
 
 Cada estudio en UN renglon que empiece con "- " y diga: para que es en palabras simples (que enfermedad y que se prueba), la fase, quien lo hace y donde. Si se hace en Argentina, decilo primero ("En Argentina:"). Al final, el link como enlace Markdown con el codigo tal cual, por ejemplo ([ClinicalTrials.gov](L3)). Si el estado es "terminado", aclara que termino y que hay que esperar los resultados. No inventes datos. No uses las palabras "ceguera", "ciego" o "ciega". Nada de introducciones ni cierres: solo el titulo y la lista.
 
@@ -646,6 +665,45 @@ function guardarHistorialEstudios(hoy, texto, estudios) {
     .flatMap((e) => [e, ...(e.gemelos || [])]);
   const filas = [...leerHistorialEstudios(), ...publicados.map((e) => [hoy, e.id, e.estado])];
   fs.writeFileSync(HISTORIAL_ESTUDIOS, filas.map((f) => f.join('\t')).join('\n') + '\n');
+}
+
+// ---------------- VERSION CORTA PARA GASTON (v11) ----------------
+const LIMITE_GASTON = 1900;
+
+function textoPlano(md) {
+  return md.replace(/\[([^\]]+)\]\[\d+\]/g, '$1').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/\*\*/g, '').replace(/^#+\s*/gm, '').replace(/\n{3,}/g, '\n\n').trim();
+}
+
+function recortar(texto, limite) {
+  if (texto.length <= limite) return texto;
+  // Se corta por notas enteras, nunca a mitad de frase
+  const partes = texto.split(/\n\n/);
+  let salida = '';
+  for (const p of partes) {
+    if ((salida + '\n\n' + p).length > limite) break;
+    salida = salida ? salida + '\n\n' + p : p;
+  }
+  return salida;
+}
+
+async function versionGaston(hoy, resumen) {
+  const corte = resumen.indexOf('## 🤖');
+  const vision = textoPlano(corte >= 0 ? resumen.slice(0, corte) : resumen);
+  const encabezado = `Novedades de retina y baja visión - ${hoy.split('-').reverse().join('/')}`;
+  if (!vision.replace(/Baja visión/i, '').trim() || /Hoy no hubo novedades/i.test(vision)) {
+    return `${encabezado}\n\nHoy no hubo novedades.`;
+  }
+  const prompt = `Reescribi este resumen de novedades para mandarselo por Instagram a un medico oftalmologo especialista en retina. Espanol rioplatense, tono neutro y profesional, sin hablarle a nadie en particular. Texto plano: sin Markdown, sin asteriscos, sin numerales, sin links. Puede usar terminos medicos tecnicos.
+
+Formato: cada nota en un parrafo corto que empiece con el titulo, dos puntos y lo concreto (que se probo, en cuantos pacientes, resultado, etapa) y al final la fuente entre parentesis. Si hay estudios clinicos, ponelos al final bajo la linea "Estudios en marcha:", uno por renglon empezando con "- ", con medicamento, enfermedad, fase y laboratorio. Copia los nombres de medicamentos y enfermedades tal cual. No agregues introduccion ni cierre ni datos que no esten.
+
+Largo maximo: ${LIMITE_GASTON - encabezado.length - 50} caracteres en total. Si no entra todo, deja afuera las notas menos importantes para un retinologo (eventos, accesibilidad) antes que los tratamientos.
+
+=== RESUMEN ===
+${vision}`;
+  let cuerpo = textoPlano((await llamarClaude(prompt)).trim());
+  return recortar(`${encabezado}\n\n${cuerpo}`, LIMITE_GASTON);
 }
 
 async function principal() {
@@ -702,6 +760,8 @@ Reglas de esta seccion:
 - No uses nunca las palabras "ceguera", "ciego" o "ciega". Si un tratamiento evita perder la vista, deci "perdida de vision".
 - Tambien afuera las enfermedades de perdida total de vision desde el nacimiento o la infancia (amaurosis congenita de Leber y parecidas), aunque sea un tratamiento.
 - Hay notas en ingles: traducilas al espanol (titulo y resumen). Si la nota en ingles y una en espanol cuentan lo mismo, quedate con la que tenga mas datos.
+- Afuera los eventos presenciales (foros, jornadas, congresos, cursos, charlas) que se hagan fuera de Argentina: Gabriel vive en Buenos Aires y no le sirven. Los de Argentina y los que se pueden ver online si entran.
+- Las notas sobre empresas (compras, inversiones, acuerdos) solo entran si vienen de un medio reconocido o del comunicado oficial de la empresa.
 - Si hay un ateneo o video de retina de Laboratorios Poen o del Consejo Argentino de Oftalmologia, o un episodio de Canal Retina, mencionalo siempre y decile que lo puede ver en el link.
 
 ## 🤖 Inteligencia artificial
@@ -724,6 +784,7 @@ Reglas generales:
 - En las notas de busqueda de noticias, la fuente es el medio que aparece al final del titulo (despues del guion); sacalo del titulo y no lo repitas en el titulo en negrita.
 - NO REPETIR: abajo esta la lista de noticias ya publicadas en dias anteriores. Si una nota cuenta el mismo hecho que alguna de esa lista (aunque sea de otro medio o con otro titulo), dejala afuera. Solo entra si trae un hecho nuevo (por ejemplo, un resultado o una aprobacion que antes no estaba).
 - SOLO NOVEDADES (regla firme): hoy es ${hoy}. Deja afuera toda nota cuyo hecho principal (anuncio, lanzamiento, acuerdo, informe, resultado) ocurrio hace mas de 10 dias, aunque el articulo sea nuevo. Lee las fechas que aparecen en el "Texto de la nota" y en el titulo: si dice que el anuncio fue, por ejemplo, "el 27 de octubre" y hoy es 14 de noviembre, va afuera. En la seccion de baja vision el limite es 30 dias. Ante la duda, si el texto menciona una fecha vieja para el hecho principal, deja la nota afuera.
+- NOMBRES TAL CUAL: los nombres de productos, programas, medicamentos, fallas de seguridad, empresas y personas se copian exactamente como estan en el texto de la nota. No los traduzcas, no los corrijas ni los "arregles" (por ejemplo, si la nota dice "Log4Shell", es "Log4Shell").
 - Usa solo la informacion de abajo: no inventes datos. Si una seccion no tiene material, deci "Hoy no hubo novedades".
 - No pongas titulo principal: empeza directamente por "## 👁️ Baja visión".
 
@@ -783,6 +844,13 @@ ${ia.texto || '(sin notas hoy)'}`;
   );
 
   if (estudios && estudios.texto) guardarHistorialEstudios(hoy, resumen, estudios.estudios);
+
+  // v11: version corta para Gaston (por Instagram, que corta los mensajes largos)
+  try {
+    fs.writeFileSync(path.join(CARPETA, 'gaston.txt'), await versionGaston(hoy, resumen) + '\n');
+  } catch (e) {
+    console.warn('Aviso: no se pudo armar la version para Gaston:', e.message);
+  }
 
   // Anotar en el historial los links publicados hoy
   const nuevos = [];
