@@ -46,6 +46,8 @@
 //    o lo registre otro laboratorio (antes se comparaba tambien el laboratorio).
 //  - Fuentes: afuera blogs personales y plataformas de autopublicacion (note.com, Medium, Substack...).
 //  - El resumen no puede cambiar nombres propios ni tecnicos (salio "Java4Shell").
+//  - v12: los estudios muestran el codigo NCT y el protocolo del laboratorio (ej. MK-8748-004),
+//    tambien en la version de Gaston.
 //  - Version corta para Gaston (medico de retina): nexus-daily-output/gaston.txt, solo baja vision
 //    y estudios, texto plano de menos de 1900 caracteres para pegar en Instagram.
 
@@ -602,8 +604,11 @@ async function buscarEstudios() {
       const resumenEstudio = (ps.descriptionModule?.briefSummary || '').replace(/\s+/g, ' ').slice(0, 700);
       if (esDeCeguera(titulo) || cuerpoEsParaCiegos(resumenEstudio)) continue;
       const paises = [...new Set((ps.contactsLocationsModule?.locations || []).map((l) => l.country).filter(Boolean))];
+      // v12: codigo de protocolo del laboratorio (ej. MK-8748-004), para que el medico lo ubique
+      const protocolo = (ps.identificationModule?.orgStudyInfo?.id || '').trim();
       porId.set(id, {
         id, estado, titulo, resumen: resumenEstudio,
+        protocolo: protocolo && protocolo !== id ? protocolo : '',
         fases: (ps.designModule?.phases || []).filter((f) => f !== 'NA').join(', ') || 'sin fase',
         pacientes: ps.designModule?.enrollmentInfo?.count || '',
         sponsor: ps.sponsorCollaboratorsModule?.leadSponsor?.name || '',
@@ -640,7 +645,7 @@ async function armarEstudios(links) {
   if (!r) return null;
   const material = r.lista.map((e) => {
     links.push('https://clinicaltrials.gov/study/' + e.id);
-    return `- ${e.id}: ${e.titulo} | Estado: ${ESTADOS[e.estado] || e.estado} | Fase: ${e.fases}` +
+    return `- ${e.id}${e.protocolo ? ` (protocolo ${e.protocolo})` : ''}: ${e.titulo} | Estado: ${ESTADOS[e.estado] || e.estado} | Fase: ${e.fases}` +
       (e.pacientes ? ` | Pacientes: ${e.pacientes}` : '') + (e.sponsor ? ` | Quien lo hace: ${e.sponsor}` : '') +
       (e.tratamientos ? ` | Que prueban: ${e.tratamientos}` : '') + (e.paises ? ` | Donde: ${e.paises}` : '') +
       (e.primerRegistro ? ` | Registrado: ${e.primerRegistro}` : '') +
@@ -651,7 +656,7 @@ async function armarEstudios(links) {
 
 Empeza exactamente con la linea "### 🔬 Estudios en marcha (resumen semanal)" y despues una lista de entre 3 y 8 estudios elegidos de abajo, los mas interesantes: tratamientos nuevos, fases avanzadas (fase 2 o 3), los que se hacen en Argentina, y variedad de enfermedades. Deja afuera los estudios chicos de un hospital que solo comparan tecnicas de cirugia de rutina, y todo lo que sea para personas que no ven nada (incluida la amaurosis congenita de Leber). Cada medicamento sale UNA sola vez en la lista, aunque haya estudios para distintas enfermedades o de distintos laboratorios (fijate tambien en los codigos, por ejemplo MK-8748): elegi el estudio mas avanzado o el que se haga en Argentina.
 
-Cada estudio en UN renglon que empiece con "- " y diga: para que es en palabras simples (que enfermedad y que se prueba), la fase, quien lo hace y donde. Si se hace en Argentina, decilo primero ("En Argentina:"). Al final, el link como enlace Markdown con el codigo tal cual, por ejemplo ([ClinicalTrials.gov](L3)). Si el estado es "terminado", aclara que termino y que hay que esperar los resultados. No inventes datos. No uses las palabras "ceguera", "ciego" o "ciega". Nada de introducciones ni cierres: solo el titulo y la lista.
+Cada estudio en UN renglon que empiece con "- " y diga: para que es en palabras simples (que enfermedad y que se prueba), la fase, quien lo hace y donde. Si se hace en Argentina, decilo primero ("En Argentina:"). Al final, los codigos del estudio: el link como enlace Markdown cuyo texto es el codigo NCT, y si tiene protocolo, el protocolo despues, por ejemplo ([NCT07705555](L3), protocolo MK-8748-004). Si no tiene protocolo, solo el NCT. Copia los codigos exactos, sin cambiarles nada. Si el estado es "terminado", aclara que termino y que hay que esperar los resultados. No inventes datos. No uses las palabras "ceguera", "ciego" o "ciega". Nada de introducciones ni cierres: solo el titulo y la lista.
 
 === ESTUDIOS DE LA SEMANA (ClinicalTrials.gov) ===
 ${material}`;
@@ -696,7 +701,7 @@ async function versionGaston(hoy, resumen) {
   }
   const prompt = `Reescribi este resumen de novedades para mandarselo por Instagram a un medico oftalmologo especialista en retina. Espanol rioplatense, tono neutro y profesional, sin hablarle a nadie en particular. Texto plano: sin Markdown, sin asteriscos, sin numerales, sin links. Puede usar terminos medicos tecnicos.
 
-Formato: cada nota en un parrafo corto que empiece con el titulo, dos puntos y lo concreto (que se probo, en cuantos pacientes, resultado, etapa) y al final la fuente entre parentesis. Si hay estudios clinicos, ponelos al final bajo la linea "Estudios en marcha:", uno por renglon empezando con "- ", con medicamento, enfermedad, fase y laboratorio. Copia los nombres de medicamentos y enfermedades tal cual. No agregues introduccion ni cierre ni datos que no esten.
+Formato: cada nota en un parrafo corto que empiece con el titulo, dos puntos y lo concreto (que se probo, en cuantos pacientes, resultado, etapa) y al final la fuente entre parentesis. Si hay estudios clinicos, ponelos al final bajo la linea "Estudios en marcha:", uno por renglon empezando con "- ", con medicamento, enfermedad, fase, laboratorio y al final los codigos exactos (el NCT y, si figura, el protocolo, por ejemplo NCT07705555, protocolo MK-8748-004). Copia los nombres de medicamentos y enfermedades tal cual. No agregues introduccion ni cierre ni datos que no esten.
 
 Largo maximo: ${LIMITE_GASTON - encabezado.length - 50} caracteres en total. Si no entra todo, deja afuera las notas menos importantes para un retinologo (eventos, accesibilidad) antes que los tratamientos.
 
