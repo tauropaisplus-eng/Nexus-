@@ -254,3 +254,11 @@
 2026-11-24	https://www.infobae.com/tecno/2026/11/24/automatizar-toda-la-investigacion-en-ia-el-escenario-que-describe-el-jefe-de-ia-de-meta-alexandr-wang/
 2026-11-24	https://openai.com/business/customer-stories/intentful-dots
 2026-11-24	https://www.xataka.com/ecologia-y-naturaleza/ciencia-llevaba-anos-debatiendo-cambio-climatico-traeria-rayos-ia-acaba-dar-respuesta-inquietante
+2026-11-25	https://www.ophthalmologytimes.com/view/setting-expectations-for-anti-vegf-treatment-in-wamd
+2026-11-25	https://www.healio.com/news/ophthalmology/20261124/sol1-trial-axpaxli-superior-to-aflibercept-shows-durability-in-wet-amd
+2026-11-25	https://www.larazon.es/tecnologia-consumo/inteligencia-artificial/claude-crear-instalar-aplicaciones-ia-windows-mac_202611256b06aeff50b7057c6d15c6f2.html
+2026-11-25	https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities
+2026-11-25	https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/
+2026-11-25	https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga
+2026-11-25	https://huggingface.co/blog/inkling-2-mini-inference-hillclimb
+2026-11-25	https://openai.com/business/customer-stories/clay-plugins-openai

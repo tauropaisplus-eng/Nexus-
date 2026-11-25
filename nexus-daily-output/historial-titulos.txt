@@ -292,3 +292,11 @@
 2026-11-24	"Automatizar toda la investigación en IA": el escenario que plantea Alexandr Wang, jefe de IA de Meta
 2026-11-24	Cómo Intentful usa dots para ganar tiempo y crecer
 2026-11-24	Una IA responde si el cambio climático traerá más rayos
+2026-11-25	Cómo plantear las expectativas del tratamiento anti-VEGF en la DMAE húmeda
+2026-11-25	Estudio SOL-1: Axpaxli superó a aflibercept y mostró durabilidad en DMAE húmeda
+2026-11-25	Claude permite convertir herramientas creadas en una conversación en aplicaciones de escritorio
+2026-11-25	Los modelos GPT-6 muestran capacidad intrínseca para diseñar proteínas
+2026-11-25	Del espectro a la estructura: identificar moléculas con Mass Spec Skills para Google Antigravity
+2026-11-25	Un agente de voz para idiomas indios con CUGA
+2026-11-25	Optimizar la inferencia de Inkling 2 Mini en una sola RTX PRO 6000
+2026-11-25	Clay usa Codex y ChatGPT para ayudar a los equipos de ventas
