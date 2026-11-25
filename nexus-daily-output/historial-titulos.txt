@@ -300,3 +300,6 @@
 2026-11-25	Un agente de voz para idiomas indios con CUGA
 2026-11-25	Optimizar la inferencia de Inkling 2 Mini en una sola RTX PRO 6000
 2026-11-25	Clay usa Codex y ChatGPT para ayudar a los equipos de ventas
+2026-11-25	Anthropic migró la API de Messages de Python a Rust con agentes de Claude
+2026-11-25	Siren: la prueba de Anthropic para saber si Claude respeta los límites de su entorno aislado
+2026-11-25	Dónde ponen el límite los científicos con los agentes de IA

@@ -262,3 +262,6 @@
 2026-11-25	https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga
 2026-11-25	https://huggingface.co/blog/inkling-2-mini-inference-hillclimb
 2026-11-25	https://openai.com/business/customer-stories/clay-plugins-openai
+2026-11-25	https://www.unite.ai/es/anthropic-details-claude-assisted-rust-migration-of-messages-api/
+2026-11-25	https://fomoera.com/anthropic-siren-claude-entorno-aislado/
+2026-11-25	https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents
