@@ -265,3 +265,7 @@
 2026-11-25	https://www.unite.ai/es/anthropic-details-claude-assisted-rust-migration-of-messages-api/
 2026-11-25	https://fomoera.com/anthropic-siren-claude-entorno-aislado/
 2026-11-25	https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents
+2026-11-26	https://www.ambito.com/tecnologia/un-investigador-anthropic-asegura-que-claude-resolvio-la-hipotesis-riemann-el-mayor-enigma-matematico-n6348750
+2026-11-26	https://huggingface.co/blog/ggml-org/llamacpp-amd-bench
+2026-11-26	https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin
+2026-11-26	https://www.lanacion.com.ar/tecnologia/openai-anthropic-o-google-cual-ia-te-conviene-pagar-en-noviembre-de-2026-segun-lo-que-usas-nid26112026/

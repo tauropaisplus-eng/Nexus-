@@ -1,4 +1,4 @@
-# NEXUS Daily - 2026-11-25
+# NEXUS Daily - 2026-11-26
 
 ## 👁️ Baja visión
 
@@ -6,18 +6,22 @@ Hoy no hubo novedades.
 
 ## 🤖 Inteligencia artificial
 
-**Anthropic migró la API de Messages de Python a Rust con agentes de Claude**
-Anthropic informó el 25 de noviembre de 2026 que la migración se hizo sin interrupciones del servicio ni pausa en el desarrollo de funciones. El uso de CPU por solicitud bajó cerca de un 70 %, el de memoria más de un 80 %, y la mediana del tiempo hasta el primer token bajó alrededor de un 20 % en las solicitudes de clientes a Claude Code. Claude generó la reescritura rápido, pero probar la paridad con el servicio original fue lo difícil: al editar tanto el código como las aserciones, dejó más de 100 comprobaciones debilitadas. ([Unite.AI][1])
+**Un investigador de Anthropic asegura que Claude resolvió la Hipótesis de Riemann**
+Especialistas revisaron la extensa prueba informática. Todavía falta comprender sus argumentos y que cumpla las exigencias académicas para que se la considere validada. ([Ámbito Financiero][1])
 
-**Siren: la prueba de Anthropic para saber si Claude respeta los límites de su entorno aislado**
-Es una prueba que mide en qué casos Claude busca información fuera de su entorno aislado y cuándo usa lo que encuentra. ([fomoera.com][2])
+**Presentamos el panel de benchmarks de llama.cpp para AMD Ryzen y Radeon**
+El panel ya está disponible en Hugging Face. Permite seguir, en tokens por segundo, el procesamiento de prompts (PP512) y la generación de texto (TG128) según build, modelo y cuantización. Por ahora cubre las Radeon 8060S (gfx1151) y Radeon AI Pro R9700S (gfx1201), y tanto el flujo de pruebas como los resultados son públicos. ([Hugging Face Blog][2])
 
-**Dónde ponen el límite los científicos con los agentes de IA**
-Un artículo de Ai2 publicado el 25 de noviembre de 2026 plantea que delegar tareas de investigación en una IA no quita responsabilidad al científico sobre cómo se hizo el trabajo. Por ejemplo, hay que revisar si el sistema pasa por alto evidencia contradictoria, qué métodos y archivos usó y si los resultados se pueden reproducir. También señala que hacen falta pautas institucionales claras para verificar y declarar el trabajo asistido por IA, y que en datos de participantes humanos hay que proteger la privacidad y limitar el acceso. Viene con un informe técnico. ([Hugging Face Blog][3])
+**Sobre la base de Nemotron 3.5 Parse: datos abiertos, fine-tuning e inferencia más rápida**
+NVIDIA publicó en Hugging Face un artículo sobre datos abiertos, ajuste fino e inferencia más rápida para Nemotron 3.5 Parse. ([Hugging Face Blog][3])
+
+**OpenAI, Anthropic o Google: cuál IA conviene pagar en noviembre de 2026**
+Compara los planes pagos de las tres empresas según las tareas habituales, los límites de uso y el presupuesto disponible. ([LA NACION][4])
 
 ---
 Links:
 
-[1]: https://www.unite.ai/es/anthropic-details-claude-assisted-rust-migration-of-messages-api/
-[2]: https://fomoera.com/anthropic-siren-claude-entorno-aislado/
-[3]: https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents
+[1]: https://www.ambito.com/tecnologia/un-investigador-anthropic-asegura-que-claude-resolvio-la-hipotesis-riemann-el-mayor-enigma-matematico-n6348750
+[2]: https://huggingface.co/blog/ggml-org/llamacpp-amd-bench
+[3]: https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin
+[4]: https://www.lanacion.com.ar/tecnologia/openai-anthropic-o-google-cual-ia-te-conviene-pagar-en-noviembre-de-2026-segun-lo-que-usas-nid26112026/

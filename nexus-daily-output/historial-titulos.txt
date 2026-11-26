@@ -303,3 +303,7 @@
 2026-11-25	Anthropic migró la API de Messages de Python a Rust con agentes de Claude
 2026-11-25	Siren: la prueba de Anthropic para saber si Claude respeta los límites de su entorno aislado
 2026-11-25	Dónde ponen el límite los científicos con los agentes de IA
+2026-11-26	Un investigador de Anthropic asegura que Claude resolvió la Hipótesis de Riemann
+2026-11-26	Presentamos el panel de benchmarks de llama.cpp para AMD Ryzen y Radeon
+2026-11-26	Sobre la base de Nemotron 3.5 Parse: datos abiertos, fine-tuning e inferencia más rápida
+2026-11-26	OpenAI, Anthropic o Google: cuál IA conviene pagar en noviembre de 2026
