@@ -269,3 +269,6 @@
 2026-11-26	https://huggingface.co/blog/ggml-org/llamacpp-amd-bench
 2026-11-26	https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin
 2026-11-26	https://www.lanacion.com.ar/tecnologia/openai-anthropic-o-google-cual-ia-te-conviene-pagar-en-noviembre-de-2026-segun-lo-que-usas-nid26112026/
+2026-11-27	https://www.ndtv.com/health/living-healthy/can-food-protect-your-vision-what-the-science-says-about-diet-and-eye-supplements-12385392
+2026-11-27	https://huggingface.co/blog/video-trainium3
+2026-11-27	https://huggingface.co/blog/training-swarms

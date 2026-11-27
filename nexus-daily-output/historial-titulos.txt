@@ -307,3 +307,6 @@
 2026-11-26	Presentamos el panel de benchmarks de llama.cpp para AMD Ryzen y Radeon
 2026-11-26	Sobre la base de Nemotron 3.5 Parse: datos abiertos, fine-tuning e inferencia más rápida
 2026-11-26	OpenAI, Anthropic o Google: cuál IA conviene pagar en noviembre de 2026
+2026-11-27	¿Puede la comida proteger la vista? Qué dice la ciencia sobre la dieta y los suplementos oculares
+2026-11-27	Trainium3 en pista: generación de videos con LTX-2.5
+2026-11-27	Enjambres, bandadas y pandillas: cómo construir, entrenar y evaluar sistemas multiagente

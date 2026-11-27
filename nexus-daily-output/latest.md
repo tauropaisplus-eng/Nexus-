@@ -1,27 +1,21 @@
-# NEXUS Daily - 2026-11-26
+# NEXUS Daily - 2026-11-27
 
 ## 👁️ Baja visión
 
-Hoy no hubo novedades.
+**¿Puede la comida proteger la vista? Qué dice la ciencia sobre la dieta y los suplementos oculares**
+La nutrición influye en la salud del ojo, pero lo que realmente sirve es más acotado de lo que sugiere el marketing de los suplementos. La mayor parte de lo útil está en lo que se come en el plato. ([NDTV][1])
 
 ## 🤖 Inteligencia artificial
 
-**Un investigador de Anthropic asegura que Claude resolvió la Hipótesis de Riemann**
-Especialistas revisaron la extensa prueba informática. Todavía falta comprender sus argumentos y que cumpla las exigencias académicas para que se la considere validada. ([Ámbito Financiero][1])
+**Trainium3 en pista: generación de videos con LTX-2.5**
+Entrada del blog de Hugging Face sobre cómo generar videos con LTX-2.5 usando chips Trainium3. ([Hugging Face Blog][2])
 
-**Presentamos el panel de benchmarks de llama.cpp para AMD Ryzen y Radeon**
-El panel ya está disponible en Hugging Face. Permite seguir, en tokens por segundo, el procesamiento de prompts (PP512) y la generación de texto (TG128) según build, modelo y cuantización. Por ahora cubre las Radeon 8060S (gfx1151) y Radeon AI Pro R9700S (gfx1201), y tanto el flujo de pruebas como los resultados son públicos. ([Hugging Face Blog][2])
-
-**Sobre la base de Nemotron 3.5 Parse: datos abiertos, fine-tuning e inferencia más rápida**
-NVIDIA publicó en Hugging Face un artículo sobre datos abiertos, ajuste fino e inferencia más rápida para Nemotron 3.5 Parse. ([Hugging Face Blog][3])
-
-**OpenAI, Anthropic o Google: cuál IA conviene pagar en noviembre de 2026**
-Compara los planes pagos de las tres empresas según las tareas habituales, los límites de uso y el presupuesto disponible. ([LA NACION][4])
+**Enjambres, bandadas y pandillas: cómo construir, entrenar y evaluar sistemas multiagente**
+Entrada del blog de Hugging Face sobre el armado, el entrenamiento y la evaluación de sistemas de varios agentes de IA. ([Hugging Face Blog][3])
 
 ---
 Links:
 
-[1]: https://www.ambito.com/tecnologia/un-investigador-anthropic-asegura-que-claude-resolvio-la-hipotesis-riemann-el-mayor-enigma-matematico-n6348750
-[2]: https://huggingface.co/blog/ggml-org/llamacpp-amd-bench
-[3]: https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin
-[4]: https://www.lanacion.com.ar/tecnologia/openai-anthropic-o-google-cual-ia-te-conviene-pagar-en-noviembre-de-2026-segun-lo-que-usas-nid26112026/
+[1]: https://www.ndtv.com/health/living-healthy/can-food-protect-your-vision-what-the-science-says-about-diet-and-eye-supplements-12385392
+[2]: https://huggingface.co/blog/video-trainium3
+[3]: https://huggingface.co/blog/training-swarms
